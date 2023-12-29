@@ -1,0 +1,106 @@
+
+/* Style the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  
+}
+
+/* Style the dropdown link */
+.dropdown .div.a {
+    display: block;
+    position: relative;
+    color: rgb(253, 91, 4);
+    font-weight: bold; /* Texte en gras */
+    height: 36px;
+}
+.dropdown .div.a:hover{
+    background-color: rgb(253, 218, 201);
+    color: #0411f7;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fc8b44;
+    min-width: 160px;
+    z-index: 1;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(254, 254, 254);
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Change la couleur de fond au passage de la souris */
+.dropdown-content a:hover {
+    background-color: rgb(253, 218, 201);
+    color: #0411f7;
+    border: 2px solid #01580e;
+}
+
+/* Add arrow icon before the link */
+.dropdown .div.a i {
+    margin-left: 5px;
+    font-size: 20px; /* Taille de la flèche augmentée */
+    color: #f90101;
+    transition: transform 0.3s ease;
+}
+
+/* Faites pivoter la flèche en survol pour indiquer le menu ouvert */
+.dropdown:hover .div.a i {
+    transform: rotate(180deg);
+    color:#0411f7
+}
+
+
+/*Boite de recherche*/
+
+.search {
+    width: 60%;
+    /* position: relative; */
+    display: flex;
+    margin: -186px 0px 300px 320px;
+  }
+  .searchTerm {
+    width: 50%;
+    border: 3px solid #f77204;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+  }
+  .searchTerm:focus {
+    color: #380136;
+  }
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #f77204;
+    background: #f77204;
+    text-align: center;
+    color: #eeeeee;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+ 
+  }
+  .wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    margin: -04px 0 0 51%;
+    transform: translate(-50%, -50%);
+  }
+
+
+/*Fin Boite de recherche*/

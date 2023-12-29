@@ -1,0 +1,80 @@
+body, html {
+    height: 100%;
+    margin: 0px 0 0 0;
+    overflow: hidden;
+    background: url(/Images/ciel.jpg) center center / cover no-repeat fixed;
+}
+
+.star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: twinkling 5s infinite; /* Animation des étoiles */
+}
+
+@keyframes twinkling {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.globe {
+    width: 700px;
+    height: 700px;
+    background: url(/Images/terreDetoure.png); /* Image du globe terrestre */
+    background-size: 100% 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 200s linear infinite, spinUpDown 10s linear infinite;
+    margin: 140px 0 0 0;
+}
+ 
+/*lune*/
+.moon {
+    width: 100px;
+    height: 100px;
+    background: url(/Images/Lune.png); /* Image de la lune */
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+    /* ... Votre CSS existant pour les étoiles ... */
+
+.star::before, .star::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 2px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid #fff; /* Couleur des étoiles */
+
+    transform: rotate(35deg);
+}
+
+.star::before {
+    top: -3px;
+    left: -3px;
+}
+
+.star::after {
+    top: -3px;
+    left: -3px;
+}
+
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+
+
+

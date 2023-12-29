@@ -1,0 +1,147 @@
+.tableau {
+    display: table;
+    width: 40%;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 40px; /* Ajustez la taille de la police pour les écrans mobiles */
+    border-collapse: collapse; /* Combine les bordures de cellules */
+	margin: 0 auto;
+	table-layout: fixed;
+	opacity: 0.;
+}
+
+.ligne {
+    display: table-row;
+}
+
+a {
+    color: rgb(252, 251, 251);
+    text-shadow: rgb(10, 10, 10) 0.1em 0.1em 0.2em;
+}
+
+.cellule {
+    display: table-cell;
+    text-align: center;
+    border: 1px solid #060;
+    padding: 12px;
+}
+
+.entete {
+    font-weight: bold;
+    color: #fff;
+    background-color: #060;
+}
+
+.paire {
+    background-color: #cf6;
+}
+
+.impaire {
+    background-color: #3f0;
+}
+
+.legende {
+    text-align: center;
+    color: #060;
+    padding-bottom: 7px;
+    font-size: 36px; /* Ajustez la taille de la légende pour les écrans mobiles */
+    margin: 20px -360px 20px 180px  /* Réduisez l'espacement autour de la légende */
+}
+
+.cellule:hover {
+    background-color: #ff0; /* Changez cette couleur en fonction de votre préférence */
+}
+
+.cellule a:hover {
+    color: #f00; /* Changez cette couleur en fonction de votre préférence */
+}
+
+
+@media screen and (max-width: 650px) {
+    .tableau {
+        font-size: 16px; /* Ajustez la taille de la police pour les écrans très petits */
+    }
+
+    .cellule {
+        padding: 6px; /* Réduisez l'espacement des cellules pour les écrans petits */
+    }
+
+    .legende {
+        font-size: 24px; /* Ajustez la taille de la légende pour les écrans très petits */
+        margin: -10px 0 10px 0; /* Réduisez davantage l'espacement autour de la légende */
+    }
+
+    /* Cachez certaines colonnes ou éléments qui ne sont pas pertinents sur les petits écrans */
+    .cacher {
+        display: none;
+    }
+}
+/* ---------------------------- */
+/* Défilement de droite à gauche */
+.marquee-rtl {
+    overflow: hidden; /* important */
+    width: 100%;
+    max-width: 46em; /* A ADAPTER */
+  }
+  .marquee-rtl > div {
+    display: inline-block; /* important */
+    white-space: nowrap; /* important */
+    animation: defilement-rtl 15s infinite linear; /* défilement */
+    cursor: pointer;
+    padding: 10px 2em 10px 100%;
+  }
+  .marquee-rtl:hover > div {
+    animation-play-state: paused; /* met en pause le défilement */
+  }
+  .marquee-rtl > div:first-letter {
+    font-weight: 700;
+    color: #f00;
+  }
+  @keyframes defilement-rtl {
+    0% {
+      -webkit-transform: translate(0);
+      transform: translate(0);
+    }
+    100% {
+      -webkit-transform: translate(-100%);
+      transform: translate(-100%);
+    }
+  }
+  /* ---------------------------- */
+  /* texte sur plusieurs lignes automatiquement */
+  .marquee-multi-lignes > div {
+    width: 90%;
+    white-space: normal; /* important */
+  }
+  
+  /* ---------------------------- */
+  /* déco */
+  h2,
+  p {
+    text-align: center;
+  }
+  
+  .marquee-rtl {
+    margin: 2em auto;
+    border: 10px solid #f0f0ff;
+    box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #ccc;
+  }
+  .marquee-rtl > div {
+    font-size: 1.5em;
+  }
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  #menu > li {
+    width: 150px;
+    height: 40px;
+    background: grey;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+  }
+  
+  #menu li ul a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    background: black;
+    text-decoration: none;
+    color: white;
+  }
+  
+  #menu li ul {
+    height: 0;
+    overflow: hidden;
+    transition: 1s all;
+  }
+  
+  #menu li:hover ul {
+    height: 120px;
+  }
+
+
+  

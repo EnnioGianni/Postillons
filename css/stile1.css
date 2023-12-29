@@ -17,7 +17,7 @@ body {
     background-color: bisque;
 }
 #body{
-    background: url(/Images/Carrosse.jpg) center center / cover no-repeat fixed;
+    background: url(../laPosteDeLancienneFrance/Resource/Carrosse.jpg) center center / cover no-repeat fixed;
     padding:  20px;
     min-height: 100vh;
 }
@@ -203,7 +203,7 @@ body {
 /* ------------------ Accueil ---------------- */
 
 .accueil {
-    background: url(/Images/Carrosse.jpg);
+    background: url(../laPosteDeLancienneFrance/Resource/Carrosse.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;

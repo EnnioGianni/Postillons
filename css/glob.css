@@ -2,7 +2,7 @@ body, html {
     height: 100%;
     margin: 0px 0 0 0;
     overflow: hidden;
-    background: url(/Images/ciel.jpg) center center / cover no-repeat fixed;
+    background: url(../laPosteDeLancienneFrance/Resource/ciel.jpg) center center / cover no-repeat fixed;
 }
 
 .star {
@@ -23,7 +23,7 @@ body, html {
 .globe {
     width: 700px;
     height: 700px;
-    background: url(/Images/terreDetoure.png); /* Image du globe terrestre */
+    background: url(../laPosteDeLancienneFrance/Resource/terreDetoure.png); /* Image du globe terrestre */
     background-size: 100% 100%;
     border-radius: 50%;
     position: absolute;
@@ -38,7 +38,7 @@ body, html {
 .moon {
     width: 100px;
     height: 100px;
-    background: url(/Images/Lune.png); /* Image de la lune */
+    background: url(../laPosteDeLancienneFrance/Resource/Lune.png); /* Image de la lune */
     background-size: 100% 100%;
     position: absolute;
     top: 0;

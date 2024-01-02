@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Tableau d'objets pour stocker les informations sur les liens
     var menuItems = [
-        { label: 'Accueil', link: '/index.html' },
+        { label: 'La Poste', link: '../../../La Poste/La_Poste.html' },
         { label: 'Video', link: '/video.html' },
         { label: 'PDF', link: '/pdf.html' },
         { label: 'Blog', link: '/blog.html' },

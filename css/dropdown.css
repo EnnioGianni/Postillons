@@ -104,3 +104,17 @@
 
 
 /*Fin Boite de recherche*/
+
+.dropdown-container {
+  padding: 1px; /* Espacement intérieur */
+  margin: 0px; /* Marge extérieure */
+  background-color: #0532fe; /* Couleur d'arrière-plan */
+  border: 1px solid #ddd; /* Bordure */
+  border-radius: 5px; /* Bords arrondis */
+}
+
+#citySelector {
+  padding: 5px; /* Espacement intérieur pour le <select> */
+  border: 1px solid #818283; /* Bordure pour le <select> */
+  border-radius: 4px; /* Bords arrondis pour le <select> */
+}

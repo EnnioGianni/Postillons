@@ -27,7 +27,8 @@ body{
 }
 * {
     box-sizing: inherit;
-    font-size: 15px;
+    font-size: 17px;
+    margin: 0px 0px 0 -1px;
     
 }
 #taille{
@@ -139,8 +140,8 @@ ul {
 /*bouton de recherche*/
 input {
   height: 37px;
-  width: 148%;
-  border: 2px #e08318 solid;
+  width: 146%;
+  border: 3px #e08318 solid;
   text-align: center;
 }
 i {

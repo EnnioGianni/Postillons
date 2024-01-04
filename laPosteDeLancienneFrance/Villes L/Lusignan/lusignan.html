@@ -12,7 +12,11 @@
         <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
         <script src="../../../JS/script_global.js.js" defer></script>        
         <script src="../../../JS/lienVillesl.js" defer></script>
-        <script src="../../../JS/accueil.js" defer></script>           
+        <script src="../../../JS/accueil.js" defer></script>  
+        <script src="../../../JS/cityRedirector.js"></script>
+        <script src="path/to/cityRedirector.js"></script>
+        <!-- <script src="chemin/vers/cityRedirector.js"></script> -->
+        
         <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
     </head> 
     <body>
@@ -52,39 +56,20 @@
 <h2 id="h12">
     <a href="https://fr.wikipedia.org/wiki/Lusignan_(Vienne)" class="title-tip title-tip-up;" style="font-size: 25px;" title="lien vers wikipedia">Lusignan - Poitou (80)</a></h2>
        <p>Bureau ouvert au XVII<sup>em</sup> siècle</p>
-        <nav>
-            <ul class="pagination justify-content-center">
-                <ul class="pagination justify-content-center">
-                     <li class="page-item"><a class="page-link title-tip title-tip-left" href="../L_sommaire.html" title="Sommaire L">&laquo;&laquo;</a></li>
-                       <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Lure/lure.html" title="page precedente Lure">&laquo;</a></li>                
-                        <li class="page-item">
-                            <div class="dropdown">
-                                <!-- Champ de saisie de la ville -->
-                                <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
-                                <!-- Cellule "ville" -->
-                                <a id="villeLink" class="div a title-tip page-link">
-                                    &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
-                                </a>
-                                <!-- Contenu déroulant -->
-                                <div class="dropdown-content scrollable-content" id="dropdownContent">
-                                    <a></a>   
-                                </div>
-                            </div>
-                        </li>    
-                        <li class="page-item">
-                            <div class="dropdown1">
-                                <a href="../../../index.html" class="div a title-tip page-link">
-                                    Accueil <i class="fas fa-caret-down"></i>
-                                </a>
-                                <div class="dropdown-content" id="menuDropdown">
-                                    <!-- Les liens seront ajoutés dynamiquement ici -->
-                                </div>
-                            </div>
-                            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../LussacLesChateau/lussacLesChateau.html" title=" Ville suivante Lussac Les Chateau">&raquo;</a></li>
-                    </li>
-                </ul>              
-            </ul>
+       <nav>
+        <ul class="pagination justify-content-center">
+            <!-- Autres éléments de la pagination -->
+            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../L_sommaire.html" title="Sommaire L">&laquo;&laquo;</a></li>
+            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Lure/lure.html" title="Ville precedente Lure">&laquo;</a></li>
+            <li class="page-item active"><a class="page-link" href="../Lusignan/lusignan.html">Lusignan</a></li>
+            <li class="page-item dropdown-container title-tip title-tip-up"><div id="dropdownContainer"></div></li> <!-- Ici, le conteneur pour la liste déroulante -->
+            <li class="page-item"><a class="page-link" href="../../../index.html" >Accueil</a></li>
+            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../LussacLesChateau/lussacLesChateau.html" title=" Ville suivante Lussac Les Chateau">&raquo;</a></li>
+
+            <!-- Autres éléments de la pagination -->
+       
         </nav>
+
 <!--Fin pagination-->
 <table>   
     <thead>

@@ -104,7 +104,7 @@
 
 
 /*Fin Boite de recherche*/
-
+/*Boite de recherche 2*/
 .dropdown-container {
   padding: 1px; /* Espacement intérieur */
   margin: 0px; /* Marge extérieure */
@@ -114,7 +114,29 @@
 }
 
 #citySelector {
+  width: 200px;
   padding: 5px; /* Espacement intérieur pour le <select> */
   border: 1px solid #818283; /* Bordure pour le <select> */
   border-radius: 4px; /* Bords arrondis pour le <select> */
+}
+/* Styles pour les écrans de tablette (écrans dont la largeur est inférieure à 768px) */
+@media screen and (max-width: 768px) {
+    #citySelector {
+        width: 150px; /* Largeur réduite pour les tablettes */
+        /* Autres styles adaptés aux tablettes... */
+    }
+}
+
+/* Styles pour les écrans de téléphone mobile (écrans dont la largeur est inférieure à 480px) */
+@media screen and (max-width: 380px) {
+    .dropdown-container {
+        padding: 5px;
+        margin: 2px;
+        /* Autres styles adaptés aux mobiles... */
+    }
+
+    #citySelector {
+        width: 100%; /* Largeur pleine page pour les petits écrans */
+        /* Autres styles adaptés aux mobiles... */
+    }
 }

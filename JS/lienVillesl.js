@@ -24,84 +24,84 @@ document.addEventListener(DOMContentLoaded function ()
          
         
          
-        Laon 
-        Largentiere 
-        Laspeyres 
-        Launoy 
-        Lauterbourg 
-        Lauzerte
-        Laval 
-        Lavaur 
-        Lavit De Loumagne 
-        Lectoure 
-        Ledignan 
-        Lege 
-        Lens 
-        Lescar 
-        Lesneven 
-        Lesparre 
-        Levet
-        Levroux 
-        Lezat 
-        Lezignan
-        Lezou
-        Libourne 
-        Lieuray 
-        Lieusaint 
-        Lignieres 
-        Ligny En Barrois 
-        Ligueil 
-        Lihons 
-        Lille 
-        Lillebonne 
-        Lillers 
-        Limoges 
-        Limours 
-        Limoux 
-        Linas 
-        Lisieux 
-        livarot 
-        Livry 
-        Lizy
-        Loches
-        Locmine 
-        Lodeve 
-        Lombez 
-        Longeray 
-        Longny 
-        Longuyon 
-        Longwy 
-        Lonjumeau 
-        Lons Le Saunier 
-        Lorgues 
-        Lorient 
-        Loriol 
-        Lormes 
-        Lorris 
-        Loudeac 
-        Loudun 
-        Louhans 
-        Loupe 
-        Loupian 
-        Louviers 
-        Louvois 
-        Louvres 
-        Luc 
-        Lucenay lévêque 
-        Lucon 
-        Lucy Le Bois 
-        Lude
-        Lunel 
-        Luneville 
-        Lure 
-        Lusignan 
-        Lussac Les Chateau 
-        Luxeuil 
-        Luzarches 
-        Luzy 
-        Lyon 
-        Lyon La Foret 
-        Lyre (La Neuve) 
+       
+        
+        
+         
+       
+        
+         
+         
+         
+         
+         
+        
+        
+         
+         
+        
+        
+         
+         
+        
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+        
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+        
+         
+         
+         
+         
+        
+         
+         
+         
+         
+         
+        
                          
          Ajoutez dautres villes ici
     ];

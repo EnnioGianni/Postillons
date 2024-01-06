@@ -140,7 +140,31 @@ body {
   
   /* Crafted with love at Sparkbox */
 
-
+  @media screen and (max-width: 500px) {
+    .dropdown-content a:hover {
+        background-color: #ddd; /* Changement de couleur au survole */
+    }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content {
+      display: block; /* Toujours afficher le contenu */
+  }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content a {
+      padding: 5px 10px; /* Padding réduit */
+  }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content a {
+      padding: 5px 10px; /* Padding réduit */
+  }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content a {
+      font-size: 12px; /* Taille de police réduite */
+  }
+}
 
 
 

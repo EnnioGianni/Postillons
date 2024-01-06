@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tableau de liens de villes
     var cityLinks = [
+        { name: 'lagny', url: '/laPosteDeLancienneFrance/Villes L/Lagny/lagny.html' },
+        { name: 'Laignes', url: '/laPosteDeLancienneFrance/Villes L/Laignes/Laignes.html' },
+        { name: 'Cadenet', url: '/laPosteDeLancienneFrance/Villes L/Cadenet/Cadenet.html' },
         { name: 'Abbeville', url: '/laPosteDeLancienneFrance/Villes A/Abbeville/abbeville.html' },
         { name: 'Abries', url: '/laPosteDeLancienneFrance/Villes A/Abries/abries.html' },
         { name: 'Agde', url: '/laPosteDeLancienneFrance/Villes A/Agde/agde.html' },
@@ -100,6 +103,12 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Avranches', url: '/laPosteDeLancienneFrance/Villes A/Avranches/avranches.html' },
         { name: 'Ay', url: '/laPosteDeLancienneFrance/Villes A//Ay/Ay.html' },
         { name: 'Azille', url: '/laPosteDeLancienneFrance/Villes A/Azille/azille.html' },
+        { name: 'Alzonne', url: '/laPosteDeLancienneFrance/Villes A/Alzonne/alzonne.html' },
+        { name: 'Azille', url: '/laPosteDeLancienneFrance/Villes A/Azille/azille.html' },
+        { name: '', url: '/laPosteDeLancienneFrance/Villes A/' },
+        { name: '', url: '/laPosteDeLancienneFrance/Villes A/' },
+       
+                         
         // Ajoutez d'autres villes ici
     ];
 

@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (dropdownContainer) {
         var dropdownHtml = '<select id="citySelector">' +
                            '<option value="">Tapez le nom de la ville</option>' +
-    
                            '<option value="Lagny">Lagny</option>' +
                            '<option value="Laignes">Laignes</option>' +
                            '<option value="Lailly">Lailly</option>' +

@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+        <head>
         <meta charset="utf-8" />
         <title>Le Postillon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../../../css/nba.css" />
         <link rel="stylesheet" href="../../../css/table.css" />
+        <link rel="stylesheet" href="../../../css/dropdown.css" />
         <link rel="stylesheet" href="../../../css/modale.css" />
         <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
-        <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-        <script src="../../../JS/script.js" defer></script>
-        <link rel="icon" type="image/x-icon" href="../../../icones/books_library_1768.ico">
-        <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
+        <script src="../../../JS/bootstrap.bundle.min.js" defer></script>
+        <script src="../../../JS/script_global.js.js" defer></script>              
+        <script src="../../../JS/villesC.js" defer></script>        
+        <script src="../../../JS/accueil.js" defer></script>
+        <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script> 
+        <script src="../../../JS/cityRedirector.js"></script>
+        <script src="path/to/cityRedirector.js"></script>  
     </head>  
+
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
         <h1 id="h1" style="margin: 0 0 0 10px;">Le Postillon</h1>
@@ -53,12 +57,35 @@
 <p>Bureau ouvert le 1<sup>er</sup> novembre 1783</p>
 <nav>
     <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="page-link" href="../C_sommaire.html" title="sommaire des ville C">&laquo;&laquo;</a></li>
-        <li class="page-item active"><a class="page-link" href="../Cadenet/cadenet.html">Cadenet</a></li>
-        <li class="page-item"><a class="page-link" href="../Cadillac/cadillac.html">Cadillac</a></li>
-        <li class="page-item"><a class="page-link" href="../Caen/caen.html">Caen</a></li>
-        <li class="page-item"><a class="page-link" href="../Cahors/cahors.html" title="Cahors">&raquo;</a></li>
-        <li class="page-item"><a class="page-link" href="../Culan/culan.html" title="Culan">&raquo;&raquo;</a></li>
+        <ul class="pagination justify-content-center">
+             <li class="page-item"><a class="page-link title-tip title-tip-left" href="../L_sommaire.html" title="Sommaire L">&laquo;&laquo;</a></li>
+               <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Lonjumeau/lonjumeau.html" title="page precedente Lonjumeau">&laquo;</a></li>                
+                <li class="page-item">
+                    <div class="dropdown">
+                        <!-- Champ de saisie de la ville -->
+                        <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
+                        <!-- Cellule "ville" -->
+                        <a id="villeLink" class="div a title-tip page-link">
+                            &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
+                        </a>
+                        <!-- Contenu déroulant -->
+                        <div class="dropdown-content scrollable-content" id="dropdownContent">
+                            <a></a>   
+                        </div>
+                    </div>
+                </li>    
+                <li class="page-item">
+                    <div class="dropdown1">
+                        <a href="../../../index.html" class="div a title-tip page-link">
+                            Accueil <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-content" id="menuDropdown">
+                            <!-- Les liens seront ajoutés dynamiquement ici -->
+                        </div>
+                    </div>
+                    <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Lorgues/lorgues.html" title=" Ville suivante Lorgues">&raquo;</a></li>
+            </li>
+        </ul>              
     </ul>
 </nav>
 <!--Fin pagination-->
@@ -113,7 +140,7 @@
 </div>
 
 </section>        
-<!---Footer defilant-->
+<!---Footer défilant-->
 <div class='News-footer'>
     <div class='news'>
         <span id='news-head'><b>COTE</b></span>
@@ -121,7 +148,7 @@
     <p class='N-text'>
       <marquee direction='left'>
         Celles-ci s'entendent pour de belles frappes.</a>
-        <span>• Pour les lattres en port paye:
+        <span>• Pour les lettres en port paye:
         </span>
         <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.
         </span>
@@ -131,7 +158,7 @@
     </p>
   </div>
       
-<!---fin Footer defilant-->          
+<!---fin Footer défilant-->          
      
 </body>
 </html>

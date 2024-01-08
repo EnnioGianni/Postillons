@@ -1,25 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
         <title>Le Postillon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../../css/nba.css" />
         <link rel="stylesheet" href="../../../css/table.css" />
         <link rel="stylesheet" href="../../../css/dropdown.css" />
         <link rel="stylesheet" href="../../../css/modale.css" />
         <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
         <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
         <script src="../../../JS/script_global.js.js" defer></script>        
-        <script src="../../../JS/lienVillesl.js" defer></script>
-        <script src="../../../JS/accueil.js" defer></script>  
+        <script src="../../../JS/script.js" defer></script>  
+        <script src="../../../JS/villesA.js" defer></script>        
+        <script src="../../../JS/villesB.js" defer></script>        
+        <script src="../../../JS/villesC.js" defer></script>        
+        <script src="../../../JS/villesD.js" defer></script>        
+        <script src="../../../JS/villesE.js" defer></script>        
+        <script src="../../../JS/villesF.js" defer></script>        
+        <script src="../../../JS/villesG.js" defer></script>        
+        <script src="../../../JS/villesH.js" defer></script>        
+        <script src="../../../JS/villesI.js" defer></script>        
+        <script src="../../../JS/villesJ.js" defer></script>        
+        <script src="../../../JS/villesK.js" defer></script>        
+        <script src="../../../JS/villesL.js" defer></script>        
+        <script src="../../../JS/villesM.js" defer></script>        
+        <script src="../../../JS/villesN.js" defer></script>        
+        <script src="../../../JS/villesO.js" defer></script>        
+        <script src="../../../JS/villesP.js" defer></script>        
+        <script src="../../../JS/villesQ.js" defer></script>        
+        <script src="../../../JS/villesR.js" defer></script>        
+        <script src="../../../JS/villesS.js" defer></script>        
+        <script src="../../../JS/villesT.js" defer></script>        
+        <script src="../../../JS/villesU.js" defer></script>        
+        <script src="../../../JS/villesV.js" defer></script>        
+        <script src="../../../JS/villesW.js" defer></script>        
+        <script src="../../../JS/villesX.js" defer></script>        
+        <script src="../../../JS/villesY.js" defer></script>        
+        <script src="../../../JS/villesZ.js" defer></script>        
+        <script src="../../../JS/accueil.js" defer></script>
+        <script src="../../../JS/accueil.js" defer></script>
         <script src="../../../JS/cityRedirector.js"></script>
-        <script src="path/to/cityRedirector.js"></script>
-        <!-- <script src="chemin/vers/cityRedirector.js"></script> -->
-        
+        <script src="path/to/cityRedirector.js"></script>  
+        <link rel="icon" type="image/x-icon" href="../../../icones/books_library_1768.ico">
         <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
-    </head> 
-    <body>
+    </head>  
+<body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
         <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>      
         <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>        
@@ -56,36 +82,39 @@
 <h2 id="h12">
     <a href="https://fr.wikipedia.org/wiki/Lusignan_(Vienne)" class="title-tip title-tip-up;" style="font-size: 25px;" title="lien vers wikipedia">Lusignan - Poitou (80)</a></h2>
        <p>Bureau ouvert au XVII<sup>em</sup> siècle</p>
-       <nav>
-        <ul class="pagination justify-content-center">
+        <nav>
             <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <div class="dropdown">
-                            <!-- Champ de saisie de la ville -->
-                            <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
-                            <!-- Cellule "ville" -->
-                            <a id="villeLink" class="div a title-tip page-link">
-                                &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
-                            </a>
-                            <!-- Contenu déroulant -->
-                            <div class="dropdown-content scrollable-content" id="dropdownContent">
-                                <a></a>   
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link title-tip title-tip-left" href="../L_sommaire.html" title="Sommaire L">&laquo;&laquo;</a></li>
+                    <li class="page-item"><a class="page-link title-tip title-tip-left" href="../Lure/lure.html" title="Page precedente Lure">&laquo;&laquo;</a></li>
+                        <li class="page-item">
+                            <div class="dropdown">
+                                <!-- Champ de saisie de la ville -->
+                                <input type="text" id="villeInput" placeholder="Entrée le nom de la ville recherchée">
+                                <!-- Cellule "ville" -->
+                                <a id="villeLink" class="div a title-tip page-link">
+                                    &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
+                                </a>
+                                <!-- Contenu déroulant -->
+                                <div class="dropdown-content scrollable-content" id="dropdownContent">
+                                    <a></a>   
+                                </div>
                             </div>
-                        </div>
-                    </li>    
-                    <li class="page-item">
-                        <div class="dropdown1">
-                            <a href="../../../index.html" class="div a title-tip page-link">
-                                Accueil <i class="fas fa-caret-down"></i>
-                            </a>
-                            <div class="dropdown-content" id="menuDropdown">
-                                <!-- Les liens seront ajoutés dynamiquement ici -->
+                        </li>    
+                        <li class="page-item">
+                            <div class="dropdown1">
+                                <a href="../../../index.html" class="div a title-tip page-link">
+                                    Accueil <i class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-content" id="menuDropdown">
+                                    <!-- Les liens seront ajoutés dynamiquement ici -->
+                                </div>
                             </div>
-                        </div>
-                </li>
-            </ul>              
-        </ul>
-    </nav>
+                            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../LussacLesChateau/lussacLesChateau.html" title=" Ville suivante Lussac Les Chateau">&raquo;</a></li>
+                    </li>
+                </ul>              
+            </ul>
+        </nav>
     <!--Fin pagination-->
 <table>   
     <thead>
@@ -210,9 +239,9 @@
 </tr> 
 
 <!--Espace-->
-<tr> 
-    <th colspan="8" style="color: black;"></th>
-</tr>              
+    <tr> 
+        <th colspan="8" style="color: black;"></th>
+    </tr>              
 </table>
 
 <!--Debut popup-->
@@ -220,24 +249,24 @@
     <div class="popup-content">
         <a href="#" class="close">&times;</a>
             <p>lorem</p>
-</div>
+    </div>
 </div>
 
 </section>        
 <!---Footer défilant-->
 <div class='News-footer'>
     <div class='news'>
-<span id='news-head'>COTE</span>
-</div>
-    <p class='N-text'>
-        <marquee direction='left'>
-            <span>Celles-ci s'entendent pour de belles frappes.</span>
-            <span>• Pour les lettre en port paye:</span>
-            <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.</span>
-            <span>• Si la marque de port (dû) qui accompagne le (port payé) est d'un indice supérieur a 16, majorer de 2 indices la cote du port payé.</span> 
-            <span>&copy; Copyright Tout droit réservé.</span>
-        </marquee>
-    </p>
+        <span id='news-head'>COTE</span>
+    </div>
+        <p class='N-text'>
+            <marquee direction='left'>
+                <span>Celles-ci s'entendent pour de belles frappes.</span>
+                <span>• Pour les lettre en port paye:</span>
+                <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.</span>
+                <span>• Si la marque de port (dû) qui accompagne le (port payé) est d'un indice supérieur a 16, majorer de 2 indices la cote du port payé.</span> 
+                <span>&copy; Copyright Tout droit réservé.</span>
+            </marquee>
+        </p>
 </div>
 <!---fin Footer défilant--> 
 </body>

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tableau de liens de villes
     var cityLinks = [
-        { name: 'Abbeville', url: '../laPosteDeLancienneFrance/Villes A/Abbeville/abbeville.html' },
+        { name: 'Abbeville', url: '/laPosteDeLancienneFrance/Villes A/Abbeville/abbeville.html' },
         { name: 'Abries', url: '/laPosteDeLancienneFrance/Villes A/Abries/abries.html' },
         { name: 'Agde', url: '/laPosteDeLancienneFrance/Villes A/Agde/agde.html' },
         { name: 'Agen', url: '/laPosteDeLancienneFrance/Villes A/Agen/agen.html' },

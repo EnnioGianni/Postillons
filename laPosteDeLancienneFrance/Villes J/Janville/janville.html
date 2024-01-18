@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+    <head>  
         <meta charset="utf-8" />
         <title>Le Postillon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,13 +10,43 @@
         <link rel="stylesheet" href="../../../css/modale.css" />
         <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
         <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-        <script src="../../../JS/script.js" defer></script>
-        <link rel="icon" type="image/x-icon" href="../../../icones/books_library_1768.ico">
+        <script src="../../../JS/script_global.js.js" defer></script>        
+        <script src="../../../JS/script.js" defer></script>  
+        <script src="../../../JS/villesA.js" defer></script>        
+        <script src="../../../JS/villesB.js" defer></script>        
+        <script src="../../../JS/villesC.js" defer></script>        
+        <script src="../../../JS/villesD.js" defer></script>        
+        <script src="../../../JS/villesE.js" defer></script>        
+        <script src="../../../JS/villesF.js" defer></script>        
+        <script src="../../../JS/villesG.js" defer></script>        
+        <script src="../../../JS/villesH.js" defer></script>        
+        <script src="../../../JS/villesI.js" defer></script>        
+        <script src="../../../JS/villesJ.js" defer></script>        
+        <script src="../../../JS/villesK.js" defer></script>        
+        <script src="../../../JS/villesL.js" defer></script>        
+        <script src="../../../JS/villesM.js" defer></script>        
+        <script src="../../../JS/villesN.js" defer></script>        
+        <script src="../../../JS/villesO.js" defer></script>        
+        <script src="../../../JS/villesP.js" defer></script>        
+        <script src="../../../JS/villesQ.js" defer></script>        
+        <script src="../../../JS/villesR.js" defer></script>        
+        <script src="../../../JS/villesS.js" defer></script>        
+        <script src="../../../JS/villesT.js" defer></script>        
+        <script src="../../../JS/villesU.js" defer></script>        
+        <script src="../../../JS/villesV.js" defer></script>        
+        <script src="../../../JS/villesW.js" defer></script>        
+        <script src="../../../JS/villesX.js" defer></script>        
+        <script src="../../../JS/villesY.js" defer></script>        
+        <script src="../../../JS/villesZ.js" defer></script>        
+        <script src="../../../JS/accueil.js" defer></script>
+        <script src="../../../JS/accueil.js" defer></script>
+        <script src="../../../JS/cityRedirector.js"></script>
+        <script src="path/to/cityRedirector.js"></script>  
         <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
-    </head>  
+    </head> 
     <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
-        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../../icones/books_library_1768.ico"></a>      
+        <a><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>           
         <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>        
         <a class="div a" href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"  title="lien vers les villes avec le nom A et ainsi de suite">A</a>
         <a class="div a" href="../../../laPosteDeLancienneFrance/Villes B/B_sommaire.html">B</a>
@@ -44,18 +74,36 @@
         <a class="div a" href="../../../laPosteDeLancienneFrance/Villes X/X_sommaire.html">X</a>
         <a class="div a" href="../../../laPosteDeLancienneFrance/Villes Y/Y_sommaire.html">Y</a>
         <a class="div a" href="../../../laPosteDeLancienneFrance/Villes Z/Z_sommaire.html">Z</a> 
-
-        <div class="dropdown">
-            <a href="../../../index.html" class="div a">
-                Accueil <i class="fas fa-caret-down"></i>
-            </a>
-            <div class="dropdown-content">
-                <a href="../../../video.html">Video</a>
-                <a href="../../../pdf.html">PDF</a>
-                <a href="../../../blog.html">Blog</a>
-                <a href="../../../Articles.html">Articles</a>
-            </div>
-        </div>
+        <nav style="margin: 50px 0 0 0;">
+            <ul class="pagination justify-content-center">
+                <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <div class="dropdown">
+                                <!-- Champ de saisie de la ville -->
+                                <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
+                                <!-- Cellule "ville" -->
+                                <a id="villeLink" class="div a title-tip page-link">
+                                    &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
+                                </a>
+                                <!-- Contenu déroulant -->
+                                <div class="dropdown-content scrollable-content" id="dropdownContent">
+                                    <a></a>   
+                                </div>
+                            </div>
+                        </li>    
+                        <li class="page-item">
+                            <div class="dropdown1">
+                                <a href="../../../index.html" class="div a title-tip page-link">
+                                    Accueil <i class="fas fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-content" id="menuDropdown">
+                                    <!-- Les liens seront ajoutés dynamiquement ici -->
+                                </div>
+                            </div>
+                    </li>
+                </ul>              
+            </ul>
+        </nav>
     </header>
 <section>
 <!--Debut pagination-->  
@@ -67,8 +115,7 @@
         <li class="page-item"><a class="page-link" href="../../../laPosteDeLancienneFrance/Villes I/Lisle_Sur_Le_Doubs/lisleSurLeDoubs.html" title="Lisle Sur Le Doubs">&laquo;</a></li>
         <li class="page-item"><a class="page-link" href="../Jalons/jalons.html">Jalons</a></li>
         <li class="page-item active"><a class="page-link" href="../Janville/janville.html">Janville</a></li>
-        <li class="page-item"><a class="page-link"  href="../Joigny/joigny.html">Joigny</a></li>
-        <li class="page-item"><a class="page-link" href="../Joinville/joinville.html" title="Joinville">&raquo;</a></li>
+        <li class="page-item"><a class="page-link" href="../Joigny/joigny.html" title="Joigny">&raquo;</a></li>
         <li class="page-item"><a class="page-link" href="../Juzennecour/juzennecour.html" title="Juzennecour">&raquo;&raquo;</a></li>
     </ul>
 </nav>

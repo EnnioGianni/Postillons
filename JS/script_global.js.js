@@ -41,6 +41,7 @@ var prixParLigneGlobal = {
     37: '9500.00',
     38: '11000.00',
     39: '12000.00',
+    0:'0',//LavitDeLoumagne/
     // Ajoutez d'autres lignes avec leurs prix associés au besoin
 };
 

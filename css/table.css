@@ -151,13 +151,13 @@ button {
   background-color: #e08318;
   height: 30px;
   width: 50px;
-  border: 1px transparent solid;
+  border: 1px solid transparent;
 }
 button:hover {
   background-color: #e08318;
   height: 30px;
   width: 40px;
-  border: 1px transparent solid;
+  border: 1px solid transparent;
 }
 form {
   box-sizing: border-box;
@@ -167,6 +167,28 @@ form {
 
 .highlight {
   background-color: #f7bc85; /* Choisissez votre couleur de surbrillance */
+}
+
+/* Requête média pour tablettes (par exemple, écrans entre 600px et 900px de large) */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+  /* Styles spécifiques aux tablettes */
+  input, button {
+    width: 100%; /* Ajustez la largeur à 100% pour une meilleure adaptation aux écrans de tablettes */
+  }
+  form {
+    margin: 0; /* Ajustez les marges du formulaire pour les tablettes */
+  }
+}
+
+/* Requête média pour smartphones (par exemple, écrans de moins de 600px de large) */
+@media screen and (max-width: 599px) {
+  /* Styles spécifiques aux smartphones */
+  input, button {
+    width: 100%; /* Ajustez la largeur pour les smartphones */
+  }
+  form {
+    flex-direction: column; /* Empilez les éléments du formulaire verticalement sur les petits écrans */
+  }
 }
 
 /* .highlight {
@@ -709,7 +731,6 @@ p{
   border: 0.25em dashed transparent;
   border-left: 0.25em solid #222;
 }
-
 
 
 

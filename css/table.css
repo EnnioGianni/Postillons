@@ -197,22 +197,14 @@ form {
 
 
 
-#searchBox {
+/* #searchBox {
   width: 200px;
   padding: 10px;
   margin-left: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
-}
-
-
-
-
-
-
-
-
+} */
 
 #img:hover{
   -ms-transform: scale(3) translate(30px); /* IE 9 */
@@ -289,9 +281,9 @@ table{
     padding: 10px;
     border: 3px double #090909;
     background-color: #fadebb;
+
   }
 
-  
   
   @media screen and (max-width: 500px) {
     table {

@@ -65,11 +65,10 @@
 /*Boite de recherche*/
 
 .search {
-    width: 60%;
-    /* position: relative; */
-    display: flex;
-    margin: -186px 0px 300px 320px;
-  }
+  width: 20%; /* Utiliser toute la largeur du conteneur */
+  display: flex;
+  margin: 0; /* Enlever la marge négative */
+}
   .searchTerm {
     width: 50%;
     border: 3px solid #f77204;
@@ -94,16 +93,46 @@
     font-size: 20px;
  
   }
+  
   .wrap {
-    width: 30%;
-    position: absolute;
-    top: 50%;
-    margin: -04px 0 0 51%;
-    transform: translate(-50%, -50%);
+    width: 80%; /* Largeur plus adaptative */
+    margin: 0 auto; /* Centrer dans la page */
+    display: flex; /* Utiliser flexbox pour le centrage */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+    padding: 20px; /* Ajouter un peu de padding */
+}
+/* Media Query pour Tablettes */
+@media screen and (max-width: 768px) {
+  .wrap {
+      width: 90%; /* Augmenter la largeur pour les tablettes */
   }
+  .search {
+      width: 30%; /* Ajuster la largeur de la boîte de recherche */
+  }
+  .searchTerm {
+      width: 70%; /* Ajuster la largeur de l'input */
+  }
+}
 
+/* Media Query pour Smartphones */
+@media screen and (max-width: 480px) {
+  .wrap {
+      width: 95%; /* Augmenter la largeur pour les smartphones */
+  }
+  .search {
+      width: 50%; /* Ajuster la largeur de la boîte de recherche */
+  }
+  .searchTerm {
+      width: 60%; /* Ajuster la largeur de l'input */
+  }
+  .searchButton {
+      width: 50px; /* Ajuster la taille du bouton si nécessaire */
+  }
+}
 
 /*Fin Boite de recherche*/
+
 /*Boite de recherche 2*/
 .dropdown-container {
   padding: 1px; /* Espacement intérieur */

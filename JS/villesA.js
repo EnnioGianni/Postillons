@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Avenay', url: '/laPosteDeLancienneFrance/Villes A/Avenay/avenay.html' },
         { name: 'Avignon', url: '/laPosteDeLancienneFrance/Villes A/Avignon/avignon.html' },
         { name: 'Avranches', url: '/laPosteDeLancienneFrance/Villes A/Avranches/avranches.html' },
-        { name: 'Ay', url: '/laPosteDeLancienneFrance/Villes A//Ay/Ay.html' },
+        { name: 'Ay', url: '/laPosteDeLancienneFrance/Villes A/Ay/Ay.html' },
         { name: 'Azille', url: '/laPosteDeLancienneFrance/Villes A/Azille/azille.html' },
-        { name: 'Sommaire', url: '../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html' },
+        { name: 'Sommaire Ville A', url: '/laPosteDeLancienneFrance/Villes A/sommaireVilleA/sommaireVilleA.html' },
         // Ajoutez d'autres villes ici
     ];
 

@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Avranches', url: '/laPosteDeLancienneFrance/Villes A/Avranches/avranches.html' },
         { name: 'Ay', url: '/laPosteDeLancienneFrance/Villes A/Ay/Ay.html' },
         { name: 'Azille', url: '/laPosteDeLancienneFrance/Villes A/Azille/azille.html' },
-        { name: 'Sommaire Ville A', url: '/laPosteDeLancienneFrance/Villes A/sommaireVilleA/sommaireVilleA.html' },
+        { name: 'Sommaire Ville A', url: '/laPosteDeLancienneFrance/Villes A/sommaireVilleA.html' },
         // Ajoutez d'autres villes ici
     ];
 

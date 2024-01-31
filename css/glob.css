@@ -31,7 +31,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%);
     animation: spin 200s linear infinite, spinUpDown 10s linear infinite;
-    margin: 140px 0 0 0;
+    margin: 170px 0 0 0;
 }
  
 /*lune*/

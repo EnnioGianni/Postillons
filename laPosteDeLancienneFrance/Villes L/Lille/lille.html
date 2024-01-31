@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+    <head>  
         <meta charset="utf-8" />
         <title>Le Postillon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,17 +10,43 @@
         <link rel="stylesheet" href="../../../css/modale.css" />
         <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
         <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-        <script src="../../../JS/script_global.js.js" defer></script> 
-        <script src="../../../JS/lienVillesl.js" defer></script>
+        <script src="../../../JS/script_global.js.js" defer></script>        
+        <script src="../../../JS/script.js" defer></script>  
+        <script src="../../../JS/villesA.js" defer></script>        
+        <script src="../../../JS/villesB.js" defer></script>        
+        <script src="../../../JS/villesC.js" defer></script>        
+        <script src="../../../JS/villesD.js" defer></script>        
+        <script src="../../../JS/villesE.js" defer></script>        
+        <script src="../../../JS/villesF.js" defer></script>        
+        <script src="../../../JS/villesG.js" defer></script>        
+        <script src="../../../JS/villesH.js" defer></script>        
+        <script src="../../../JS/villesI.js" defer></script>        
+        <script src="../../../JS/villesJ.js" defer></script>        
+        <script src="../../../JS/villesK.js" defer></script>        
+        <script src="../../../JS/villesL.js" defer></script>        
+        <script src="../../../JS/villesM.js" defer></script>        
+        <script src="../../../JS/villesN.js" defer></script>        
+        <script src="../../../JS/villesO.js" defer></script>        
+        <script src="../../../JS/villesP.js" defer></script>        
+        <script src="../../../JS/villesQ.js" defer></script>        
+        <script src="../../../JS/villesR.js" defer></script>        
+        <script src="../../../JS/villesS.js" defer></script>        
+        <script src="../../../JS/villesT.js" defer></script>        
+        <script src="../../../JS/villesU.js" defer></script>        
+        <script src="../../../JS/villesV.js" defer></script>        
+        <script src="../../../JS/villesW.js" defer></script>        
+        <script src="../../../JS/villesX.js" defer></script>        
+        <script src="../../../JS/villesY.js" defer></script>        
+        <script src="../../../JS/villesZ.js" defer></script>        
+        <script src="../../../JS/accueil.js" defer></script>
         <script src="../../../JS/accueil.js" defer></script>
         <script src="../../../JS/cityRedirector.js"></script>
-        <script src="path/to/cityRedirector.js"></script>                
-        <link rel="icon" type="image/x-icon" href="../../../icones/books_library_1768.ico">
+        <script src="path/to/cityRedirector.js"></script>  
         <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
     </head> 
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
-        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../../icones/books_library_1768.ico"></a>      
+        <a><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>        
         <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>        
         <a class="div a title-tip" href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html" title="lien vers les villes avec le nom A">A</a>
         <a class="div a title-tip" href="../../../laPosteDeLancienneFrance/Villes B/B_sommaire.html" title="lien vers les villes avec le nom B">B</a>
@@ -54,40 +80,44 @@
 <!--Debut pagination-->  
 <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Lille" class="title-tip title-tip-up;" style="font-size: 25px;" title="lien vers wikipedia">
     Lille - Flandre (57)</a></h2><p>Bureau en service lors de l'annexion, 1668</p>
-    <nav>
+<!--Debut pagination-->
+<nav>
+    <ul class="pagination justify-content-center">
         <ul class="pagination justify-content-center">
-            <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <div class="dropdown">
-                            <!-- Champ de saisie de la ville -->
-                            <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
-                            <!-- Cellule "ville" -->
-                            <a id="villeLink" class="div a title-tip page-link">
-                                &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
-                            </a>
-                            <!-- Contenu déroulant -->
-                            <div class="dropdown-content scrollable-content" id="dropdownContent">
-                                <a></a>   
-                            </div>
+            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../L_sommaire.html" title="Sommaire L">&laquo;&laquo;</a></li>
+            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../Lihons/lihons.html" title=" ville precedente Lihons">&laquo; </a></li> 
+                <li class="page-item">
+                    <div class="dropdown">
+                        <!-- Champ de saisie de la ville -->
+                        <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
+                        <!-- Cellule "ville" -->
+                        <a id="villeLink" class="div a title-tip page-link">
+                            &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
+                        </a>
+                        <!-- Contenu déroulant -->
+                        <div class="dropdown-content scrollable-content" id="dropdownContent">
+                            <a></a>   
                         </div>
-                    </li>    
-                    <li class="page-item">
-                        <div class="dropdown1">
-                            <a href="../../../index.html" class="div a title-tip page-link">
-                                Accueil <i class="fas fa-caret-down"></i>
-                            </a>
-                            <div class="dropdown-content" id="menuDropdown">
-                                <!-- Les liens seront ajoutés dynamiquement ici -->
-                            </div>
+                    </div>
+                </li>    
+                <li class="page-item">
+                    <div class="dropdown1">
+                        <a href="../../../index.html" class="div a title-tip page-link">
+                            Accueil <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-content" id="menuDropdown">
+                            <!-- Les liens seront ajoutés dynamiquement ici -->
                         </div>
-                </li>
-            </ul>              
-        </ul>
-    </nav>
-    <!--Fin pagination-->
+                    </div>
+                <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Lillebonne/lillebonne.html" title=" Ville suivante Lillebonne">&raquo;</a></li>
+            </li>
+        </ul>              
+    </ul>
+</nav>
+<!--Fin pagination-->
 <table> 
   <!--Commentaire-->
-  <tr> 
+<tr> 
     <th colspan="8" style="color: black;">Pour la petite poste de Lille suive ce lien
         <a href="#PPLille"><img src="../../../La Poste/Images/suivante.png" style="height: 50px; width:50px; margin: 0px 0 0 -10px;" 
             title="Vers la petite poste de Lille" class="title-tip title-tip-rigt" target="_blank">
@@ -108,14 +138,14 @@
     </thead>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 <!--Marque 1-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/1.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/1.jpg" alt="Lille" style="width: 70%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/1.png" alt="Lille" style="width: 70%;"/>
                 </a>      
             </td>
             <td class="border2">1</td>
             <td class="border2">port dû</td>
-            <td class="border2"><a><img src="../../../Images/manuscrit.jpg" style="width: 20%;"/>Lille</a></td>
+            <td class="border2"><a><img src="../../Resource/plumeDeture.png" style="width: 20%;"/>Lille</a></td>
             <td class="border2">1671-1700</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-21</td>
@@ -123,14 +153,14 @@
         </tr>
 <!--Marque 1A-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/1A.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/1A.jpg" alt="Lille" style="width: 50%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/1A.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/1A.png" alt="Lille" style="width: 50%;"/>
                 </a>      
             </td>
             <td class="border2">1A</td>
             <td class="border2">port dû</td>
-            <td class="border2"><a><img src="../../../Images/colorM.jpg" style="width: 20%;"/>Lille</a></td>
+            <td class="border2"><a><img src="../../Resource/plumeDeture.png" style="width: 20%;"/>Lille</a></td>
             <td class="border2">1701-1748</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-14</td>
@@ -138,9 +168,9 @@
         </tr>
 <!--Marque 2-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/2.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/2.jpg" alt="Lille" style="width: 70%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/2.png" alt="Lille" style="width: 70%;"/>
                 </a>      
             </td>
             <td class="border2">2</td>
@@ -153,9 +183,9 @@
         </tr>
 <!--Marque 3-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/3.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/3.jpg" alt="Lille" style="width: 69%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/3.png" alt="Lille" style="width: 69%;"/>
                 </a>      
             </td>
             <td class="border2">3</td>
@@ -168,9 +198,9 @@
         </tr>
 <!--Marque 4-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/4.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/4.jpg" alt="Lille" style="width: 66%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/4.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/4.png " alt="Lille" style="width: 66%;"/>
                 </a>      
             </td>
             <td class="border2">4</td>
@@ -183,9 +213,9 @@
         </tr>
 <!--Marque 5-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/5.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/5.jpg" alt="Lille" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/5.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/5.png" alt="Lille" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">5</td>
@@ -198,9 +228,9 @@
         </tr>
 <!--Marque 6-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/6.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/6.jpg" alt="Lille" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/6.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/6.png" alt="Lille" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">6</td>
@@ -213,9 +243,9 @@
         </tr>
 <!--Marque 7-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/7.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/7.jpg" alt="Lille" style="width: 67%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/7.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/7.png" alt="Lille" style="width: 67%;"/>
                 </a>      
             </td>
             <td class="border2">7</td>
@@ -228,9 +258,9 @@
         </tr>
 <!--Marque 8-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/8.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/8.jpg" alt="Lille" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/8.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/8.png" alt="Lille" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">8</td>
@@ -243,9 +273,9 @@
         </tr>
 <!--Marque 8A-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/8A.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/8A.jpg" alt="Lille" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/8A.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/8A.png" alt="Lille" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">8A</td>
@@ -258,9 +288,9 @@
         </tr>
 <!--Marque 9-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/9.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/9.jpg" alt="Lille" style="width: 73%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/9.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/9.png" alt="Lille" style="width: 73%;"/>
                 </a>      
             </td>
             <td class="border2">9</td>
@@ -273,9 +303,9 @@
         </tr>
 <!--Marque 10-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/10.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/10.jpg" alt="Lille" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/10.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/10.png" alt="Lille" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">10</td>
@@ -288,9 +318,9 @@
         </tr>
 <!--Marque 11-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/11.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/11.jpg" alt="Lille" style="width: 69%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/11.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/11.png" alt="Lille" style="width: 69%;"/>
                 </a>      
             </td>
             <td class="border2">11</td>
@@ -303,9 +333,9 @@
         </tr>
 <!--Marque 11A-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/11A.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/11A.jpg" alt="Lille" style="width: 69%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/11A.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/11A.png" alt="Lille" style="width: 69%;"/>
                 </a>      
             </td>
             <td class="border2">11A</td>
@@ -318,9 +348,9 @@
         </tr>
 <!--Marque 12-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/12.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/12.jpg" alt="Lille" style="width: 76%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/12.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/12.png" alt="Lille" style="width: 76%;"/>
                 </a>      
             </td>
             <td class="border2">12</td>
@@ -333,9 +363,9 @@
         </tr>
 <!--Marque 12A-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/12A.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/12A.jpg" alt="Lille" style="width: 76%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/12A.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/12A.png" alt="Lille" style="width: 76%;"/>
                 </a>      
             </td>
             <td class="border2">12A</td>
@@ -348,9 +378,9 @@
         </tr>
 <!--Marque 13-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/13.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/13.jpg" alt="Lille" style="width: 75%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/13.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/13.png" alt="Lille" style="width: 75%;"/>
                 </a>      
             </td>
             <td class="border2">13</td>
@@ -363,24 +393,9 @@
         </tr>
 <!--Marque 14-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/14.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/14.jpg" alt="Lille" style="width: 67%;"/>
-                </a>      
-            </td>
-            <td class="border2">14</td>
-            <td class="border2">port dû</td>
-            <td class="border2">14x4,5mm</td>
-            <td class="border2">1762-1763</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-16</td>
-            <td class="prixProduit" data-id="16">120.00</td>
-        </tr>
-<!--Marque 14-->          
-        <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/14.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/14.jpg" alt="Lille" style="width: 67%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/14.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/14.png" alt="Lille" style="width: 67%;"/>
                 </a>      
             </td>
             <td class="border2">14</td>
@@ -393,9 +408,9 @@
         </tr>
 <!--Marque 15-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/15.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/15.jpg" alt="Lille" style="width: 77%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/15.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/15.png" alt="Lille" style="width: 77%;"/>
                 </a>      
             </td>
             <td class="border2">15</td>
@@ -408,9 +423,9 @@
         </tr>
 <!--Marque 16-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/16.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/16.jpg" alt="Lille" style="width: 72%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/16.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/16.png" alt="Lille" style="width: 72%;"/>
                 </a>      
             </td>
             <td class="border2">16</td>
@@ -423,9 +438,9 @@
         </tr>
 <!--Marque 17-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/17.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/17.jpg" alt="Lille" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/17.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/17.png" alt="Lille" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">17</td>
@@ -438,9 +453,9 @@
         </tr>
 <!--Marque 18-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/18.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/18.jpg" alt="Lille" style="width: 67%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/18.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/18.png" alt="Lille" style="width: 67%;"/>
                 </a>      
             </td>
             <td class="border2">18</td>
@@ -453,9 +468,9 @@
         </tr>
 <!--Marque 19-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/19.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/19.jpg" alt="Lille" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/19.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/19.png" alt="Lille" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">19</td>
@@ -468,9 +483,9 @@
         </tr>
 <!--Marque 20-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/20.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/20.jpg" alt="Lille" style="width: 67%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/20.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/20.png" alt="Lille" style="width: 67%;"/>
                 </a>      
             </td>
             <td class="border2">20</td>
@@ -483,9 +498,9 @@
         </tr>
 <!--Marque 21-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/21.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/21.jpg" alt="Lille" style="width: 75%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/21.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/21.png" alt="Lille" style="width: 75%;"/>
                 </a>      
             </td>
             <td class="border2">21</td>
@@ -498,9 +513,9 @@
         </tr>
 <!--Marque 22-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/22.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/22.jpg" alt="Lille" style="width: 76%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/22.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/22.png" alt="Lille" style="width: 76%;"/>
                 </a>      
             </td>
             <td class="border2">22</td>
@@ -513,9 +528,9 @@
         </tr>
 <!--Marque 23-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/23.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/23.jpg" alt="Lille" style="width: 79%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/23.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/23.png" alt="Lille" style="width: 79%;"/>
                 </a>      
             </td>
             <td class="border2">23</td>
@@ -528,9 +543,9 @@
         </tr>
 <!--Marque 24-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/24.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/24.jpg" alt="Lille" style="width: 76%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/24.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/24.png" alt="Lille" style="width: 76%;"/>
                 </a>      
             </td>
             <td class="border2">24</td>
@@ -543,9 +558,9 @@
         </tr>
 <!--Marque 25-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/25.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/25.jpg" alt="Lille" style="width: 76%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/25.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/25.png" alt="Lille" style="width: 76%;"/>
                 </a>      
             </td>
             <td class="border2">25</td>
@@ -558,9 +573,9 @@
         </tr>
 <!--Marque 26-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/26.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/26.jpg" alt="Lille" style="width: 77%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/26.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/26.png" alt="Lille" style="width: 77%;"/>
                 </a>      
             </td>
             <td class="border2">26</td>
@@ -573,9 +588,9 @@
         </tr>
 <!--Marque 27-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/27.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/27.jpg" alt="Lille" style="width: 31%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/27.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/27.png" alt="Lille" style="width: 31%;"/>
                 </a>      
             </td>
             <td class="border2">27</td>
@@ -588,9 +603,9 @@
         </tr>
 <!--Marque 28-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/28.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/28.jpg" alt="Lille" style="width: 40%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/28.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/28.png" alt="Lille" style="width: 40%;"/>
                 </a>      
             </td>
             <td class="border2">28</td>
@@ -603,13 +618,13 @@
         </tr>
 <!--Commentaire-->
         <tr> 
-            <th colspan="8" style="color: black;"> cette marque 28 es généralement floue</th>
+            <th colspan="8" style="color: black;"> cette marque 28 est généralement floue</th>
         </tr>
 <!--Marque 29-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/29.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/29.jpg" alt="Lille" style="width: 29%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/29.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/29.png" alt="Lille" style="width: 29%;"/>
                 </a>      
             </td>
             <td class="border2">29</td>
@@ -622,9 +637,9 @@
         </tr>             
 <!--Marque 30-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/30.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/30.jpg" alt="Lille" style="width: 45%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/30.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/30.png" alt="Lille" style="width: 45%;"/>
                 </a>      
             </td>
             <td class="border2">30</td>
@@ -637,9 +652,9 @@
         </tr>             
 <!--Marque 31-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lille/Images/31.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lille/Images/31.jpg" alt="Lille" style="width: 90%;"/>
+            <td class="border2">
+                <a href="../Lille/Images/31.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lille/Images/31.png" alt="Lille" style="width: 90%;"/>
                 </a>      
             </td>
             <td class="border2">31</td>
@@ -652,14 +667,14 @@
         </tr>             
 <!--Marque 32-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
+            <td class="border2">
                 <a>
-                    <img src="../../../Images/Absente.jpg" alt="Lille" style="width: 30%;"/>
+                    <img src="../../Resource/Absente_Deture.png" alt="Lille" style="width: 20%;"/>
                 </a>      
             </td>
             <td class="border2">32</td>
             <td class="border2">port payé</td>
-            <td class="border2"><a><img src="../../../Images/colorM.jpg" alt="Lille" style="width: 20%;"/></a></td>
+            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Lille" style="width: 20%;"/></a></td>
             <td class="border2">1677-1698</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-22</td>
@@ -667,14 +682,14 @@
         </tr>             
 <!--Marque 33-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
+            <td class="border2">
                 <a>
-                    <img src="../../../Images/Absente.jpg" alt="Lille" style="width: 30%;"/>
+                    <img src="../../Resource/Absente_Deture.png" alt="Lille" style="width: 20%;"/>
                 </a>      
             </td>
             <td class="border2">33</td>
             <td class="border2">port payé</td>
-            <td class="border2"><a><img src="../../../Images/manuscrit.jpg" alt="Lille" style="width: 20%;"/></a></td>
+            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Lille" style="width: 20%;"/></a></td>
             <td class="border2">1677-1791</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-18</td>
@@ -708,9 +723,9 @@
     </tr>  
 <!--Marque PP1-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
-            <a href="../Lille/Images/pp1.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                <img src="../Lille/Images/pp1.jpg" alt="Lille" style="width: 70%;"/>
+        <td class="border2">
+            <a href="../Lille/Images/PP1.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                <img src="../Lille/Images/PP1.png" alt="Lille" style="width: 70%;"/>
             </a>      
         </td>
         <td class="border2">1</td>
@@ -722,9 +737,9 @@
     </tr>      
 <!--Marque PP2-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
-            <a href="../Lille/Images/pp2.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                <img src="../Lille/Images/pp2.jpg" alt="Lille" style="width: 70%;"/>
+        <td class="border2">
+            <a href="../Lille/Images/PP2.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                <img src="../Lille/Images/PP2.png" alt="Lille" style="width: 70%;"/>
             </a>      
         </td>
         <td class="border2">2</td>
@@ -736,9 +751,9 @@
     </tr>      
 <!--Marque PP3-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
-            <a href="../Lille/Images/pp3.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                <img src="../Lille/Images/pp3.jpg" alt="Lille" style="width: 70%;"/>
+        <td class="border2">
+            <a href="../Lille/Images/PP3.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                <img src="../Lille/Images/PP3.png" alt="Lille" style="width: 70%;"/>
             </a>      
         </td>
         <td class="border2">3</td>
@@ -750,9 +765,9 @@
     </tr>      
 <!--Marque PP4-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
-            <a href="../Lille/Images/pp4.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                <img src="../Lille/Images/pp4.jpg" alt="Lille" style="width: 70%;"/>
+        <td class="border2">
+            <a href="../Lille/Images/PP4.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                <img src="../Lille/Images/PP4.png" alt="Lille" style="width: 70%;"/>
             </a>      
         </td>
         <td class="border2">4</td>
@@ -764,9 +779,9 @@
     </tr>      
 <!--Marque PP5-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
-            <a href="../Lille/Images/pp5.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                <img src="../Lille/Images/pp5.jpg" alt="Lille" style="width: 70%;"/>
+        <td class="border2">
+            <a href="../Lille/Images/PP5.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                <img src="../Lille/Images/PP5.png" alt="Lille" style="width: 70%;"/>
             </a>      
         </td>
         <td class="border2">5</td>
@@ -778,9 +793,9 @@
     </tr>      
 <!--Marque PP6-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
-            <a href="../Lille/Images/pp6.jpg" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                <img src="../Lille/Images/pp6.jpg" alt="Lille" style="width: 70%;"/>
+        <td class="border2">
+            <a href="../Lille/Images/PP6.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                <img src="../Lille/Images/PP6.png" alt="Lille" style="width: 70%;"/>
             </a>      
         </td>
         <td class="border2">6</td>
@@ -792,9 +807,9 @@
     </tr>      
 <!--Marque PP7-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
+        <td class="border2">
             <!-- <a href="../Lille/Images/pp6.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank"> -->
-                <img src="../../../Images/Absentebleu.jpg" alt="Lille" style="width: 70%;"/>
+                <img src="../../Resource/Absente_Deture.png" alt="Lille" style="width: 20%;"/>
             </a>      
         </td>
         <td class="border2">7</td>
@@ -806,9 +821,9 @@
     </tr>      
 <!--Marque PP8-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
+        <td class="border2">
             <!-- <a href="../Lille/Images/pp6.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank"> -->
-                <img src="../../../Images/Absentebleu.jpg" alt="Lille" style="width: 70%;"/>
+                <img src="../../Resource/Absente_Deture.png" alt="Lille" style="width: 20%;"/>
             </a>      
         </td>
         <td class="border2">8</td>
@@ -820,9 +835,9 @@
     </tr>      
 <!--Marque PP9-->          
     <tr>
-        <td class="border2" style="background-color: rgb(255, 255, 255);">
+        <td class="border2">
             <!-- <a href="../Lille/Images/pp6.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank"> -->
-                <img src="../../../Images/Absentebleu.jpg" alt="Lille" style="width: 70%;"/>
+                <img src="../../Resource/Absente_Deture.png" alt="Lille" style="width: 20%;"/>
             </a>      
         </td>
         <td class="border2">9</td>
@@ -846,7 +861,7 @@
 <!--Blason-->
     <th colspan="1">
         <a href="https://fr.wikipedia.org/wiki/Lille#H%C3%A9raldique">
-            <img id="img2" src="../Lille/Images/Blason.jpg" alt="Blason de Lille" style="width:80%; height: auto;"/>
+            <img id="img2" src="../Lille/Images/Blason.png" alt="Blason de Lille" style="width:80%; height: auto;"/>
                 <p>Blason de Lille</p>
         </a>
     </th> 

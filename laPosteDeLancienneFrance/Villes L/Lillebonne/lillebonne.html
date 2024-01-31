@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+    <head>  
         <meta charset="utf-8" />
         <title>Le Postillon</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,17 +10,43 @@
         <link rel="stylesheet" href="../../../css/modale.css" />
         <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
         <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-        <script src="../../../JS/script_global.js.js" defer></script>
-        <script src="../../../JS/lienVillesl.js" defer></script>
+        <script src="../../../JS/script_global.js.js" defer></script>        
+        <script src="../../../JS/script.js" defer></script>  
+        <script src="../../../JS/villesA.js" defer></script>        
+        <script src="../../../JS/villesB.js" defer></script>        
+        <script src="../../../JS/villesC.js" defer></script>        
+        <script src="../../../JS/villesD.js" defer></script>        
+        <script src="../../../JS/villesE.js" defer></script>        
+        <script src="../../../JS/villesF.js" defer></script>        
+        <script src="../../../JS/villesG.js" defer></script>        
+        <script src="../../../JS/villesH.js" defer></script>        
+        <script src="../../../JS/villesI.js" defer></script>        
+        <script src="../../../JS/villesJ.js" defer></script>        
+        <script src="../../../JS/villesK.js" defer></script>        
+        <script src="../../../JS/villesL.js" defer></script>        
+        <script src="../../../JS/villesM.js" defer></script>        
+        <script src="../../../JS/villesN.js" defer></script>        
+        <script src="../../../JS/villesO.js" defer></script>        
+        <script src="../../../JS/villesP.js" defer></script>        
+        <script src="../../../JS/villesQ.js" defer></script>        
+        <script src="../../../JS/villesR.js" defer></script>        
+        <script src="../../../JS/villesS.js" defer></script>        
+        <script src="../../../JS/villesT.js" defer></script>        
+        <script src="../../../JS/villesU.js" defer></script>        
+        <script src="../../../JS/villesV.js" defer></script>        
+        <script src="../../../JS/villesW.js" defer></script>        
+        <script src="../../../JS/villesX.js" defer></script>        
+        <script src="../../../JS/villesY.js" defer></script>        
+        <script src="../../../JS/villesZ.js" defer></script>        
+        <script src="../../../JS/accueil.js" defer></script>
         <script src="../../../JS/accueil.js" defer></script>
         <script src="../../../JS/cityRedirector.js"></script>
-        <script src="path/to/cityRedirector.js"></script>                
-        <link rel="icon" type="image/x-icon" href="../../../icones/books_library_1768.ico">
+        <script src="path/to/cityRedirector.js"></script>  
         <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
     </head> 
-    <body>
+<body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
-        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../../icones/books_library_1768.ico"></a>      
+        <a><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>        
         <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>        
         <a class="div a title-tip" href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html" title="lien vers les villes avec le nom A">A</a>
         <a class="div a title-tip" href="../../../laPosteDeLancienneFrance/Villes B/B_sommaire.html" title="lien vers les villes avec le nom B">B</a>
@@ -54,37 +80,41 @@
 <!--Debut pagination-->  
 <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Lillebonne" class="title-tip title-tip-up;" style="font-size: 25px;" title="lien vers wikipedia">
     Lillebonne - Normandie (74)</a></h2><p>Bureau ouvert ou XVII<sup>em</sup> siècle</p>
-    <nav>
+<!--Debut pagination-->
+<nav>
+    <ul class="pagination justify-content-center">
         <ul class="pagination justify-content-center">
-            <ul class="pagination justify-content-center">
-                    <li class="page-item">
-                        <div class="dropdown">
-                            <!-- Champ de saisie de la ville -->
-                            <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
-                            <!-- Cellule "ville" -->
-                            <a id="villeLink" class="div a title-tip page-link">
-                                &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
-                            </a>
-                            <!-- Contenu déroulant -->
-                            <div class="dropdown-content scrollable-content" id="dropdownContent">
-                                <a></a>   
-                            </div>
+            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../L_sommaire.html" title="Sommaire L">&laquo;&laquo;</a></li>
+            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../Lille/lille.html" title=" ville precedente Lille">&laquo; </a></li> 
+                <li class="page-item">
+                    <div class="dropdown">
+                        <!-- Champ de saisie de la ville -->
+                        <input type="text" id="villeInput" placeholder="Tapez le nom de ville qui comence par L ">
+                        <!-- Cellule "ville" -->
+                        <a id="villeLink" class="div a title-tip page-link">
+                            &emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i>
+                        </a>
+                        <!-- Contenu déroulant -->
+                        <div class="dropdown-content scrollable-content" id="dropdownContent">
+                            <a></a>   
                         </div>
-                    </li>    
-                    <li class="page-item">
-                        <div class="dropdown1">
-                            <a href="../../../index.html" class="div a title-tip page-link">
-                                Accueil <i class="fas fa-caret-down"></i>
-                            </a>
-                            <div class="dropdown-content" id="menuDropdown">
-                                <!-- Les liens seront ajoutés dynamiquement ici -->
-                            </div>
+                    </div>
+                </li>    
+                <li class="page-item">
+                    <div class="dropdown1">
+                        <a href="../../../index.html" class="div a title-tip page-link">
+                            Accueil <i class="fas fa-caret-down"></i>
+                        </a>
+                        <div class="dropdown-content" id="menuDropdown">
+                            <!-- Les liens seront ajoutés dynamiquement ici -->
                         </div>
-                </li>
-            </ul>              
-        </ul>
-    </nav>
-    <!--Fin pagination-->
+                    </div>
+                <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Lillers/lillers.html" title=" Ville suivante Lillers">&raquo;</a></li>
+            </li>
+        </ul>              
+    </ul>
+</nav>
+<!--Fin pagination-->
 <table>   
     <thead>
         <tr>
@@ -100,9 +130,9 @@
     </thead>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 <!--Marque 1-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lillebonne/Images/1.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lillebonne/Images/1.jpg" alt="Lillebonne" style="width: 80%;"/>
+            <td class="border2">
+                <a href="../Lillebonne/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lillebonne/Images/1.png" alt="Lillebonne" style="width: 80%;"/>
                 </a>      
             </td>
             <td class="border2">1</td>
@@ -115,9 +145,9 @@
         </tr>
 <!--Marque 2-->          
         <tr>
-            <td class="border2" style="background-color: rgb(255, 255, 255);">
-                <a href="../Lillebonne/Images/2.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Lillebonne/Images/2.jpg" alt="Lillebonne" style="width: 68%;"/>
+            <td class="border2">
+                <a href="../Lillebonne/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Lillebonne/Images/2.png" alt="Lillebonne" style="width: 68%;"/>
                 </a>      
             </td>
             <td class="border2">2</td>
@@ -143,7 +173,7 @@
 <!--Blason-->
     <th colspan="1">
         <a href="https://fr.wikipedia.org/wiki/Lillebonne#H%C3%A9raldique">
-            <img id="img2" src="../Lillebonne/Images/Blason.jpg" alt="Blason de Lillebonne" style="width:80%; height: auto;"/>
+            <img id="img2" src="../Lillebonne/Images/Blason.png" alt="Blason de Lillebonne" style="width:80%; height: auto;"/>
                 <p>Blason de Lillebonne</p>
         </a>
     </th> 

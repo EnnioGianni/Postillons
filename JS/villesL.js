@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Luzarches', url: '/laPosteDeLancienneFrance/Villes L/Luzarches/Luzarches.html' },
         { name: 'Luzy', url: '/laPosteDeLancienneFrance/Villes L/Luzy/Luzy.html' },
         { name: 'Lyon', url: '/laPosteDeLancienneFrance/Villes L/Lyon/Lyon.html' },
-        { name: 'Lyon La Foret', url: '/laPosteDeLancienneFrance/Villes L/LyonLaForet/LyonLaForet.html' },
+        { name: 'Lyons La Foret', url: '/laPosteDeLancienneFrance/Villes L/LyonsLaForet/LyonsLaForet.html' },
         { name: 'Lyre (La Neuve)', url: '/laPosteDeLancienneFrance/Villes L/LyreLaNeuve/LyreLaNeuve.html' },
         
                       

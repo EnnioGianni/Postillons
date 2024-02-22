@@ -724,5 +724,8 @@ p{
   border-left: 0.25em solid #222;
 }
 
+@media (max-width: 768px) {
+  /* Vos styles pour les écrans jusqu'à 768px ici */
+}
 
 

@@ -140,7 +140,7 @@ ul {
 /*bouton de recherche*/
 input {
   height: 37px;
-  width: 144%;
+  width:99%;
   border: 3px #e08318 solid;
   text-align: center;
 }

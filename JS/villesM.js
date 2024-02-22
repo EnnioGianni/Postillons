@@ -6,6 +6,26 @@ document.addEventListener('DOMContentLoaded', function () {
     // Tableau de liens de villes
     var cityLinks = [
         { name: 'Machecoul', url: '../../../laPosteDeLancienneFrance/Villes M/Machecoul/machecoul.html' },
+        { name: 'Macon', url: '../../../laPosteDeLancienneFrance/Villes M/macon/macon.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
+    
         // Ajoutez d'autres villes ici
     ];
 

@@ -730,10 +730,9 @@ p{
 
 
 @media (max-width: 576px) {
-  .page-item {
-      margin-bottom: 5px; /* Ajoutez une marge pour éviter que les éléments se chevauchent */
-  }
-  .page-link {
-      font-size: 14px; /* Réduisez la taille de police pour économiser de l'espace */
+  .page-item .page-link {
+      font-size: 12px; /* Réduction de la taille de la police */
+      padding: 5px 10px; /* Réduction du padding pour économiser de l'espace */
   }
 }
+

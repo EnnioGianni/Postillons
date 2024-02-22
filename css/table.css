@@ -730,9 +730,9 @@ p{
 
 
 @media (max-width: 576px) {
-  .page-item .page-link {
-      font-size: 12px; /* Réduction de la taille de la police */
-      padding: 5px 10px; /* Réduction du padding pour économiser de l'espace */
+  .dropdown + .page-item {
+      margin-top: -5px; /* Ajustez cette valeur selon les besoins */
   }
 }
+
 

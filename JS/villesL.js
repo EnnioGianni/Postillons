@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Langogne', url: '/laPosteDeLancienneFrance/Villes L/Langogne/Langogne.html' },
         { name: 'Langon', url: '/laPosteDeLancienneFrance/Villes L/Langon/Langon.html' },
         { name: 'Langres', url: '/laPosteDeLancienneFrance/Villes L/Langres/Langres.html' },
-        { name: 'Lannion', url: '/laPosteDeLancienneFrance/Villes LLannion/Lannion/.html' },
+        { name: 'Lannion', url: '/laPosteDeLancienneFrance/Villes L/Lannion/Lannion/.html' },
         { name: 'Laon', url: '/laPosteDeLancienneFrance/Villes L/Laon/Laon.html' },
         { name: 'Largentière', url: '/laPosteDeLancienneFrance/Villes L/Largentière/Largentière.html' },
         { name: 'Laspeyres', url: '/laPosteDeLancienneFrance/Villes L/Laspeyres/Laspeyres.html' },

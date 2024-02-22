@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Abbeville', url: '../../../laPosteDeLancienneFrance/Villes A/Abbeville/abbeville.html' },
         { name: 'Abries', url: '../../../laPosteDeLancienneFrance/Villes A/Abries/abries.html' },
         { name: 'Agde', url: '../../../laPosteDeLancienneFrance/Villes A/Agde/agde.html' },
-        { name: 'Agen', url: '../../../aPosteDeLancienneFrance/Villes A/Agen/agen.html' },
+        { name: 'Agen', url: '../../../laPosteDeLancienneFrance/Villes A/Agen/agen.html' },
         { name: 'Ahun', url: '/laPosteDeLancienneFrance/Villes A/Ahun/ahun.htm' },
         { name: 'Aigle', url: '/laPosteDeLancienneFrance/Villes A/Aigle/aigle.html' },
         { name: 'Aignay', url: '/laPosteDeLancienneFrance/Villes A/Aignay/aignay.html' },

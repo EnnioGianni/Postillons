@@ -336,6 +336,12 @@ table{
     border-style: solid;
     border-color : rgb(10, 10, 10);
   }
+  .border3{
+    border-width: 0.5px;
+    border-style: solid;
+    border-color : rgb(10, 10, 10);
+    font-size: x-large;
+  }
 
 
 /*-- scrool dans pagination--*/

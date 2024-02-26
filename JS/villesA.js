@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Ancy le Franc', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/AncyLeFranc/AncyLeFranc.html' },
         { name: 'Les Andelys', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/Andelys/lesAndelis.html' },
         { name: 'Andresy', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/Andresy/Andresy.html' },
-        { name: 'Anduse', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/Anduse/anduse.html' },
+        { name: 'Anduze', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/Anduze/anduze.html' },
         { name: 'Angers', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/Angers/angers.html' },
         { name: 'Angerville', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/Angerville/angerville.html' },
         { name: 'Angles', url: '../../../laPosteDeLancienneFrancelaPosteDeLancienneFrance/Villes A/Angles/angles.html' },

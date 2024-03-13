@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Beaumont de Roger', url: '../../../laPosteDeLancienneFrance/Villes B/Beaumont26/Beaumont26.html' },
         { name: 'Beaumont le Viconte', url: '../../../laPosteDeLancienneFrance/Villes B/Beaumont71/Beaumont71.html' },
         { name: 'Beaumont sur oise', url: '../../../laPosteDeLancienneFrance/Villes B/Beaumont72/Beaumont72.html' },
-        { name: 'Beaume', url: '../../../laPosteDeLancienneFrance/Villes B/Beaume/Beaume.html' },
+        { name: 'Beaune', url: '../../../laPosteDeLancienneFrance/Villes B/Beaune/baune.html' },
         { name: 'Beaupreau', url: '../../../laPosteDeLancienneFrance/Villes B/Beaupreau/Beaupreau.html' },
         { name: 'Beaurepaire', url: '../../../laPosteDeLancienneFrance/Villes B/Beaurepaire/Beaurepaire.html' },
         { name: 'Le Beausset', url: '../../../laPosteDeLancienneFrance/Villes B/Beausset/Beausset.html' },

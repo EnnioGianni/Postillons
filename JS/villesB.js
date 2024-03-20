@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Belfort', url: '../../../laPosteDeLancienneFrance/Villes B/Belfort/Belfort.html' },
         { name: 'Bellac', url: '../../../laPosteDeLancienneFrance/Villes B/Bellac/Bellac.html' },
         { name: 'Belle Isle en Mer', url: '../../../laPosteDeLancienneFrance/Villes B/Belle/belleIsleEnMer.html' },
+        { name: 'Belle Isle en Terre', url: '../../../laPosteDeLancienneFrance/Villes B/BelleIsleEnTerre/belleIsleEnTerre.html' },
         { name: 'Bellegarde', url: '../../../laPosteDeLancienneFrance/Villes B/Bellegarde/Bellegarde.html' },
         { name: 'Bellemare', url: '../../../laPosteDeLancienneFrance/Villes B/Bellemare/Bellemare.html' },
         { name: 'Belleme', url: '../../../laPosteDeLancienneFrance/Villes B/Belleme/Belleme.html' },

@@ -217,7 +217,7 @@ form {
     display: grid;
     grid-template-columns: 80px 1fr;
     align-items: start;
-    background-color:#434242;
+    background-color:#4e4e4d;
     height: 40px;
     width: 100%;
     position: fixed;
@@ -263,8 +263,16 @@ table{
     border: 3px double #090909;
   }
   tr:nth-child(even) {
-    background-color: #fadebb;
+    background-color: #f8e7d1;
   }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  
   #table{
     padding: 0px 0 0 50px;
     text-align: left;
@@ -280,10 +288,19 @@ table{
     color: brown;
     padding: 10px;
     border: 3px double #090909;
-    background-color: #fadebb;
+    background-color: #f8e7d1
 
   }
-
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .blink {
+    animation: blinker 1s linear infinite;
+    color: rgb(254, 3, 3); /* This line sets the text color to red */
+  }
   
   @media screen and (max-width: 500px) {
     table {
@@ -487,7 +504,7 @@ p{
   bottom: 0;
   margin: 0;
   width: 100%;
-  background-color: rgb(56, 55, 55);
+  background-color: #4e4e4d;
   display: inline-flex;
   overflow: hidden;
   white-space: nowrap;

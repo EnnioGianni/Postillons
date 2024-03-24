@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Bessines', url: '../../../laPosteDeLancienneFrance/Villes B/Bessines/bessines.html' },
         { name: 'Bethleem', url: '../../../laPosteDeLancienneFrance/Villes B/Bethleem/bethleem.html' },
         { name: 'Béthune', url: '../../../laPosteDeLancienneFrance/Villes B/Béthune/bethune.html' },
-        { name: 'Bézier', url: '../../../laPosteDeLancienneFrance/Villes B/Bézier/bezier.html' },
+        { name: 'Bézier', url: '../../../laPosteDeLancienneFrance/Villes B/Béziers/beziers.html' },
         { name: 'Billom', url: '../../../laPosteDeLancienneFrance/Villes B/Billom/billom.html' },
         { name: 'Binche', url: '../../../laPosteDeLancienneFrance/Villes B/Binche/binche.html' },
         { name: 'Bitche', url: '../../../laPosteDeLancienneFrance/Villes B/Bitche/bitche.html' },

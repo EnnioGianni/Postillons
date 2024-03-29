@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Damville', url: '../../../laPosteDeLancienneFrance/Villes D/Damville/damville.html' },
         { name: 'Damvillers', url: '../../../laPosteDeLancienneFrance/Villes D/Damvillers/damvillers.html' },
         { name: 'Dannemarie', url: '../../../laPosteDeLancienneFrance/Villes D/Dannemarie/dannemarie.html' },
-        { name: 'Darney', url: '../../../laPosteDeLancienneFrance/Villes D/Darney/darney/.html' },
+        { name: 'Darney', url: '../../../laPosteDeLancienneFrance/Villes D/Darney/darney.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },

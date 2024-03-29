@@ -6,7 +6,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Tableau de liens de villes
     var cityLinks = [
         { name: 'Dammartin', url: '../../../laPosteDeLancienneFrance/Villes D/Dammartin/dammartin.html' },
-        { name: '', url: '../../../' },
+        { name: 'Dampierre', url: '../../../laPosteDeLancienneFrance/Villes D/Dampierre/dampierre.html' },
+        { name: 'Damville', url: '../../../laPosteDeLancienneFrance/Villes D/Damville/damville.html' },
+        { name: 'Damvillers', url: '../../../laPosteDeLancienneFrance/Villes D/Damvillers/damvillers.html' },
+        { name: 'Dannemarie', url: '../../../laPosteDeLancienneFrance/Villes D/Dannemarie/dannemarie.html' },
+        { name: 'Darney', url: '../../../laPosteDeLancienneFrance/Villes D/Darney/darney/.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes D//.html' },
       
     
         // Ajoutez d'autres villes ici

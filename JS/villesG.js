@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Tableau de liens de villes
     var cityLinks = [
         { name: 'Gace', url: '../../../laPosteDeLancienneFrance/Villes G/Gace/gace.html' },
-        { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },
-        { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },
+        { name: 'Gaillac', url: '../../../laPosteDeLancienneFrance/Villes G/Gaillac/gaillac.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },

@@ -157,3 +157,28 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("links-table").appendChild(container);
     
 });
+
+
+
+
+
+// Fonction pour rendre le tableau responsive
+function makeTableResponsive() {
+    var container = document.getElementById("links-table");
+    var table = container.querySelector("table");
+  
+    // Vérifie la largeur de l'écran
+    var screenWidth = window.innerWidth;
+  
+    // Si la largeur de l'écran est inférieure à 600px, ajoute une classe pour rendre le tableau responsive
+    if (screenWidth < 600) {
+      container.classList.add("responsive-table");
+    } else {
+      container.classList.remove("responsive-table");
+    }
+  }
+  
+  // Appelle la fonction makeTableResponsive lors du chargement de la page et lors du redimensionnement de la fenêtre
+  window.onload = makeTableResponsive;
+  window.onresize = makeTableResponsive;
+  

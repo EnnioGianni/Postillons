@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const viewportWidth = window.innerWidth;
         const cells = Array.from(row.children);
 
-        if (viewportWidth <= 768) { // Tablet and smaller devices
+        if (viewportWidth <= 468) { // Tablet and smaller devices
             cells.forEach(cell => {
                 cell.style.display = "block";
                 cell.style.width = "100%";

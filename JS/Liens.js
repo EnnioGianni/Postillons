@@ -106,14 +106,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    const tableBody = document.getElementById("links-table");
+    // Create a container div for horizontal scrolling
+    const container = document.createElement("div");
+    container.style.overflowX = "auto";
+    container.style.whiteSpace = "nowrap";
+
+    // Create the table element
+    const table = document.createElement("table");
+    table.style.width = "100%";
+    table.style.borderCollapse = "collapse";
+
+    // Create a table row
     const row = document.createElement("tr");
 
+    // Add links to the row
     liens.forEach(lien => {
         const cell = document.createElement("th");
         cell.style.color = "black";
         cell.style.border = "none";
         cell.style.textAlign = "center";
+        cell.style.padding = "10px";
 
         const anchor = document.createElement("a");
         anchor.href = lien.href;
@@ -133,27 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
         row.appendChild(cell);
     });
 
-    tableBody.appendChild(row);
-
-    function adjustLayout() {
-        const viewportWidth = window.innerWidth;
-        const cells = Array.from(row.children);
-
-        if (viewportWidth <= 468) { // Tablet and smaller devices
-            cells.forEach(cell => {
-                cell.style.display = "block";
-                cell.style.width = "100%";
-                cell.style.marginBottom = "10px";
-            });
-        } else {
-            cells.forEach(cell => {
-                cell.style.display = "table-cell";
-                cell.style.width = "";
-                cell.style.marginBottom = "";
-            });
-        }
-    }
-
-    window.addEventListener("resize", adjustLayout);
-    adjustLayout();
+    table.appendChild(row);
+    container.appendChild(table);
+    document.getElementById("links-table").appendChild(container);
 });

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var cityLinks = [
         { name: 'Gace', url: '../../../laPosteDeLancienneFrance/Villes G/Gace/gace.html' },
         { name: 'Gaillac', url: '../../../laPosteDeLancienneFrance/Villes G/Gaillac/gaillac.html' },
-        { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },
+        { name: 'Gaillon', url: '../../../laPosteDeLancienneFrance/Villes G/Gaillon/gaillon.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes G//.html' },
 

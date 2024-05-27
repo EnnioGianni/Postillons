@@ -120,14 +120,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Créer une ligne de tableau
     const row = document.createElement("tr");
-
+    row.style.height = "-30px"; // ou toute autre hauteur que vous souhaitez définir
+    
     // Ajouter des cellules à la ligne de tableau
     liens.forEach(lien => {
         const cell = document.createElement("th");
         cell.style.color = "black";
         cell.style.border = "none";
         cell.style.textAlign = "center";
-        cell.style.padding = "10px";
+        cell.style.padding = "34px";
         cell.style.display = "inline-block";
 
         const anchor = document.createElement("a");
@@ -152,5 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     table.appendChild(row);
     container.appendChild(table);
+    document.getElementById("links-table").style.maxHeight = "-100px"; // ou toute autre hauteur que vous souhaitez définir
     document.getElementById("links-table").appendChild(container);
+    
 });

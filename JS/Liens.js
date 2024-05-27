@@ -106,26 +106,29 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    // Create a container div for horizontal scrolling
+    // Créer un conteneur div pour le défilement horizontal
     const container = document.createElement("div");
     container.style.overflowX = "auto";
     container.style.whiteSpace = "nowrap";
+    container.style.width = "100%";
 
-    // Create the table element
+    // Créer un élément table
     const table = document.createElement("table");
     table.style.width = "100%";
     table.style.borderCollapse = "collapse";
+    table.style.display = "inline-table";
 
-    // Create a table row
+    // Créer une ligne de tableau
     const row = document.createElement("tr");
 
-    // Add links to the row
+    // Ajouter des cellules à la ligne de tableau
     liens.forEach(lien => {
         const cell = document.createElement("th");
         cell.style.color = "black";
         cell.style.border = "none";
         cell.style.textAlign = "center";
         cell.style.padding = "10px";
+        cell.style.display = "inline-block";
 
         const anchor = document.createElement("a");
         anchor.href = lien.href;
@@ -139,6 +142,8 @@ document.addEventListener("DOMContentLoaded", function() {
         img.style.width = lien.width;
         img.style.height = lien.height;
         img.style.display = "inline-block";
+        img.style.maxHeight = "100%";
+        img.style.maxWidth = "100%";
 
         anchor.appendChild(img);
         cell.appendChild(anchor);

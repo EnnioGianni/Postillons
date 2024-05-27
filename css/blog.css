@@ -44,7 +44,7 @@ a {
     color: #060;
     padding-bottom: 7px;
     font-size: 36px; /* Ajustez la taille de la légende pour les écrans mobiles */
-    margin: 20px -360px 20px 180px  /* Réduisez l'espacement autour de la légende */
+    margin: 20px -370px 20px 0px  /* Réduisez l'espacement autour de la légende */
 }
 
 .cellule:hover {
@@ -67,7 +67,7 @@ a {
 
     .legende {
         font-size: 24px; /* Ajustez la taille de la légende pour les écrans très petits */
-        margin: -10px 0 10px 0; /* Réduisez davantage l'espacement autour de la légende */
+        /* margin: 5px 0 10px px; Réduisez davantage l'espacement autour de la légende */
     }
 
     /* Cachez certaines colonnes ou éléments qui ne sont pas pertinents sur les petits écrans */
@@ -129,19 +129,50 @@ a {
     font-size: 1.5em;
   }
   
+/* Ajoutez vos media queries ici */
+@media screen and (max-width: 768px) { /* pour tablettes */
+  .tableau {
+    margin: 0 auto;
+    width: 80%; /* Ajuster la largeur du tableau pour les tablettes */
+  }
+  .cellule {
+    text-align: center;
+  }
+  .legende {
+    text-align: center; /* Centrer la légende */
+    font-size: 24px; /* Ajuster la taille de la légende pour les tablettes */
+    margin-bottom: 10px; /* Ajuster la marge en bas de la légende */
+  }
+}
 
+/* Media queries pour les tablettes et smartphones */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto; /* Afficher le défilement vertical */
+  }
+}
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
+@media screen and (max-width: 480px) { /* pour smartphones */
+  .tableau {
+    width: 100%; /* Ajuster la largeur du tableau pour les smartphones */
+  }
+  .cellule a {
+    font-size: 12px; /* Réduire la taille du texte dans les cases pour les smartphones */
+  }
+  .legende {
+    font-size: 18px; /* Ajuster la taille de la légende pour les smartphones */
+  }
+}
+/* Media queries pour les tablettes et smartphones */
+@media (max-width: 480px) {
+  body {
+    overflow-y: auto; /* Afficher le défilement vertical */
+  }
+}
+/* Media queries pour les tablettes et smartphones */
+@media (max-width: 768px) {
+  .modalDialog > div {
+    overflow-y: auto; /* Afficher le défilement vertical à l'intérieur de la modale */
+    max-height: 80%; /* Limiter la hauteur de la modale pour éviter le débordement de la fenêtre */
+  }
+}

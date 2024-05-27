@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Creil', url: '../../../laPosteDeLancienneFrance/Villes C/Creil/creil.html' },
         { name: 'Cremieu', url: '../../../laPosteDeLancienneFrance/Villes C/Cremieu/cremieu.html' },
         { name: 'Crepy en Valois', url: '../../../laPosteDeLancienneFrance/Villes C/Crepy/crepyEnValois.html' },
-        { name: 'Cressensac', url: '../../../laPosteDeLancienneFrance/Villes C/Cressensac/cressensac.html' },
+        { name: 'Cressensac', url: '../../../laPosteDeLancienneFrance/Villes C/Cressensac/crenssensac.html' },
         { name: 'Crest', url: '../../../laPosteDeLancienneFrance/Villes C/Crest/crest.html' },
         { name: 'Crevecoeur', url: '../../../laPosteDeLancienneFrance/Villes C/Crevecoeur/crevecoeur.html' },
         { name: 'Croissanville', url: '../../../laPosteDeLancienneFrance/Villes C/Croissanville/croissanville.html' },

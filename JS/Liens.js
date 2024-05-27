@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Définir un tableau d'objets contenant les détails de chaque lien
     const liens = [
         {
             href: "https://www.academiedephilatelie.fr/",
@@ -107,42 +106,54 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    // Sélectionner l'élément tbody dans le document HTML où les lignes seront insérées
     const tableBody = document.getElementById("links-table");
-    // Créer une nouvelle ligne de tableau
     const row = document.createElement("tr");
 
-    // Pour chaque lien dans le tableau
     liens.forEach(lien => {
-        // Créer une nouvelle cellule de tableau
         const cell = document.createElement("th");
-        cell.style.color = "black"; // Définir la couleur du texte à noir
-        cell.style.border = "none"; // Supprimer la bordure de la cellule
-        cell.style.textAlign = "center"; // Centrer le contenu de la cellule
+        cell.style.color = "black";
+        cell.style.border = "none";
+        cell.style.textAlign = "center";
 
-        // Créer un élément <a> pour le lien
         const anchor = document.createElement("a");
-        anchor.href = lien.href; // Définir l'URL du lien
-        anchor.title = lien.title; // Définir le titre du lien
-        anchor.classList.add("title-tip", "title-tip-rigt"); // Ajouter des classes CSS
-        anchor.target = "_blank"; // Ouvrir le lien dans un nouvel onglet
+        anchor.href = lien.href;
+        anchor.title = lien.title;
+        anchor.classList.add("title-tip", "title-tip-right");
+        anchor.target = "_blank";
 
-        // Créer un élément <img> pour l'image du lien
         const img = document.createElement("img");
-        img.src = lien.src; // Définir la source de l'image
-        img.alt = lien.alt; // Définir le texte alternatif de l'image
-        img.style.width = lien.width; // Définir la largeur de l'image
-        img.style.height = lien.height; // Définir la hauteur de l'image
-        img.style.display = "inline-block"; // Afficher l'image en bloc en ligne
+        img.src = lien.src;
+        img.alt = lien.alt;
+        img.style.width = lien.width;
+        img.style.height = lien.height;
+        img.style.display = "inline-block";
 
-        // Ajouter l'image au lien
         anchor.appendChild(img);
-        // Ajouter le lien à la cellule
         cell.appendChild(anchor);
-        // Ajouter la cellule à la ligne
         row.appendChild(cell);
     });
 
-    // Ajouter la ligne au corps du tableau
     tableBody.appendChild(row);
+
+    function adjustLayout() {
+        const viewportWidth = window.innerWidth;
+        const cells = Array.from(row.children);
+
+        if (viewportWidth <= 768) { // Tablet and smaller devices
+            cells.forEach(cell => {
+                cell.style.display = "block";
+                cell.style.width = "100%";
+                cell.style.marginBottom = "10px";
+            });
+        } else {
+            cells.forEach(cell => {
+                cell.style.display = "table-cell";
+                cell.style.width = "";
+                cell.style.marginBottom = "";
+            });
+        }
+    }
+
+    window.addEventListener("resize", adjustLayout);
+    adjustLayout();
 });

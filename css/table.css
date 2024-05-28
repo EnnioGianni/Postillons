@@ -790,35 +790,3 @@ p{
   background-color: #fc0202;
 }
 
-
-
-
-
-/* Style pour le tableau et son conteneur */
-#links-table {
-  max-height: 300px; /* Hauteur maximale pour le conteneur */
-  overflow-y: auto; /* Ajoute une barre de défilement verticale si nécessaire */
-}
-
-table {
-  width: 100%; /* Prend la largeur totale du conteneur */
-  border-collapse: collapse; /* Fusionne les bordures des cellules */
-}
-
-th, td {
-  border: 1px solid black; /* Ajoute une bordure à chaque cellule */
-  padding: 8px; /* Ajoute de l'espace autour du contenu des cellules */
-  text-align: left; /* Aligne le texte à gauche */
-}
-
-/* Style pour le tableau responsive */
-.responsive-table table {
-  width: 100%; /* Prend la largeur totale du conteneur */
-}
-
-/* Style pour le tableau et ses conteneurs sur les petits écrans */
-@media screen and (max-width: 600px) {
-  #links-table {
-    max-height: none; /* Supprime la hauteur maximale pour permettre le défilement */
-  }
-}

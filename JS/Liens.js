@@ -106,54 +106,59 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    // Créer un conteneur div pour le défilement horizontal
-    const container = document.createElement("div");
-    container.style.overflowX = "auto";
-    container.style.whiteSpace = "nowrap";
-    container.style.width = "100%";
+ // Créer un conteneur div pour le défilement horizontal
+ const container = document.createElement("div");
+//  container.style.overflowX = "scroll";
+ container.style.whiteSpace = "nowrap";
+ container.style.width = "100%";
+ container.style.margin = "0"; // Minimiser l'espace
+ container.style.display = "flex";
+ container.style.alignItems = "center"; // Alignement vertical centré
 
-    // Créer un élément table
-    const table = document.createElement("table");
-    table.style.width = "100%";
-    table.style.borderCollapse = "collapse";
-    table.style.display = "inline-table";
+ // Créer un élément div pour contenir les logos
+ const table = document.createElement("div");
+ table.style.display = "flex";
+ table.style.width = "auto";
+ table.style.margin = "0"; // Minimiser l'espace
+ table.style.height = "60px"; // Hauteur réduite de la cellule
+ table.style.gap = "20px"; // Ajouter un espacement entre les logos
 
-    // Créer une ligne de tableau
-    const row = document.createElement("tr");
-    row.style.height = "-30px"; // ou toute autre hauteur que vous souhaitez définir
-    
-    // Ajouter des cellules à la ligne de tableau
-    liens.forEach(lien => {
-        const cell = document.createElement("th");
-        cell.style.color = "black";
-        cell.style.border = "none";
-        cell.style.textAlign = "center";
-        cell.style.padding = "34px";
-        cell.style.display = "inline-block";
+ // Ajouter des cellules avec les logos
+ liens.forEach(lien => {
+     const cell = document.createElement("div");
+     cell.style.color = "black";
+     cell.style.border = "none";
+     cell.style.textAlign = "center";
+     cell.style.padding = "0"; // Minimiser l'espace autour des logos
+     cell.style.margin = "0"; // Minimiser l'espace autour des logos
+     cell.style.display = "flex";
+     cell.style.alignItems = "center"; // Centrer les logos verticalement
+     cell.style.justifyContent = "center"; // Centrer les logos horizontalement
+     cell.style.height = "100%"; // S'assurer que la cellule prend toute la hauteur
 
-        const anchor = document.createElement("a");
-        anchor.href = lien.href;
-        anchor.title = lien.title;
-        anchor.classList.add("title-tip", "title-tip-right");
-        anchor.target = "_blank";
+     const anchor = document.createElement("a");
+     anchor.href = lien.href;
+     anchor.title = lien.title;
+     anchor.classList.add("title-tip", "title-tip-right");
+     anchor.target = "_blank";
 
-        const img = document.createElement("img");
-        img.src = lien.src;
-        img.alt = lien.alt;
-        img.style.width = lien.width;
-        img.style.height = lien.height;
-        img.style.display = "inline-block";
-        img.style.maxHeight = "100%";
-        img.style.maxWidth = "100%";
+     const img = document.createElement("img");
+     img.src = lien.src;
+     img.alt = lien.alt;
+     img.style.width = "auto";
+     img.style.height = "40px"; // Assurer que les images gardent leurs proportions
+     img.style.display = "block";
+     img.style.maxHeight = "100%";
+     img.style.maxWidth = "100%";
+     img.style.margin = "auto"; // Centrer l'image horizontalement
 
-        anchor.appendChild(img);
-        cell.appendChild(anchor);
-        row.appendChild(cell);
-    });
+     anchor.appendChild(img);
+     cell.appendChild(anchor);
+     table.appendChild(cell);
+ });
 
-    table.appendChild(row);
-    container.appendChild(table);
-    document.getElementById("links-table").style.maxHeight = "-100px"; // ou toute autre hauteur que vous souhaitez définir
-    document.getElementById("links-table").appendChild(container);
-    
+ container.appendChild(table);
+ const linksTable = document.getElementById("links-table");
+ linksTable.style.margin = "0"; // Minimiser l'espace
+ linksTable.appendChild(container);
 });

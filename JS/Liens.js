@@ -1,164 +1,193 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Définir un tableau d'objets contenant les liens et les informations sur les logos
     const liens = [
         {
             href: "https://www.academiedephilatelie.fr/",
             title: "Liens vers le site de L'Accademiede philatelie",
             src: "../../../La Poste/logo/academieDePhilatelie.png",
-            alt: "Accademiede philatelie",
-            width: "auto",
-            height: "50px"
+            alt: "Accademiede philatelie"
         },
         {
             href: "https://www.jfbphilatelie.com/",
             title: "JEAN FRANCOIS BRUN",
             src: "../../../La Poste/logo/1JFB-modified.png",
-            alt: "JEAN FRANCOIS BRUN",
-            width: "auto",
-            height: "50px"
+            alt: "JEAN FRANCOIS BRUN"
         },
         {
             href: "https://unionmarcophile.fr/",
             title: "L’UNION MARCOPHILE",
             src: "../../../La Poste/logo/unionMarcophile.png",
-            alt: "L’UNION MARCOPHILE",
-            width: "auto",
-            height: "50px"
+            alt: "L’UNION MARCOPHILE"
         },
         {
             href: "https://www.museedelaposte.fr/fr",
             title: "Musée De La Poste",
             src: "../../../La Poste/logo/muse DeLaPoste.png",
-            alt: "Musée De La Poste",
-            width: "auto",
-            height: "50px"
+            alt: "Musée De La Poste"
         },
         {
             href: "https://www.accademiadiposta.it/",
             title: "Accademied'italie",
             src: "../../../La Poste/logo/Accademied'italie.png",
-            alt: "Accademied'italie",
-            width: "auto",
-            height: "50px"
+            alt: "Accademied'italie"
         },
         {
             href: "https://marcophilie.org/index.html",
             title: "Marcophilie",
             src: "../../../La Poste/logo/Marques postales.png",
-            alt: "Marcophilie",
-            width: "auto",
-            height: "50px"
+            alt: "Marcophilie"
         },
         {
             href: "https://aqep.net/",
             title: "ACADÉMIE QUÉBÉCOISE D’ÉTUDES PHILATÉLIQUES",
             src: "../../../La Poste/logo/Quebec.png",
-            alt: "ACADÉMIE QUÉBÉCOISE D’ÉTUDES PHILATÉLIQUES",
-            width: "auto",
-            height: "50px"
+            alt: "ACADÉMIE QUÉBÉCOISE D’ÉTUDES PHILATÉLIQUES"
         },
         {
             href: "https://www.academiebelgium.be/fr/",
             title: "Académie Royale de Philatélie de Belgique",
             src: "../../../La Poste/logo/Academie de Philatelie Belge.png",
-            alt: "Académie Royale de Philatélie de Belgique",
-            width: "auto",
-            height: "60px"
+            alt: "Académie Royale de Philatélie de Belgique"
         },
         {
             href: "https://www.bnf.fr/fr",
             title: "Gallica",
             src: "../../../La Poste/logo/gallica.png",
-            alt: "Gallica",
-            width: "auto",
-            height: "50px"
+            alt: "Gallica"
         },
         {
             href: "https://www.letimbreclassique.com/",
             title: "Histoire Postale – Jamet Baudot Pothion",
             src: "../../../La Poste/logo/Pothion.png",
-            alt: "Histoire Postale – Jamet Baudot Pothion",
-            width: "auto",
-            height: "50px"
+            alt: "Histoire Postale – Jamet Baudot Pothion"
         },
         {
             href: "https://www.ffap.net/index.php",
             title: "Fédération Française des Associations Philatéliques",
             src: "../../../La Poste/logo/FFAP.png",
-            alt: "Fédération Française des Associations Philatéliques",
-            width: "auto",
-            height: "50px"
+            alt: "Fédération Française des Associations Philatéliques"
         },
         {
             href: "http://www.aephil.com/fr/default.asp",
             title: "Académie européenne de philatélie",
             src: "../../../La Poste/logo/AEP.png",
-            alt: "Académie européenne de philatélie",
-            width: "auto",
-            height: "50px"
+            alt: "Académie européenne de philatélie"
         },
         {
             href: "https://www.timbres-de-france.com/philatelie/liste_cote.php",
             title: "Cote des Timbres de France",
             src: "../../../La Poste/logo/Timbres_de_France.png",
-            alt: "timbres-de-france",
-            width: "auto",
-            height: "50px"
+            alt: "timbres-de-france"
         }
     ];
 
- // Créer un conteneur div pour le défilement horizontal
- const container = document.createElement("div");
-//  container.style.overflowX = "scroll";
- container.style.whiteSpace = "nowrap";
- container.style.width = "100%";
- container.style.margin = "0"; // Minimiser l'espace
- container.style.display = "flex";
- container.style.alignItems = "center"; // Alignement vertical centré
+    // Créer et injecter les styles CSS dans le document
+    const style = document.createElement("style");
+    style.innerHTML = `
+        .logo-img {
+            width: auto;
+            height: 40px;
+        }
+        @media (max-width: 600px) {
+            .logo-img {
+                height: 60px;
+            }
+        }
+        .scroll-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centrer les logos horizontalement */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Pour un défilement fluide sur les appareils iOS */
+        }
+        .scroll-container::-webkit-scrollbar {
+            display: none; /* Masquer la barre de défilement par défaut */
+        }
+        @media (max-width: 600px) {
+            .scroll-container::-webkit-scrollbar {
+                display: block; /* Afficher la barre de défilement sur les petits écrans */
+            }
+        }
+        @media (max-width: 450px) {
+            .scroll-container::-webkit-scrollbar {
+                display: block; /* Afficher la barre de défilement sur les écrans de 450px */
+            }
+        }
+        @media (max-width: 300px) {
+            .scroll-container::-webkit-scrollbar {
+                display: block; /* Afficher la barre de défilement sur les écrans de 300px */
+            }
+        }
+        .logo-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+        }
+    `;
+    document.head.appendChild(style);
 
- // Créer un élément div pour contenir les logos
- const table = document.createElement("div");
- table.style.display = "flex";
- table.style.width = "auto";
- table.style.margin = "0"; // Minimiser l'espace
- table.style.height = "60px"; // Hauteur réduite de la cellule
- table.style.gap = "20px"; // Ajouter un espacement entre les logos
+    // Créer un conteneur div pour le défilement horizontal
+    const container = document.createElement("div");
+    container.className = "scroll-container";
 
- // Ajouter des cellules avec les logos
- liens.forEach(lien => {
-     const cell = document.createElement("div");
-     cell.style.color = "black";
-     cell.style.border = "none";
-     cell.style.textAlign = "center";
-     cell.style.padding = "0"; // Minimiser l'espace autour des logos
-     cell.style.margin = "0"; // Minimiser l'espace autour des logos
-     cell.style.display = "flex";
-     cell.style.alignItems = "center"; // Centrer les logos verticalement
-     cell.style.justifyContent = "center"; // Centrer les logos horizontalement
-     cell.style.height = "100%"; // S'assurer que la cellule prend toute la hauteur
+    // Créer un div pour contenir les logos
+    const table = document.createElement("div");
+    table.style.display = "flex";
+    table.style.width = "auto";
+    table.style.height = "60px";
+    table.style.gap = "20px"; // Ajouter un espace entre les logos
 
-     const anchor = document.createElement("a");
-     anchor.href = lien.href;
-     anchor.title = lien.title;
-     anchor.classList.add("title-tip", "title-tip-right");
-     anchor.target = "_blank";
+    // Ajouter des cellules avec les logos
+    liens.forEach(lien => {
+        // Créer une cellule pour chaque logo
+        const cell = document.createElement("div");
+        cell.className = "logo-cell";
 
-     const img = document.createElement("img");
-     img.src = lien.src;
-     img.alt = lien.alt;
-     img.style.width = "auto";
-     img.style.height = "40px"; // Assurer que les images gardent leurs proportions
-     img.style.display = "block";
-     img.style.maxHeight = "100%";
-     img.style.maxWidth = "100%";
-     img.style.margin = "auto"; // Centrer l'image horizontalement
+        // Créer un lien (anchor) pour chaque logo
+        const anchor = document.createElement("a");
+        anchor.href = lien.href;
+        anchor.title = lien.title;
+        anchor.classList.add("title-tip", "title-tip-right");
+        anchor.target = "_blank"; // Ouvrir le lien dans un nouvel onglet
 
-     anchor.appendChild(img);
-     cell.appendChild(anchor);
-     table.appendChild(cell);
- });
+        // Créer une image pour chaque logo
+        const img = document.createElement("img");
+        img.src = lien.src;
+        img.alt = lien.alt;
+        img.className = "logo-img"; // Appliquer la classe logo
 
- container.appendChild(table);
- const linksTable = document.getElementById("links-table");
- linksTable.style.margin = "0"; // Minimiser l'espace
- linksTable.appendChild(container);
+        // Ajouter l'image à l'ancre, puis l'ancre à la cellule
+        anchor.appendChild(img);
+        cell.appendChild(anchor);
+        // Ajouter la cellule au tableau (table)
+        table.appendChild(cell);
+    });
+
+    // Ajouter le tableau de logos au conteneur
+    container.appendChild(table);
+    // Récupérer l'élément qui contiendra le conteneur
+    const linksTable = document.getElementById("links-table");
+    linksTable.style.margin = "0"; // Minimiser l'espace
+    // Ajouter le conteneur à l'élément
+    linksTable.appendChild(container);
+
+    // Ajouter un défilement automatique
+    function autoScroll() {
+        // Déplacer le conteneur vers la droite
+        container.scrollLeft += 10;
+        // Réinitialiser la position de défilement à zéro lorsque le dernier logo est atteint
+        if (container.scrollLeft >= (table.scrollWidth - container.clientWidth)) {
+            container.scrollLeft = 0;
+        }
+    }
+
+    // Définir l'intervalle de défilement automatique
+    setInterval(autoScroll, 10); // Ajuster la vitesse du défilement ici (plus petit est le nombre, plus rapide est le défilement)
 });

@@ -34,7 +34,6 @@
   margin: 5px;
   font-size: 16px;
   border: 2px solid rgb(130, 128, 128);
-
 }
 
 .calculator .display-wrapper {
@@ -86,11 +85,12 @@ button:hover {
 /* Responsive */
 @media screen and (min-width: 769px) {
   .calculator {
-      position: fixed;
-      bottom: 50px;
-      right: 30px;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
   }
 }
+
 #showCalculatorBtn {
   display: none; /* Par défaut, le bouton est caché */
   position: fixed;
@@ -110,8 +110,3 @@ button:hover {
 #showCalculatorBtn:hover {
   background-color: #74f947; /* Changer la couleur de fond au survol */
 }
-
-
-
-
-

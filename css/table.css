@@ -790,8 +790,100 @@ p{
   background-color: #fc0202;
 }
 
+.logo-img {
+  width: auto;
+  height: 40px;
+  margin-right: 10px;
+}
 @media (max-width: 600px) {
-  .scroll-container::-webkit-scrollbar {
-      display: block; /* Afficher la barre de défilement sur les petits écrans */
+  .logo-img {
+      height: 60px;
   }
 }
+
+
+/*--Logo*/
+.scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrapper {
+  display: inline-block;
+  padding-right: 0px; /* Éliminer l'espace entre la fin et le début */
+  font-size: 25px;
+  color: yellow;
+  vertical-align: middle;
+}
+
+/* Défilement pour les petits écrans */
+.scroll-container {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrapper {
+  display: inline-block;
+  padding-right: 0; /* Éliminer l'espace entre la fin et le début */
+  margin-right: -4px; /* Ajuster la marge pour réduire l'espace */
+  font-size: 25px;
+  color: yellow;
+  vertical-align: middle;
+}
+
+/* Défilement pour différentes largeurs d'écran */
+@media (max-width: 950px) {
+  .logo-wrapper {
+    animation: defilement 30s linear infinite; /* Ajuster la durée à 30s */
+  }
+}
+
+@media (max-width: 900px) {
+  .logo-wrapper {
+    animation: defilement 28s linear infinite; /* Ajuster la durée à 28s */
+  }
+}
+
+@media (max-width: 750px) {
+  .logo-wrapper {
+    animation: defilement 25s linear infinite; /* Ajuster la durée à 25s */
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-wrapper {
+    animation: defilement 20s linear infinite; /* Ajuster la durée à 20s */
+  }
+}
+
+@media (max-width: 450px) {
+  .logo-wrapper {
+    animation: defilement 15s linear infinite; /* Ajuster la durée à 15s */
+  }
+}
+
+@media (max-width: 300px) {
+  .logo-wrapper {
+    animation: defilement 10s linear infinite; /* Ajuster la durée à 10s */
+  }
+}
+
+@keyframes defilement {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+

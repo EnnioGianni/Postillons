@@ -1,6 +1,8 @@
 // Fonction pour ajouter du texte à l'affichage de la calculatrice
 function appendToDisplay(value) {
     document.getElementById('display').value += value;
+    // Enregistrer l'affichage actuel dans le stockage local
+    localStorage.setItem('calculatorDisplay', document.getElementById('display').value);
 }
 
 // Fonction pour effectuer le calcul et afficher le résultat
@@ -13,6 +15,9 @@ function calculate() {
 
     // Afficher le résultat dans l'affichage de la calculatrice
     document.getElementById('display').value = result;
+
+    // Enregistrer l'affichage actuel dans le stockage local
+    localStorage.setItem('calculatorDisplay', document.getElementById('display').value);
 }
 
 // Fonction pour effacer l'affichage de la calculatrice et les données du stockage local
@@ -22,16 +27,17 @@ function clearDisplay() {
 
     // Effacer les données du stockage local
     localStorage.removeItem('calculatorResult');
+    localStorage.removeItem('calculatorDisplay');
 }
 
 // Événement lors du chargement de la page
 document.addEventListener('DOMContentLoaded', function() {
-    // Vérifier s'il y a un résultat précédemment enregistré dans le stockage local
-    let previousResult = localStorage.getItem('calculatorResult');
+    // Vérifier s'il y a un affichage précédemment enregistré dans le stockage local
+    let previousDisplay = localStorage.getItem('calculatorDisplay');
     
-    // Afficher le résultat précédemment enregistré s'il existe
-    if (previousResult !== null) {
-        document.getElementById('display').value = previousResult;
+    // Afficher l'affichage précédemment enregistré s'il existe
+    if (previousDisplay !== null) {
+        document.getElementById('display').value = previousDisplay;
     }
 });
 
@@ -50,6 +56,7 @@ document.getElementById('closeCalculator').addEventListener('click', function() 
     document.querySelector('.calculator').style.display = 'none';
 });
 
+// Événement pour gérer la visibilité de la calculatrice
 document.addEventListener('DOMContentLoaded', function() {
     const calculator = document.querySelector('.calculator');
     const closeBtn = document.getElementById('closeCalculator');

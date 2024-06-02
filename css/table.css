@@ -2,6 +2,7 @@
 body{ 
     background: url(../laPosteDeLancienneFrance/Resource/Livre.png) center center / cover no-repeat fixed;
     height: 300%;
+    width: auto;
   }
 /*Enpeche la copie du texte*/
   .unselectable {

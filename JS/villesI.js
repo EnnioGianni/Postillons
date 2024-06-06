@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Lisle-En-Dodon', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_En_Dodon/lisleEnDodon.html' },
         { name: 'Lisle-Jourdain', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Jourdain/lisleJourdain.html' },
         { name: 'Lisle-Jourdain (80)', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Jourdain80/lisleJourdain80.html' },
-        { name: '', url: '../../../laPosteDeLancienneFrance/Villes I//.html' },
-        { name: '', url: '../../../laPosteDeLancienneFrance/Villes I//.html' },
+        { name: 'Lisle-Rousse', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Rousse/lisleRousse.html' },
+        { name: 'Lisle-Sur-Le-Doubs', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Sur_Le_Doubs/lisleSurLeDoubs.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes I//.html' },
        
    

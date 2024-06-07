@@ -15,7 +15,7 @@ body{
   }
 
   .exemple {
-    border: 8px solid #f9ba67;
+    border: 8px solid #8a7d4a;
     columns: 3;
   
   }  
@@ -251,7 +251,7 @@ table{
 
     
   }
-  tr:hover {background-color: rgb(250, 198, 84);
+  tr:hover {background-color: #C3BC98;
   }
 
   table tr {
@@ -293,7 +293,7 @@ table{
     color: brown;
     padding: 10px;
     border: 3px double #3502fe;
-    background-color: #f8e7d1
+    background-color: #cdba6d
 
   }
   #th1 {
@@ -889,3 +889,62 @@ p{
   }
 }
 
+/*maisons de vente*/
+.menu-btn {
+  display: block;
+  position: absolute;
+  top: 195px;
+  left: 20px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Cacher le menu en dehors de l'écran */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  padding-top: 60px;
+  z-index: 999;
+  transition: left 0.3s ease; /* Animation de transition */
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #575757;
+}
+
+.menu.visible {
+  left: 0; /* Afficher le menu */
+}
+
+.menu-btn.hidden {
+  opacity: 0; /* Rendre le bouton invisible */
+  pointer-events: none; /* Désactiver les interactions avec le bouton */
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background-color: white;
+  color: black;
+  border: 1px solid #333;
+  padding: 10px;
+  z-index: 1001;
+}

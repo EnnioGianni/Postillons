@@ -893,7 +893,7 @@ p{
 .menu-btn {
   display: block;
   position: absolute;
-  top: 195px;
+  top: 100px;
   left: 20px;
   background-color: #333;
   color: white;
@@ -912,15 +912,25 @@ p{
   height: 100%;
   background-color: #333;
   color: white;
-  padding-top: 60px;
   z-index: 999;
   transition: left 0.3s ease; /* Animation de transition */
+  overflow-y: auto; /* Ajout du défilement vertical */
+}
+
+.menu h2 {
+  margin: 0;
+  padding: 10px;
+  background-color: #444;
+  text-align: center;
+  border-bottom: 1px solid #555;
+  font-size: 20px;
+  color: #cdba6d;
 }
 
 .menu a {
   display: block;
   padding: 10px 20px;
-  color: white;
+  color: rgb(255, 254, 254);
   text-decoration: none;
 }
 
@@ -947,4 +957,8 @@ p{
   border: 1px solid #333;
   padding: 10px;
   z-index: 1001;
+}
+
+body.menu-open {
+  overflow: hidden; /* Empêcher le défilement de la page principale */
 }

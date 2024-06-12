@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     const liens = [
         { href: "https://www.academiedephilatelie.fr/", title: "Liens vers le site de L'Académie de philatélie", src: "../../../La Poste/logo/academieDePhilatelie.png", alt: "Académie de philatélie" },
-        { href: "https://www.jfbphilatelie.com/", title: "JEAN FRANCOIS BRUN", src: "../../../La Poste/logo/1JFB-modified.png", alt: "JEAN FRANCOIS BRUN" },
         { href: "https://unionmarcophile.fr/", title: "L’UNION MARCOPHILE", src: "../../../La Poste/logo/unionMarcophile.png", alt: "L’UNION MARCOPHILE" },
         { href: "https://www.museedelaposte.fr/fr", title: "Musée De La Poste", src: "../../../La Poste/logo/muse DeLaPoste.png", alt: "Musée De La Poste" },
         { href: "https://www.accademiadiposta.it/", title: "Académie d'Italie", src: "../../../La Poste/logo/Accademied'italie.png", alt: "Académie d'Italie" },
@@ -12,7 +11,8 @@ document.addEventListener("DOMContentLoaded", function() {
         { href: "https://www.letimbreclassique.com/", title: "Histoire Postale – Jamet Baudot Pothion", src: "../../../La Poste/logo/Pothion.png", alt: "Histoire Postale – Jamet Baudot Pothion" },
         { href: "https://www.ffap.net/index.php", title: "Fédération Française des Associations Philatéliques", src: "../../../La Poste/logo/FFAP.png", alt: "Fédération Française des Associations Philatéliques" },
         { href: "http://www.aephil.com/fr/default.asp", title: "Académie européenne de philatélie", src: "../../../La Poste/logo/AEP.png", alt: "Académie européenne de philatélie" },
-        { href: "https://www.timbres-de-france.com/philatelie/liste_cote.php", title: "Cote des Timbres de France", src: "../../../La Poste/logo/Timbres_de_France.png", alt: "Timbres de France" }
+        { href: "https://www.timbres-de-france.com/philatelie/liste_cote.php", title: "Cote des Timbres de France", src: "../../../La Poste/logo/Timbres_de_France.png", alt: "Timbres de France" },
+        { href: "https://www.upu.int/fr/Accueil", title: "Association mondiale pour le développement de la philatélie (AMDP)", src: "../../../La Poste/logo/Association mondiale pour le développement de la philatélie (AMDP).png", alt: "Association mondiale pour le développement de la philatélie (AMDP)" }
     ];
 
     const conteneur = document.createElement("div");

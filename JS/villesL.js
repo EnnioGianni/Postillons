@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Lisieux', url: '../../../laPosteDeLancienneFrance/Villes L/Lisieux/lisieux.html' },
         { name: 'Livarot', url: '../../../laPosteDeLancienneFrance/Villes L/Livarot/livarot.html' },
         { name: 'Livry', url: '../../../laPosteDeLancienneFrance/Villes L/Livry/livry.html' },
-        { name: 'Lisy', url: '../../../laPosteDeLancienneFrance/Villes L/Lisy/lisy.html' },
+        { name: 'Lizy', url: '../../../laPosteDeLancienneFrance/Villes L/Lizy/lizy.html' },
         { name: 'Loches', url: '../../../laPosteDeLancienneFrance/Villes L/Loches/loches.html' },
         { name: 'Locmine', url: '../../../laPosteDeLancienneFrance/Villes L/Locmine/locmine.html' },
         { name: 'Lodeve', url: '../../../laPosteDeLancienneFrance/Villes L/Lodeve/lodeve.html' },

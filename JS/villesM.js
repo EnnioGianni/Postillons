@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Tableau de liens de villes
     var cityLinks = [
         { name: 'Machecoul', url: '../../../laPosteDeLancienneFrance/Villes M/Machecoul/machecoul.html' },
-        { name: 'Macon', url: '../../../laPosteDeLancienneFrance/Villes M/macon/macon.html' },
+        { name: 'Macon', url: '../../../laPosteDeLancienneFrance/Villes M/Macon/macon.html' },
         { name: 'Magnac', url: '../../../laPosteDeLancienneFrance/Villes M/Magnac/magnac.html' },
-        { name: 'Magny En Vexin', url: '../../../laPosteDeLancienneFrance/Villes M/magnyEnVexin/magnyEnVexin.html' },
-        { name: 'Magny Guiscard', url: '../../../laPosteDeLancienneFrance/Villes M/maillyLeChateau/maillyLeChateau.html' },
+        { name: 'Magny En Vexin', url: '../../../laPosteDeLancienneFrance/Villes M/MagnyEnVexin/magnyEnVexin.html' },
+        { name: 'Magny Guiscard', url: '../../../laPosteDeLancienneFrance/Villes M/MagnyGuiscard/magnyGuiscard.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },
         { name: '', url: '../../../laPosteDeLancienneFrance/Villes M//.html' },

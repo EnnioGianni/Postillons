@@ -110,3 +110,17 @@ button:hover {
 #showCalculatorBtn:hover {
   background-color: #74f947; /* Changer la couleur de fond au survol */
 }
+
+/*publicité*/
+#adBanner {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

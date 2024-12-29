@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif; /* Définit la police du texte */
+    margin: 0; /* Supprime les marges de la page */
+    padding: 0; /* Supprime les marges internes de la page */
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed; /* Définit une image d'arrière-plan fixe centrée */
+    background-size: cover; /* Étire l'image pour couvrir l'écran */
+    display: flex; /* Utilise Flexbox pour l'agencement */
+    justify-content: center; /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement le contenu */
+    height: 100vh; /* Définit la hauteur de la page à 100% de la hauteur de l'écran */
+}
+
+.container {
+    background: rgba(219, 253, 184, 0.8); /* Fond blanc avec une transparence */
+    border-radius: 10px; /* Arrondit les coins du conteneur */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère au conteneur */
+    padding: 15px; /* Ajoute un espace interne */
+    width: 400px; /* Définit une largeur fixe */
+    border: 5px solid #007BFF; /* Ajoute une bordure bleue */
+    max-height: 85vh; /* Limite la hauteur maximale du conteneur */
+    overflow-y: auto; /* Permet un défilement vertical si nécessaire */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Ajoute une transition pour le survol */
+}
+
+.container:hover {
+    transform: scale(1.02); /* Agrandit légèrement le conteneur au survol */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Accentue l'ombre au survol */
+}
+
+.container h2 {
+    text-align: center; /* Centre le texte */
+    margin-bottom: 15px; /* Ajoute un espace sous le titre */
+    color: #333; /* Définit la couleur du texte */
+    border-bottom: 2px solid #ddd; /* Ajoute une ligne sous le titre */
+    padding-bottom: 5px; /* Ajoute un espace interne sous le texte */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Ajoute un espace entre les groupes de formulaire */
+    border: 2px solid #ddd; /* Ajoute une bordure grise légère */
+    padding: 8px; /* Ajoute un espace interne */
+    border-radius: 5px; /* Arrondit les coins */
+    background: rgba(255, 255, 255, 0.9); /* Ajoute un fond blanc légèrement transparent */
+}
+
+.form-group:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ajoute une ombre légère au survol */
+}
+
+.form-group label {
+    display: block; /* Force l'étiquette à occuper une ligne complète */
+    margin-bottom: 3px; /* Ajoute un petit espace sous l'étiquette */
+    color: #555; /* Définit la couleur de l'étiquette */
+}
+
+.form-group input, .form-group textarea {
+    width: 96%; /* Occupe toute la largeur du conteneur */
+    padding: 8px; /* Ajoute un espace interne */
+    border: 1px solid #ddd; /* Ajoute une bordure grise légère */
+    border-radius: 5px; /* Arrondit les coins */
+}
+
+.form-group textarea {
+    resize: none; /* Désactive le redimensionnement manuel */
+}
+
+.btn {
+    display: block; /* Occupe une ligne complète */
+    width: 100%; /* Occupe toute la largeur du conteneur */
+    background-color: #007BFF; /* Définit un fond bleu */
+    color: white; /* Définit une couleur de texte blanche */
+    border: none; /* Supprime les bordures */
+    padding: 8px; /* Ajoute un espace interne */
+    border-radius: 5px; /* Arrondit les coins */
+    cursor: pointer; /* Change le curseur en pointeur */
+    text-align: center; /* Centre le texte */
+    border: 2px solid #0056b3; /* Ajoute une bordure bleue foncée */
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Ajoute une transition au survol */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Change la couleur du bouton au survol */
+    transform: translateY(-2px); /* Déplace légèrement le bouton vers le haut */
+}
+
+.image-gallery {
+    margin-top: 10px; /* Ajoute un espace au-dessus de la galerie */
+    border: 2px solid #ddd; /* Ajoute une bordure grise légère */
+    padding: 8px; /* Ajoute un espace interne */
+    border-radius: 5px; /* Arrondit les coins */
+    background: rgba(255, 255, 255, 0.9); /* Ajoute un fond blanc légèrement transparent */
+}
+
+.image-card {
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    justify-content: space-between; /* Sépare les éléments horizontalement */
+    background: rgba(249, 249, 249, 0.9); /* Ajoute un fond gris clair transparent */
+    padding: 8px; /* Ajoute un espace interne */
+    border: 2px solid #ddd; /* Ajoute une bordure grise légère */
+    border-radius: 5px; /* Arrondit les coins */
+    margin-bottom: 8px; /* Ajoute un espace entre les cartes */
+    transition: box-shadow 0.2s ease; /* Ajoute une transition pour l'ombre */
+}
+
+.image-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ajoute une ombre au survol */
+}
+
+.image-card img {
+    max-width: 50px; /* Définit une largeur maximale pour l'image */
+    max-height: 50px; /* Définit une hauteur maximale pour l'image */
+    margin-right: 10px; /* Ajoute un espace à droite de l'image */
+    border-radius: 5px; /* Arrondit les coins de l'image */
+    border: 2px solid #007BFF; /* Ajoute une bordure bleue à l'image */
+}
+
+.image-card a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+}
+
+.image-card a img {
+    cursor: pointer; /* Change le curseur en pointeur sur les images */
+    transition: transform 0.2s ease; /* Ajoute une transition pour l'effet de survol */
+}
+
+.image-card a img:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+}
+
+.image-card button {
+    background-color: #dc3545; /* Définit un fond rouge pour le bouton */
+    color: white; /* Définit une couleur de texte blanche */
+    border: none; /* Supprime les bordures */
+    padding: 5px 8px; /* Ajoute un espace interne au bouton */
+    border-radius: 5px; /* Arrondit les coins du bouton */
+    cursor: pointer; /* Change le curseur en pointeur */
+    border: 2px solid #b02a37; /* Ajoute une bordure rouge foncée */
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Ajoute une transition au survol */
+}
+
+.image-card button:hover {
+    background-color: #b02a37; /* Change la couleur du bouton au survol */
+    transform: scale(1.05); /* Agrandit légèrement le bouton au survol */
+}
+
+.drop-zone {
+    width: 95%; /* Occupe toute la largeur du conteneur */
+    height: 120px; /* Définit la hauteur de la zone de dépôt */
+    border: 2px groove #0c0c0c; /* Ajoute une bordure en pointillés bleue */
+    border-radius: 5px; /* Arrondit les coins */
+    display: flex; /* Utilise Flexbox pour aligner le contenu */
+    justify-content: center; /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement le contenu */
+    color: #555; /* Définit la couleur du texte */
+    background-color: rgba(255, 255, 255, 0.9); /* Ajoute un fond blanc légèrement transparent */
+    cursor: pointer; /* Change le curseur en pointeur */
+    transition: background-color 0.3s ease; /* Ajoute une transition pour le fond */
+    position: relative; /* Positionne la zone pour contenir des éléments enfants */
+    overflow: hidden; /* Masque les débordements */
+    padding: 8px; /* Ajoute un espace interne */
+}
+
+.drop-zone:hover {
+    background-color: rgba(240, 240, 255, 0.9); /* Change légèrement la couleur au survol */
+}
+
+.drop-zone p {
+    text-align: center; /* Centre le texte */
+    margin: 0; /* Supprime les marges */
+    border-bottom: 2px solid #ddd; /* Ajoute une ligne sous le texte */
+    padding-bottom: 5px; /* Ajoute un espace interne sous le texte */
+}
+
+.drop-zone img {
+    max-width: 100%; /* Limite la largeur maximale de l'image */
+    max-height: 100%; /* Limite la hauteur maximale de l'image */
+    object-fit: contain; /* Redimensionne l'image en conservant les proportions */
+    position: absolute; /* Positionne l'image en absolu */
+    border: 2px solid #ddd; /* Ajoute une bordure grise légère */
+}
+
+.hidden {
+    display: none; /* Cache complètement l'élément */
+}

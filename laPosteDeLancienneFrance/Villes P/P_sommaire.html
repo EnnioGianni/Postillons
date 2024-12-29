@@ -6,107 +6,250 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../css/nba.css" />
         <link rel="stylesheet" href="../../css/table.css" />
+        <link rel="stylesheet" href="../../css/dropdown.css" />
+        <link rel="stylesheet" href="../../css/modale.css" />
         <link rel="stylesheet" href="../../css/bootstrap.min.css" />
-        <script src="../../JS/bootstrap.bundle.min.js" defer></script>                
-    </head>   
+        <script src="../../JS/bootstrap.bundle.min.js" defer></script>        
+        <script src="../../JS/script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="../../icones/books_library_1768.ico">
+        <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
+    </head> 
 <body>
-    <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">
-        
-        <h1 id="h1" style="margin: 0 0 0 50px;">Le Postillon</h1>
-        <a class="div a" href="../Villes A/sommaireVilleA.html" title="lien vers les villes avec le nom A et ainsi de suite">A</a>
-        <a class="div a" href="../Villes B/B_sommaire.html">B</a>
-        <a class="div a" href="../Villes C/C_sommaire.html">C</a>
-        <a class="div a" href="../Villes D/D_sommaire.html">D</a>
-        <a class="div a" href="../Villes E/E_sommaire.html">E</a>
-        <a class="div a" href="../Villes F/F_sommaire.html">F</a>
-        <a class="div a" href="../Villes G/G_sommaire.html">G</a>
-        <a class="div a" href="../Villes H/H_sommaire.html">H</a>
-        <a class="div a" href="../Villes I/I_sommaire.html">I</a>
-        <a class="div a" href="../Villes J/J_sommaire.html">J</a>
-        <a class="div a" href="../Villes K/K_sommaire.html">K</a>
-        <a class="div a" href="../Villes L/L_sommaire.html">L</a>
-        <a class="div a" href="../Villes M/M_sommaire.html">M</a>
-        <a class="div a" href="../Villes N/N_sommaire.html">N</a>
-        <a class="div a" href="../Villes O/O_sommaire.html">O</a>
-        <a class="div a active" href="../Villes P/P_sommaire.html">P</a>
-        <a class="div a" href="../Villes Q/Q_sommaire.html">Q</a>
-        <a class="div a" href="../Villes R/R_sommaire.html">R</a>
-        <a class="div a" href="../Villes S/S_sommaire.html">S</a>
-        <a class="div a" href="../Villes T/T_sommaire.html">T</a>
-        <a class="div a" href="../Villes U/U_sommaire.html">U</a>
-        <a class="div a" href="../Villes V/V_sommaire.html">V</a>
-        <a class="div a" href="../Villes W/W_sommaire.html">W</a>
-        <a class="div a" href="../Villes X/X_sommaire.html">X</a>
-        <a class="div a" href="../Villes Y/Y_sommaire.html">Y</a>
-        <a class="div a" href="../Villes Z/Z_sommaire.html">Z</a>            
-        <a class="div a" href="../../index.html">Accueil</a>              
-    </header>
-    <header>   
+    <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">       
+         <a href="../Villes A/sommaireVilleA.html"><img id="logoImg" src="../../icones/books_library_1768.ico"></a>      
+        <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1> 
+               
+        <a class="div a title-tip" href="../Villes A/sommaireVilleA.html" title="lien vers les villes avec le nom A">A</a>
+        <a class="div a title-tip" href="../Villes B/B_sommaire.html" title="lien vers les villes avec le nom B">B</a>
+        <a class="div a title-tip" href="../Villes C/C_sommaire.html" title="lien vers les villes avec le nom C">C</a>
+        <a class="div a title-tip" href="../Villes D/D_sommaire.html" title="lien vers les villes avec le nom D">D</a>
+        <a class="div a title-tip" href="../Villes E/E_sommaire.html" title="lien vers les villes avec le nom E">E</a>
+        <a class="div a title-tip" href="../Villes F/F_sommaire.html" title="lien vers les villes avec le nom F">F</a>
+        <a class="div a title-tip" href="../Villes G/G_sommaire.html" title="lien vers les villes avec le nom G">G</a>
+        <a class="div a title-tip" href="../Villes H/H_sommaire.html" title="lien vers les villes avec le nom H">H</a>
+        <a class="div a title-tip" href="../Villes I/I_sommaire.html" title="lien vers les villes avec le nom I">I</a>
+        <a class="div a title-tip" href="../Villes J/J_sommaire.html" title="lien vers les villes avec le nom J">J</a>
+        <a class="div a title-tip" href="../Villes K/K_sommaire.html" title="lien vers les villes avec le nom K">K</a>
+        <a class="div a title-tip" href="../Villes L/L_sommaire.html" title="lien vers les villes avec le nom L">L</a>
+        <a class="div a title-tip" href="../Villes M/M_sommaire.html" title="lien vers les villes avec le nom M">M</a>
+        <a class="div a title-tip" href="../Villes N/N_sommaire.html" title="lien vers les villes avec le nom N">N</a>
+        <a class="div a title-tip" href="../Villes O/O_sommaire.html" title="lien vers les villes avec le nom O">O</a>
+        <a class="div a title-tip active " href="../Villes P/P_sommaire.html" title="lien vers les villes avec le nom P">P</a>
+        <a class="div a title-tip" href="../Villes Q/Q_sommaire.html" title="lien vers les villes avec le nom Q">Q</a>
+        <a class="div a title-tip" href="../Villes R/R_sommaire.html" title="lien vers les villes avec le nom R">R</a>
+        <a class="div a title-tip" href="../Villes S/S_sommaire.html" title="lien vers les villes avec le nom S">S</a>
+        <a class="div a title-tip" href="../Villes T/T_sommaire.html" title="lien vers les villes avec le nom T">T</a>
+        <a class="div a title-tip" href="../Villes U/U_sommaire.html" title="lien vers les villes avec le nom U">U</a>
+        <a class="div a title-tip" href="../Villes V/V_sommaire.html" title="lien vers les villes avec le nom V">V</a>
+        <a class="div a title-tip" href="../Villes W/W_sommaire.html" title="lien vers les villes avec le nom W">W</a>
+        <a class="div a title-tip" href="../Villes X/X_sommaire.html" title="lien vers les villes avec le nom X">X</a>
+        <a class="div a title-tip" href="../Villes Y/Y_sommaire.html" title="lien vers les villes avec le nom Y">Y</a>
+        <a class="div a title-tip" href="../Villes Z/Z_sommaire.html" title="lien vers les villes avec le nom Z">Z</a> 
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <div class="dropdown" style="margin: 20px 50px 0 0;">
+                    <a href="../../index.html" class="div a title-tip page-link">
+                        Accueil <i class="fas fa-caret-down"></i>
+                    </a>
+                     <!-- <div class="dropdown-content">
+                         <a href="../../video.html">Video</a>
+                        <a href="../../pdf.html">PDF</a>
+                        <a href="../../blog.html">Blog</a>
+                        <a href="../../Articles.html">Articles</a>
+                        <a href="../../contact.html">Contact</a>
+                    </div>  -->
+                </div> 
+            </li>       
+        </ul>
+
+    </header>        
         <h2 id="h2">La poste de l'ancienne France</h2>
-        <p>Catalogue de description et cotations des marques postales des origines à 1791<br>Villes comencent par le <strong>P</strong></p>
-    <hr style=" height: 5px; border-width: 2px; color: rgb(6, 14, 251); background-color: rgb(248, 5, 5); ">
-    <header>              
-<table style="margin: 20px 0 0 0px;">   
+        <p>Catalogue de description et cotations des marques postales des origines à 1791<br>Villes comencent par la lettre <span><strong id="taille">P</strong></span></p>
+<!--Boite de recherche dans dropdown.cssN°66-->           
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" id="champRecherche" placeholder="Rechercher une ville">       
+                  <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>     
+<!--Fin Boite de recherche-->
+   
+<table style="margin: 0px 0 0 0px;">
+    <!--Commentaire-->   
+    <tr>             
+        <td colspan="7" style="color: black; background-color: rgb(206, 183, 123); font-size: 20px;" ><b>Nom des Villes</b></td>         
+    </tr>
+<!--Fin Commentaire-->      
     <tr>
-        <td class="div a active"><a href="#">lorem</a></td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        
+        <td class="div a active"><a href="../Villes P/La Pacaudiere/laPacaudiere.html">La Pacaudiere</a></td>
+        <td class="div a active"><a href="../Villes P/La Palisse/laPalisse.html">La Palisse</a></td>
+        <td class="div a active"><a href="../Villes P/La Palud/laPalud.html">La Palud</a></td>
+        <td class="div a active"><a href="../Villes P/La Perine/laPerine.html">La Perine</a></td>
+        <td class="div a active"><a href="../Villes P/La Porta/laPorta.html">La Porta</a</td>
+        <td class="div a active"><a href="../Villes P/Le Peage de Roussillon/lePeageDeRoussillon.html">Le Peage de Roussillon</a></td>
+        <td class="div a active"><a href="../Villes P/Le Pellerin/lePellerin.html">Le Pellerin</a></td>
+        <td class="div a active"><a href="../Villes P/Le Pompidou/lePompidou.html">Le Pompidou</a></td>
     </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Le Pont de Beauvoisin/lePontDeBeauvoisin.html">Le Pont de Beauvoisin</a></td>
+        <td class="div a active"><a href="../Villes P/Le Pont de Ce/lePontDeCe.html">Le Pont de Ce</a></td>
+        <td class="div a active"><a href="../Villes P/Le pont de Neuilly/lePontDeNeuilly.html">Le pont de Neuilly</a></td>
+        <td class="div a active"><a href="../Villes P/Le Puy/lePuy.html">Le Puy</a></td>
+        <td class="div a active"><a href="../Villes P/Les Pieux/lesPieux.html">Les Pieux</a></td>
+        <td class="div a active"><a href="../Villes P/Pacy sur Eure/pacySurEure.html">Pacy sur Eure</a></td>
+        <td class="div a active"><a href="../Villes P/Pacy-sur-Armancon/pacySurArmancon.html">Pacy-sur-Armancon</a></td>
+        <td class="div a active"><a href="../Villes P/Paimboeuf/paimboeuf.html">Paimboeuf</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Paimpol/paimpol.html">Paimpol</a></td>
+        <td class="div a active"><a href="../Villes P/Palaiseau/palaiseau.html">Palaiseau</a></td>
+        <td class="div a active"><a href="../Villes P/Paliseul/paliseul.html">Paliseul</a></td>
+        <td class="div a active"><a href="../Villes P/Palluau/palluau.html">Palluau</a></td>
+        <td class="div a active"><a href="../Villes P/Pamiers/pamiers.html">Pamiers</a></td>
+        <td class="div a active"><a href="../Villes P/Pampellonne/pampellonne.html">Pampellonne</a></td>
+        <td class="div a active"><a href="../Villes P/Paray le Monial/parayLeMonial.html">Paray le Monial</a></td>
+        <td class="div a active"><a href="../Villes P/Parce/parce.html">Parce</a></td>
+    <tr>
+        <td class="div a active"><a href="../Villes P/Paris/paris.html">Paris</a></td>
+        <td class="div a active"><a href="../Villes P/Parthenay/parthenay.html">Parthenay</a></td>
+        <td class="div a active"><a href="../Villes P/Pau/pau.html">Pau</a></td>
+        <td class="div a active"><a href="../Villes P/Pauillac/pauillac.html">Pauillac</a></td>
+        <td class="div a active"><a href="../Villes P/Payrac/payrac.html">Payrac</a></td>
+        <td class="div a active"><a href="../Villes P/Pelissanne/pelissanne.html">Pelissanne</a></td>
+        <td class="div a active"><a href="../Villes P/Peronne/peronne.html">Peronne</a></td>
+        <td class="div a active"><a href="../Villes P/Perpignan/perpignan.html">Perpignan</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Perrecy/perrecy.html">Perrecy</a></td>
+        <td class="div a active"><a href="../Villes P/Perriers/perrieres.html">Perriers</a></td>
+        <td class="div a active"><a href="../Villes P/Pertuis/pertuis.html">Pertuis</a></td>
+        <td class="div a active"><a href="../Villes P/Petit Poste De Paris/petitPosteDeParis.html">Petit Poste De Paris</a></td>
+        <td class="div a active"><a href="../Villes P/Peyrot le Negre/peyrotLeNegre.html">Peyrot le Negre</a></td>
+        <td class="div a active"><a href="../Villes P/Pezenas/pezenas.html">Pezenas</a></td>
+        <td class="div a active"><a href="../Villes P/Phalsbourg/phalsbourg.html">Phalsbourg</a></td>
+        <td class="div a active"><a href="../Villes P/Philippeville/philippeville.html">Philippeville</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Picquigny/picquigny.html">Picquigny</a></td>
+        <td class="div a active"><a href="../Villes P/Pierre Buffiere/pierreBuffiere.html">Pierre Buffiere</a></td>
+        <td class="div a active"><a href="../Villes P/Pierrefort/pierrefort.html">Pierrefort</a></td>
+        <td class="div a active"><a href="../Villes P/Pithiviers/pithiviers.html">Pithiviers</a></td>
+        <td class="div a active"><a href="../Villes P/Pierrelatte/pierrelatte.html">Pierrelatte</a></td>
+        <td class="div a active"><a href="../Villes P/Pignans/pignans.html">Pignans</a></td>
+        <td class="div a active"><a href="../Villes P/Pignerol/pignerol.html">Pignerol</a></td>
+        <td class="div a active"><a href="../Villes P/Plombieres/plombieres.html">Plombieres</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Piney/piney.html">Piney</a></td>
+        <td class="div a active"><a href="../Villes P/Pinon/pinon.html">Pinon</a></td>
+        <td class="div a active"><a href="../Villes P/Pithiviers/pithiviers.html">Pithiviers</a></td>
+        <td class="div a active"><a href="../Villes P/Plancoet/plancoet.html">Plancoet</a></td>
+        <td class="div a active"><a href="../Villes P/Plelan/plelan.html">Plelan</a></td>
+        <td class="div a active"><a href="../Villes P/Ploermel/ploermel.html">Ploermel</a></td>
+        <td class="div a active"><a href="../Villes P/Plombieres/plombieres.html">Plombieres</a></td>
+        <td class="div a active"><a href="../Villes P/Pogny/pogny.html">Pogny</a></td>
+    </tr>     
+    <tr>
+        <tr>
+            <td class="div a active"><a href="../Villes P/Poissy/poissy.html">Poissy</a></td>
+            <td class="div a active"><a href="../Villes P/Poitiers/poitiers.html">Poitiers</a></td>
+            <td class="div a active"><a href="../Villes P/Poix/poix.html">Poix</a></td>
+            <td class="div a active"><a href="../Villes P/Poligny/poligny.html">Poligny</a></td>
+            <td class="div a active"><a href="../Villes P/Pons/pons.html">Pons</a></td>
+            <td class="div a active"><a href="../Villes P/Pont a Mousson/pontAMousson.html">Pont a Mousson</a></td>
+            <td class="div a active"><a href="../Villes P/Pont Audemer/pontAudemer.html">Pont Audemer</a></td>
+            <td class="div a active"><a href="../Villes P/Pont D-Ain/pontDain.html">Pont D'Ain</a></td>    
+    </tr>     
+        <td class="div a active"><a href="../Villes P/Pont de Abbe/pontDeAbbe.html">Pont de Abbe</a></td>
+        <td class="div a active"><a href="../Villes P/Pont de Camares/pontDeCamares.html">Pont de Camares</a></td>
+        <td class="div a active"><a href="../Villes P/Pont de Chateau/pontDeChatea.html">Pont de Chateau</a></td>
+        <td class="div a active"><a href="../Villes P/Pont de L-Arche/pontDeLarche.html">Pont de L'Arche</a></td>
+        <td class="div a active"><a href="../Villes P/Pont de Vaux/pontDeVaux.html">Pont de Vaux</a></td>
+        <td class="div a active"><a href="../Villes P/Pont en Royans/pontEnRoyan.html">Pont en Royans</a></td>
+        <td class="div a active"><a href="../Villes P/Pont L-Eveque/pontLéveque.html">Pont L'Eveque</a></td>
+        <td class="div a active"><a href="../Villes P/Pont Saint Esprit/PontSaintEsprit.html">Pont Saint Esprit</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Pont Scorff/pontScoff.html">Pont Scorff</a></td>
+        <td class="div a active"><a href="../Villes P/Pont Ste Maxence/pontSteMaxence.html">Pont Ste Maxence</a></td>
+        <td class="div a active"><a href="../Villes P/Pont sur Seine/pontSurSeine.html">Pont sur Seine</a></td>
+        <td class="div a active"><a href="../Villes P/Pont sur Yonne/pontSurYonne.html">Pont sur Yonne</a></td>
+        <td class="div a active"><a href="../Villes P/Pontailler/pontailler.html">Pontailler</a></td>
+        <td class="div a active"><a href="../Villes P/Pontarlier/pontarlier.html">Pontarlier</a></td>
+        <td class="div a active"><a href="../Villes P/Pontarneaud/pontarneaud.html">Pontarneaud</a></td>
+        <td class="div a active"><a href="../Villes P/Pontchartrain/pontchartrain.html">Pontchartrain</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Ponthierry/ponthierry.html">Ponthierry</a></td>
+        <td class="div a active"><a href="../Villes P/Pontigny/pontign.html">Pontigny</a></td>
+        <td class="div a active"><a href="../Villes P/Pontivy/pontivy.html">Pontivy</a></td>
+        <td class="div a active"><a href="../Villes P/Pontoise/pontoise.html">Pontoise</a></td>
+        <td class="div a active"><a href="../Villes P/Pontorson/pontorson.html">Pontorson</a></td>
+        <td class="div a active"><a href="../Villes P/Pontrieux/pontrieux.html">Pontrieux</a></td>
+        <td class="div a active"><a href="../Villes P/Poperingue/poperingue.html">Poperingue</a></td>
+        <td class="div a active"><a href="../Villes P/Pornic/pornic.html">Pornic</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Port de Piles/portDePiles.html">Port de Piles</a></td>
+        <td class="div a active"><a href="../Villes P/Port Louis/portLouis.html">Port Louis</a></td>
+        <td class="div a active"><a href="../Villes P/Port Saint Pere/portSaintPere.html">Port Saint Pere</a></td>
+        <td class="div a active"><a href="../Villes P/Port Sainte Marie/portSainteMarie.html">Port Sainte Marie</a></td>
+        <td class="div a active"><a href="../Villes P/Port sur Saone/portSurSaone.html">Port sur Saone</a></td>
+        <td class="div a active"><a href="../Villes P/Port Vendres/portVendres.html">Port Vendres</a></td>
+        <td class="div a active"><a href="../Villes P/Pougues/pougues.html">Pougues</a></td>
+        <td class="div a active"><a href="../Villes P/Pouilly sur Loire/pouillySurLoire.html">Pouilly sur Loire</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Pouzauges/pouzauges.html">Pouzauges</a></td>
+        <td class="div a active"><a href="../Villes P/Prades/prades.html">Prades</a></td>
+        <td class="div a active"><a href="../Villes P/Prats de Mollo/pratsDeMollo.html">Prats de Mollo</a></td>
+        <td class="div a active"><a href="../Villes P/Preignac/preignac.html">Preignac</a></td>
+        <td class="div a active"><a href="../Villes P/Pretot/pretot.html">Pretot</a></td>
+        <td class="div a active"><a href="../Villes P/Preuilly/preuilly.html">Preuilly</a></td>
+        <td class="div a active"><a href="../Villes P/Prez en Pail/prezEnPail.html">Prez en Pail</a></td>
+        <td class="div a active"><a href="../Villes P/Privas/privas.html">Privas</a></td>
+    </tr>     
+    <tr>
+        <td class="div a active"><a href="../Villes P/Provins/provins.html">Provins</a></td>
+        <td class="div a active"><a href="../Villes P/Puiseaux/puiseaux.html">Puiseaux</a></td>
+        <td class="div a active"><a href="../Villes P/Puttelange/puttelenge.html">Puttelange</a></td>
+        <td class="div a active"><a href="../Villes P/Puy Laurens/puyLaurens.html">Puy Laurens</a></td>
+        <td class="div a active"><a href="../Villes P/Puydarrieux/puydarrieux.html">Puydarrieux</a></td>
+        <td class="div a active"><a href="../Villes P/Por"></a></td>
+        <td class="div a active"><a href="../Villes P/Por"></a></td>
+        <td class="div a active"><a href="../Villes P/Por"></a></td>
+    </tr>     
+   
+<!--Commentaire-->
+        <tr>             
+            <th colspan="8"></th>         
+        </tr>  
+</table> 
 
-</table>  
-
-<!--Carousel-->
-
-<div class="row">
-    <div class="col-12 col-md-4" style="margin: 30px 0 90px  650px;">
-    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
-        <div class="carousel-indicators" style="margin: 0 0 0 -20px;">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../MPGenerales/1.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="../../MPGenerales/2.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="../../MPGenerales/3.jpg" class="d-block w-100">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button> 
-
-        </div>
-    </div>
+<div class='News-footer' >
+<div class='news'>
+    <span id='news-head'><b>COTE</b></span>
 </div>
-</div>
-
-
-<footer id="mainFooter">
-    <p>&copy; Copyright Tout droit resevée</p>
-</footer><!--Ici se termine le #mainFooter-->     
-            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous"></script>
-            <script src="../../JS/script.js"></script>      
-  </body>
+    <p class='N-text'>
+        <marquee direction='left'>
+            Celles-ci s'entendent pour de belles frappes.</a>
+            <span>• Pour les lettre en port paye:
+            </span>
+            <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.
+            </span>
+            <span>• Si la marque de port (dû) qui accompagne le (port payé) est d'un indice supérieur a 16, majorer de 2 indices la cote du port payé. 
+            <span>&copy; Copyright Tout droit réservé</span>
+            </span>
+        </marquee>
+              
+    </p>
+</div>  
+        <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous"></script>
+        <script src="../../JS/script.js"></script> 
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="script.js"></script> 
+                 
+</body>
 </html>

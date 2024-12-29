@@ -6,107 +6,192 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../css/nba.css" />
         <link rel="stylesheet" href="../../css/table.css" />
+        <link rel="stylesheet" href="../../css/dropdown.css" />
+        <link rel="stylesheet" href="../../css/modale.css" />
         <link rel="stylesheet" href="../../css/bootstrap.min.css" />
-        <script src="../../JS/bootstrap.bundle.min.js" defer></script>                
-    </head>   
+        <script src="../../JS/bootstrap.bundle.min.js" defer></script>        
+        <script src="../../JS/script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="../../icones/books_library_1768.ico">
+        <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>      
+    </head> 
 <body>
-    <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">
-        
-        <h1 id="h1" style="margin: 0 0 0 50px;">Le Postillon</h1>
-        <a class="div a" href="../Villes A/sommaireVilleA.html" title="lien vers les villes avec le nom A et ainsi de suite">A</a>
-        <a class="div a" href="../Villes B/B_sommaire.html">B</a>
-        <a class="div a" href="../Villes C/C_sommaire.html">C</a>
-        <a class="div a" href="../Villes D/D_sommaire.html">D</a>
-        <a class="div a" href="../Villes E/E_sommaire.html">E</a>
-        <a class="div a" href="../Villes F/F_sommaire.html">F</a>
-        <a class="div a" href="../Villes G/G_sommaire.html">G</a>
-        <a class="div a" href="../Villes H/H_sommaire.html">H</a>
-        <a class="div a" href="../Villes I/I_sommaire.html">I</a>
-        <a class="div a" href="../Villes J/J_sommaire.html">J</a>
-        <a class="div a" href="../Villes K/K_sommaire.html">K</a>
-        <a class="div a" href="../Villes L/L_sommaire.html">L</a>
-        <a class="div a" href="../Villes M/M_sommaire.html">M</a>
-        <a class="div a active" href="../Villes N/N_sommaire.html">N</a>
-        <a class="div a" href="../Villes O/O_sommaire.html">O</a>
-        <a class="div a" href="../Villes P/P_sommaire.html">P</a>
-        <a class="div a" href="../Villes Q/Q_sommaire.html">Q</a>
-        <a class="div a" href="../Villes R/R_sommaire.html">R</a>
-        <a class="div a" href="../Villes S/S_sommaire.html">S</a>
-        <a class="div a" href="../Villes T/T_sommaire.html">T</a>
-        <a class="div a" href="../Villes U/U_sommaire.html">U</a>
-        <a class="div a" href="../Villes V/V_sommaire.html">V</a>
-        <a class="div a" href="../Villes W/W_sommaire.html">W</a>
-        <a class="div a" href="../Villes X/X_sommaire.html">X</a>
-        <a class="div a" href="../Villes Y/Y_sommaire.html">Y</a>
-        <a class="div a" href="../Villes Z/Z_sommaire.html">Z</a>            
-        <a class="div a" href="../../index.html">Accueil</a>              
-    </header>
-    <header>   
+    <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">       
+         <a href="../Villes A/sommaireVilleA.html"><img id="logoImg" src="../../icones/books_library_1768.ico"></a>      
+        <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1> 
+               
+        <a class="div a title-tip" href="../Villes A/sommaireVilleA.html" title="lien vers les villes avec le nom A">A</a>
+        <a class="div a title-tip" href="../Villes B/B_sommaire.html" title="lien vers les villes avec le nom B">B</a>
+        <a class="div a title-tip" href="../Villes C/C_sommaire.html" title="lien vers les villes avec le nom C">C</a>
+        <a class="div a title-tip" href="../Villes D/D_sommaire.html" title="lien vers les villes avec le nom D">D</a>
+        <a class="div a title-tip" href="../Villes E/E_sommaire.html" title="lien vers les villes avec le nom E">E</a>
+        <a class="div a title-tip" href="../Villes F/F_sommaire.html" title="lien vers les villes avec le nom F">F</a>
+        <a class="div a title-tip" href="../Villes G/G_sommaire.html" title="lien vers les villes avec le nom G">G</a>
+        <a class="div a title-tip" href="../Villes H/H_sommaire.html" title="lien vers les villes avec le nom H">H</a>
+        <a class="div a title-tip" href="../Villes I/I_sommaire.html" title="lien vers les villes avec le nom I">I</a>
+        <a class="div a title-tip" href="../Villes J/J_sommaire.html" title="lien vers les villes avec le nom J">J</a>
+        <a class="div a title-tip" href="../Villes K/K_sommaire.html" title="lien vers les villes avec le nom K">K</a>
+        <a class="div a title-tip" href="../Villes L/L_sommaire.html" title="lien vers les villes avec le nom L">L</a>
+        <a class="div a title-tip" href="../Villes M/M_sommaire.html" title="lien vers les villes avec le nom M">M</a>
+        <a class="div a title-tip active" href="../Villes N/N_sommaire.html" title="lien vers les villes avec le nom N">N</a>
+        <a class="div a title-tip" href="../Villes O/O_sommaire.html" title="lien vers les villes avec le nom O">O</a>
+        <a class="div a title-tip" href="../Villes P/P_sommaire.html" title="lien vers les villes avec le nom P">P</a>
+        <a class="div a title-tip" href="../Villes Q/Q_sommaire.html" title="lien vers les villes avec le nom Q">Q</a>
+        <a class="div a title-tip" href="../Villes R/R_sommaire.html" title="lien vers les villes avec le nom R">R</a>
+        <a class="div a title-tip" href="../Villes S/S_sommaire.html" title="lien vers les villes avec le nom S">S</a>
+        <a class="div a title-tip" href="../Villes T/T_sommaire.html" title="lien vers les villes avec le nom T">T</a>
+        <a class="div a title-tip" href="../Villes U/U_sommaire.html" title="lien vers les villes avec le nom U">U</a>
+        <a class="div a title-tip" href="../Villes V/V_sommaire.html" title="lien vers les villes avec le nom V">V</a>
+        <a class="div a title-tip" href="../Villes W/W_sommaire.html" title="lien vers les villes avec le nom W">W</a>
+        <a class="div a title-tip" href="../Villes X/X_sommaire.html" title="lien vers les villes avec le nom X">X</a>
+        <a class="div a title-tip" href="../Villes Y/Y_sommaire.html" title="lien vers les villes avec le nom Y">Y</a>
+        <a class="div a title-tip" href="../Villes Z/Z_sommaire.html" title="lien vers les villes avec le nom Z">Z</a> 
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <div class="dropdown" style="margin: 20px 50px 0 0;">
+                    <a href="../../index.html" class="div a title-tip page-link">
+                        Accueil <i class="fas fa-caret-down"></i>
+                    </a>
+                     <!-- <div class="dropdown-content">
+                         <a href="../../video.html">Video</a>
+                        <a href="../../pdf.html">PDF</a>
+                        <a href="../../blog.html">Blog</a>
+                        <a href="../../Articles.html">Articles</a>
+                        <a href="../../contact.html">Contact</a>
+                    </div>  -->
+                </div> 
+            </li>       
+        </ul>
+
+    </header>        
         <h2 id="h2">La poste de l'ancienne France</h2>
-        <p>Catalogue de description et cotations des marques postales des origines à 1791<br>Villes comencent par le <strong>N</strong></p>
-    <hr style=" height: 5px; border-width: 2px; color: rgb(6, 14, 251); background-color: rgb(248, 5, 5); ">
-    <header>              
-<table style="margin: 20px 0 0 0px;">   
+        <p>Catalogue de description et cotations des marques postales des origines à 1791<br>Villes comencent par la lettre <span><strong id="taille">N</strong></span></p>
+<!--Boite de recherche dans dropdown.cssN°66-->           
+            <div class="wrap">
+                <div class="search">
+                    <input type="text" id="champRecherche" placeholder="Rechercher une ville">       
+                  <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+              </div>     
+<!--Fin Boite de recherche-->
+   
+<table style="margin: 0px 0 0 0px;">
+    <!--Commentaire-->   
+    <tr>             
+        <td colspan="7" style="color: black; background-color: rgb(206, 183, 123); font-size: 20px;" ><b>Nom des Villes</b></td>         
+    </tr>
+<!--Fin Commentaire-->     
     <tr>
-        <td class="div a active"><a href="#">lorem</a></td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        <td class="div a active"><a href="#">lorem</a</td>
-        
-    </tr>     
+        <td class="div a active"><a href="../Villes N/Le-Neubourg/le-neubourg.html">Le-Neubourg</a></td> 
+        <td class="div a active"><a href="../Villes N/Nailloux/nailloux.html">Nailloux</a></td> 
+        <td class="div a active"><a href="../Villes N/Nampot/nampot.html">Nampot</a></td> 
+        <td class="div a active"><a href="../Villes N/Nancy/nancy.html">Nancy</a></td> 
+        <td class="div a active"><a href="../Villes N/Nangis/nangis.html">Nangis</a></td> 
+        <td class="div a active"><a href="../Villes N/Nant/nant.html">Nant</a></td> 
+        <td class="div a active"><a href="../Villes N/Nanterre/nanterre.html">Nanterre</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Nantes/nantes.html">Nantes</a></td> 
+        <td class="div a active"><a href="../Villes N/Nanteuil-le-Haudouin/nanteuil-Le-Haudouin.html">Nanteuil-le-Haudouin</a></td> 
+        <td class="div a active"><a href="../Villes N/Nanteuil-sur-Marne/nanteuil-Sur-Marne.html">Nanteuil-sur-Marne</a></td> 
+        <td class="div a active"><a href="../Villes N/Nantua/nantua.html">Nantua</a></td> 
+        <td class="div a active"><a href="../Villes N/Narbonne/narbonne.html">Narbonne</a></td> 
+        <td class="div a active"><a href="../Villes N/Navarrenx/navarrenx.html">Navarrenx</a></td> 
+        <td class="div a active"><a href="../Villes N/Neauphi-le-Chateau/neauphi-le-Chateau.html">Neauphi-le-Chateau</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Negrepelisse/negrepelisse.html">Negrepelisse</a></td> 
+        <td class="div a active"><a href="../Villes N/Nemours/nemours.html">Nemours</a></td> 
+        <td class="div a active"><a href="../Villes N/Nerac/nerac.html">Nerac</a></td> 
+        <td class="div a active"><a href="../Villes N/Nesle/nesle.html">Nesle</a></td> 
+        <td class="div a active"><a href="../Villes N/Neubourg/neubourg.html">Neubourg</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuf-Brisach/neuf-Brisach.html">Neuf-Brisach</a></td> 
+        <td class="div a active"><a href="../Villes N/Neufchateau/neufchateau.html">Neufchateau</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Neufchatel-en-Bray/neufchatel-en-Bray.html">Neufchatel-en-Bray</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuilly-St-Frond/neuilly-St-Frond.html">Neuilly-St-Frond</a></td> 
+        <td class="div a active"><a href="../Villes N/Neung-sur-Beuvron/neung-sur-Beuvron.html">Neung-sur-Beuvron</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuville-les-Dames/neuville-les-Dames.html">Neuville-les-Dames</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuville/neuville.html">Neuville</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuvy-le-Roi/neuvy-le-Roi.html">Neuvy-le-Roi</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuvy-sur-Loire/neuvy-sur-Loire.html">Neuvy-sur-Loire</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Neung-sur-Beuvron/neung-sur-Beuvron.html">Neung-sur-Beuvron</a></td> 
+        <td class="div a active"><a href="../Villes N/Neufchatel-en-Bray/neufchatel-en-Bray.html">Neufchatel-en-Bray</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuilly-St-Frond/neuilly-St-Frond.html">Neuilly-St-Frond</a></td> 
+        <td class="div a active"><a href="../Villes N/Neung-sur-Beuvron/neung-sur-Beuvron.html">Neung-sur-Beuvron</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuville/neuville.html">Neuville</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuville-les-Dames/neuville-les-Dames.html">Neuville-les-Dames</a></td> 
+        <td class="div a active"><a href="../Villes N/Neuvy-sur-Loire/neuvy-sur-Loire.html">Neuvy-sur-Loire</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Neuvy-le-Roi/neuvy-le-Roi.html">Neuvy-le-Roi</a></td> 
+        <td class="div a active"><a href="../Villes N/Nevers/nevers.html">Nevers</a></td> 
+        <td class="div a active"><a href="../Villes N/Nimes/nimes.html">Nimes</a></td> 
+        <td class="div a active"><a href="../Villes N/Niort/niort.html">Niort</a></td> 
+        <td class="div a active"><a href="../Villes N/Noe/noe.html">Noe</a></td> 
+        <td class="div a active"><a href="../Villes N/Nogaro/nogaro.html">Nogaro</a></td> 
+        <td class="div a active"><a href="../Villes N/Nogent-LArtaud/nogent-LArtaud.html">Nogent-L'Artaud</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Nogent-le-Roi/nogent-le-Roi.html">Nogent-le-Roi</a></td> 
+        <td class="div a active"><a href="../Villes N/Nogent-le-Rotrou/nogent-le-Rotrou.html">Nogent-le-Rotrou</a></td> 
+        <td class="div a active"><a href="../Villes N/Nogent-sur-Seine/nogent-sur-Seine.html">Nogent-sur-Seine</a></td> 
+        <td class="div a active"><a href="../Villes N/Nogent-sur-Vernisson/nogent-sur-Vernisson.html">Nogent-sur-Vernisson</a></td> 
+        <td class="div a active"><a href="../Villes N/Noirmoutier/noirmoutier.html">Noirmoutier</a></td> 
+        <td class="div a active"><a href="../Villes N/Nolay/nolay.html">Nolay</a></td> 
+        <td class="div a active"><a href="../Villes N/Nonancourt/nonancourt.html">Nonancourt</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Nonant/nonant.html">Nonant</a></td> 
+        <td class="div a active"><a href="../Villes N/Nontron/nontron.html">Nontron</a></td> 
+        <td class="div a active"><a href="../Villes N/Nouan-le-Fuzelier/nouan-le-Fuzelier.html">Nouan-le-Fuzelier</a></td> 
+        <td class="div a active"><a href="../Villes N/Noyers/Noyers.html">Noyers</a></td> 
+        <td class="div a active"><a href="../Villes N/Noyers-Menard/noyers-Menard.html">Noyers-Menard</a></td> 
+        <td class="div a active"><a href="../Villes N/Noyon/noyon.html">Noyon</a></td> 
+        <td class="div a active"><a href="../Villes N/Nozay/nozay.html">Nozay</a></td> 
+    </tr>       
+    <tr>
+        <td class="div a active"><a href="../Villes N/Nozeroy/nozeroy.html">Nozeroy</a></td> 
+        <td class="div a active"><a href="../Villes N/Nuaille/nuaille.html">Nuaille</a></td> 
+        <td class="div a active"><a href="../Villes N/Nuits/nuits.html">Nuits</a></td> 
+        <td class="div a active"><a href="../Villes N/Nyons/nyons.html">Nyons</a></td> 
+        <td class="div a active"><a href="../Villes N/Petit-Poste-de-Nancy/petit-Poste-de-Nancy.html">Petit-Poste-de-Nancy</a></td> 
+        <td class="div a active"><a href="../Villes N/Petite-Poste-de-Nantes/petit-Poste-de-Nantes.html">Petite-Poste-de-Nantes</a></td> 
+        <td class="div a active"><a href="../Villes N/Le-Neubourg/le-Neubourg.html">Le-Neubourg</a></td> 
+    </tr>       
+  
+<!--Commentaire-->
+    <tr>             
+        <th colspan="8"></th>         
+    </tr>  
+</table> 
 
-</table>  
-
-<!--Carousel-->
-
-<div class="row">
-    <div class="col-12 col-md-4" style="margin: 30px 0 90px  650px;">
-    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
-        <div class="carousel-indicators" style="margin: 0 0 0 -20px;">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../../MPGenerales/1.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="../../MPGenerales/2.jpg" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="../../MPGenerales/3.jpg" class="d-block w-100">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button> 
-
-        </div>
+<div class='News-footer' >
+    <div class='news'>
+        <span id='news-head'><b>COTE</b></span>
     </div>
-</div>
-</div>
-
-
-<footer id="mainFooter">
-    <p>&copy; Copyright Tout droit resevée</p>
-</footer><!--Ici se termine le #mainFooter-->     
+        <p class='N-text'>
+            <marquee direction='left'>
+                Celles-ci s'entendent pour de belles frappes.</a>
+                <span>• Pour les lettre en port paye:
+                </span>
+                <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.
+                </span>
+                <span>• Si la marque de port (dû) qui accompagne le (port payé) est d'un indice supérieur a 16, majorer de 2 indices la cote du port payé. 
+                <span>&copy; Copyright Tout droit réservé</span>
+                </span>
+            </marquee>
+                  
+        </p>
+  </div>  
             <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous"></script>
-            <script src="../../JS/script.js"></script>      
+            <script src="../../JS/script.js"></script> 
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <script src="script.js"></script> 
+                     
   </body>
 </html>

@@ -4,14 +4,20 @@
         <meta charset="utf-8" />
             <title>Le Postillon</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link rel="stylesheet" href="../../../css/nba.css" />
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
+        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-            <script src="../../../JS/script_global.js.js" defer></script>        
+            <script src="../../../JS/script_global.js" defer></script>        
+        <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
+            <script src="../../../JS/calculatrice.js" defer></script> 
+            <script src="../../../JS/Liens.js" defer></script>
+            <link rel="stylesheet" href="../../../css/calculatrice.css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
+            
 <!--Debut pagination--> 
             <script src="../../../JS/villesA.js" defer></script>        
             <script src="../../../JS/villesB.js" defer></script>        
@@ -40,18 +46,17 @@
             <script src="../../../JS/villesY.js" defer></script>        
             <script src="../../../JS/villesZ.js" defer></script>        
             <script src="../../../JS/accueil.js" defer></script>
-            <script src="../../../JS/accueil.js" defer></script>
             <script src="../../../JS/cityRedirector.js"></script>
             <script src="path/to/cityRedirector.js"></script>  
-            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>   
+            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>           
     </head>  
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
-        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>                  
+        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico" alt="Logo"></a>                  
         <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>  
         <a class="div a" href="../../Villes A/sommaireVilleA.html">A</a>
         <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
-        <a class="div a active" href="../../Villes C/C_sommaire.html">C</a>
+        <a class="div a" href="../../Villes C/C_sommaire.html">C</a>
         <a class="div a" href="../../Villes D/D_sommaire.html">D</a>
         <a class="div a" href="../../Villes E/E_sommaire.html">E</a>
         <a class="div a" href="../../Villes F/F_sommaire.html">F</a>
@@ -61,7 +66,7 @@
         <a class="div a" href="../../Villes J/J_sommaire.html">J</a>
         <a class="div a" href="../../Villes K/K_sommaire.html">K</a>
         <a class="div a" href="../../Villes L/L_sommaire.html">L</a>
-        <a class="div a" href="../../Villes M/M_sommaire.html">M</a>
+        <a class="div a active" href="../../Villes M/M_sommaire.html">M</a>
         <a class="div a" href="../../Villes N/N_sommaire.html">N</a>
         <a class="div a" href="../../Villes O/O_sommaire.html">O</a>
         <a class="div a" href="../../Villes P/P_sommaire.html">P</a>
@@ -75,7 +80,7 @@
         <a class="div a" href="../../Villes X/X_sommaire.html">X</a>
         <a class="div a" href="../../Villes Y/Y_sommaire.html">Y</a>
         <a class="div a" href="../../Villes Z/Z_sommaire.html">Z</a>            
-    </header>
+    </header>   
 <section>
 <!--Debut pagination--> 
 <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Ch%C3%A2teau-Salins" class="title-tip" style="font-size: 25px;" title="lien vers wikipedia">
@@ -219,8 +224,8 @@
 <!--Marque 7--->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Chateau9Thierry/Images/6.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Chateau-Thierry" style="width: 70%; height: auto;"/></a>
+               <a  href="../Chateau9Thierry/Images/7.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../Chateau9Thierry/Images/7.png" style="width: 70%;"/></a>
             </td>
             <td class="border3">7</td>       
             <td class="border2">déboursé</td>       

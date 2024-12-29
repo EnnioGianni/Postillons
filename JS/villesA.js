@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Abries', url: '../../../laPosteDeLancienneFrance/Villes A/Abries/abries.html' },
         { name: 'Agde', url: '../../../laPosteDeLancienneFrance/Villes A/Agde/agde.html' },
         { name: 'Agen', url: '../../../laPosteDeLancienneFrance/Villes A/Agen/agen.html' },
-        { name: 'Ahun', url: '../../../laPosteDeLancienneFrance/Villes A/Ahun/ahun.htm' },
+        { name: 'Ahun', url: '../../../laPosteDeLancienneFrance/Villes A/Ahun/ahun.html' },
         { name: 'Aigle', url: '../../../laPosteDeLancienneFrance/Villes A/Aigle/aigle.html' },
         { name: 'Aignay', url: '../../../laPosteDeLancienneFrance/Villes A/Aignay/aignay.html' },
         { name: 'Aigre', url: '../../../laPosteDeLancienneFrance/Villes A/AIGRE/aigre.html' },

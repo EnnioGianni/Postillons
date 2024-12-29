@@ -4,14 +4,20 @@
         <meta charset="utf-8" />
             <title>Le Postillon</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link rel="stylesheet" href="../../../css/nba.css" />
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
-            <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
+          <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-            <script src="../../../JS/script_global.js.js" defer></script>        
+            <script src="../../../JS/script_global.js" defer></script>        
+        <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
+            <script src="../../../JS/calculatrice.js" defer></script> 
+            <script src="../../../JS/Liens.js" defer></script>
+            <link rel="stylesheet" href="../../../css/calculatrice.css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
+            
 <!--Debut pagination--> 
             <script src="../../../JS/villesA.js" defer></script>        
             <script src="../../../JS/villesB.js" defer></script>        
@@ -43,7 +49,8 @@
             <script src="../../../JS/accueil.js" defer></script>
             <script src="../../../JS/cityRedirector.js"></script>
             <script src="path/to/cityRedirector.js"></script>  
-            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>   
+            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>  
+            
     </head>  
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
@@ -51,7 +58,7 @@
         <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>  
         <a class="div a" href="../../Villes A/sommaireVilleA.html">A</a>
         <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
-        <a class="div a active" href="../../Villes C/C_sommaire.html">C</a>
+        <a class="div a" href="../../Villes C/C_sommaire.html">C</a>
         <a class="div a" href="../../Villes D/D_sommaire.html">D</a>
         <a class="div a" href="../../Villes E/E_sommaire.html">E</a>
         <a class="div a" href="../../Villes F/F_sommaire.html">F</a>
@@ -61,7 +68,7 @@
         <a class="div a" href="../../Villes J/J_sommaire.html">J</a>
         <a class="div a" href="../../Villes K/K_sommaire.html">K</a>
         <a class="div a" href="../../Villes L/L_sommaire.html">L</a>
-        <a class="div a" href="../../Villes M/M_sommaire.html">M</a>
+        <a class="div a active" href="../../Villes M/M_sommaire.html">M</a>
         <a class="div a" href="../../Villes N/N_sommaire.html">N</a>
         <a class="div a" href="../../Villes O/O_sommaire.html">O</a>
         <a class="div a" href="../../Villes P/P_sommaire.html">P</a>
@@ -75,37 +82,41 @@
         <a class="div a" href="../../Villes X/X_sommaire.html">X</a>
         <a class="div a" href="../../Villes Y/Y_sommaire.html">Y</a>
         <a class="div a" href="../../Villes Z/Z_sommaire.html">Z</a>            
-    </header>
+    </header>   
 <section>
 <!--Debut pagination--> 
-<h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Clermont-Ferrand" class="title-tip" style="font-size: 25px;" title="lien vers wikipedia">
-   Montbeliard- Auvergne (62)</a></h2><p>Bureau ouvert au XVII<sup>em</sup> siècle<br>Existait en 1644</p>
+    <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Montb%C3%A9liard" class="title-tip" style="font-size: 25px;" title="Lien vers wikipedia">
+                    Montbeliard - Principauté (24)                  
+                </a>
+                
+    </h2>
+        <p>
+            Le service postal paraît dater de l'occupation françaisevers la fin du XVII<sup>em</sup> siècle
+                    
+        </p>
     <nav>
-    <ul class="pagination justify-content-center">
         <ul class="pagination justify-content-center">
-             <li class="page-item"><a class="page-link title-tip title-tip-left" href="../C_sommaire.html" title="Sommaire C">&laquo;&laquo;</a></li>
-               <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Clermont2/clermontEnBeauvoisis.html" title="Clermont-en-Beauvoisis">&laquo;</a></li>                
-                <li class="page-item">
-                    <div class="dropdown">
-                        <!-- Champ de saisie de la ville -->
-                        <input type="text" id="villeInput" placeholder="Tapez le nom d'une ville ">
-                        <!-- Cellule "ville" -->
-                        <a id="villeLink" class="div a title-tip page-link">&emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i></a>
-                        <!-- Contenu déroulant -->
-                        <div class="dropdown-content scrollable-content" id="dropdownContent"></div>
-                    </div>
-                </li>            
-                    <div class="dropdown-content" id="menuDropdown">
-                        <!-- Les liens seront ajoutés dynamiquement ici -->
-                    </div>
-            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Clermont4/clermontLodeve.html" title="Clermont Lodeve">&raquo;&raquo;</a></li>
-            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../../../index.html" title="Accueil">&raquo;&raquo;</a></li>
-
-        </ul>              
-    </ul>
-</nav>
+            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../../../laPosteDeLancienneFrance/Villes M/M_sommaire.html" title="M_sommaire">&laquo;&laquo;</a></li>       
+            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../../Villes M/Montbazon/montbazon.html" title="Montbazon">&laquo;</a></li>
+            <div class="dropdown">
+                    <!-- Champ de saisie de la ville -->
+                    <input type="text" id="villeInput" placeholder="Tapez le nom d'une ville ">
+                    <!-- Cellule "ville" -->
+                    <a id="villeLink" class="div a title-tip page-link">&emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i></a>
+                    <!-- Contenu déroulant -->
+                    <div class="dropdown-content scrollable-content" id="dropdownContent"></div>
+                </div>
+            </li>            
+                <div class="dropdown-content" id="menuDropdown">
+                    <!-- Les liens seront ajoutés dynamiquement ici -->
+                </div>
+            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../../Villes M/Montbrison/montbrison.html" title="Montbrison">&raquo;</a></li>
+            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../../../index.html" title="Accueil">&raquo;&raquo;</a></li>       
+        </ul> 
+    </nav>
 <!--Fin pagination-->
-<table class="exemple">       
+
+<table class="exemple">
     <thead >   
         <tr>
             <th class="border2 col-3" scope="col">Marque</th>
@@ -118,320 +129,196 @@
             <th class="border2 col-2" scope="col">Cote</th>      
         </tr>
     </thead>
-<!--Marque 1--->                   
+
+<!--Espace-->
+        <tr> 
+            <th colspan="8" style="color: black;">
+                <p> La principauté de Montbéliard remonte au X<sup>em</sup> siècle, Après avoir appartenu aux maisons d'Alsace et de Montfaucon elle passe à la famille de Wurtemberg par le mariage de la dernière héritière, Henriette de Montbéliard, avec le comte Eberhard de Wurtemberg. A la fin du XVII<sup>em</sup> siècle elle est gouvernée par le comte Georges II lorsque Louis XIV fait occuper la ville, le 8 novembre 1676. Maître depuis peu de l'Alsace et de la Franche-Comté, le roi de France tient à assurer des communications régulières entre ces deux provinces.
+                </p>
+                <p> L'occupation dure jusqu'au traité de Ryswick, 29 octobre 1697, Le bureaude poste utilisé par les français est alors transféré à Clerval. Pour peu de temps car Louis XIV a de la suite dans les idées, il fait évacuer ses militaires mais rétablit la poste sur les terres de Montbéliard. Cette situation dure jusqu'en 1718.
+                </p>
+                <p>La principauté est à nouveau occupée par les français en 1796, elle leur est définitivement attribuée par le traité de Lunéville, 9 février 1801.
+                </p>
+                <p>A la lueur de ces évènements historiques il semble bien que la très rare marque n°1, de 1712, soit française. Les suivantes sont l'émanation du service postal de la principauté, elles n'en sont pas moins intéressantes. L'échange des lettres entre Montbéliard et les postes de France se faisait au bureau de Belfort.
+                </p>
+            </th>
+        </tr>
+
+<!--Marque 1-->          
         <tr>
             <td class="border2">
-                <a  href="../Clermont3/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/1.png" alt="Clermont Ferrand" style="width:60%;"/></a>
-            </td>
-            <td class="border3">1</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">21mm</td>       
-            <td class="border2">1714-1725</td>
+                <a href="../Montbeilard/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/1.png" alt="Montbeilard" style="width: 75%;"/>
+                </a>
+            </td>        
+            <td class="border3">1</td>
+            <td class="border2">port dû</td>
+            <td class="border2">40x3,5mm</td>
+            <td class="border2">1712</td>
             <td class="border2">noir</td>
-            <td class="border2">I-15</td>
-            <td class="prixProduit" data-id="15">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 1A--->                   
+            <td class="border2">I-25</td>
+            <td class="prixProduit" data-id="25">0€</td>
+        </tr>
+<!--Marque 2-->          
         <tr>
             <td class="border2">
-                <a  href="../Clermont3/Images/1A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/1A.png" alt="Clermont Ferrand" style="width:60%;"/></a>
-            </td>
-            <td class="border3">1A</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">21mm</td>       
-            <td class="border2">1726-1761</td>
+                <a href="../Montbeilard/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/2.png" alt="Montbeilard" style="width: 70%;"/>
+                </a>
+            </td>        
+            <td class="border3">2</td>
+            <td class="border2">port dû</td>
+            <td class="border2">35x3,5mm</td>
+            <td class="border2">1759-1768</td>
             <td class="border2">noir</td>
-            <td class="border2">I-13</td>
-            <td class="prixProduit" data-id="13">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 1B--->                   
+            <td class="border2">I-22</td>
+            <td class="prixProduit" data-id="22">0€</td>
+        </tr>
+<!--Marque 3-->          
         <tr>
             <td class="border2">
-                <a  href="../Clermont3/Images/1B.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/1B.png" alt="Clermont Ferrand" style="width:60%;"/></a>
-            </td>
-            <td class="border3">1B</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">21mm</td>       
-            <td class="border2">1754-1758</td>
-            <td class="border2">sec</td>
-            <td class="border2">I-13</td>
-            <td class="prixProduit" data-id="13">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 2--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/2.png" alt="Clermont Ferrand" style="width:73%;"/></a>
-            </td>
-            <td class="border3">2</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">34mm</td>       
-            <td class="border2">1728-1751</td>
+                <a href="../Montbeilard/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/3.png" alt="Montbeilard" style="width: 69%;"/>
+                </a>
+            </td>        
+            <td class="border3">3</td>
+            <td class="border2">port dû</td>
+            <td class="border2">34x3mm</td>
+            <td class="border2">1769-1782</td>
             <td class="border2">noir</td>
-            <td class="border2">I-13</td>
-            <td class="prixProduit" data-id="13">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 3--->                   
+            <td class="border2">I-20</td>
+            <td class="prixProduit" data-id="20">0€</td>
+        </tr>
+<!--Marque 4-->          
         <tr>
             <td class="border2">
-                <a  href="../Clermont3/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/3.png" alt="Clermont Ferrand" style="width:72%;"/></a>
-            </td>
-            <td class="border3">3</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">34mm</td>       
-            <td class="border2">1748-1756</td>
+                <a href="../Montbeilard/Images/4.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/4.png" alt="Montbeilard" style="width: 79%;"/>
+                </a>
+            </td>        
+            <td class="border3">4</td>
+            <td class="border2">port dû</td>
+            <td class="border2">44x4,5mm</td>
+            <td class="border2">1774-1785</td>
             <td class="border2">noir</td>
-            <td class="border2">I-11</td>
-            <td class="prixProduit" data-id="11">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 4--->                   
+            <td class="border2">I-20</td>
+            <td class="prixProduit" data-id="20">0€</td>
+        </tr>
+<!--Marque 5-->          
         <tr>
             <td class="border2">
-                <a  href="../Clermont3/Images/4.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/4.png" alt="Clermont Ferrand" style="width:70%;"/></a>
-            </td>
-            <td class="border3">4</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">31x,2,5mm</td>       
-            <td class="border2">1759-1761</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-16</td>
-            <td class="prixProduit" data-id="16">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 5--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/5.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/5.png" alt="Clermont Ferrand" style="width:69%;"/></a>
-            </td>
-            <td class="border3">5</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">30,5x2mm</td>       
-            <td class="border2">1759-1766</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-13</td>
-            <td class="prixProduit" data-id="13">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 6--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/6.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/6.png" alt="Clermont Ferrand" style="width:84%;"/></a>
-            </td>
-            <td class="border3">6</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">45mm</td>       
-            <td class="border2">1765</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-26</td>
-            <td class="prixProduit" data-id="26">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 7--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/7.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/7.png" alt="Clermont Ferrand" style="width:97%;"/></a>
-            </td>
-            <td class="border3">7</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">58mm</td>       
-            <td class="border2">1765-1774</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-11</td>
-            <td class="prixProduit" data-id="11">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 8--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/8.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/8.png" alt="Clermont Ferrand" style="width:78%;"/></a>
-            </td>
-            <td class="border3">8</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">39mm</td>       
-            <td class="border2">1774-1782</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-10</td>
-            <td class="prixProduit" data-id="10">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 9--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/9.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/9.png" alt="Clermont Ferrand" style="width:79%;"/></a>
-            </td>
-            <td class="border3">9</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">40x4,5mm</td>       
-            <td class="border2">1774-1787</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-10</td>
-            <td class="prixProduit" data-id="10">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 10--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/9.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/9.png" alt="Clermont Ferrand" style="width:79%;"/></a>
-            </td>
-            <td class="border3">10</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2">40x3,5mm</td>       
-            <td class="border2">1788-1791</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-11</td>
-            <td class="prixProduit" data-id="11">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 11--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/11.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/11.png" alt="Clermont Ferrand" style="width: 50%;"/></a>
-            </td>
-            <td class="border3">11</td>       
-            <td class="border2">port payé</td>       
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Clermont Ferrand" style="width: 18%;"/></a></td>
-            <td class="border2">1734-1780</td>
-            <td class="border2">manuscrit</td>
-            <td class="border2">I-18</td>
-            <td class="prixProduit" data-id="18">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 12--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/12.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/12.png" alt="Clermont Ferrand" style="width:100%;"/></a>
-            </td>
-            <td class="border3">12</td>       
-            <td class="border2">port payé</td>       
-            <td class="border2">71mm</td>       
-            <td class="border2">1789-1791</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-28</td>
-            <td class="prixProduit" data-id="28">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 13--->                   
-        <tr>
-            <td class="border2">
-                <a  href="../Clermont3/Images/13.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Clermont3/Images/13.png" alt="Clermont Ferrand" style="width:79%;"/></a>
-            </td>
-            <td class="border3">13</td>       
-            <td class="border2">déboursé</td>       
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Clermont Ferrand" style="width: 18%;"/></a></td>
-            <td class="border2">1747-1789</td>
-            <td class="border2">manuscrit</td>
-            <td class="border2">I-17</td>
-            <td class="prixProduit" data-id="17">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 14--->                   
-        <tr>
-            <td class="border2">
-                <!-- <a  href="../Clermont3/Images/14.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Clermont Ferrand" style="width:70%;"/></a>
-            </td>
-            <td class="border3">14</td>       
-            <td class="border2">N° 10 en déboursé</td>       
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Clermont Ferrand" style="width: 18%;"/></a></td>
-            <td class="border2">1791</td>
+                <a href="../Montbeilard/Images/5.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/5.png" alt="Montbeilard" style="width: 71%;"/>
+                </a>
+            </td>        
+            <td class="border3">5</td>
+            <td class="border2">port dû</td>
+            <td class="border2">36x3,5mm</td>
+            <td class="border2">1780-1793</td>
             <td class="border2">noir</td>
             <td class="border2">I-19</td>
-            <td class="prixProduit" data-id="19">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 15--->                   
+            <td class="prixProduit" data-id="19">0€</td>
+        </tr>
+<!--Marque 6-->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Clermont3/Images/15.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Clermont Ferrand" style="width:70%;"/></a>
-            </td>
-            <td class="border3">15</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Clermont Ferrand" style="width: 18%;"/></a></td>
-            <td class="border2">1689-1700</td>
-            <td class="border2">manuscrit</td>
-            <td class="border2">I-22</td>
-            <td class="prixProduit" data-id="22">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 15A--->                   
-        <tr>
-            <td class="border2">
-                <!-- <a  href="../Clermont3/Images/15A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Clermont Ferrand" style="width:70%;"/></a>
-            </td>
-            <td class="border3">15A</td>       
-            <td class="border2">port dû</td>       
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Clermont Ferrand" style="width: 18%;"/></a></td>
-            <td class="border2">1714-1727</td>
+                <a href="../Montbeilard/Images/6.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/6.png" alt="Montbeilard" style="width: 70%;"/>
+                </a>
+            </td>        
+            <td class="border3">6</td>
+            <td class="border2">port dû</td>
+            <td class="border2"><img src="../../Resource/plumeDeture.png" alt="Montbeilard" style=" width: 30%"></td>
+            <td class="border2">1716-1717</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-20</td>
-            <td class="prixProduit" data-id="20">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 16--->                   
+            <td class="prixProduit" data-id="20">0€</td>
+        </tr>
+<!--Marque 7-->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Clermont3/Images/16.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Clermont Ferrand" style="width:70%;"/></a>
-            </td>
-            <td class="border3">16</td>       
-            <td class="border2">chargé</td>       
-            <td class="border2">28mm</td>       
+                <a href="../Montbeilard/Images/7.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/7.png" alt="Montbeilard" style="width: 70%;"/>
+                </a>
+            </td>        
+            <td class="border3">7</td>
+            <td class="border2">chargé</td>
+            <td class="border2"><img src="../../Resource/plumeDeture.png" alt="Montbeilard" style=" width: 30%"></td>
             <td class="border2">1791</td>
-            <td class="border2 text-danger">rouge</td>
+            <td class="border2">manuscrit</td>
             <td class="border2">I-18</td>
-            <td class="prixProduit" data-id="18">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Marque 17--->                   
+            <td class="prixProduit" data-id="18">0€</td>
+        </tr>
+<!--Marque 8-->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Clermont3/Images/17.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Clermont Ferrand" style="width:70%;"/></a>
-            </td>
-            <td class="border3">17</td>       
-            <td class="border2">chargé</td>       
-            <td class="border2">28mm</td>       
-            <td class="border2">1791</td>
-            <td class="border2">noir</td>
-            <td class="border2">I-28</td>
-            <td class="prixProduit" data-id="28">00.00</td>
-        </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<!--Commentaire-->                    
-        <tr>             
-            <th colspan="12" style="color: #000;"></th>         
-        </tr>         
-<!--Cartes google-->
+                <a href="../Montbeilard/Images/8.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Montbeilard/Images/8.png" alt="Montbeilard" style="width: 70%;"/>
+                </a>
+            </td>        
+            <td class="border3">8</td>
+            <td class="border2">franc</td>
+            <td class="border2"><img src="../../Resource/plumeDeture.png" alt="Montbeilard" style=" width: 30%"></td>
+            <td class="border2">1777</td>
+            <td class="border2">manuscrit</td>
+            <td class="border2">I-20</td>
+            <td class="prixProduit" data-id="20">0€</td>
+        </tr>
 
-<tr>
-    <th colspan="3">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77063.04247782823!2d3.071783749149931!3d45.78434516569017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f71bdd7f2e8507%3A0x3994306038a06f22!2sClermont-Ferrand!5e0!3m2!1sfr!2sfr!4v1714202207744!5m2!1sfr!2sfr" width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </th>         
+<!--Liens-->
+        <tr > 
+            <th colspan="12" id="table-liens" style="padding-top: 10px;">Liens utiles</th>                
+            <!-- Le contenu dynamique sera inséré ici -->  
+            </th>
+        </tr>  
+
+<!--Cartes Géoportail-->
+    <tr>
+         <th colspan="4">
+            <iframe width="800" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=6.8346032142764495,47.52820133200373&z=12&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=BNF-IGNF_GEOGRAPHICALGRIDSYSTEMS.CASSINI::GEOPORTAIL:OGC:WMTS(1)&permalink=yes" allowfullscreen></iframe>
+        </th>
 
 <!--Blason-->
-<th colspan="1">
-    <a href="https://fr.wikipedia.org/wiki/Clermont-Ferrand#H%C3%A9raldique">
-        <img src="../Clermont3/Images/Blason.png" alt="Clermont Ferrand" style="width:80%; height: auto;"/>
-        <p>Blason de Clermont Ferrand</p>
-    </a>
-</th>
-<!--Carte Géoportail-->              
-    <th colspan="4">
-        <iframe width="800" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=3.097338994721523,45.77956753552584&z=12&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=GEOGRAPHICALGRIDSYSTEMS.CASSINI::GEOPORTAIL:OGC:WMTS(1)&permalink=yes" allowfullscreen></iframe>
-    </th>  
-</tr> 
-<!--Commentaire-->
+        <th colspan="1">
+            <a href="https://fr.wikipedia.org/wiki/Montb%C3%A9liard#H%C3%A9raldique">
+                <img id="img2" src="../Montbeilard/Images/Blason.png" alt="Blason de Montbeilard" style="width:80%; height: auto;"/>
+                    <p>Blason de Montbeilard</p>
+            </a>
+        </th>
+
+<!--Carte Google-->
+                
+        <th colspan="3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d43116.09570200062!2d6.770539589085902!3d47.514143254595936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4792168cd6c87ad9%3A0x409ce34b313da10!2s25200%20Montb%C3%A9liard!5e0!3m2!1sfr!2sfr!4v1732459493806!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </th>
+    </tr>
+
+<!--Espace-->
     <tr> 
         <th colspan="8" style="color: black;"></th>
-    </tr>   
-    
+    </tr>
+  
 <!-- Scroll To Top -->
-    <button onclick="topFunction()" id="scrollToTopButton" title="Haut de page"><i class="fas fa-chevron-up"></i></button>
-<!--popup 1--> 
-    
-</table> 
+<button onclick="topFunction()" id="scrollToTopButton" title="Haut de page"><i class="fas fa-chevron-up"></i></button>
 
+</table> 
+<!--Calculatrice-->
+<div class="calculator">
+    <div class="display-wrapper">
+        <input type="text" class="display" id="display">
+        <button id="closeCalculator" class="close-btn" title="Fermer la calculatrice">X</button>
+    </div>
+    <div class="buttons">
+        <button class="operator" onclick="appendToDisplay('+')">+</button>
+        <button class="operator" onclick="appendToDisplay('-')">-</button>
+        <button class="equal" onclick="calculate()">=</button>
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <p>Additionne vos marques</p>
+    </div>
+</div>
+<button id="showCalculatorBtn" title="Afficher la calculatrice">Afficher la calculatrice</button>
+
+<!--popup 1--> 
 <div id="popup1" class="popup-container">
     <div class="popup-content">
         <a href="#" class="close">&times;</a>
@@ -456,8 +343,8 @@
         <span id='news-head'>COTE</span>
     </div>
         <p class='N-text'>
-            <marquee direction='left' >
-                <span>Celles-ci s'entendent pour de belles frappes.</span>
+            <marquee direction='left'>
+                <span>• Celles-ci s'entendent pour de belles frappes.</span>
                 <span>• Pour les lettre en port paye:</span>
                 <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.</span>
                 <span>• Si la marque de port (dû) qui accompagne le (port payé) est d'un indice supérieur a 16, majorer de 2 indices la cote du port payé.</span> 
@@ -465,11 +352,6 @@
             </marquee>
         </p>
 </div>
-<!---fin Footer défilant--> 
+<!---fin Footer défilant-->
 </body>
-</html>      
-
-
-
-
-
+</html>   

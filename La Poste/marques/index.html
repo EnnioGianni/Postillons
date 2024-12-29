@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposez une Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Proposez une Image</h2>
+        <!-- Formulaire -->
+        <form id="imageForm">
+            <div class="form-group">
+                <label for="dropZone">Déposez, collez ou cliquez pour une image</label>
+                <div id="dropZone" class="drop-zone">
+                    <img id="previewImage" src="" alt="Aperçu de l'image" class="hidden">
+
+                    <!-- Menu déroulant -->
+                    <div id="dropdownMenu" class="dropdown hidden">
+                        <button id="pasteOption">Paste</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" rows="3" placeholder="Entrez une description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="name">Votre Nom</label>
+                <input type="text" id="name" placeholder="Entrez votre nom" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" placeholder="Entrez votre numéro de téléphone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email (facultatif)</label>
+                <input type="email" id="email" placeholder="Entrez votre email (facultatif)">
+            </div>
+            <button type="submit" class="btn">Ajouter l'image</button>
+        </form>
+
+        <!-- Galerie -->
+        <div class="image-gallery" id="imageGallery"></div>
+        <p id="imageCountNote"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

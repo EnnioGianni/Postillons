@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propositions et Galerie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Proposer une Image ou une Marque</h1>
+        </header>
+        <!-- Section des instructions visibles -->
+        <div class="instructions">
+            <p><strong>Instructions :</strong></p>
+            <ul>
+                <li>Collez une image dans la zone dédiée ou importez-la depuis votre appareil.</li>
+                <li>Ajoutez une description pour l'image.</li>
+                <li>Fournissez vos coordonnées (nom, téléphone, email).</li>
+                <li>Les images proposées apparaîtront dans la galerie ci-dessous.</li>
+            </ul>
+        </div>
+
+        <form id="imageForm">
+            <textarea id="pasteArea" placeholder="Collez ici des images (Ctrl+V)" style="resize: none; height: 100px;"></textarea>
+            <input type="text" id="description" placeholder="Description de l'image" required>
+            <input type="text" id="coordinates" placeholder="Vos coordonnées (ex : Nom, Téléphone, Email)" required>
+            <input type="file" id="imageFile" accept="image/*">
+            <button type="submit">Ajouter</button>
+        </form>
+        
+        <section class="gallery" id="gallery"></section>
+        
+        <table>
+            <!-- Les propositions seront ajoutées ici dynamiquement -->
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -666,6 +666,9 @@ input.title = "Tapez le numéro de la marque ou une date pour rechercher";
 
 
 
+
+
+
 //Main qui bouge
 document.addEventListener('DOMContentLoaded', () => {
     // Sélectionne toutes les images correspondantes dans les tables

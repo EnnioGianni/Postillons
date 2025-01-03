@@ -54,6 +54,20 @@ body{
 color: #ddd;
 }
 
+.p1{line-height: 1em;
+
+}
+.p2{line-height: 1.3em;
+  text-align: left;
+  margin: 0 180px 0 180px;
+  text-align: justify;
+}
+.p3{line-height: 300%m;
+
+}
+
+
+
 a.active{
   text-decoration:underline;
   background:#018605;
@@ -441,6 +455,11 @@ th p {
   }
 }
   /*Fin Table*/
+
+
+
+
+
 /*encadré un mots*/
 span {
   border: 3px rgb(122, 122, 255) inset;
@@ -456,6 +475,30 @@ span {
   z-index: 10;
   background-color: rgba(249, 1, 1, 0.9); /* Ajout d'une couleur de fond pour contraste */
 }
+
+
+/*lettrine*/
+span1 {
+  /* border: 3px rgb(122, 122, 255) inset; */
+  padding: 10px 8px 5px 7px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #070707;
+  font-weight: bold;
+  font-size: 60px;
+  color: #fc0303;
+
+  /* Assurer la visibilité en premier plan */
+  position: relative; /* Nécessaire pour utiliser z-index */
+  z-index: 10;
+  /*background-color: rgba(249, 1, 1, 0.9); /* Ajout d'une couleur de fond pour contraste */
+}
+
+
+
+
+
+
 
   
   /*Debut Pagination*/

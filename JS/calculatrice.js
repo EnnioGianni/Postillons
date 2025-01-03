@@ -556,7 +556,7 @@ searchButton.style.fontSize = '14px';
 // Crée un élément pour afficher les résultats
 const resultDisplay = document.createElement('div');
 resultDisplay.style.marginTop = '5px';
-resultDisplay.style.fontSize = '10px';
+resultDisplay.style.fontSize = '15px';
 resultDisplay.style.color = '#32FA5C';
 resultDisplay.style.position = 'absolute';
 resultDisplay.style.bottom = '-20px';
@@ -574,6 +574,7 @@ document.body.appendChild(searchCell);
 function performSearch() {
   const searchValue = input.value.trim(); // Récupère la valeur entrée
   resultDisplay.textContent = ''; // Réinitialise l'affichage du résultat
+  let count = 0; // Compteur des résultats trouvés
 
   if (!searchValue) {
     resultDisplay.textContent = 'Entrez une valeur.';
@@ -596,6 +597,7 @@ function performSearch() {
 
         if (!isNaN(searchValue) && cellValue === searchValue) { // Vérifie que la recherche est numérique et correspond strictement
           found = true;
+          count++; // Incrémente le compteur
           highlightCell(cell, `Valeur trouvée : ${cellValue}`);
         } else {
           resetCellStyle(cell);
@@ -612,6 +614,7 @@ function performSearch() {
           (dateValue.includes('-') && dateValue.split('-').includes(searchValue)) // Recherche partielle pour une date composée
         ) {
           found = true;
+          count++; // Incrémente le compteur
           highlightCell(dateCell, `Valeur trouvée : ${dateValue}`);
         } else {
           resetCellStyle(dateCell);
@@ -624,9 +627,13 @@ function performSearch() {
     resultDisplay.textContent = `"${searchValue}" non trouvé.`;
     resultDisplay.style.color = 'Black';
     resultDisplay.style.fontWeight = 'bold';
-    resultDisplay.style.fontSize = '26px'; // Augmente la taille de la police
+    resultDisplay.style.fontSize = '16px'; // Augmente la taille de la police
+  } else {
+    resultDisplay.textContent = `${count} résultat(s) trouvé(s).`;
+    resultDisplay.style.color = '#0530FF';
+    resultDisplay.style.fontWeight = 'bold';
   }
-  }
+}
 
 // Fonction pour mettre en surbrillance une cellule
 function highlightCell(cell, tooltip) {
@@ -657,6 +664,11 @@ input.addEventListener('keydown', (event) => {
 
 // Ajout du titre pour l'info-bulle
 input.title = "Tapez le numéro de la marque ou une date pour rechercher";
+
+// Fonction pour normaliser les textes (sans accent)
+function normalizeText(text) {
+  return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+}
   
 
 

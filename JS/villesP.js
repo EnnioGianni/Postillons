@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Palluau', url:'../../../laPosteDeLancienneFrance/Villes P/Palluau/palluau.html' },
         { name: 'Pamiers', url:'../../../laPosteDeLancienneFrance/Villes P/Pamiers/pamiers.html' },
         { name: 'Pampellonne', url:'../../../laPosteDeLancienneFrance/Villes P/Pampellonne/pampellonne.html' },
-        { name: 'Paray le Monial', url:'../../../laPosteDeLancienneFrance/Villes P/parayLeMonial/parayLeMonial.html' },
+        { name: 'Paray le Monial', url:'../../../laPosteDeLancienneFrance/Villes P/Paray le Monial/parayLeMonial.html' },
         { name: 'Parce', url:'../../../laPosteDeLancienneFrance/Villes P/Parce/parce.html' },
         { name: 'Paris', url:'../../../laPosteDeLancienneFrance/Villes P/Paris/Paris.html' },
         { name: 'Parthenay', url:'../../../laPosteDeLancienneFrance/Villes P/Parthenay/parthenay.html' },

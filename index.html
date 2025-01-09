@@ -7,7 +7,22 @@
 <link rel="stylesheet" href="./css/modale.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
+<style>
+.blink {
+    animation: blink-animation 1s steps(2, start) infinite;
+    color: brown;
+    text-decoration: none;
+}
 
+@keyframes blink-animation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+</style>
 <body id="scrollable" style="background: url(./laPosteDeLancienneFrance/Resource/carrosseAvecPhoto.jpg) center center / cover no-repeat fixed;" onload="window.location.href = '#openModal';">        
         <div id="openModal" class="modalDialog">
             <div>
@@ -26,6 +41,8 @@
                         <hr>
                         <li>Sur cette page d'accueil cliquez sur une lettre pour vous rendre sur le sommaire de toute les villes qui commence par cette lettre</a></li>
                     </ol>
+                    <p>Si vous possédez des marques mentionnées et cotées sur ce site, mais qu'elles ne sont pas répertoriées, vous pouvez les proposer ici.
+                        <a style="color: brown; font-size: 25px;"  class="blink" href="./proposition/index.html"><b>Proposition</b></a>                    </p>
                 </p>
                 <a href="#close" title="Close" class="close">Accéder au site</a>
             </div>
@@ -73,7 +90,7 @@
     	<div class="cellule paire"><a class="div a" href="./index.html" style="font-size: 25px;">accueil</a></div>
         <div class="cellule paire"><a class="div a" href="./laPosteDeLancienneFrance/Villes Y/Y_sommaire.html">Y</a></div>
         <div class="cellule paire"><a class="div a" href="./laPosteDeLancienneFrance/Villes Z/Z_sommaire.html">Z</a></div>
-        <div class="cellule paire"><a class="div a" href="./lettresAnciennes.html" style="font-size: 20px;">Cote des lettres<br>Anciennes</a></div>   
+        <div class="cellule paire"><a class="div a" href="./lettresAnciennes.html" style="font-size: 20px;">Cote des lettres Anciennes</a></div>   
     </div>
 </div>
 <div class="marquee-rtl">

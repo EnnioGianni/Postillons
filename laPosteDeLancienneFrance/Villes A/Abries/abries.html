@@ -50,7 +50,7 @@
             <script src="path/to/cityRedirector.js"></script>  
             <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>  
             
-    </head>  
+    </head>       
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
         <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico" alt="Logo"></a>                  
@@ -114,7 +114,8 @@
     </ul>
 </nav>
  <!--Fin pagination-->  
-    <table>       
+
+<table class="exemple">     
         <thead>
             <tr>
               <th class="border2 col-2" scope="col">Marque</th>
@@ -180,21 +181,6 @@
 <button onclick="topFunction()" id="scrollToTopButton" title="Haut de page"><i class="fas fa-chevron-up"></i></button>
 
 </table> 
-<!--Calculatrice-->
-<div class="calculator">
-    <div class="display-wrapper">
-        <input type="text" class="display" id="display">
-        <button id="closeCalculator" class="close-btn" title="Fermer la calculatrice">X</button>
-    </div>
-    <div class="buttons">
-        <button class="operator" onclick="appendToDisplay('+')">+</button>
-        <button class="operator" onclick="appendToDisplay('-')">-</button>
-        <button class="equal" onclick="calculate()">=</button>
-        <button class="clear" onclick="clearDisplay()">C</button>
-        <p>Additionne vos marques</p>
-    </div>
-</div>
-<button id="showCalculatorBtn" title="Afficher la calculatrice">Afficher la calculatrice</button>
 
 <!--popup 1--> 
     <div id="popup1" class="popup-container">
@@ -231,5 +217,5 @@
     </p>
 </div>
 <!---fin Footer défilant-->
-</body>
+  </body>
 </html>   

@@ -1,0 +1,101 @@
+/* Container pour la barre de recherche */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 0%; /* Largeur adaptée à l'écran */
+}
+
+/* Boîte de recherche avec bordure externe et interne */
+.search-box {
+    width: 160px; /* Largeur adaptée */
+    padding: 12px 20px;
+    font-size: 12px;
+    border: 2px solid #4CAF50; /* Bordure externe verte */
+    border-radius: 8px; /* Coins arrondis */
+    outline: none;
+    background-color: #f9f9f9; /* Couleur de fond claire */
+    transition: all 0.3s ease; /* Transition douce */
+}
+
+/* Effet de survol de la boîte de recherche */
+.search-box:hover {
+    border-color: #388E3C; /* Bordure verte foncée au survol */
+    box-shadow: 0 0 10px rgba(56, 142, 172, 0.5); /* Ombre douce */
+}
+
+/* Effet de focus sur la boîte de recherche */
+.search-box:focus {
+    border-color: #FFEB3B; /* Bordure jaune au focus */
+    background-color: #fff; /* Fond blanc au focus */
+    box-shadow: 0 0 8px rgba(255, 235, 59, 0.6); /* Ombre jaune claire */
+}
+
+/* Mise en surbrillance des cellules trouvées */
+.exemple td.highlight {
+    background-color: #FFEB3B; /* Surbrillance jaune */
+}
+
+/* Tableaux - Ligne et cellules */
+.exemple tbody tr {
+    transition: background-color 0.3s ease; /* Transition douce */
+}
+
+/* Survol des lignes de tableau (sans mouvement) */
+.exemple tbody tr:hover {
+    background-color: #e0f7fa; /* Couleur de fond claire pour la ligne survolée */
+}
+
+/* Style de cellule avec un petit padding et alignement à gauche */
+.exemple td {
+    padding: 8px;
+}
+
+/* Ajustements pour petits écrans */
+@media (max-width: 768px) {
+    .search-container {
+        width: 40%; /* S'adapte à l'écran */
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    .search-box {
+        width: 100%; /* Largeur à 100% pour les petits écrans */
+        margin-bottom: 10px;
+    }
+
+    .exemple td {
+        font-size: 12px; /* Réduit la taille du texte */
+    }
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        padding: 0 10px;
+    }
+
+    .search-box {
+        width: 100%; /* Remplir toute la largeur */
+        margin-bottom: 10px;
+    }
+}
+
+/* Ajout d'animation pour l'input */
+@keyframes inputFocus {
+    0% {
+        box-shadow: 0 0 0px rgba(56, 142, 172, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(56, 142, 172, 0.5);
+    }
+}
+
+.search-box:focus {
+    animation: inputFocus 0.3s ease-out;
+}
+
+/* Style pour les résultats trouvés dans le tableau */
+.exemple tbody tr.visible {
+    background-color: #979899; /* Surbrillance des lignes trouvées */
+}

@@ -1,19 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //ligne de Total
 document.addEventListener("DOMContentLoaded", () => {
     function processTables(columnIndex) {
@@ -76,6 +60,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const calculator = document.querySelector(".calculator");
+    const showCalculatorBtn = document.getElementById("showCalculatorBtn");
+
+    function handleResize() {
+        if (window.innerWidth < 768) {
+            // Cache la calculatrice et le bouton d'affichage sur les petits écrans
+            calculator.style.display = "none";
+            showCalculatorBtn.style.display = "none";
+        } else {
+            // Affiche la calculatrice et le bouton d'affichage sur les écrans plus larges
+            calculator.style.display = "block";
+            showCalculatorBtn.style.display = "block";
+        }
+    }
+
+    // Exécute handleResize au chargement de la page et lors du redimensionnement
+    handleResize();
+    window.addEventListener("resize", handleResize);
+});
 
 
 

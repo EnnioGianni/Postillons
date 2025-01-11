@@ -7,6 +7,7 @@
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
+            <link rel="stylesheet" href="../../../css/1recherche.css" />
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
             <script src="../../../JS/script_global.js" defer></script>        
@@ -14,6 +15,7 @@
             <script src="../../../JS/calculatrice.js" defer></script> 
             <script src="../../../JS/galerie.js" defer></script> 
             <script src="../../../JS/Liens.js" defer></script>
+            <script src="../../../JS/recherche.js" defer></script>
             <link rel="stylesheet" href="../../../css/calculatrice.css" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
             
@@ -57,7 +59,7 @@
         <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
         <a class="div a" href="../../Villes C/C_sommaire.html">C</a>
         <a class="div a" href="../../Villes D/D_sommaire.html">D</a>
-        <a class="div a" href="../../Villes E/E_sommaire.html">E</a>""
+        <a class="div a" href="../../Villes E/E_sommaire.html">E</a>
         <a class="div a" href="../../Villes F/F_sommaire.html">F</a>
         <a class="div a" href="../../Villes G/G_sommaire.html">G</a>
         <a class="div a" href="../../Villes H/H_sommaire.html">H</a>
@@ -79,8 +81,9 @@
         <a class="div a" href="../../Villes X/X_sommaire.html">X</a>
         <a class="div a" href="../../Villes Y/Y_sommaire.html">Y</a>
         <a class="div a" href="../../Villes Z/Z_sommaire.html">Z</a>            
-    </header>   
-<section>
+    </header>  
+    
+    <section>
 <!--Debut pagination--> 
     <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Parc%C3%A9" class="title-tip" style="font-size: 25px;" title="Lien vers wikipedia">
                     Parcé - Anjou  (70)                  
@@ -110,6 +113,12 @@
         </ul> 
     </nav>
 <!--Fin pagination-->
+
+<!-- Barre de recherche -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-box" placeholder="Recherche N° ou Date...">
+        </div>
+
 
 <table class="exemple">
     <thead >   
@@ -222,6 +231,7 @@
 <button onclick="topFunction()" id="scrollToTopButton" title="Haut de page"><i class="fas fa-chevron-up"></i></button>
 
 </table> 
+
 <!--Calculatrice-->
 <div class="calculator">
     <div class="display-wrapper">

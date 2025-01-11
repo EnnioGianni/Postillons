@@ -122,225 +122,32 @@ function topFunction() {
 
 
 
-// Crée dynamiquement une cellule de recherche
-const searchCell = document.createElement('div'); // Crée un élément <div> pour la cellule de recherche.
-searchCell.style.position = 'fixed'; // Positionne l'élément de manière fixe sur la page, indépendamment du défilement.
-searchCell.style.top = '225px'; // Position verticale à 225 pixels du haut de la fenêtre.
-searchCell.style.right = '20px'; // Position horizontale à 20 pixels du bord droit de la fenêtre.
-searchCell.style.padding = '5px 10px'; // Ajoute un espacement interne (padding) de 5px en haut/bas et 10px à gauche/droite.
-searchCell.style.backgroundColor = '#2C3E50'; // Définit une couleur de fond sombre (#2C3E50).
-searchCell.style.color = 'white'; // Définit la couleur du texte en blanc.
-searchCell.style.borderRadius = '10px'; // Arrondit les coins du <div> avec un rayon de 10 pixels.
-searchCell.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)'; // Ajoute une ombre subtile pour un effet visuel de profondeur.
-searchCell.style.fontFamily = 'Arial, sans-serif'; // Utilise la police Arial avec une alternative sans-serif.
-searchCell.style.fontSize = '12px'; // Définit la taille de la police à 12 pixels.
-searchCell.style.zIndex = '1000'; // Place l'élément au-dessus des autres en augmentant sa priorité sur l'axe Z.
-searchCell.style.display = 'flex'; // Définit le conteneur comme un flexbox pour gérer facilement l'agencement des enfants.
-searchCell.style.alignItems = 'center'; // Aligne les éléments enfants verticalement au centre.
-searchCell.style.gap = '5px'; // Ajoute un espacement de 5 pixels entre les enfants dans le flexbox.
 
 
-// Créer une boîte de saisie
-const input = document.createElement('textarea'); // Crée un élément HTML de type <textarea>.
-input.placeholder = 'Tapez le N° ou la date recherché'; // Définit un texte indicatif à l'intérieur de la boîte de saisie.
-input.style.padding = '5px'; // Ajoute un espace intérieur (padding) de 5 pixels autour du contenu.
-input.style.borderRadius = '5px'; // Donne des coins arrondis avec un rayon de 5 pixels.
-input.style.border = '1px solid #ccc'; // Ajoute une bordure grise (#ccc) d'une largeur de 1 pixel et de style plein.
-input.style.fontSize = '15px'; // Définit la taille de la police de texte à 15 pixels.
-input.style.width = '100px'; // Définit une largeur de 100 pixels pour la boîte de saisie.
-input.style.height = '50px'; // Définit une hauteur de 50 pixels pour la boîte de saisie.
-input.style.textAlign = 'center'; // Centre le texte saisi dans la boîte.
-input.style.display = 'block'; // Définit l'élément comme un bloc, permettant un positionnement distinct.
-input.style.margin = '0 auto'; // Centre horizontalement l'élément dans son conteneur.
-
-// Ajouter l'élément au document
-document.body.appendChild(input); // Ajoute la boîte de saisie à la fin du corps du document HTML.
 
 
-// Crée un bouton pour effectuer la recherche
-const searchButton = document.createElement('button'); // Crée un élément de bouton
-searchButton.textContent = '🔍'; // Définit le texte (ou icône) du bouton
-searchButton.style.padding = '5px'; // Applique un remplissage interne au bouton
-searchButton.style.borderRadius = '5px'; // Rend les coins du bouton arrondis
-searchButton.style.border = 'none'; // Supprime la bordure du bouton
-searchButton.style.backgroundColor = '#1ABC9C'; // Définit la couleur d'arrière-plan du bouton
-searchButton.style.color = 'white'; // Définit la couleur du texte du bouton
-searchButton.style.cursor = 'pointer'; // Change le curseur en une main au survol
-searchButton.style.fontSize = '14px'; // Définit la taille de la police du texte du bouton
 
-// Variables pour gérer les résultats trouvés
-let searchResults = []; // Tableau pour stocker les résultats de recherche
-let currentIndex = -1; // Index pour suivre le résultat actuellement sélectionné
 
-// Ajouter des boutons "Précédent" et "Suivant"
-const prevButton = document.createElement('button'); // Crée le bouton "Précédent"
-prevButton.textContent = '⬅️'; // Ajoute un texte/emoji au bouton
-prevButton.style.padding = '5px'; // Définit le padding du bouton
-prevButton.style.borderRadius = '5px'; // Ajoute un bord arrondi
-prevButton.style.border = 'none'; // Supprime les bordures par défaut
-prevButton.style.backgroundColor = '#1ABC9C'; // Définit la couleur de fond
-prevButton.style.color = 'white'; // Définit la couleur du texte
-prevButton.style.cursor = 'pointer'; // Change le curseur en pointeur (main) au survol
-prevButton.style.fontSize = '14px'; // Définit la taille de la police
-prevButton.disabled = true; // Désactive le bouton par défaut
 
-const nextButton = document.createElement('button'); // Crée le bouton "Suivant"
-nextButton.textContent = '➡️'; // Ajoute un texte/emoji au bouton
-nextButton.style.padding = '5px'; // Définit le padding du bouton
-nextButton.style.borderRadius = '5px'; // Ajoute un bord arrondi
-nextButton.style.border = 'none'; // Supprime les bordures par défaut
-nextButton.style.backgroundColor = '#1ABC9C'; // Définit la couleur de fond
-nextButton.style.color = 'white'; // Définit la couleur du texte
-nextButton.style.cursor = 'pointer'; // Change le curseur en pointeur (main) au survol
-nextButton.style.fontSize = '14px'; // Définit la taille de la police
-nextButton.disabled = true; // Désactive le bouton par défaut
 
-// Crée un élément pour afficher les résultats
-const resultDisplay = document.createElement('div'); // Crée une div pour afficher les résultats
-resultDisplay.style.marginTop = '5px'; // Ajoute une marge supérieure pour espacer visuellement
-resultDisplay.style.fontSize = '15px'; // Définit la taille de la police pour le texte affiché
-resultDisplay.style.color = '#32FA5C'; // Définit la couleur du texte en vert clair
-resultDisplay.style.position = 'absolute'; // Positionne l'élément de manière absolue par rapport à son conteneur
-resultDisplay.style.bottom = '-20px'; // Place l'élément 20px sous le bas de son conteneur
-resultDisplay.style.left = '0'; // Aligne le côté gauche de l'élément avec le conteneur
-resultDisplay.style.right = '0'; // Aligne le côté droit de l'élément avec le conteneur
-resultDisplay.style.textAlign = 'center'; // Centre le texte horizontalement
 
-// Assemble les éléments de la cellule de recherche
-searchCell.appendChild(input); // Ajoute le champ de saisie (input) à la cellule de recherche
-searchCell.appendChild(searchButton); // Ajoute le bouton de recherche à la cellule
-searchCell.appendChild(prevButton); // Ajoute le bouton précédent à la cellule
-searchCell.appendChild(nextButton); // Ajoute le bouton suivant à la cellule
-searchCell.appendChild(resultDisplay); // Ajoute l'affichage des résultats à la cellule
-document.body.appendChild(searchCell); // Ajoute la cellule de recherche complète au corps du document
 
-// Fonction pour effectuer une recherche
-function performSearch() {
-  // Réinitialise les styles des résultats précédents
-  searchResults.forEach(resetCellStyle); // Réinitialise le style des cellules mises en évidence par une recherche précédente
-  searchResults = []; // Réinitialise les résultats
-  currentIndex = -1; // Réinitialise l'index du résultat actuel
 
-  const searchValue = input.value.trim(); // Récupère et nettoie la valeur entrée par l'utilisateur
-  resultDisplay.textContent = ''; // Efface tout message affiché précédemment
 
-  if (!searchValue) { // Si aucune valeur n'est entrée
-    resultDisplay.textContent = 'Entrez une valeur.'; // Affiche un message d'erreur
-    return;
-  }
 
-  const tables = document.querySelectorAll('table'); // Sélectionne toutes les tables du document
-  let count = 0; // Initialise un compteur pour les résultats trouvés
 
-  tables.forEach(table => { // Parcourt chaque table
-    const rows = table.querySelectorAll('tr'); // Sélectionne toutes les lignes de la table
 
-    rows.forEach(row => { // Parcourt chaque ligne
-      const cells = row.querySelectorAll('td'); // Sélectionne toutes les cellules de la ligne
 
-      if (cells.length >= 2) { // Vérifie si la ligne a au moins 2 cellules
-        const cell = cells[1]; // Sélectionne la deuxième cellule
-        const cellValue = cell.textContent.trim(); // Extrait et nettoie le contenu textuel de la cellule
 
-        if (!isNaN(searchValue) && cellValue === searchValue) { // Si la valeur cherchée est un nombre et correspond à la cellule
-          searchResults.push(cell); // Ajoute la cellule aux résultats
-          count++; // Incrémente le compteur
-        }
-      }
 
-      if (cells.length >= 5) { // Vérifie si la ligne a au moins 5 cellules
-        const dateCell = cells[4]; // Sélectionne la cinquième cellule
-        const dateValue = dateCell.textContent.trim(); // Extrait et nettoie le contenu textuel de la cellule
-        const years = extractYears(dateValue); // Extrait les années du texte (supposant une fonction `extractYears`)
 
-        if (years.includes(searchValue)) { // Si l'année cherchée est incluse dans les années extraites
-          searchResults.push(dateCell); // Ajoute la cellule aux résultats
-          count++; // Incrémente le compteur
-        }
-      }
-    });
-  });
 
-  if (searchResults.length === 0) { // Si aucun résultat n'est trouvé
-    resultDisplay.textContent = `"${searchValue}" non trouvé.`; // Affiche un message indiquant que rien n'a été trouvé
-    resultDisplay.style.color = 'Black'; // Applique des styles au message
-    resultDisplay.style.fontWeight = 'bold';
-    resultDisplay.style.fontSize = '16px';
-    nextButton.disabled = true; // Désactive le bouton "suivant"
-    prevButton.disabled = true; // Désactive le bouton "précédent"
-  } else { // Si des résultats sont trouvés
-    resultDisplay.textContent = `${searchResults.length} résultat(s) trouvé(s).`; // Affiche le nombre de résultats trouvés
-    resultDisplay.style.color = '#0530FF'; // Applique des styles au message
-    resultDisplay.style.fontWeight = 'bold';
-    nextButton.disabled = false; // Active le bouton "suivant"
-    prevButton.disabled = false; // Active le bouton "précédent"
-    currentIndex = 0; // Réinitialise l'index du résultat actuel
-    navigateToResult(currentIndex); // Met en évidence le premier résultat
-  }
-}
 
-// Fonction pour naviguer vers un résultat spécifique
-function navigateToResult(index) {
-  searchResults.forEach(resetCellStyle); // Réinitialise les styles des résultats de recherche
-  const cell = searchResults[index]; // Sélectionne la cellule correspondant à l'index
-  highlightCell(cell, `Résultat ${index + 1} sur ${searchResults.length}`); // Met en surbrillance le résultat avec un tooltip
-  cell.scrollIntoView({ behavior: 'smooth', block: 'center' }); // Fait défiler la page pour centrer le résultat
-  updateNavigationButtons(); // Met à jour l'état des boutons de navigation
-}
 
-// Met à jour les boutons de navigation
-function updateNavigationButtons() {
-  prevButton.disabled = currentIndex <= 0; // Désactive le bouton "précédent" si on est au premier résultat
-  nextButton.disabled = currentIndex >= searchResults.length - 1; // Désactive le bouton "suivant" si on est au dernier résultat
-}
 
-// Gère les clics sur les boutons
-prevButton.addEventListener('click', () => {
-  if (currentIndex > 0) { // Vérifie qu'il y a un résultat précédent
-    currentIndex--; // Décrémente l'index du résultat actuel
-    navigateToResult(currentIndex); // Navigue vers le résultat précédent
-  }
-});
 
-nextButton.addEventListener('click', () => {
-  if (currentIndex < searchResults.length - 1) { // Vérifie qu'il y a un résultat suivant
-    currentIndex++; // Incrémente l'index du résultat actuel
-    navigateToResult(currentIndex); // Navigue vers le résultat suivant
-  }
-});
 
-// Fonction pour mettre en surbrillance une cellule
-function highlightCell(cell, tooltip) {
-  cell.style.backgroundColor = '#32FA5C'; // Change la couleur d'arrière-plan
-  cell.style.color = '#000'; // Change la couleur du texte
-  cell.style.fontWeight = 'bold'; // Met le texte en gras
-  cell.setAttribute('title', tooltip); // Ajoute un tooltip pour donner des informations supplémentaires
-}
 
-// Fonction pour réinitialiser le style d'une cellule
-function resetCellStyle(cell) {
-  cell.style.backgroundColor = ''; // Réinitialise la couleur d'arrière-plan
-  cell.style.color = ''; // Réinitialise la couleur du texte
-  cell.style.fontWeight = ''; // Réinitialise la mise en forme du texte
-  cell.removeAttribute('title'); // Supprime le tooltip
-}
-
-// Fonction pour extraire les années d'une chaîne
-function extractYears(text) {
-  const regex = /\b\d{4}\b/g; // Expression régulière pour détecter les années (quatre chiffres)
-  const matches = text.match(regex); // Trouve toutes les correspondances
-  return matches ? matches : []; // Renvoie les années trouvées ou un tableau vide
-}
-
-// Ajouter un événement au bouton de recherche
-searchButton.addEventListener('click', performSearch); // Déclenche la recherche lors d'un clic sur le bouton
-
-// Ajouter un événement pour la touche Entrée
-input.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') { // Vérifie si la touche pressée est "Entrée"
-    performSearch(); // Déclenche la recherche
-  }
-});
 
 
 
@@ -367,7 +174,7 @@ const boite = document.createElement('div');
 // Applique les styles pour la boîte
 boite.style.position = 'fixed';  // Toujours visible
 boite.style.top = '170px';       // Distance du haut
-boite.style.right = '110px';      // Distance de la droite
+boite.style.right = '30px';      // Distance de la droite
 boite.style.width = '100px';     // Dimensions inchangées
 boite.style.height = '50px';
 boite.style.backgroundColor = '#4CAF50'; // Vert de fond

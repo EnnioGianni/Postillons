@@ -4,12 +4,14 @@
     justify-content: center;
     align-items: center;
     margin: 20px auto;
-    width: 0%; /* Largeur adaptée à l'écran */
+    width: 100%; /* Largeur adaptée à l'écran */
 }
 
-/* Boîte de recherche avec bordure externe et interne */
+/* Boîte de recherche */
 .search-box {
-    width: 160px; /* Largeur adaptée */
+    display: flex;
+    align-items: center;
+    width: 160px; /* Largeur par défaut */
     padding: 12px 20px;
     font-size: 12px;
     border: 2px solid #4CAF50; /* Bordure externe verte */
@@ -17,6 +19,7 @@
     outline: none;
     background-color: #f9f9f9; /* Couleur de fond claire */
     transition: all 0.3s ease; /* Transition douce */
+    margin-right: 20px; /* Espacement par défaut */
 }
 
 /* Effet de survol de la boîte de recherche */
@@ -30,58 +33,47 @@
     border-color: #FFEB3B; /* Bordure jaune au focus */
     background-color: #fff; /* Fond blanc au focus */
     box-shadow: 0 0 8px rgba(255, 235, 59, 0.6); /* Ombre jaune claire */
+    animation: inputFocus 0.3s ease-out;
 }
 
-/* Mise en surbrillance des cellules trouvées */
-.exemple td.highlight {
-    background-color: #FFEB3B; /* Surbrillance jaune */
+/* Input de recherche */
+#search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px; /* Ajustez la largeur selon vos besoins */
+    transition: all 0.3s ease;
 }
 
-/* Tableaux - Ligne et cellules */
-.exemple tbody tr {
-    transition: background-color 0.3s ease; /* Transition douce */
+/* Bouton de recherche */
+#search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 0;
+    padding: 10px;
 }
 
-/* Survol des lignes de tableau (sans mouvement) */
-.exemple tbody tr:hover {
-    background-color: #f7e8a5; /* Couleur de fond claire pour la ligne survolée */
-}
-
-/* Style de cellule avec un petit padding et alignement à gauche */
-.exemple td {
-    padding: 8px;
-}
-
-/* Ajustements pour petits écrans */
-@media (max-width: 768px) {
+/* Réactivité pour les petits écrans */
+@media screen and (max-width: 768px) {
     .search-container {
-        width: 40%; /* S'adapte à l'écran */
         flex-direction: column;
         padding: 0 10px;
     }
 
     .search-box {
-        width: 100%; /* Largeur à 100% pour les petits écrans */
-        margin-bottom: 10px;
+        margin-right: 0;
+        margin-top: 10px;
+        width: 100%;
     }
 
-    .exemple td {
-        font-size: 15px; /* Réduit la taille du texte */
-    }
-}
-
-@media (max-width: 600px) {
-    .search-container {
-        padding: 0 10px;
-    }
-
-    .search-box {
-        width: 100%; /* Remplir toute la largeur */
-        margin-bottom: 10px;
+    #search-input {
+        width: 100%; /* Pleine largeur sur les écrans plus petits */
     }
 }
 
-/* Ajout d'animation pour l'input */
+/* Animation focus */
 @keyframes inputFocus {
     0% {
         box-shadow: 0 0 0px rgba(56, 142, 172, 0.5);
@@ -91,11 +83,40 @@
     }
 }
 
-.search-box:focus {
-    animation: inputFocus 0.3s ease-out;
+/* Mise en surbrillance */
+.highlighted {
+    background-color: yellow; /* Mise en surbrillance des mots trouvés */
 }
 
-/* Style pour les résultats trouvés dans le tableau */
+/* Style pour les tableaux */
+.exemple td {
+    padding: 8px;
+}
+
+.exemple td.highlight {
+    background-color: #FFEB3B; /* Surbrillance jaune */
+}
+
+.exemple tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.exemple tbody tr:hover {
+    background-color: #f7e8a5; /* Couleur de fond pour le survol */
+}
+
 .exemple tbody tr.visible {
     background-color: #979899; /* Surbrillance des lignes trouvées */
+}
+
+/* Ajustements pour petits écrans */
+@media (max-width: 600px) {
+    .search-box {
+        width: 100%; /* Largeur adaptative pour petits écrans */
+        margin-bottom: 10px;
+    }
+
+    .exemple td {
+        font-size: 15px; /* Réduction de la taille du texte */
+    }
 }

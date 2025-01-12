@@ -319,3 +319,8 @@ searchButton.id = 'custom-search-button'; // Attribue un ID unique au bouton de 
 prevButton.id = 'custom-prev-button'; // Attribue un ID unique au bouton précédent
 nextButton.id = 'custom-next-button'; // Attribue un ID unique au bouton suivant
 resultDisplay.id = 'custom-result-display'; // Attribue un ID unique à l'affichage des résultats
+
+
+
+
+

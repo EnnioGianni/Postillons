@@ -261,60 +261,13 @@ scrollToTopButton.onclick = function () {
 
 
 
-
-
-    
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Fichier : horloge.js
 // Crée un conteneur pour la boîte
 const boite = document.createElement('div');
 
 // Applique les styles pour la boîte
 boite.style.position = 'fixed';  // Toujours visible
-boite.style.top = '130px';       // Distance du haut
+boite.style.top = '170px';       // Distance du haut
 boite.style.right = '20px';      // Distance de la droite
 boite.style.width = '100px';     // Dimensions inchangées
 boite.style.height = '50px';

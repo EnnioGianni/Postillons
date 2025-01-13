@@ -261,68 +261,72 @@ scrollToTopButton.onclick = function () {
 
 
 
-// Fichier : horloge.js
-// Crée un conteneur pour la boîte
-const boite = document.createElement('div');
+(function () {
+  // Crée un conteneur pour la boîte
+  const boite = document.createElement('div');
 
-// Applique les styles pour la boîte
-boite.style.position = 'fixed';  // Toujours visible
-boite.style.top = '170px';       // Distance du haut
-boite.style.right = '20px';      // Distance de la droite
-boite.style.width = '100px';     // Dimensions inchangées
-boite.style.height = '50px';
-boite.style.backgroundColor = '#4CAF50'; // Vert de fond
-boite.style.color = '#fff';              // Couleur du texte
-boite.style.fontFamily = 'Arial, sans-serif';
-boite.style.fontSize = '1.2rem';
-boite.style.display = 'flex';
-boite.style.alignItems = 'center';       // Centrage vertical
-boite.style.justifyContent = 'center';   // Centrage horizontal
-boite.style.border = '2px solid #ffffff'; // Bordure extérieure blanche
-boite.style.padding = '5px';             // Espace intérieur
-boite.style.borderRadius = '10px';       // Coins arrondis
-boite.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)'; // Ombre portée
-boite.style.zIndex = '1000';             // Toujours au-dessus
+  // Attribue un ID unique pour éviter les conflits
+  boite.id = 'horloge-boite';
 
-// Bordure intérieure (via un conteneur interne)
-const innerBox = document.createElement('div');
-innerBox.style.width = '100%';
-innerBox.style.height = '100%';
-innerBox.style.border = '2px solid #333'; // Bordure intérieure noire
-innerBox.style.borderRadius = '8px';     // Coins arrondis intérieurs
-innerBox.style.display = 'flex';
-innerBox.style.alignItems = 'center';
-innerBox.style.justifyContent = 'center';
-innerBox.style.boxSizing = 'border-box'; // Inclus padding dans les dimensions
+  // Applique les styles pour la boîte
+  boite.style.position = 'fixed';
+  boite.style.top = '10px';
+  boite.style.right = '20px';
+  boite.style.width = '100px';
+  boite.style.height = '50px';
+  boite.style.backgroundColor = '#4CAF50';
+  boite.style.color = '#fff';
+  boite.style.fontFamily = 'Arial, sans-serif';
+  boite.style.fontSize = '1.2rem';
+  boite.style.display = 'flex';
+  boite.style.alignItems = 'center';
+  boite.style.justifyContent = 'center';
+  boite.style.border = '2px solid #ffffff';
+  boite.style.padding = '5px';
+  boite.style.borderRadius = '10px';
+  boite.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+  boite.style.zIndex = '1000';
 
-// Crée un élément pour afficher l'horloge
-const horloge = document.createElement('div');
+  // Bordure intérieure (via un conteneur interne)
+  const innerBox = document.createElement('div');
+  innerBox.style.width = '100%';
+  innerBox.style.height = '100%';
+  innerBox.style.border = '2px solid #333';
+  innerBox.style.borderRadius = '8px';
+  innerBox.style.display = 'flex';
+  innerBox.style.alignItems = 'center';
+  innerBox.style.justifyContent = 'center';
+  innerBox.style.boxSizing = 'border-box';
 
-// Ajoute l'horloge au conteneur intérieur
-innerBox.appendChild(horloge);
+  // Crée un élément pour afficher l'horloge
+  const horloge = document.createElement('div');
 
-// Ajoute le conteneur intérieur à la boîte principale
-boite.appendChild(innerBox);
+  // Ajoute l'horloge au conteneur intérieur
+  innerBox.appendChild(horloge);
 
-// Ajoute la boîte au body de la page
-document.body.appendChild(boite);
+  // Ajoute le conteneur intérieur à la boîte principale
+  boite.appendChild(innerBox);
 
-// Fonction pour mettre à jour l'horloge
-function mettreAJourHorloge() {
-  const maintenant = new Date();
-  const heures = String(maintenant.getHours()).padStart(2, '0');
-  const minutes = String(maintenant.getMinutes()).padStart(2, '0');
-  const secondes = String(maintenant.getSeconds()).padStart(2, '0');
+  // Ajoute la boîte au body de la page
+  document.body.appendChild(boite);
 
-  // Format HH:MM:SS
-  horloge.textContent = `${heures}:${minutes}:${secondes}`;
-}
+  // Fonction pour mettre à jour l'horloge
+  function mettreAJourHorloge() {
+    const maintenant = new Date();
+    const heures = String(maintenant.getHours()).padStart(2, '0');
+    const minutes = String(maintenant.getMinutes()).padStart(2, '0');
+    const secondes = String(maintenant.getSeconds()).padStart(2, '0');
 
-// Met à jour l'horloge toutes les secondes
-setInterval(mettreAJourHorloge, 1000);
+    // Format HH:MM:SS
+    horloge.textContent = `${heures}:${minutes}:${secondes}`;
+  }
 
-// Initialise l'horloge immédiatement
-mettreAJourHorloge();
+  // Met à jour l'horloge toutes les secondes
+  setInterval(mettreAJourHorloge, 1000);
+
+  // Initialise l'horloge immédiatement
+  mettreAJourHorloge();
+})();
 
 
 

@@ -39,35 +39,35 @@
       searchButton.id = 'custom-search-button';
       searchButton.textContent = '🔍';
       searchButton.style.padding = '10px';
-      searchButton.style.borderRadius = '5px';
+      searchButton.style.borderRadius = '55px';
       searchButton.style.border = 'none';
       searchButton.style.backgroundColor = '#1ABC9C';
       searchButton.style.color = 'white';
       searchButton.style.cursor = 'pointer';
-      searchButton.style.fontSize = '14px';
+      searchButton.style.fontSize = '20px';
 
       const prevButton = document.createElement('button');
       prevButton.id = 'custom-prev-button';
       prevButton.textContent = '⬅️';
       prevButton.style.padding = '10px';
-      prevButton.style.borderRadius = '5px';
+      prevButton.style.borderRadius = '55px';
       prevButton.style.border = 'none';
       prevButton.style.backgroundColor = '#1ABC9C';
       prevButton.style.color = 'white';
       prevButton.style.cursor = 'pointer';
-      prevButton.style.fontSize = '14px';
+      prevButton.style.fontSize = '20px';
       prevButton.disabled = true;
 
       const nextButton = document.createElement('button');
       nextButton.id = 'custom-next-button';
       nextButton.textContent = '➡️';
       nextButton.style.padding = '10px';
-      nextButton.style.borderRadius = '5px';
+      nextButton.style.borderRadius = '55px';
       nextButton.style.border = 'none';
       nextButton.style.backgroundColor = '#1ABC9C';
       nextButton.style.color = 'white';
       nextButton.style.cursor = 'pointer';
-      nextButton.style.fontSize = '14px';
+      nextButton.style.fontSize = '20px';
       nextButton.disabled = true;
 
       const resultDisplay = document.createElement('div');

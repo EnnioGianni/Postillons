@@ -7,18 +7,17 @@
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
-            <link rel="stylesheet" href="../../../css/1recherche.css" />
+        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
             <script src="../../../JS/script_global.js" defer></script>        
+            <script src="../../../JS/manquantes.js" defer></script>        
+        <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
             <script src="../../../JS/calculatrice.js" defer></script> 
-            <script src="../../../JS/galerie.js" defer></script> 
             <script src="../../../JS/Liens.js" defer></script>
-            <script src="../../../JS/1recherche.js" defer></script>
             <link rel="stylesheet" href="../../../css/calculatrice.css" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
-
             
 <!--Debut pagination--> 
             <script src="../../../JS/villesA.js" defer></script>        
@@ -79,7 +78,7 @@
         <a class="div a" href="../../Villes M/M_sommaire.html">M</a>
         <a class="div a" href="../../Villes N/N_sommaire.html">N</a>
         <a class="div a" href="../../Villes O/O_sommaire.html">O</a>
-        <a class="div a active" href="../../Villes P/P_sommaire.html">P</a>
+        <a class="div a" href="../../Villes P/P_sommaire.html">P</a>
         <a class="div a" href="../../Villes Q/Q_sommaire.html">Q</a>
         <a class="div a" href="../../Villes R/R_sommaire.html">R</a>
         <a class="div a" href="../../Villes S/S_sommaire.html">S</a>
@@ -151,7 +150,7 @@
     <td class="border2">port dû</td>
     <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt=" Abbeville" style="width:20%;"/></a></td>
     <td class="border2">1683-1700</td>
-    <td class="border2">manuscrit - </td>
+    <td class="border2">manuscrit</td>
     <td class="border2">I-20</td>
     <td class="prixProduit" data-id="20">120.00</td>
 </tr>                                
@@ -468,5 +467,45 @@
     </p>
 </div>
 <!---fin Footer défilant-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function adjustImageSize() {
+            $(".exemple td:first-child img, .exemple td:nth-child(4) img").each(function () {
+                let parent = $(this).parent(); // Sélectionne la cellule contenant l’image
+                let parentWidth = parent.width(); // Largeur de la cellule
+                let parentHeight = parent.height(); // Hauteur de la cellule
+
+                if (parentHeight === 0) {
+                    parentHeight = 80; // Définit une hauteur minimale pour éviter qu'elle soit cachée
+                    parent.css("min-height", "80px"); // Assure que la cellule ait une hauteur
+                }
+
+                $(this).css({
+                    "max-width": "100%", // Ne dépasse pas la largeur de la cellule
+                    "max-height": (parentHeight + 20) + "px", // Rend l'image légèrement plus grande
+                    "width": "auto", // Garde le ratio
+                    "height": "auto", // Garde le ratio
+                    "object-fit": "contain", // Assure que l’image s’adapte sans être coupée
+                    "display": "block",
+                    "margin": "auto", // Centre l'image dans la cellule
+                    "visibility": "visible", // S'assure que l'image soit bien affichée
+                    "opacity": "1", // Rend l’image bien visible
+                    "padding": "5px" // Ajoute un peu d'espace autour de l'image
+                });
+
+                // Centrage vertical (si nécessaire)
+                parent.css({
+                    "display": "flex",
+                    "justify-content": "center",
+                    "align-items": "center"
+                });
+            });
+        }
+
+        adjustImageSize();
+        $(window).resize(adjustImageSize); // Réajuster si la fenêtre est redimensionnée
+    });
+</script>
 </body>
 </html>   

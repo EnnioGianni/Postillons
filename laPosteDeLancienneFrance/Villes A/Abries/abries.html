@@ -11,12 +11,14 @@
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
             <script src="../../../JS/script_global.js" defer></script>        
+            <script src="../../../JS/manquantes.js" defer></script>        
         <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
             <script src="../../../JS/calculatrice.js" defer></script> 
             <script src="../../../JS/Liens.js" defer></script>
             <link rel="stylesheet" href="../../../css/calculatrice.css" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
+            
             
 <!--Debut pagination--> 
             <script src="../../../JS/villesA.js" defer></script>        
@@ -217,5 +219,46 @@
     </p>
 </div>
 <!---fin Footer défilant-->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function adjustImageSize() {
+            $(".exemple td:first-child img, .exemple td:nth-child(4) img").each(function () {
+                let parent = $(this).parent(); // Sélectionne la cellule contenant l’image
+                let parentWidth = parent.width(); // Largeur de la cellule
+                let parentHeight = parent.height(); // Hauteur de la cellule
+
+                if (parentHeight === 0) {
+                    parentHeight = 80; // Définit une hauteur minimale pour éviter qu'elle soit cachée
+                    parent.css("min-height", "80px"); // Assure que la cellule ait une hauteur
+                }
+
+                $(this).css({
+                    "max-width": "100%", // Ne dépasse pas la largeur de la cellule
+                    "max-height": (parentHeight + 20) + "px", // Rend l'image légèrement plus grande
+                    "width": "auto", // Garde le ratio
+                    "height": "auto", // Garde le ratio
+                    "object-fit": "contain", // Assure que l’image s’adapte sans être coupée
+                    "display": "block",
+                    "margin": "auto", // Centre l'image dans la cellule
+                    "visibility": "visible", // S'assure que l'image soit bien affichée
+                    "opacity": "1", // Rend l’image bien visible
+                    "padding": "5px" // Ajoute un peu d'espace autour de l'image
+                });
+
+                // Centrage vertical (si nécessaire)
+                parent.css({
+                    "display": "flex",
+                    "justify-content": "center",
+                    "align-items": "center"
+                });
+            });
+        }
+
+        adjustImageSize();
+        $(window).resize(adjustImageSize); // Réajuster si la fenêtre est redimensionnée
+    });
+</script>
+
   </body>
 </html>   

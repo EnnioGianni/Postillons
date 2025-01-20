@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Perrecy', url:'../../../laPosteDeLancienneFrance/Villes P/Perrecy/perrecy.html' },
         { name: 'Perriers', url:'../../../laPosteDeLancienneFrance/Villes P/Perriers/perrieres.html' },
         { name: 'Pertuis', url:'../../../laPosteDeLancienneFrance/Villes P/Pertuis/pertuis.html' },
-        { name: 'Petit Poste De Paris', url:'../../../laPosteDeLancienneFrance/Villes P/Petit Poste De Paris/petitPosteDeParis.html' },
+        { name: 'Petite Poste De Paris', url:'../../../laPosteDeLancienneFrance/Villes P/Petit Poste De Paris/petitePosteDeParis.html' },
         { name: 'Peyrot le Negre', url:'../../../laPosteDeLancienneFrance/Villes P/Peyrot le Negre/peyrotLeNegre.html' },
         { name: 'Pezenas', url:'../../../laPosteDeLancienneFrance/Villes P/Pezenas/pezenas.html' },
         { name: 'Phalsbourg', url:'../../../laPosteDeLancienneFrance/Villes P/Phalsbourg/phalsbourg.html' },

@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+            <title>Le Postillon</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="../../../css/table.css" />
+            <link rel="stylesheet" href="../../../css/dropdown.css" />
+            <link rel="stylesheet" href="../../../css/modale.css" />
+        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
+            <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
+            <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
+            <script src="../../../JS/script_global.js" defer></script>        
+            <script src="../../../JS/manquantes.js" defer></script>        
+        <!--<script src="../../../JS/publicite.js" defer></script>-->        
+            <script src="../../../JS/script.js" defer></script> 
+            <script src="../../../JS/calculatrice.js" defer></script> 
+            <script src="../../../JS/Liens.js" defer></script>
+            <link rel="stylesheet" href="../../../css/calculatrice.css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
+<!--Debut pagination--> 
+            <script src="../../../JS/villesA.js" defer></script>        
+            <script src="../../../JS/villesB.js" defer></script>        
+            <script src="../../../JS/villesC.js" defer></script>        
+            <script src="../../../JS/villesD.js" defer></script>        
+            <script src="../../../JS/villesE.js" defer></script>        
+            <script src="../../../JS/villesF.js" defer></script>        
+            <script src="../../../JS/villesG.js" defer></script>        
+            <script src="../../../JS/villesH.js" defer></script>        
+            <script src="../../../JS/villesI.js" defer></script>        
+            <script src="../../../JS/villesJ.js" defer></script>        
+            <script src="../../../JS/villesK.js" defer></script>        
+            <script src="../../../JS/villesL.js" defer></script>        
+            <script src="../../../JS/villesM.js" defer></script>        
+            <script src="../../../JS/villesN.js" defer></script>        
+            <script src="../../../JS/villesO.js" defer></script>        
+            <script src="../../../JS/villesP.js" defer></script>        
+            <script src="../../../JS/villesQ.js" defer></script>        
+            <script src="../../../JS/villesR.js" defer></script>        
+            <script src="../../../JS/villesS.js" defer></script>        
+            <script src="../../../JS/villesT.js" defer></script>        
+            <script src="../../../JS/villesU.js" defer></script>        
+            <script src="../../../JS/villesV.js" defer></script>        
+            <script src="../../../JS/villesW.js" defer></script>        
+            <script src="../../../JS/villesX.js" defer></script>        
+            <script src="../../../JS/villesY.js" defer></script>        
+            <script src="../../../JS/villesZ.js" defer></script>        
+            <script src="../../../JS/accueil.js" defer></script>
+            <script src="../../../JS/cityRedirector.js"></script>
+            <script src="path/to/cityRedirector.js"></script>  
+            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>           
+    </head> 
+    
+<style> 
+      table.exemple {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: rgb(250, 249, 249);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px auto;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #dde0e0; /* Couleur de fond */
+            color: rgb(250, 247, 247);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(250, 0, 0, 0.1);
+            transition: border 0.3s ease; /* Transition pour une bordure fluide */
+        }
+
+        .box:hover {
+            border: 3px solid #00796b; /* Bordure colorée au survol */
+        }
+
+        .box-container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px auto;
+        }
+
+        .box1 {
+            width: 150px;
+            height: 50px;
+            background-color: #dde0e0; /* Couleur de fond */
+            color: rgb(250, 247, 247);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(250, 0, 0, 0.1);
+            transition: border 0.3s ease; /* Transition pour une bordure fluide */
+        }
+
+        .box1:hover {
+            border: 3px solid #00796b; /* Bordure colorée au survol */
+        }
+        .box-container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px auto;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 70px;
+            background-color: #dde0e0; /* Couleur de fond */
+            color: rgb(250, 247, 247);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(250, 0, 0, 0.1);
+            transition: border 0.3s ease; /* Transition pour une bordure fluide */
+        }
+
+        .box2:hover {
+            border: 3px solid #00796b; /* Bordure colorée au survol */
+        }
+        .box-container3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px auto;
+        }
+
+        .box3 {
+            width: 300px;
+            height: 70px;
+            background-color: #dde0e0; /* Couleur de fond */
+            color: rgb(250, 247, 247);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(250, 0, 0, 0.1);
+            transition: border 0.3s ease; /* Transition pour une bordure fluide */
+        }
+
+        .box3:hover {
+            border: 3px solid #00796b; /* Bordure colorée au survol */
+        }
+
+        @media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+}
+   /* Styles pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    /* Paragraphe : aligner à gauche et augmenter la taille */
+    .p2 {
+        text-align:justify; /* Aligner le texte à gauche */
+        font-size: 18px; /* Taille du texte augmentée */
+        line-height: 1.6; /* Espacement des lignes pour améliorer la lisibilité */
+        padding: 10px; /* Ajouter un peu d'espace autour du texte */
+        margin: auto;
+    }
+
+    /* Titres : aligner à gauche et ajuster la taille */
+    h1, h2, h5 {
+        text-align:justify; /* Aligner le texte à gauche */
+        font-size: 18px; /* Taille du texte augmentée */
+        line-height: 1.6; /* Espacement des lignes pour améliorer la lisibilité */
+        padding: 10px; /* Ajouter un peu d'espace autour du texte */
+        margin: auto;
+    }
+
+}
+.left-aligned {
+    text-align: left; /* Aligner le texte à gauche */
+    margin: 0 auto; /* Centre horizontalement si nécessaire */
+    padding-left: 10px; /* Espace depuis la gauche */
+    margin-top: 20px; /* Espacement supérieur */
+    width: 90%; /* Limite la largeur du texte */
+    max-width: 1100px; /* Limite maximale pour un affichage propre */
+  
+}
+
+
+</style>      
+<body>
+    <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
+        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico" alt="Logo"></a>                  
+        <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>  
+        <a class="div a" href="../../Villes A/sommaireVilleA.html">A</a>
+        <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
+        <a class="div a" href="../../Villes C/C_sommaire.html">C</a>
+        <a class="div a" href="../../Villes D/D_sommaire.html">D</a>
+        <a class="div a" href="../../Villes E/E_sommaire.html">E</a>
+        <a class="div a" href="../../Villes F/F_sommaire.html">F</a>
+        <a class="div a" href="../../Villes G/G_sommaire.html">G</a>
+        <a class="div a" href="../../Villes H/H_sommaire.html">H</a>
+        <a class="div a" href="../../Villes I/I_sommaire.html">I</a>
+        <a class="div a" href="../../Villes J/J_sommaire.html">J</a>
+        <a class="div a" href="../../Villes K/K_sommaire.html">K</a>
+        <a class="div a" href="../../Villes L/L_sommaire.html">L</a>
+        <a class="div a" href="../../Villes M/M_sommaire.html">M</a>
+        <a class="div a" href="../../Villes N/N_sommaire.html">N</a>
+        <a class="div a" href="../../Villes O/O_sommaire.html">O</a>
+        <a class="div a active" href="../../Villes P/P_sommaire.html">P</a>
+        <a class="div a" href="../../Villes Q/Q_sommaire.html">Q</a>
+        <a class="div a" href="../../Villes R/R_sommaire.html">R</a>
+        <a class="div a" href="../../Villes S/S_sommaire.html">S</a>
+        <a class="div a" href="../../Villes T/T_sommaire.html">T</a>
+        <a class="div a" href="../../Villes U/U_sommaire.html">U</a>
+        <a class="div a" href="../../Villes V/V_sommaire.html">V</a>
+        <a class="div a" href="../../Villes W/W_sommaire.html">W</a>
+        <a class="div a" href="../../Villes X/X_sommaire.html">X</a>
+        <a class="div a" href="../../Villes Y/Y_sommaire.html">Y</a>
+        <a class="div a" href="../../Villes Z/Z_sommaire.html">Z</a>            
+    </header> 
+  
+<section>
+<!--Debut pagination--> 
+    <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Paris" class="title-tip" style="font-size: 25px;" title="Lien vers wikipedia">
+            Petite Poste de Paris - Ile-de-France (60)                  
+        </a>              
+    </h2>
+        <p>
+            Etablie le 8 juillet 1759
+        </p>            
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link title-tip title-tip-left" href="../../../laPosteDeLancienneFrance/Villes P/P_sommaire.html" title="Sommaire P">&laquo;&laquo;</a></li>       
+                    <li class="page-item"><a class="page-link title-tip title-tip-up" href="../../Villes P/Paris/paris.html" title="Paris">&laquo;</a></li>
+                    <div class="dropdown">
+                            <!-- Champ de saisie de la ville -->
+                            <input type="text" id="villeInput" placeholder="Tapez le nom d'une ville ">
+                            <!-- Cellule "ville" -->
+                            <a id="villeLink" class="div a title-tip page-link">&emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i></a>
+                            <!-- Contenu déroulant -->
+                            <div class="dropdown-content scrollable-content" id="dropdownContent"></div>
+                    </div>                             
+                        <div class="dropdown-content" id="menuDropdown">
+                            <!-- Les liens seront ajoutés dynamiquement ici -->
+                        </div>
+                            <li class="page-item"><a class="page-link title-tip title-tip-up" href="../../Villes P/Parthenay/parthenay.html" title="Parthenay">&raquo;</a></li>
+                            <li class="page-item"><a class="page-link title-tip title-tip-left" href="../../../index.html" title="Accueil">&raquo;&raquo;</a></li>       
+                </ul> 
+            </nav>
+<!--Fin pagination-->
+
+<table class="exemple">
+    <thead >   
+        <tr>
+            <th class="border2 col-3" scope="col">Marque</th>
+            <th class="border2 col-1" scope="col">N°</th>
+            <th class="border2 col-2" scope="col">Port</th>
+            <th class="border2 col-2" scope="col">Dimensions</th>
+            <th class="border2 col-2" scope="col">Date</th>
+            <th class="border2 col-2" scope="col">Couleurs</th>
+            <th class="border2 col-2" scope="col">Indice</th>
+            <th class="border2 col-2" scope="col">Cote</th>      
+        </tr>
+    </thead>
+<!--Espace-->
+<tr> 
+    <th colspan="12" style="color: black;">Voir ici pour  <a href="../Paris/paris.html">"Paris"</a></th>
+</tr>
+<!--Espace-->
+<tr> 
+    <th colspan="8" class="border2" style="color: black;">
+        <h5 style="text-decoration: underline; margin-top: 10px;;"><B>PETITE POSTE DE PARIS</B></h5>
+        <p class="p2" style="text-indent: 6ch;">
+            Inventée et mise en place par Piarron de Chamousset, la Petite Poste de Paris est établie par Déclaration Royale du 8 juillet 1759.
+        </p>
+        <p class="p2" style="text-indent: 6ch; margin-top: 10px;">
+            L'ouverture effective des bureaux a lieu le 9 juin 1760 et l'exploitation telle que l'avait prévue de Chamousset, basée sur le principe du port payé obligatoire, dure jusqu'en 1795.
+        </p>
+        <p class="p2" style="text-indent: 6ch; margin-top: 10px;">
+            Un service spécial du bureau de Paris a la charge de vérifier les lettres en transit en provenance de la province et de l'étranger dont le port a été payé au départ. 
+            Cette vérification est sanctionnée par l'apposition d'une marque de port payé. Ont été utilisées à cet effet les marques
+            numéros 30, 31, 33, 34, 36, 37, 38, 41, 43, 45, 46, 47 et 48. De ces marques il faut retenir que cet usage les rend assez communes mais que les numéros
+            31, 33, 34, 36 et 37 sont d'une rareté insigne en état superbe.
+        </p>
+        <p class="p2" style="text-indent: 6ch; margin-top: 10px;">
+            Les "Oeuvres Complètes de Mr de Chamousset" nous en exposent le fonctionnement et donnent la liste des 9 bureaux qui sont installés dans Paris, 
+            desservant chacun un quartier et utilisant une lettre de l'alphabet comme indicatif. Voici cette liste :
+        </p>
+        <p class="left-aligned">
+            <B>1</B> - Bureau A, Place de l'Ecole, près le Pont-Neuf<br>
+            <B>2</B> - Bureau B, Cloître Couture Sainte-Catherine<br>
+            <B>3</B> - Bureau C, Rue Saint-Martin, près la rue aux Ours<br>
+            <B>4</B> - Bureau D, Rue Neuve des Petits-Champs, vis à vis les écuries de Monseigneur le Duc d'Orléans<br>
+            <B>5</B> - Bureau E, Porte Sainte-Honoré<br>
+            <B>6</B> - Bureau F, Rue du Bac, entre les rues de Verneuil et de l'Université<br>
+            <B>7</B> - Bureau G, Rue du Petit-Lyon et des Quatre-Vents, vers la foire Saint-Germain<br>
+            <B>8</B> - Bureau H, à l'Estrapade, à l'entrée de la Rue des Postes<br>
+            <B>9</B> - Bureau J, Rue Galande, vis à vis de la Rue des Anglais, près la Place Maubert<br>
+        </p>
+                <p class="p2" style="text-indent: 6ch; margin-top: 10px;">
+            L'Almanach de la Poste de Paris pour l'année 1762 indique pour le Bureau À : Place du Chevalier du Guet et pour le Bureau J : Rue Neuve Saint-Etienne, 
+            entre les projets de 1759 et l'installation en 1760 il y a sans doute eu quelques changements d'adresse, ces modifications ont aussi bien pu intervenir en 1761 ou 1762.
+        </p>
+            <h5 style="text-decoration: underline; margin-top: 10px;;"><B>LES 9 BUREAUX DE PARIS</B></h5>
+        <p class="p2" style="text-indent: 6ch; margin-top: 10px;">
+            Les lettres sont, en principe, remises en acquittant le montant du port, 2 sols pour Paris, 6 deniers pour les lettres à remettre à la Grande Poste pour acheminement en province. 
+            Les usagers peuvent remettre leurs lettres dans les 9 bureaux de quartier cités plus haut,
+        </p>
+
+    </th>
+</tr>
+
+<!-- Première colonne -->
+<tr>
+    <td colspan="8">
+        <h5 style="text-decoration: underline; margin: 15px;">Marques des bureaux de quartier</h5>
+        <p style="margin: 15px; font-size: 15px;">Première période</p>
+        <div class="box-container">
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/1p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/2p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/3p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/4p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/5p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+        </div>
+        <!-- Deuxième ligne de boîtes -->
+        <p style="margin: 15px; font-size: 15px;">Deuxième période</p>
+        <div class="box-container">
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/6p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/7p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/8p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/9p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/10p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+        </div>
+        <!-- Deuxième ligne de boîtes -->
+        <div class="box-container">
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/11p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/12p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/13p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box">
+                <img src="../Petit Poste De Paris/Images/14p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div> 
+        </div>
+        <p style="margin: 15px; font-size: 15px;">En noir ou en rouge au recto de la lettre.</p>
+    </td>
+</tr>
+<!--Troisiemme colonne-->
+<tr>
+    <th colspan="8" class="border2" style="color: black;">
+            <p class="p2" style="text-indent: 6ch;">
+                Presque toutes les marques de la première période ont servi jusqu'en 1795. Cette observation est valable pour toutes les marques de la Petite Poste
+                port-dû, levée, quantième, etc... et toutes les combinaisons de marques de différentes époques sont possibles,            
+            </p>
+            <p class="p2" style="text-indent: 6ch;">
+                Les lettres peuvent aussi être remises aux nombreux boîtiers installé dans chaque quartier. Ces boîtes sont tenues par des particuliers, très souvent 
+                petits boutiquiers ou artisans qui acceptent de tenir cet emploi, en plu de leur activité ordinaire, moyennant une petite rétribution. Chaque boîtie 
+                a un cachet qu'il frappe au recto des lettres, ces marques sont composée d'un numéro surmonté de la lettre du bureau dont il dépend. Les numéro 
+                de boîte partent de 20 et l'on peut observer jusqu'au numéro 92 pour le bureau À et 99 pour le bureau B, ce qui donne une idée des moyens mis à la
+                disposition du public.            
+            </p>
+    </th>
+</tr>
+<!--page 541-->
+    <tr>
+        <td colspan="8">
+            <h5 style="text-decoration: underline; margin: 15px;">Marques des boîtiers</h5>
+            <p style="margin: 15px; font-size: 15px;">Première période</p>
+     
+ <!--premiere ligne de boîtes -->
+     
+            <div class="box-container">
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/15p.png" alt="Paris" style="width: 50%; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/16p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/17p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/18p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/19p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+<!-- Deuxième ligne de boîtes -->
+            <p style="margin: 15px; font-size: 15px;">Deuxième période</p>
+            <div class="box-container">
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/20p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/21p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/22p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/23p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/24p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/25p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+            <!-- Deuxième ligne de boîtes -->
+        </td>
+    </tr>
+    <tr>
+        <th colspan="8" class="border2" style="color: black;">
+                <p class="p2" style="text-indent: 6ch;">
+                    Au recto exclusivement en noir ou à sec de1760 à 1763, ensuite en noir, à sec ou en rouge, très rarement en bleu. 
+                    La marque de boîtier est répétée au verso sur les lettres en port dû.         
+                </p>
+                <p class="p2" style="text-indent: 6ch;">
+                    Enfin les usagers peuvent remettre leurs lettres aux facteurs qui lèvent les boîtes. 
+                    Les facteurs ont un sac de cuir fermé à clé et muni d'une fente par laquelle ils glissent le courrier levé dans les boîtes et celui qui leur est remis par le public. 
+                    Le sac est ouvert au bureau et c'est le vérificateur du bureau qui appose la marque du facteur sur la lettre. Les marques de facteur se composent d'un numéro, de 1 à 20, 
+                    surmonté de la lettre du bureau, le tout inscrit dans un cercle. On observe les numéros G 22 et F 22 pendant la deuxième période.      
+                </p>
+        </th>
+    </tr>
+<!--page 541-->
+    <tr>
+        <td colspan="8">
+            <h5 style="text-decoration: underline; margin: 15px;">Marques des facteurs</h5>
+            <p style="margin: 15px; font-size: 15px;">Première période</p>
+ <!--premiere ligne de boîtes -->
+     
+            <div class="box-container">
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/26p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/27p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/28p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/29p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/30p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+<!-- Deuxième ligne de boîtes -->
+            <p style="margin: 15px; font-size: 15px;">Deuxième période</p>
+            <div class="box-container">
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/31p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/32p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/33p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+            <!-- Deuxième ligne de boîtes -->
+        </td>
+    </tr>
+    <tr>
+        <th colspan="8" class="border2" style="color: black;">
+                <p class="p2" style="text-indent: 6ch;">
+                    Au recto en noir ou à sec de 1760 à 1763, en noir, à sec ou en rouge ensuite.
+                    La marque du facteur est répétée au verso sur les lettres en port dû.      
+                </p>
+        </th>
+    </tr>
+<!--page 542-->
+    <tr>
+        <td colspan="8">
+            <h5 style="text-decoration: underline; margin: 15px;">Marques de quantième de mois</h5>
+            <p style="margin: 15px; font-size: 15px;">Première période</p>
+ <!--premiere ligne de boîtes -->
+     
+            <div class="box-container">
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/34-1.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/34-2.png" alt="Paris" style="width: auto; height: 35px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/34-3.png" alt="Paris" style="width: auto; height: 30px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/34-4.png" alt="Paris" style="width: auto; height: 35px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/34-5.png" alt="Paris" style="width: auto; height: 35px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+<!-- Deuxième ligne de boîtes -->
+            <p style="margin: 15px; font-size: 15px;">Deuxième période</p>
+            <div class="box-container">
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/36-1.png" alt="Paris" style="width: auto; height:40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/36-2.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/36-3.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/36-4.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box">
+                    <img src="../Petit Poste De Paris/Images/36-5.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="8" class="border2" style="color: black;">
+                <p class="p2" style="text-indent: 6ch;">
+                    Au recto en noir ou à sec. Cette marque est posée par le bureau de triage,
+                    on ne la trouve pas sur les lettres à distribuer dans le quartier d'origine.                   
+                </p>
+        </th>
+    </tr>
+       
+    <tr>
+        <td colspan="8">
+            <h5 style="text-decoration: underline; margin: 15px;">Marques des levées</h5>
+            <p style="margin: 15px; font-size: 15px;">Première période</p>
+ <!--Marques des levées 1-->
+     
+            <div class="box-container1">
+                <div class="box1">
+                    <img src="../Petit Poste De Paris/Images/37-1.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box1">
+                    <img src="../Petit Poste De Paris/Images/37-2.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box1">
+                    <img src="../Petit Poste De Paris/Images/38-1.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box1">
+                    <img src="../Petit Poste De Paris/Images/38-2.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+<!-- Marques des levées 2-->
+            <p style="margin: 15px; font-size: 15px;">Deuxième période</p>
+            <div class="box-container2">
+                <div class="box2">
+                    <img src="../Petit Poste De Paris/Images/39p.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box2">
+                    <img src="../Petit Poste De Paris/Images/40p.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box1" style="width: auto; height: 70px;">
+                    <img src="../Petit Poste De Paris/Images/41p.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+                <div class="box1" style="width: auto; height: 70px;">
+                    <img src="../Petit Poste De Paris/Images/41a.png" alt="Paris" style="width: auto; height: 40px; margin: 0 10px 0 10px;"/>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th colspan="8" class="border2" style="color: black;">
+                <p class="p2" style="text-indent: 6ch;">
+                    Au recto, en noir ou à sec de 1760 à 1763, en noir, à sec ou en rouge en suite. 
+                    Cette marque est apposée au bureau à l'arrivée du facteur. 
+                    Il n'y a que 3 levées par jour en 1760 et 9 levées à partir de 1761, toutes les heures
+                    et demie de 6 heures du matin à 6 heures du soir.                                    
+                </p><br> 
+                <p class="p2" style="text-indent: 6ch;">
+                    L'indication de la levée est supprimée à partir de 1794 et remplacée
+                    par l'indication de la distribution.                   
+                </p>
+        </th>
+    </tr>
+<!--page 543-->
+<tr>
+    <td colspan="8">
+<!--Marques de distributions-->
+        <h5 style="text-decoration: underline; margin: 15px;">Marques de distributions</h5>
+        <div class="box-container3">
+            <div class="box3">
+                <img src="../Petit Poste De Paris/Images/42p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+            <div class="box3">
+                <img src="../Petit Poste De Paris/Images/43p.png" alt="Paris" style="width: auto; height: 50px; margin: 0 10px 0 10px;"/>
+            </div>
+        </div>   
+    </td>
+</tr>
+
+<tr>
+    <th colspan="8" class="border2" style="color: black;">
+            <p class="p2" style="text-indent: 6ch;">
+                Au verso, en noir, rarement en rouge. Il y a 6 distributions par jour.                                   
+            </p>
+    </th>
+</tr>
+
+
+<tr>
+    <td colspan="8">
+        <h5 style="text-decoration: underline; margin: 15px;">Marques de port dû</h5>
+        <p style="margin: 15px; font-size: 15px;">Première période</p>
+        <div id="responsive-box-container" class="box-container" style="display: flex; justify-content: center; gap: 30px; align-items: flex-start; margin: 20px auto;">
+            
+            <!-- Première ligne -->
+            <div style="text-align: center; margin-right: 50px;">
+                <div style="display: flex; justify-content: center; gap: 50px; margin: 20px auto;">
+                    <div style="text-align: center;">
+                        <img src="../Petit Poste De Paris/Images/44p.png" alt="Paris" style="display: block; background: transparent; width: auto; height: 40px; margin: 0 auto;" />
+                        <span id="unique-date-1760" style="margin-top: 10px; font-size: 18px; font-weight: bold; color: black; background: transparent; font-family: Arial, sans-serif; line-height: normal; display: inline-block;">1760</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <div style="text-align: center; font-family: 'Times New Roman', serif; margin: 20px auto;">
+                    <div style="display: flex; justify-content: center; gap: 5px;">
+                        <img src="../Petit Poste De Paris/Images/45p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/46p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/47p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/48p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/49p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 auto;" />
+                    </div>
+                    <div style="margin-top: 10px; font-size: 18px; font-weight: bold;">1761</div>
+                </div>
+            </div>
+        </div>
+        
+<!-- Troisiemme ligne identique -->
+        <div id="responsive-box-container" class="box-container" style="display: flex; justify-content: center; gap: 30px; align-items: flex-start; margin: -50px 0 0 0;">
+            
+            <div style="text-align: center;">
+                <div style="text-align: center; font-family: 'Times New Roman', serif; margin: 20px auto;">
+                    <div style="display: flex; justify-content: center; gap: 5px;">
+                        <img src="../Petit Poste De Paris/Images/50p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/51p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/52p.png" alt="Paris" style="display: block; width: auto; height: 60px; margin: 0 10px auto;" />
+                    </div>
+                    <div style="margin-top: 10px; font-size: 18px; font-weight: bold;">1775</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <div style="text-align: center; font-family: 'Times New Roman', serif; margin: 20px auto;">
+                    <div style="display: flex; justify-content: center; gap: 5px;">
+                        <img src="../Petit Poste De Paris/Images/53p.png" alt="Paris" style="display: block; width: auto; height: 70px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/54p.png" alt="Paris" style="display: block; width: auto; height: 70px; margin: 0 10px auto;" />
+                        <img src="../Petit Poste De Paris/Images/55p.png" alt="Paris" style="display: block; width: auto; height: 70px; margin: 0 10px auto;" />
+                    </div>
+                    <div style="margin-top: 10px; font-size: 18px; font-weight: bold;">2<sup>em</sup> Période</div>
+                </div>
+            </div>
+        </div>
+        
+    </td>
+</tr>
+<!--Commentaire-->
+<tr>
+    <th colspan="8" class="border2" style="color: black;">
+            <p class="p2" style="text-indent: 6ch;">
+                Au recto, en noir ou à sec jusqu en 1763, en noir, à sec ou en rouge ensuite
+                Ces marques sont posées au bureau.                       
+            </p>
+            <p class="p2"style="text-indent: 6ch;">
+                L'acceptation des lettres en port dû est une dérogation à la regie du port payé, elle nécessite un processus spécial qui est exposé plus loin.
+            </p>
+            <p class="p2"style="text-indent: 6ch;">
+                Ces différentes marques présentées, indiquons comment elles se trouvent sur les lettres.
+            </p><br>
+            <p class="p2"style="text-indent: 6ch;">
+                Une lettre remise en acquittant le port reçoit 3 marques, sauf cas particulier :                     
+            </p><br>
+            <p class="p2"style="text-indent: 6ch;">
+                1/ Marque de bureau, de boîtier ou de facteur selon qu'elle a été remise à un bureau de quartier, à un boîtier ou à un facteur.
+            </p>
+            <p class="p2"style="text-indent: 6ch;">
+                2/ Indication de la levée ou de la distribution à partir de 1794.
+            </p>
+            <p class="p2"style="text-indent: 6ch;">
+                3/ Indication du quantième du mois.
+            </p><br>
+            <p class="p2"style="text-indent: 6ch;">
+                L'Administration a prévu que certains usagers désireront que le port soit payé par le destinataire, aussi accepte-t-elle que ses préposés, boîtiers 
+                et facteurs reçoivent des lettres en port dû de personnes connues d'eux, à charge pour lesdits préposés, boîtiers ou facteurs de faire personnellement l'avance du port. 
+                Les lettres sont contresignées par l'expéditeur afin que l'employé de la poste puisse se faire rembourser si le destinataire refuse l'envoi. 
+                Après encaissement du port, chaque bureau rembourse les avances qui ont été faites, ce qui oblige à tenir une comptabilité particulière et à apposer des marques supplémentaires sur les lettres.
+            </p>
+                    <h5 style="text-decoration: underline; margin: 15px;">
+                        Voici la descriptions des marques que l'on trouve sur les lettres en port dû :
+                    </h5>
+                <p class="p2"style="text-indent: 6ch;">    
+                    1/ Lettre remise à un bureau du quartier, le port est avancé par le préposé du bureau, les 3 marques que l'on trouve sur les lettres en port payé plus
+                    la marque de port dû. Le cas est peu fréquent et les lettres en port dû remises à un bureau sont rares.    
+                </p><br>
+                <p class="p2"style="text-indent: 6ch;">
+                    2/ Lettre remise à un facteur, les 3 marques des lettres en port payé aux quelles le bureau ajoute, lorsque le facteur remet son sac, la marque du port
+                    dû et il répète au verso la marque du facteur, C'est cette dernière marque qui permet de suivre le compte et de rembourser l'employé qui a fait l'avance,  
+                </p><br>
+                <p class="p2"style="text-indent: 6ch;">
+                    3/ Lettre remise à un boîtier, les 3 marques prévues en port payé, le boîtier répète sa marque au verso. Si le facteur qui lève la boîte règle les comptes
+                    avec le boîtier, il prend à sa charge l'avance du port faite par le boîtier et, dans ce cas, le bureau répète aussi la marque du facteur au verso, tout en
+                    ajoutant au recto la marque de port dû comme dans les autres cas. 
+                </p><br>
+                <p class="p2"style="text-indent: 6ch;">
+                    Ainsi, les lettres de la Petite Poste, dans leur forme la plus courante, se présentant en 6 états, 3 en port payé et 3 en port dû. C'est en tenant
+                    compte de cette observation que le catalogue est rédigé, en prenant une lettre type d'un bureau choisi au hasard pour chacun des 6 cas et répétée pour les
+                    deux périodes d'exploitation. Cette classification est inspirée du travail de Mr André Rochette publié dans les "Feuilles Marcophiles'' numéro 135,
+                    qui est un classement rigoureusement logique de ces lettres.
+                </p><br>
+                <p class="p2"style="text-indent: 6ch;">
+                    À la suite sont classés les cas particuliers et les anomalies, le Bureau K qui centralise les services de banlieue et, 
+                    à la fin, les marques des boitiers de banlieu.
+                </p>
+    </th>
+</tr>
+<!--Commentaire-->
+<tr>
+    <th colspan="8" class="border2" style="color: black;">
+            
+        <h5 style="text-decoration: underline; margin: 15px;">
+            1<sup>er</sup>Période 1760-80
+        </h5>
+    </th>
+</tr>
+<!--Marque 1-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/1.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/1.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">1</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un bureau</td>
+                <td class="border2">1760</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-24</td>
+                <td class="prixProduit" data-id="24">0€</td>
+            </tr>
+<!--Marque 1A-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/1a.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/1a.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">1A</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un bureau</td>
+                <td class="border2">1761-1763</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-22</td>
+                <td class="prixProduit" data-id="22">0€</td>
+            </tr>
+<!--Marque 1B-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/1b.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/1b.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">1B</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un bureau</td>
+                <td class="border2">1764-1780</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-20</td>
+                <td class="prixProduit" data-id="20">0€</td>
+            </tr>
+<!--Marque 2-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/2.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/2.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">2</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un facteur</td>
+                <td class="border2">1760</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-23</td>
+                <td class="prixProduit" data-id="23">0€</td>
+            </tr>
+<!--Marque 2A-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/2a.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/2a.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">2A</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un facteur</td>
+                <td class="border2">1761-1763</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-21</td>
+                <td class="prixProduit" data-id="21">0€</td>
+            </tr>
+<!--Marque 2B-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/2b.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/2b.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">2B</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un facteur</td>
+                <td class="border2">1764-1780</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-19</td>
+                <td class="prixProduit" data-id="19">0€</td>
+            </tr>
+<!--Marque 3-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/3.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/3.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">3</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un boîtier</td>
+                <td class="border2">1760</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-20</td>
+                <td class="prixProduit" data-id="20">0€</td>
+            </tr>
+<!--Marque 3A-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/3a.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/3a.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">3A</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un boîtier</td>
+                <td class="border2">1761-1763</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-18</td>
+                <td class="prixProduit" data-id="18">0€</td>
+            </tr>
+<!--Marque 3B-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/3b.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/3b.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">3B</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un boîtier</td>
+                <td class="border2">1764-1780</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-16</td>
+                <td class="prixProduit" data-id="16">0€</td>
+            </tr>
+<!--Marque 4-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/4.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/4.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">4</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un bureau</td>
+                <td class="border2">1760</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-24</td>
+                <td class="prixProduit" data-id="24">0€</td>
+            </tr>
+<!--Marque 4A-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/4a.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/4a.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">4A</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un bureau</td>
+                <td class="border2">1761-1763</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-22</td>
+                <td class="prixProduit" data-id="22">0€</td>
+            </tr>
+<!--Marque 4B-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/4b.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/4b.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">4B</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un bureau</td>
+                <td class="border2">1764-1780</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-20</td>
+                <td class="prixProduit" data-id="20">0€</td>
+            </tr>
+<!--Marque 5-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/5.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/5.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">5</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un facteur</td>
+                <td class="border2">1760</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-23</td>
+                <td class="prixProduit" data-id="23">0€</td>
+            </tr>
+<!--Marque 5A-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/5a.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/5a.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">5A</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un facteur</td>
+                <td class="border2">1761-1763</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-21</td>
+                <td class="prixProduit" data-id="21">0€</td>
+            </tr>
+<!--Marque 5B-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/5b.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/5b.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">5B</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un facteur</td>
+                <td class="border2">1764-1780</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-19</td>
+                <td class="prixProduit" data-id="19">0€</td>
+            </tr>
+<!--Marque 6-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/6.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/6.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">6</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un boîtier</td>
+                <td class="border2">1760</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-20</td>
+                <td class="prixProduit" data-id="20">0€</td>
+            </tr>
+<!--Marque 6-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/6.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/6.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">6</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un boîtier</td>
+                <td class="border2">1760</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-20</td>
+                <td class="prixProduit" data-id="20">0€</td>
+            </tr>
+<!--Marque 6A-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/6a.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/6a.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">6A</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un boîtier</td>
+                <td class="border2">1761-1763</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-17</td>
+                <td class="prixProduit" data-id="17">0€</td>
+            </tr>
+<!--Marque 6B-->          
+            <tr>
+                <td class="border2">
+                    <a href="../Petit Poste De Paris/Images/6b.png" title="Cliquez pour agrandir" target="_blank">
+                        <img src="../Petit Poste De Paris/Images/6b.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                    </a>
+                </td>
+                <td class="border3">6B</td>
+                <td class="border2" colspan="2" style="color: rgb(5, 5, 5);">Lettre en port dû remise à un boîtier</td>
+                <td class="border2">1764-1785</td>
+                <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                <td class="border2">I-14</td>
+                <td class="prixProduit" data-id="14">0€</td>
+            </tr>
+        </th>
+    </tr>
+
+<!--Période 1780-95-->
+    <tr>
+        <th colspan="8" class="border2" style="color: black;">
+                
+            <h5 style="text-decoration: underline; margin: 15px;">
+                2<sup>em</sup>Période 1780-95
+            </h5>
+<!--Marque 7-->          
+                <tr>
+                    <td class="border2">
+                        <a href="../Petit Poste De Paris/Images/7.png" title="Cliquez pour agrandir" target="_blank">
+                            <img src="../Petit Poste De Paris/Images/7.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                        </a>
+                    </td>
+                    <td class="border3">7</td>
+                    <td class="border2" colspan="3" style="color: rgb(5, 5, 5);">Lettre remise en port payé à un bureau</td>
+                    <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                    <td class="border2">I-20</td>
+                    <td class="prixProduit" data-id="20">0€</td>
+                </tr>
+<!--Marque 8-->          
+                <tr>
+                    <td class="border2">
+                        <a href="../Petit Poste De Paris/Images/8.png" title="Cliquez pour agrandir" target="_blank">
+                            <img src="../Petit Poste De Paris/Images/8.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                        </a>
+                    </td>
+                    <td class="border3">8</td>
+                    <td class="border2" colspan="3" style="color: rgb(5, 5, 5);">Lettre en port payé remise à un facteur</td>
+                    <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                    <td class="border2">I-18</td>
+                    <td class="prixProduit" data-id="18">0€</td>
+                </tr>
+<!--Marque 9-->          
+                <tr>
+                    <td class="border2">
+                        <a href="../Petit Poste De Paris/Images/9.png" title="Cliquez pour agrandir" target="_blank">
+                            <img src="../Petit Poste De Paris/Images/9.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                        </a>
+                    </td>
+                    <td class="border3">9</td>
+                    <td class="border2" colspan="3" style="color: rgb(5, 5, 5);">Lettre en port é remise à un boîtier</td>
+                    <td class="border2" style="color: rgb(3, 3, 3);">noir</td>
+                    <td class="border2">I-10</td>
+                    <td class="prixProduit" data-id="10">0€</td>
+                </tr>
+<!--Marque 9bleu-->          
+                <tr>
+                    <td class="border2">
+                        <a href="../Petit Poste De Paris/Images/9bleu.png" title="Cliquez pour agrandir" target="_blank">
+                            <img src="../Petit Poste De Paris/Images/9bleu.png" alt="Paris" style="width: 50mm; height: auto;"/>
+                        </a>
+                    </td>
+                    <td class="border4">9</td>
+                    <td class="border2" colspan="3" style="color: rgb(19, 2, 250);">Lettre en port é remise à un boîtier</td>
+                    <td class="border2" style="color: rgb(19, 3, 248);">noir</td>
+                    <td class="border2">I-10</td>
+                    <td class="prixProduit" data-id="10">0€</td>
+                </tr>
+
+
+        </th>
+    </tr>             
+
+
+
+
+
+
+
+
+<!--Liens-->
+        <tr > 
+            <th class="" colspan="8" id="table-liens" style="padding-top: 10px;">Liens utiles</th>                
+            <!-- Le contenu dynamique sera inséré ici -->  
+            </th>
+        </tr>  
+
+<!--Cartes Géoportail-->
+ <tr>
+    <th colspan="4">
+        <iframe width="800" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=2.371218087655063,48.84348438175397&z=12&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=BNF-IGNF_GEOGRAPHICALGRIDSYSTEMS.CASSINI::GEOPORTAIL:OGC:WMTS(1)&permalink=yes" allowfullscreen></iframe>
+    </th>
+
+<!--Blason-->
+    <th colspan="1">
+        <a href="https://fr.wikipedia.org/wiki/Paimb%C5%93uf#H%C3%A9raldique">
+            <img id="img2" src="../Paris/Images/Blason.png" alt="Blason de Paris" style="height: auto;"/>
+                <p>Blason de Paris</p>
+        </a>
+    </th>
+
+<!--Carte Google-->        
+    <th colspan="3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94288.46331730278!2d2.316582644446011!3d48.85733155662739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1736007689413!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </th>
+</tr>
+
+<!--Espace-->
+    <tr> 
+        <th colspan="8" style="color: black;"></th>
+    </tr>
+  
+<!-- Scroll To Top -->
+<button onclick="topFunction()" id="scrollToTopButton" title="Haut de page"><i class="fas fa-chevron-up"></i></button>
+
+</table> 
+<!--Calculatrice-->
+<div class="calculator">
+    <div class="display-wrapper">
+        <input type="text" class="display" id="display">
+        <button id="closeCalculator" class="close-btn" title="Fermer la calculatrice">X</button>
+    </div>
+    <div class="buttons">
+        <button class="operator" onclick="appendToDisplay('+')">+</button>
+        <button class="operator" onclick="appendToDisplay('-')">-</button>
+        <button class="equal" onclick="calculate()">=</button>
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <p>Additionne vos marques</p>
+    </div>
+</div>
+<button id="showCalculatorBtn" title="Afficher la calculatrice">Afficher la calculatrice</button>
+
+<!--popup 1--> 
+<div id="popup1" class="popup-container">
+    <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <p></p>
+    </div>
+</div> 
+
+<!--popup 2-->
+<div id="popup2" class="popup-container">
+    <div class="popup-content">
+        <a href="#" class="close">&times;</a>
+        <p></p>
+    </div>
+</div> 
+<!--Fin popup-->
+
+</section> 
+
+<!---Footer défilant-->
+<div class='News-footer'>
+    <div class='news'>
+        <span id='news-head'>COTE</span>
+    </div>
+        <p class='N-text'>
+            <marquee direction='left'>
+                <span>• Celles-ci s'entendent pour de belles frappes.</span>
+                <span>• Pour les lettres en port paye:</span>
+                <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.</span>
+                <span>• Si la marque de port (dû) qui accompagne le (port payé) est d'un indice supérieur a 16, majorer de 2 indices la cote du port payé.</span> 
+                <span>• &copy; Copyright Tout droit réservé.</span>
+            </marquee>
+        </p>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>!---fin Footer défilant-->
+
+<script>
+
+    $(document).ready(function () {
+        // Fonction pour appliquer les styles responsives
+        function applyResponsiveStyles() {
+            if ($(window).width() <= 768) { // Pour les écrans <= 768px (smartphones)
+                $("#responsive-box-container").css({
+                    "flex-direction": "column", // Empile les blocs verticalement
+                    "gap": "20px", // Ajuste l'espacement entre les sections
+                    "margin": "10px auto" // Réduit les marges globales
+                });
+
+                $("#responsive-box-container > div").css({
+                    "margin-right": "0", // Supprime les marges latérales
+                });
+
+                $("#responsive-box-container img").css({
+                    "height": "40px", // Réduit la taille des images
+                    "width": "auto" // Conserve les proportions
+                });
+
+                $("#responsive-box-container span").css({
+                    "font-size": "14px", // Réduit la taille du texte
+                    "line-height": "1.2" // Ajuste la hauteur de ligne
+                });
+            } else {
+                // Réinitialise les styles pour les écrans larges
+                $("#responsive-box-container").css({
+                    "flex-direction": "row",
+                    "gap": "30px",
+                    "margin": "20px auto"
+                });
+
+                $("#responsive-box-container > div").css({
+                    "margin-right": "30px",
+                });
+
+                $("#responsive-box-container img").css({
+                    "height": "50px",
+                    "width": "auto"
+                });
+
+                $("#responsive-box-container span").css({
+                    "font-size": "18px",
+                    "line-height": "normal"
+                });
+            }
+        }
+
+        // Applique les styles au chargement de la page
+        applyResponsiveStyles();
+
+        // Réapplique les styles lorsque la fenêtre est redimensionnée
+        $(window).resize(function () {
+            applyResponsiveStyles();
+        });
+    });
+   
+document.addEventListener("DOMContentLoaded", function () {
+    function adjustImageSize() {
+        document.querySelectorAll(".exemple td:first-child img, .exemple td:nth-child(4) img").forEach(function (img) {
+            let parent = img.parentElement; // Sélectionne la cellule contenant l’image
+            let parentWidth = parent.offsetWidth; // Largeur de la cellule
+            let parentHeight = parent.offsetHeight; // Hauteur de la cellule
+
+            if (parentHeight === 0) {
+                parentHeight = 80; // Définit une hauteur minimale pour éviter qu'elle soit cachée
+                parent.style.minHeight = "80px"; // Assure que la cellule ait une hauteur
+            }
+
+            img.style.maxWidth = "80%"; // Ne dépasse pas la largeur de la cellule
+            img.style.maxHeight = (parentHeight + 40) + "px"; // Rend l'image légèrement plus grande
+            img.style.width = "auto"; // Garde le ratio
+            img.style.height = "auto"; // Garde le ratio
+            img.style.objectFit = "contain"; // Assure que l’image s’adapte sans être coupée
+            img.style.display = "block";
+            img.style.margin = "auto"; // Centre l'image dans la cellule
+            img.style.visibility = "visible"; // S'assure que l'image soit bien affichée
+            img.style.opacity = "1"; // Rend l’image bien visible
+            img.style.padding = "5px"; // Ajoute un peu d'espace autour de l'image
+
+            // Centrage vertical (si nécessaire)
+            parent.style.display = "flex";
+            parent.style.justifyContent = "center";
+            parent.style.alignItems = "center";
+            parent.style.textAlign = "center"; // Assure un centrage parfait
+        });
+    }
+
+    adjustImageSize();
+    window.addEventListener("resize", adjustImageSize); // Réajuster si la fenêtre est redimensionnée
+});
+</script>
+
+
+</body>
+</html>   

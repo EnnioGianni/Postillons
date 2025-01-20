@@ -38,7 +38,7 @@ body{
 * {
     box-sizing: inherit;
     font-size: 17px;
-    margin: 0px -1px 0px 0px;    
+    margin: 0px 0px 0 -1px;    
 }
 #taille{
   font-size: 30px;
@@ -167,7 +167,6 @@ input {
   border: 3px #e08318 solid;
   text-align: center;
 }
-
 i {
   color: #2105f4;
 }
@@ -395,6 +394,13 @@ table{
     font-size: x-large;
     color: #ff0303;
   }
+  .border4{
+    border-width: 0.5px;
+    border-style: solid;
+    border: 3px double #3502fe;
+    font-size: x-large;
+    color: #1403ff;
+  }
 
 
 /*-- scrool dans pagination--*/
@@ -461,25 +467,16 @@ th p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*encadré un mots*/
 span {
- /* border: 3px rgb(122, 122, 255) inset;*/
-  margin-bottom: 25px;
+  border: 3px rgb(124, 124, 257) inset;
+  margin-bottom: 28px;
   text-align: center;
-  color: #fcfbfb;
+  color: #fcfafa;
   font-weight: bold;
   font-size: 20px;
+  background-color: #225cfc;
+  padding: 5px;
 
   /* Assurer la visibilité en premier plan */
   position: relative; /* Nécessaire pour utiliser z-index */
@@ -488,32 +485,18 @@ span {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*lettrine*/
 span1 {
-  /* border: 3px rgb(122, 122, 255) inset; */
-  padding: 10px 8px 5px 7px;
-  margin-bottom: 25px;
+  padding: -0px -10px 5px 0px;
+  margin-bottom: 20px;
   text-align: center;
-  color: #070707;
   font-weight: bold;
   font-size: 60px;
-  color: #fc0303;
+  color: #fd0404;
 
   /* Assurer la visibilité en premier plan */
   position: relative; /* Nécessaire pour utiliser z-index */
   z-index: 10;
-  /*background-color: rgba(249, 1, 1, 0.9); /* Ajout d'une couleur de fond pour contraste */
 }
 
 
@@ -588,16 +571,6 @@ p{
 /* .myBtn:hover {
   background-color: #555;
 } */
-
-
-
-
-
-
-
-
-
-
 
 
 /*Debut Footer*/
@@ -861,18 +834,8 @@ p{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /*Boutton haut de page*/
+
 
 #scrollToTopButton {
   display: block;
@@ -998,16 +961,6 @@ p{
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 /*maisons de vente*/
 .menu-btn {
   display: block;
@@ -1092,54 +1045,30 @@ body.menu-open {
 
 
 
-/*--Media querry pour telephones--*/
-  /* Styles spécifiques au tableau avec ID unique */
-  #custom-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  #custom-table th,
-  #custom-table td {
-    border: 1px solid #ddd;
-    text-align: center;
-    padding: 8px;
-  }
 
-  /* Styles spécifiques aux images dans le tableau */
-  #custom-table td img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
 
-  /* Media queries pour les écrans moyens et petits */
-  @media (max-width: 768px) {
-    #custom-table td img {
-      width: 50%;
-    }
-  }
 
-  @media (max-width: 480px) {
-    #custom-table td img {
-      width: 100%;
-    }
-  }
 
-  /* Bouton de retour en haut spécifique */
-  #custom-scrollToTopButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    display: none;
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  #custom-scrollToTopButton:hover {
-    background-color: #333;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

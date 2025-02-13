@@ -156,8 +156,27 @@ ul {
 #menu li:hover ul {
   height: 120px;
 }
+/*Titre Le Postillon*/
+p::first-letter {
+  color: red;
+  font-size: 130%;
+}
 
 
+.titre-principal {
+font-size: 26px; /* Taille normale */
+margin: 0 -10px 0 -35px;
+transition: font-size 0.3s ease-in-out, margin 0.3s ease-in-out;
+}
+
+/* Mode téléphone (moins de 768px) */
+@media (max-width: 768px) {
+.titre-principal {
+  font-size: 12px;
+  text-align: center;
+  margin: 10px auto;
+}
+}
 
 
 /*bouton de recherche*/
@@ -273,7 +292,7 @@ table{
   }
 
   table tr {
-    background-color: #fffffe;
+    background-color: #faf2e4;
     border: 3px double #3502fe;
     padding: 5px;
   }
@@ -474,7 +493,7 @@ span {
   text-align: center;
   color: #fcfafa;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 15px;
   background-color: #225cfc;
   padding: 5px;
 
@@ -586,7 +605,7 @@ p{
   z-index: 99;
 }
 .N-text {
-  padding-top: 10px;
+  padding-top: -10px 0 -10px 0;
   vertical-align: middle;
   font-size: 25px;
   color: rgb(2, 2, 2);
@@ -599,7 +618,7 @@ p{
 .news {
   height: auto;
   background-color: red;
-  padding: 10px 15px 10px 15px;
+  padding: 5px;
   font-size: 20px;
   color: white;
   z-index: 9;

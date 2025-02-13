@@ -1,0 +1,52 @@
+body {margin:0; width:3000px;}
+
+.icon-bar {
+  position: fixed;
+ margin: 310px 0 10px 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background-color: #052efa;
+}
+
+.facebook {
+  background: transparent;
+  color: white;
+}
+
+.twitter {
+  background: transparent;
+  color: white;
+}
+
+.google {
+  background: transparent;
+  color: white;
+}
+
+.linkedin {
+  background: transparent;
+  color: white;
+}
+
+.youtube {
+  background: transparent;
+  color: white;
+}
+
+.content {
+  margin-left: 105px;
+  font-size: 30px;
+}

@@ -1,0 +1,183 @@
+
+/*
+Website Name: One Column Layout
+Description: A one column layout for a website.
+Author(s): Your Name(s)...
+
+This site is for educational purposes in connection with the Girl Scouts of Western Ohio. All image rights are retained solely by the original sources.
+*/
+
+/* =Structure
+---------------------------*/
+body {
+    font-family: Arial, sans-serif;
+    /* font-family: 'Dancing Script', cursive; */
+    /* font-family: 'Roboto', sans-serif; */
+    background: url(../laPosteDeLancienneFrance/Resource/1Carrosse.jpg) center center / cover no-repeat fixed;
+    padding: 40px;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .site {
+    background-color: #969595;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    opacity: 0.7;
+    font-weight: bold;
+  }
+  
+  /* =Elements
+  ---------------------------*/
+  img {
+    max-width: 100%;
+    height:auto;
+    width: 100%;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: -20px 0 26px;
+    text-align: center;
+  }
+  p {
+    margin-bottom: 26px;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .ul{
+    margin: 0 0 0 200px;
+  }
+  
+  @media (max-width: 1000px) {
+    .ul{
+      margin: 0;
+    }
+  }
+
+
+  /* =Header
+  ---------------------------*/
+  .site-header {
+    padding: 40px;
+    text-align: center;
+    color: #0703f7;
+  }
+  .site-title {
+    margin: 0 0 0 0px;
+  }
+  @media (min-width: 800px) {
+    .site-title {
+      float: left;
+
+
+    }
+  }
+  
+  /* =Navigation
+  ---------------------------*/
+  .site-navigation ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  
+  }
+  .site-navigation li {
+    display: inline-block;
+    
+  }
+  .site-navigation a {
+    display: block;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    padding: 0 20px;
+  }
+  .site-navigation a:hover {
+    color: #0f03fe;
+  }
+  
+  @media (min-width: 800px) {
+    .site-navigation {
+      float: right;
+    }
+    .site-navigation a {
+      padding: 0 0 0 20px;
+    } 
+  }
+
+  
+  
+  /* =Content
+  ---------------------------*/
+  .content-wrapper {
+    padding: 40px;
+    background-color: #fdcb9a;
+   
+  }
+  
+  /* =Footer
+  ---------------------------*/
+  .site-footer {
+    background-color: #969595;
+    color: white;
+    overflow: hidden;
+    padding: 0px 0px 10px 0px;
+    text-align: center;
+  }
+  
+  @media (min-width: 800px) {
+    .site-footer {
+      clear: both;
+    }
+    .site-footer .column {
+      width: 32%;
+      float: left;
+      padding-right: 20;
+      margin-bottom: 2%;
+    }
+    .site-footer .column.last {
+      padding-right: 0;
+    }
+  }
+  
+  /* Crafted with love at Sparkbox */
+
+  @media screen and (max-width: 500px) {
+    .dropdown-content a:hover {
+        background-color: #ddd; /* Changement de couleur au survole */
+    }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content {
+      display: block; /* Toujours afficher le contenu */
+  }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content a {
+      padding: 5px 10px; /* Padding réduit */
+  }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content a {
+      padding: 5px 10px; /* Padding réduit */
+  }
+}
+@media screen and (max-width: 500px) {
+  .dropdown-content a {
+      font-size: 12px; /* Taille de police réduite */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

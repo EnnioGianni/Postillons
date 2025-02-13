@@ -1,0 +1,172 @@
+
+/* Style the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  
+}
+
+/* Style the dropdown link */
+.dropdown .div.a {
+    display: block;
+    position: relative;
+    color: rgb(253, 91, 4);
+    font-weight: bold; /* Texte en gras */
+    height: 36px;
+    /* border: 3px #e08318 solid; */
+}
+.dropdown .div.a:hover{
+    background-color: rgb(253, 218, 201);
+    color: #0411f7;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fc8b44;
+    min-width: 160px;
+    z-index: 1;
+    border: 1px solid transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(254, 254, 254);
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Change la couleur de fond au passage de la souris */
+.dropdown-content a:hover {
+    background-color: rgb(253, 218, 201);
+    color: #0411f7;
+    border: 2px solid #01580e;
+}
+
+/* Add arrow icon before the link */
+.dropdown .div.a i {
+    margin-left: 5px;
+    font-size: 20px; /* Taille de la flèche augmentée */
+    color: #f90101;
+    transition: transform 0.3s ease;
+}
+
+/* Faites pivoter la flèche en survol pour indiquer le menu ouvert */
+.dropdown:hover .div.a i {
+    transform: rotate(180deg);
+    color:#0411f7
+}
+
+
+/*Boite de recherche*/
+
+.search {
+  width: 20%; /* Utiliser toute la largeur du conteneur */
+  display: flex;
+  margin: 0; /* Enlever la marge négative */
+}
+  .searchTerm {
+    width: 50%;
+    border: 3px solid #f77204;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+  }
+  .searchTerm:focus {
+    color: #380136;
+  }
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #f77204;
+    background: #f77204;
+    text-align: center;
+    color: #eeeeee;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+ 
+  }
+  
+  .wrap {
+    width: 80%; /* Largeur plus adaptative */
+    margin: 0 auto; /* Centrer dans la page */
+    display: flex; /* Utiliser flexbox pour le centrage */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center; /* Centrer les éléments verticalement */
+    padding: 20px; /* Ajouter un peu de padding */
+}
+/* Media Query pour Tablettes */
+@media screen and (max-width: 768px) {
+  .wrap {
+      width: 90%; /* Augmenter la largeur pour les tablettes */
+  }
+  .search {
+      width: 30%; /* Ajuster la largeur de la boîte de recherche */
+  }
+  .searchTerm {
+      width: 70%; /* Ajuster la largeur de l'input */
+  }
+}
+
+/* Media Query pour Smartphones */
+@media screen and (max-width: 480px) {
+  .wrap {
+      width: 95%; /* Augmenter la largeur pour les smartphones */
+  }
+  .search {
+      width: 50%; /* Ajuster la largeur de la boîte de recherche */
+  }
+  .searchTerm {
+      width: 60%; /* Ajuster la largeur de l'input */
+  }
+  .searchButton {
+      width: 50px; /* Ajuster la taille du bouton si nécessaire */
+  }
+}
+
+/*Fin Boite de recherche*/
+
+/*Boite de recherche 2*/
+.dropdown-container {
+  padding: 1px; /* Espacement intérieur */
+  margin: 0px; /* Marge extérieure */
+  background-color: #0532fe; /* Couleur d'arrière-plan */
+  border: 1px solid #ddd; /* Bordure */
+  border-radius: 5px; /* Bords arrondis */
+}
+
+#citySelector {
+  width: 200px;
+  padding: 5px; /* Espacement intérieur pour le <select> */
+  border: 1px solid #818283; /* Bordure pour le <select> */
+  border-radius: 4px; /* Bords arrondis pour le <select> */
+}
+/* Styles pour les écrans de tablette (écrans dont la largeur est inférieure à 768px) */
+@media screen and (max-width: 768px) {
+    #citySelector {
+        width: 150px; /* Largeur réduite pour les tablettes */
+        /* Autres styles adaptés aux tablettes... */
+    }
+}
+
+/* Styles pour les écrans de téléphone mobile (écrans dont la largeur est inférieure à 480px) */
+@media screen and (max-width: 380px) {
+    .dropdown-container {
+        padding: 5px;
+        margin: 2px;
+        /* Autres styles adaptés aux mobiles... */
+    }
+
+    #citySelector {
+        width: 100%; /* Largeur pleine page pour les petits écrans */
+        /* Autres styles adaptés aux mobiles... */
+    }
+}

@@ -4,21 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Propositions et Galerie</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.gallery-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.gallery-item img {
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    margin: auto;
+}
+.menu-container {
+    display: flex;
+    justify-content: flex-end; /* Aligne à droite */
+    margin-top: 10px;
+}
+
+.btn-accueil {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-accueil:hover {
+    background-color: #0056b3;
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 768px) {
+    .menu-container {
+        justify-content: center; /* Centre le bouton sur petits écrans */
+    }
+}
+
+
+</style>
 <body>
     <div class="container">
+
         <header>
             <h1>Proposer une Image ou une Marque</h1>
+            <div class="menu-container">
+                <button onclick="retourPagePrecedente()" class="btn-accueil">
+                    Retour
+                </button>
+            </div>
         </header>
-        <!-- Section des instructions visibles -->
+
+<!-- Section des instructions visibles -->
         <div class="instructions">
             <p><strong>Instructions :</strong></p>
             <ul>
                 <li>Collez une image dans la zone dédiée ou importez-la depuis votre appareil.</li>
                 <li>Ajoutez une description pour l'image.</li>
                 <li>Fournissez vos coordonnées (nom, téléphone, email).</li>
-                <li>Les images proposées apparaîtront dans la galerie ci-dessous.</li>
+                <li>Les images proposées apparaîtront dans la galerie ci-dessous.
+                </li>
             </ul>
         </div>
 
@@ -37,5 +93,88 @@
         </table>
     </div>
     <script src="script.js"></script>
+    <script>
+        function retourPagePrecedente() {
+            if (document.referrer) {
+                window.location.href = document.referrer;
+            } else {
+                window.location.href = '/Postillons/index.html'; // Redirection par défaut si aucune page précédente
+            }
+        }
+        $(document).ready(function () {
+    // Gestion du formulaire d'ajout d'image
+    $("#imageForm").submit(function (event) {
+        event.preventDefault();
+
+        let description = $("#description").val();
+        let coordinates = $("#coordinates").val();
+        let fileInput = $("#imageFile")[0].files[0];
+
+        if (!description || !coordinates) {
+            alert("Veuillez remplir tous les champs requis.");
+            return;
+        }
+
+        if (!fileInput) {
+            alert("Veuillez sélectionner une image.");
+            return;
+        }
+
+        let reader = new FileReader();
+        reader.onload = function (e) {
+            let imageSrc = e.target.result;
+
+            // Ajouter l'image et la description à la galerie
+            let newImage = `<div class="gallery-item">
+                                <img src="${imageSrc}" alt="Image ajoutée">
+                                <p>${description}</p>
+                            </div>`;
+            $("#gallery").append(newImage);
+
+            // Ajouter une entrée au tableau des propositions
+            let newRow = `<tr>
+                            <td><img src="${imageSrc}" width="50"></td>
+                            <td>${description}</td>
+                            <td>${coordinates}</td>
+                          </tr>`;
+            $("table").append(newRow);
+
+            // Réinitialiser le formulaire
+            $("#imageForm")[0].reset();
+        };
+        reader.readAsDataURL(fileInput);
+    });
+
+    // Gestion du collage d'images dans la zone de texte
+    $("#pasteArea").on("paste", function (event) {
+        let items = (event.originalEvent.clipboardData || event.clipboardData).items;
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf("image") !== -1) {
+                let file = items[i].getAsFile();
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    let imageSrc = e.target.result;
+
+                    // Ajouter l'image collée à la galerie
+                    let newImage = `<div class="gallery-item">
+                                        <img src="${imageSrc}" alt="Image collée">
+                                        <p>Image collée</p>
+                                    </div>`;
+                    $("#gallery").append(newImage);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    });
+
+    // Retourner à la page précédente
+    $(".btn-accueil").click(function () {
+        retourPagePrecedente();
+    });
+});
+   
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </body>
 </html>

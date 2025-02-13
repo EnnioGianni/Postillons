@@ -174,3 +174,44 @@ document.addEventListener("DOMContentLoaded", function () {
       oldFooter.replaceWith(newsFooter);
   });
 });
+
+
+
+
+
+
+
+
+$(document).ready(function () {
+    function adjustH1Size() {
+        if ($(window).width() < 768) { 
+            $(".titre-principal").css({
+                "font-size": "22px",
+                "text-align": "center",
+                "margin": "10px auto"
+            });
+        } else {
+            $(".titre-principal").css({
+                "font-size": "36px",
+                "text-align": "left",
+                "margin": "0 50px 0 -35px"
+            });
+        }
+    }
+
+    adjustH1Size();
+
+    $(window).resize(function () {
+        adjustH1Size();
+    });
+});
+
+
+
+
+
+
+
+
+
+

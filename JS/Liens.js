@@ -181,36 +181,34 @@ const MenuApp = (() => {
 
 
 
-//Liens Utiles
 (function () {
-  // Rechercher toutes les occurrences de l'élément avec l'ID "table-liens"
   document.querySelectorAll('#table-liens').forEach(function (tableLiens) {
-      // Créer un conteneur pour les logos
       const logosContainer = document.createElement('div');
-      logosContainer.style.display = 'flex'; // Utiliser Flexbox pour centrer les logos
-      logosContainer.style.justifyContent = 'center'; // Centrer horizontalement
-      logosContainer.style.alignItems = 'center'; // Centrer verticalement (si besoin)
-      logosContainer.style.marginTop = '0px'; // Espacement au-dessus des logos
-      logosContainer.style.padding = '0 20px'; // Ajout de padding gauche et droite
-      logosContainer.style.gap = '0px'; // Espacement uniforme entre les logos
+      logosContainer.style.display = 'flex';
+      logosContainer.style.justifyContent = 'center';
+      logosContainer.style.alignItems = 'center';
+      logosContainer.style.marginTop = '0px';
+      logosContainer.style.padding = '0 20px';
+      logosContainer.style.gap = '10px';
+      logosContainer.style.flexWrap = 'wrap'; // Permet aux éléments de passer à la ligne
 
-      // Tableau d'objets contenant les informations des liens et logos
       const logos = [
-          { href: "https://www.academiedephilatelie.fr/", title: "Academie De Philatelie", src: "../../../La Poste/LiensUtiles/academieDePhilatelie.png", alt: "Academie De Philatelie", width: "50px", height: "50px" },
-          { href: "https://gallica.bnf.fr/accueil/fr/content/accueil-fr?mode=desktop", title: "Gallica", src: "../../../La Poste/LiensUtiles/gallica.png", alt: "Gallica", width: "50px", height: "50px" },
-          { href: "https://www.academiebelgium.be/fr/", title: "Academie de Philatelie Belge", src: "../../../La Poste/LiensUtiles/Academie de Philatelie Belge.png", alt: "Accademied'italie", width: "50px", height: "50px" },
-          { href: "https://unionmarcophile.fr/", title: "Union Marcophile", src: "../../../La Poste/LiensUtiles/unionMarcophile.png", alt: "Union Marcophile", width: "50px", height: "50px" },
-          { href: "https://www.upu.int/fr/union-postale-universelle/activites/philatelie-et-cri/association-mondiale-pour-le-developpement-de-la-philatelie-amdp", title: "Association mondiale pour le développement de la philatélie (AMDP)", src: "../../../La Poste/LiensUtiles/Association mondiale pour le développement de la philatélie (AMDP).png", alt: "Association mondiale pour le développement de la philatélie (AMDP)", width: "50px", height: "50px" },
-          { href: "https://museedelaposte.fr/fr", title: "Muse DeLaPoste", src: "../../../La Poste/LiensUtiles/muse DeLaPoste.png", alt: "Muse DeLaPoste", width: "50px", height: "50px" },
-          { href: "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal", title: "Wikipedia", src: "../../../La Poste/LiensUtiles/Wikipedia.png", alt: "Wikipedia", width: "50px", height: "50px" },
-          { href: "https://www.timbres-de-france.com/collection/_classique/pag1.php", title: "Timbres de France", src: "../../../La Poste/LiensUtiles/Timbres_de_France.png", alt: "Timbres de France", width: "50px", height: "50px" },
-          { href: "https://aqep.net/", title: "ACADÉMIE QUÉBÉCOISE D’ÉTUDES PHILATÉLIQUES", src: "../../../La Poste/LiensUtiles/Quebec.png", alt: "ACADÉMIE QUÉBÉCOISE D’ÉTUDES PHILATÉLIQUES", width: "50px", height: "50px" },
-          { href: "https://www.aep.eu.com/fr/", title: "Académie Européenne de philatélie", src: "../../../La Poste/LiensUtiles/AEP.png", alt: "Académie Européenne de philatélie", width: "85px", height: "45px" },
-          { href: "https://ffap.net/", title: "La Fédération Française des Associations Philatéliques", src: "../../../La Poste/LiensUtiles/FFAP.png", alt: "La Fédération Française des Associations Philatéliques", width: "50px", height: "50px" },
-          { href: "https://marcophilie.org/", title: "Marques postales", src: "../../../La Poste/LiensUtiles/Marques postales.png", alt: "Marques postales", width: "230px", height: "50px" }
+          { href: "https://www.academiedephilatelie.fr/", title: "Academie De Philatelie", src: "../../../La Poste/LiensUtiles/academieDePhilatelie.png", alt: "Academie De Philatelie", width: 50, height: 50 },
+          { href: "https://gallica.bnf.fr/accueil/fr/content/accueil-fr?mode=desktop", title: "Gallica", src: "../../../La Poste/LiensUtiles/gallica.png", alt: "Gallica", width: 50, height: 50 },
+          { href: "https://www.academiebelgium.be/fr/", title: "Academie de Philatelie Belge", src: "../../../La Poste/LiensUtiles/Academie de Philatelie Belge.png", alt: "Accademie d'Italie", width: 50, height: 50 },
+          { href: "https://unionmarcophile.fr/", title: "Union Marcophile", src: "../../../La Poste/LiensUtiles/unionMarcophile.png", alt: "Union Marcophile", width: 50, height: 50 },
+          { href: "https://www.upu.int/fr/union-postale-universelle/activites/philatelie-et-cri/association-mondiale-pour-le-developpement-de-la-philatelie-amdp", title: "Association mondiale pour le développement de la philatélie (AMDP)", src: "../../../La Poste/LiensUtiles/Association mondiale pour le développement de la philatélie (AMDP).png", alt: "AMDP", width: 50, height: 50 },
+          { href: "https://museedelaposte.fr/fr", title: "Muse DeLaPoste", src: "../../../La Poste/LiensUtiles/muse DeLaPoste.png", alt: "Muse DeLaPoste", width: 50, height: 50 },
+          { href: "https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal", title: "Wikipedia", src: "../../../La Poste/LiensUtiles/Wikipedia.png", alt: "Wikipedia", width: 50, height: 50 },
+          { href: "https://www.timbres-de-france.com/collection/_classique/pag1.php", title: "Timbres de France", src: "../../../La Poste/LiensUtiles/Timbres_de_France.png", alt: "Timbres de France", width: 50, height: 50 },
+          { href: "https://aqep.net/", title: "ACADÉMIE QUÉBÉCOISE D’ÉTUDES PHILATÉLIQUES", src: "../../../La Poste/LiensUtiles/Quebec.png", alt: "Académie Québécoise", width: 50, height: 50 },
+          { href: "https://www.aep.eu.com/fr/", title: "Académie Européenne de philatélie", src: "../../../La Poste/LiensUtiles/AEP.png", alt: "Académie Européenne de philatélie", width: 85, height: 45 },
+          { href: "https://ffap.net/", title: "La Fédération Française des Associations Philatéliques", src: "../../../La Poste/LiensUtiles/FFAP.png", alt: "FFAP", width: 50, height: 50 },
+          { href: "https://marcophilie.org/", title: "Marques postales", src: "../../../La Poste/LiensUtiles/Marques postales.png", alt: "Marques postales", width: 230, height: 50 }
       ];
 
-      // Ajouter chaque logo avec lien au conteneur
+      const images = [];
+
       logos.forEach(function (logo) {
           const link = document.createElement('a');
           link.href = logo.href;
@@ -219,14 +217,33 @@ const MenuApp = (() => {
           const img = document.createElement('img');
           img.src = logo.src;
           img.alt = logo.alt;
-          img.style.width = logo.width; // Appliquer la largeur spécifique
-          img.style.height = logo.height; // Appliquer la hauteur spécifique
+          img.style.width = logo.width + "px";
+          img.style.height = logo.height + "px";
+          img.style.transition = "all 0.3s ease"; // Ajoute une transition fluide
+
+          images.push({ element: img, originalWidth: logo.width, originalHeight: logo.height });
 
           link.appendChild(img);
           logosContainer.appendChild(link);
       });
 
-      // Ajouter le conteneur sous le texte "Liens utiles"
       tableLiens.appendChild(logosContainer);
+
+      function adjustImages() {
+          const screenWidth = window.innerWidth;
+
+          images.forEach(imgObj => {
+              if (screenWidth < 600) {
+                  imgObj.element.style.width = imgObj.originalWidth * 0.8 + "px"; // Réduction des images
+                  imgObj.element.style.height = imgObj.originalHeight * 0.8 + "px";
+              } else {
+                  imgObj.element.style.width = imgObj.originalWidth + "px";
+                  imgObj.element.style.height = imgObj.originalHeight + "px";
+              }
+          });
+      }
+
+      adjustImages();
+      window.addEventListener('resize', adjustImages);
   });
 })();

@@ -1,0 +1,39 @@
+/* CSS pour la case de recherche */
+.search-box {
+    display: flex;
+    align-items: auto;
+    margin-right: 20px;
+}
+
+#search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px; /* Ajustez la largeur selon vos besoins */
+}
+
+#search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 0;
+    padding: 10px;
+}
+
+/* CSS pour la réactivité - ajustez les points de rupture selon vos besoins */
+@media screen and (max-width: 768px) {
+    .search-box {
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    #search-input {
+        width: 100%; /* Pleine largeur sur les écrans plus petits */
+    }
+}
+
+/* CSS pour mettre en jaune un mot trouvé */
+.highlighted {
+    background-color: yellow;
+}

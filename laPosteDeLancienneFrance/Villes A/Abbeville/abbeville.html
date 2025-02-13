@@ -7,15 +7,15 @@
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
-        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
+            <link rel="stylesheet" href="../../../css/1recherche.css" />
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
             <script src="../../../JS/script_global.js" defer></script>        
-            <script src="../../../JS/manquantes.js" defer></script>        
-        <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
             <script src="../../../JS/calculatrice.js" defer></script> 
+            <script src="../../../JS/galerie.js" defer></script> 
             <script src="../../../JS/Liens.js" defer></script>
+            <script src="../../../JS/1recherche.js" defer></script>
             <link rel="stylesheet" href="../../../css/calculatrice.css" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
             
@@ -63,7 +63,7 @@
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
         <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico" alt="Logo"></a>                  
         <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>  
-        <a class="div a" href="../../Villes A/sommaireVilleA.html">A</a>
+        <a class="div a active" href="../../Villes A/sommaireVilleA.html">A</a>
         <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
         <a class="div a" href="../../Villes C/C_sommaire.html">C</a>
         <a class="div a" href="../../Villes D/D_sommaire.html">D</a>
@@ -143,7 +143,7 @@
 <tr>
     <td class="border2">
         <a href="../Abbeville/images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-            <img src="../Abbeville/images/1.png" alt="Abbeville" style="width: 50%;"/>
+            <img src="../Abbeville/images/1.png" alt="Abbeville" style="width: 30mm; height: auto;"/>
         </a> 
     </td>
     <td class="border2">1</td>
@@ -158,7 +158,7 @@
     <tr>
         <td class="border2">
             <a href="../Abbeville/images/1A.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                <img src="../Abbeville/images/1A.png" alt=" Abbeville" style="width: 30%;"/>
+                <img src="../Abbeville/images/1A.png" alt=" Abbeville" style="width: 30mm; height: auto;"/>
             </a> 
         </td>
         <td class="border2">1A</td>
@@ -352,7 +352,7 @@
     <tr>
         <td class="border2">
             <!-- <a href="../Abbeville/images/12.jpg" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank"> -->
-                <img src="../../Resource/Absente_Deture.png" alt=" Abbeville" style="width:30%;"/>
+                <img src="../../Resource/Absente_Deture.png" alt=" Abbeville" style="width: 5%; height: auto;"/>
             </a> 
         </td>
         <td class="border2">13</td>
@@ -467,45 +467,9 @@
     </p>
 </div>
 <!---fin Footer défilant-->
+    </body>
+    </html>   
+    
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script>
-    $(document).ready(function () {
-        function adjustImageSize() {
-            $(".exemple td:first-child img, .exemple td:nth-child(4) img").each(function () {
-                let parent = $(this).parent(); // Sélectionne la cellule contenant l’image
-                let parentWidth = parent.width(); // Largeur de la cellule
-                let parentHeight = parent.height(); // Hauteur de la cellule
-
-                if (parentHeight === 0) {
-                    parentHeight = 80; // Définit une hauteur minimale pour éviter qu'elle soit cachée
-                    parent.css("min-height", "80px"); // Assure que la cellule ait une hauteur
-                }
-
-                $(this).css({
-                    "max-width": "100%", // Ne dépasse pas la largeur de la cellule
-                    "max-height": (parentHeight + 20) + "px", // Rend l'image légèrement plus grande
-                    "width": "auto", // Garde le ratio
-                    "height": "auto", // Garde le ratio
-                    "object-fit": "contain", // Assure que l’image s’adapte sans être coupée
-                    "display": "block",
-                    "margin": "auto", // Centre l'image dans la cellule
-                    "visibility": "visible", // S'assure que l'image soit bien affichée
-                    "opacity": "1", // Rend l’image bien visible
-                    "padding": "5px" // Ajoute un peu d'espace autour de l'image
-                });
-
-                // Centrage vertical (si nécessaire)
-                parent.css({
-                    "display": "flex",
-                    "justify-content": "center",
-                    "align-items": "center"
-                });
-            });
-        }
-
-        adjustImageSize();
-        $(window).resize(adjustImageSize); // Réajuster si la fenêtre est redimensionnée
-    });
-</script>
 </body>
 </html>   

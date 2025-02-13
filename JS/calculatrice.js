@@ -162,227 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Configuration des publicités
-const ads = [
-  {
-      image: '../../../La Poste/Images/in_34.jpg',
-      title: 'Vente à prix nets !',
-      description1: "📅 Date : Vente à prix net\n📍 Lieu : Salle des ventes, Paris.",
-      description2: "Découvrez une collection unique, allant des lettres anciennes aux timbres postes.",
-      description3: "Rejoignez-nous et placez vos enchères sur ces lots exceptionnels. Les lots sont limités !",
-      link: 'https://www.letimbreclassique.com/ltc-parcourir-lots/vpn-2024/vpn-2024/'
-  },
-  {
-      image: '../../../La Poste/Images/IvertTellier.png',
-      title: 'Yvert et Tellier!',
-      description1: "Le site officiel, tout pour votre collection de timbres et de monnaies",
-      description2: "Dans les espaces YVERT ET TELLIER, retrouvez le plaisir de collectionner",
-      description3: "Yvert et Tellier est le seul site où vous pourrez voir un visuel de votre timbre  !",
-      link: 'https://www.yvert.com/'
-  },
-  {
-      image: '../../../La Poste/Images/L_EchoPhil.png',
-      title: 'L-Écho de la Timbrologie',
-      description1: "Tous les mois, L'Écho de la Timbrologie propose des informations inédites, présente et commente les nouvelles émissions de France et d'ailleurs, et interviewe les acteurs de la philatélie.",
-      description2: "L'Écho de la Timbrologie : le journal de référence pour tous les philatélistes ",
-      description3: "Si vous souhaitez recevoir la version papier de LÉcho de la Timbrologie, vous pouvez vous abonner sur le site de LÉcho de la Timbrologie",
-      link: 'http://www.echo-de-la-timbrologie.com/store/'
-  },
-  {
-      image: '../../../La Poste/Images/feteDuTimbre2025.jpg',
-      title: 'Fête du Timbre 2025',    
-      description1: "Thème Le cirque",
-      description2: "📅 Date : Du 08/03/2025 au 09/03/2025\n📍 Lieu : A MONTPELLIER ",
-      description3: "A LA SALLE NOUGARET (ESPACE PITOT).",
-      description4: "Expositions, achat, vente, oblitération par la Poste, souvenirs.",
-      link: 'https://www.asso-philatelique-montpellier.fr/evenement/fete-du-timbre/8/'
-  },
-  {
-      image: '../../../La Poste/Images/Decembre2024.jpg',
-      title: 'Timbres magazine',
-      description1: "📅 Numéro du mois de décembre\n📍 Timbres magazine",
-      description2: "Mensuel de la presse philatélique française",
-      description3: "Des articles et des nouvelles philatéliques",
-      link: 'https://timbresmag.fr/'
-  }
-];
-
-// Récupération de l'index actuel dans localStorage
-let currentAdIndex = parseInt(localStorage.getItem('lastAdIndex')) || 0;
-
-// Fonction pour enregistrer l'index actuel dans localStorage
-function saveCurrentAdIndex(index) {
-  localStorage.setItem('lastAdIndex', index);
-}
-
-// Création de la bannière publicitaire
-const adBanner = document.createElement('div');
-adBanner.style.position = 'fixed';
-adBanner.style.bottom = '20px';
-adBanner.style.right = '20px';
-adBanner.style.width = '320px';
-adBanner.style.height = 'auto';
-adBanner.style.padding = '15px';
-adBanner.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-adBanner.style.backgroundColor = '#F59454';
-adBanner.style.border = '1px solid #ddd';
-adBanner.style.borderRadius = '8px';
-adBanner.style.zIndex = '1000';
-document.body.appendChild(adBanner);
-
-// Bouton de fermeture
-const closeButton = document.createElement('span1');
-closeButton.textContent = '×';
-closeButton.style.position = 'absolute';
-closeButton.style.top = '0px';
-closeButton.style.right = '0px';
-closeButton.style.cursor = 'pointer';
-closeButton.style.fontSize = '30px';
-closeButton.style.fontWeight = 'bold';
-closeButton.style.color = '#000000';
-closeButton.title = 'Fermer la bannière';
-adBanner.appendChild(closeButton);
-
-closeButton.addEventListener('click', () => {
-  adBanner.style.display = 'none';
-});
-
-// Création des éléments dynamiques
-const adImage = document.createElement('img');
-adImage.style.width = '100%';
-adImage.style.borderRadius = '5px';
-adImage.style.marginBottom = '10px';
-adBanner.appendChild(adImage);
-
-const adTitle = document.createElement('h3');
-adTitle.style.margin = '10px 0';
-adTitle.style.fontSize = '18px';
-adTitle.style.color = '#333';
-adTitle.style.textAlign = 'center';
-adBanner.appendChild(adTitle);
-
-const adDescription1 = document.createElement('p');
-adDescription1.style.margin = '10px 0';
-adDescription1.style.fontSize = '14px';
-adDescription1.style.color = '#555';
-adDescription1.style.textAlign = 'center';
-adBanner.appendChild(adDescription1);
-
-const adDescription2 = document.createElement('p');
-adDescription2.style.margin = '10px 0';
-adDescription2.style.fontSize = '14px';
-adDescription2.style.color = '#555';
-adDescription2.style.textAlign = 'justify';
-adBanner.appendChild(adDescription2);
-
-const adDescription3 = document.createElement('p');
-adDescription3.style.margin = '10px 0';
-adDescription3.style.fontSize = '14px';
-adDescription3.style.color = '#555';
-adDescription3.style.textAlign = 'justify';
-adBanner.appendChild(adDescription3);
-
-const adLink = document.createElement('a');
-adLink.style.display = 'inline-block';
-adLink.style.marginTop = '10px';
-adLink.style.fontSize = '14px';
-adLink.style.color = '#007BFF';
-adLink.style.textDecoration = 'none';
-adLink.style.fontWeight = 'bold';
-adLink.style.textAlign = 'center';
-adLink.style.display = 'block';
-adLink.target = '_blank';
-adBanner.appendChild(adLink);
-
-// Création des flèches
-const leftArrow = document.createElement('span1');
-leftArrow.textContent = '◀';
-leftArrow.style.position = 'absolute';
-leftArrow.style.top = '40%';
-leftArrow.style.left = '10px';
-leftArrow.style.transform = 'translateY(-50%)';
-leftArrow.style.fontSize = '20px';
-leftArrow.style.cursor = 'pointer';
-leftArrow.style.zIndex = '1001';
-leftArrow.style.color = 'black';
-leftArrow.title = 'Précédent';
-adBanner.appendChild(leftArrow);
-
-const rightArrow = document.createElement('span1');
-rightArrow.textContent = '▶';
-rightArrow.style.position = 'absolute';
-rightArrow.style.top = '40%';
-rightArrow.style.right = '10px';
-rightArrow.style.transform = 'translateY(-50%)';
-rightArrow.style.fontSize = '20px';
-rightArrow.style.cursor = 'pointer';
-rightArrow.style.zIndex = '1001';
-rightArrow.style.color = 'black';
-rightArrow.title = 'Suivant';
-adBanner.appendChild(rightArrow);
-
-// Fonction pour mettre à jour la publicité
-function updateAdContent() {
-  const ad = ads[currentAdIndex];
-  adImage.src = ad.image;
-  adImage.alt = ad.title;
-  adTitle.textContent = ad.title;
-  adDescription1.textContent = ad.description1;
-  adDescription2.textContent = ad.description2;
-  adDescription3.textContent = ad.description3;
-  adLink.textContent = 'Cliquez ici pour en savoir plus !';
-  adLink.href = ad.link;
-  saveCurrentAdIndex(currentAdIndex);
-}
-
-// Gestion des clics pour les flèches
-leftArrow.addEventListener('click', () => {
-  currentAdIndex = (currentAdIndex - 1 + ads.length) % ads.length;
-  updateAdContent();
-});
-
-rightArrow.addEventListener('click', () => {
-  currentAdIndex = (currentAdIndex + 1) % ads.length;
-  updateAdContent();
-});
-
-
-
-// Initialisation de la publicité
-updateAdContent();
-
-//Fonction pour que la publicité sarrette lorsqu'on passe la sourie
-
-// Initialisation de l'intervalle
-let interval = null;
-
-// Fonction pour démarrer l'intervalle
-function startInterval() {
-  interval = setInterval(() => {
-    currentAdIndex = (currentAdIndex + 1) % ads.length;
-    updateAdContent();
-  }, 10000);
-}
-
-// Fonction pour arrêter l'intervalle
-function stopInterval() {
-  if (interval) {
-    clearInterval(interval);
-    interval = null;
-  }
-}
-
-// Démarrage initial de l'intervalle
-startInterval();
-
-// Ajout des gestionnaires d'événements pour le survol
-adBanner.addEventListener('mouseenter', () => {
-  stopInterval(); // Arrête l'intervalle lorsque la souris entre dans la bannière
-});
-
-adBanner.addEventListener('mouseleave', () => {
-  startInterval(); // Redémarre l'intervalle lorsque la souris quitte la bannière
-});
 
 
 
@@ -540,30 +319,36 @@ scrollToTopButton.onclick = function () {
 
 // Crée dynamiquement une cellule de recherche
 const searchCell = document.createElement('div');
-searchCell.style.position = 'fixed';
-searchCell.style.top = '100px';
-searchCell.style.right = '10px';
-searchCell.style.padding = '5px 10px'; // Dimensions réduites
-searchCell.style.backgroundColor = '#2C3E50'; // Fond bleu foncé élégant
+searchCell.style.position = 'fixed'; // Garde la boîte toujours visible
+searchCell.style.top = '13vh'; // Position en hauteur basée sur la taille de l'écran
+searchCell.style.right = '2vw'; // Ajustement basé sur la largeur de l'écran
+searchCell.style.padding = '1px 2px';
+searchCell.style.backgroundColor = '#2C3E50';
 searchCell.style.color = 'white';
-searchCell.style.borderRadius = '10px';
-searchCell.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+searchCell.style.borderRadius = '4px';
+searchCell.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
 searchCell.style.fontFamily = 'Arial, sans-serif';
-searchCell.style.fontSize = '12px'; // Texte légèrement réduit
+searchCell.style.fontSize = '8px';
 searchCell.style.zIndex = '1000';
-searchCell.style.display = 'flex'; // Alignement en ligne
+searchCell.style.display = 'flex';
 searchCell.style.alignItems = 'center';
-searchCell.style.gap = '5px';
+searchCell.style.gap = '1px';
+searchCell.style.width = '100px';
+searchCell.style.minWidth = '80px';
+searchCell.style.height = '25px';
+searchCell.style.minHeight = '20px';
+searchCell.style.visibility = 'visible';
+searchCell.style.opacity = '1';
 
 // Créer une boîte de saisie
 const input = document.createElement('textarea');
-input.placeholder = 'Tapez le N° ou la date recherché'; // Texte descriptif
-input.style.padding = '5px';
-input.style.borderRadius = '5px';
+input.placeholder = 'N° ou Date';
+input.style.padding = '2px';
+input.style.borderRadius = '3px';
 input.style.border = '1px solid #ccc';
-input.style.fontSize = '15px';
-input.style.width = '100px';
-input.style.height = '50px';
+input.style.fontSize = '8px';
+input.style.width = '60px';
+input.style.height = '20px';
 input.style.textAlign = 'center';
 input.style.display = 'block';
 input.style.margin = '0 auto';
@@ -573,22 +358,21 @@ document.body.appendChild(input);
 
 // Crée un bouton pour effectuer la recherche
 const searchButton = document.createElement('button');
-searchButton.textContent = '🔍'; // Icône de loupe
-searchButton.style.padding = '5px';
-searchButton.style.borderRadius = '5px';
+searchButton.textContent = '🔍';
+searchButton.style.padding = '2px';
 searchButton.style.border = 'none';
-searchButton.style.backgroundColor = '#1ABC9C';
-searchButton.style.color = 'white';
+searchButton.style.background = 'none';
+searchButton.style.color = 'inherit';
 searchButton.style.cursor = 'pointer';
-searchButton.style.fontSize = '14px';
+searchButton.style.fontSize = '12px';
 
 // Crée un élément pour afficher les résultats
 const resultDisplay = document.createElement('div');
-resultDisplay.style.marginTop = '5px';
-resultDisplay.style.fontSize = '15px';
+resultDisplay.style.marginTop = '2px';
+resultDisplay.style.fontSize = '8px';
 resultDisplay.style.color = '#32FA5C';
 resultDisplay.style.position = 'absolute';
-resultDisplay.style.bottom = '-20px';
+resultDisplay.style.bottom = '-10px';
 resultDisplay.style.left = '0';
 resultDisplay.style.right = '0';
 resultDisplay.style.textAlign = 'center';
@@ -601,49 +385,45 @@ document.body.appendChild(searchCell);
 
 // Fonction de recherche
 function performSearch() {
-  const searchValue = input.value.trim(); // Récupère la valeur entrée
-  resultDisplay.textContent = ''; // Réinitialise l'affichage du résultat
-  let count = 0; // Compteur des résultats trouvés
+  const searchValue = input.value.trim();
+  resultDisplay.textContent = '';
+  let count = 0;
 
   if (!searchValue) {
     resultDisplay.textContent = 'Entrez une valeur.';
     return;
   }
 
-  const tables = document.querySelectorAll('table'); // Sélectionne tous les tableaux existants
+  const tables = document.querySelectorAll('table');
   let found = false;
 
   tables.forEach(table => {
-    const rows = table.querySelectorAll('tr'); // Sélectionne toutes les lignes
+    const rows = table.querySelectorAll('tr');
 
     rows.forEach(row => {
-      const cells = row.querySelectorAll('td'); // Récupère les cellules de la ligne
+      const cells = row.querySelectorAll('td');
 
-      // Recherche stricte dans la colonne 2 (N°)
       if (cells.length >= 2) {
         const cell = cells[1];
         const cellValue = cell.textContent.trim();
 
-        if (!isNaN(searchValue) && cellValue === searchValue) { // Vérifie que la recherche est numérique et correspond strictement
+        if (!isNaN(searchValue) && cellValue === searchValue) {
           found = true;
-          count++; // Incrémente le compteur
+          count++;
           highlightCell(cell, `Valeur trouvée : ${cellValue}`);
         } else {
           resetCellStyle(cell);
         }
       }
 
-      // Recherche stricte ou partielle dans la colonne 5 (Date)
       if (cells.length >= 5) {
         const dateCell = cells[4];
         const dateValue = dateCell.textContent.trim();
 
-        if (
-          dateValue === searchValue || // Recherche exacte pour une date unique ou composée
-          (dateValue.includes('-') && dateValue.split('-').includes(searchValue)) // Recherche partielle pour une date composée
-        ) {
+        if (dateValue === searchValue ||
+            (dateValue.includes('-') && dateValue.split('-').includes(searchValue))) {
           found = true;
-          count++; // Incrémente le compteur
+          count++;
           highlightCell(dateCell, `Valeur trouvée : ${dateValue}`);
         } else {
           resetCellStyle(dateCell);
@@ -656,7 +436,7 @@ function performSearch() {
     resultDisplay.textContent = `"${searchValue}" non trouvé.`;
     resultDisplay.style.color = 'Black';
     resultDisplay.style.fontWeight = 'bold';
-    resultDisplay.style.fontSize = '16px'; // Augmente la taille de la police
+    resultDisplay.style.fontSize = '10px';
   } else {
     resultDisplay.textContent = `${count} résultat(s) trouvé(s).`;
     resultDisplay.style.color = '#0530FF';
@@ -693,11 +473,6 @@ input.addEventListener('keydown', (event) => {
 
 // Ajout du titre pour l'info-bulle
 input.title = "Tapez le numéro de la marque ou une date pour rechercher";
-
-// Fonction pour normaliser les textes (sans accent)
-function normalizeText(text) {
-  return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-}
   
 
 
@@ -718,78 +493,78 @@ function normalizeText(text) {
 
 //Main qui bouge
 document.addEventListener('DOMContentLoaded', () => {
-    // Sélectionne toutes les images correspondantes dans les tables
-    const handImages = document.querySelectorAll('table img[src="../../Resource/plumeDeture.png"]');
+  // Sélectionne toutes les images correspondantes dans les tables
+  const handImages = document.querySelectorAll('table img[src="../../Resource/plumeDeture.png"]');
 
-    // Variables pour la gestion du défilement et des animations
-    let isAnimating = false; // Indique si une animation est en cours
-    let lastScrollY = window.scrollY; // Position de scroll précédente
+  // Variables pour la gestion du défilement et des animations
+  let isAnimating = false; // Indique si une animation est en cours
+  let lastScrollY = window.scrollY; // Position de scroll précédente
 
-    // Fonction pour animer une seule image
-    function animateHand(handImage) {
-        return new Promise((resolve) => {
-            let positionX = 0; // Position horizontale
-            let positionY = 0; // Position verticale
-            let direction = 1; // Sens du mouvement
+  // Fonction pour animer une seule image
+  function animateHand(handImage) {
+      return new Promise((resolve) => {
+          let positionX = 0; // Position horizontale
+          let positionY = 0; // Position verticale
+          let direction = 1; // Sens du mouvement
 
-            const interval = setInterval(() => {
-                positionX += 1 * direction;
-                positionY += (Math.random() * 2 - 1); // Variation verticale aléatoire
-                handImage.style.transform = `translate(${positionX}px, ${positionY}px)`;
+          const interval = setInterval(() => {
+              positionX += 1 * direction;
+              positionY += (Math.random() * 2 - 1); // Variation verticale aléatoire
+              handImage.style.transform = `translate(${positionX}px, ${positionY}px)`;
 
-                // Inverse le sens horizontal après une limite
-                if (positionX > 10 || positionX < -10) {
-                    direction *= -1;
-                }
-            }, 50); // Répète toutes les 50 ms
+              // Inverse le sens horizontal après une limite
+              if (positionX > 10 || positionX < -10) {
+                  direction *= -1;
+              }
+          }, 50); // Répète toutes les 50 ms
 
-            // Arrêter l'animation après 3 secondes
-            setTimeout(() => {
-                clearInterval(interval); // Arrête l'animation
-                handImage.style.transform = "translate(0, 0)"; // Réinitialise la position
-                resolve(); // Indique que l'animation est terminée
-            }, 3000); // Animation dure 3 secondes
-        });
-    }
+          // Arrêter l'animation après 3 secondes
+          setTimeout(() => {
+              clearInterval(interval); // Arrête l'animation
+              handImage.style.transform = "translate(0, 0)"; // Réinitialise la position
+              resolve(); // Indique que l'animation est terminée
+          }, 3000); // Animation dure 3 secondes
+      });
+  }
 
-    // Fonction pour animer les mains visibles dans l'ordre
-    async function animateHandsSequentially(images, direction) {
-        if (isAnimating) return; // Empêche de lancer une animation si une autre est en cours
-        isAnimating = true;
+  // Fonction pour animer les mains visibles dans l'ordre
+  async function animateHandsSequentially(images, direction) {
+      if (isAnimating) return; // Empêche de lancer une animation si une autre est en cours
+      isAnimating = true;
 
-        const sortedImages = [...images].sort((a, b) => {
-            const rectA = a.getBoundingClientRect();
-            const rectB = b.getBoundingClientRect();
-            return direction === "down" ? rectA.top - rectB.top : rectB.top - rectA.top;
-        });
+      const sortedImages = [...images].sort((a, b) => {
+          const rectA = a.getBoundingClientRect();
+          const rectB = b.getBoundingClientRect();
+          return direction === "down" ? rectA.top - rectB.top : rectB.top - rectA.top;
+      });
 
-        for (const handImage of sortedImages) {
-            await animateHand(handImage); // Attends que l'animation de cette main soit terminée avant de passer à la suivante
-        }
+      for (const handImage of sortedImages) {
+          await animateHand(handImage); // Attends que l'animation de cette main soit terminée avant de passer à la suivante
+      }
 
-        isAnimating = false;
-    }
+      isAnimating = false;
+  }
 
-    // Fonction pour détecter les images visibles dans la fenêtre
-    function getVisibleImages() {
-        return [...handImages].filter((handImage) => {
-            const rect = handImage.getBoundingClientRect();
-            return rect.top >= 0 && rect.bottom <= window.innerHeight;
-        });
-    }
+  // Fonction pour détecter les images visibles dans la fenêtre
+  function getVisibleImages() {
+      return [...handImages].filter((handImage) => {
+          const rect = handImage.getBoundingClientRect();
+          return rect.top >= 0 && rect.bottom <= window.innerHeight;
+      });
+  }
 
-    // Gestion du scroll
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        const direction = currentScrollY > lastScrollY ? "down" : "up"; // Détecte la direction du scroll
-        lastScrollY = currentScrollY;
+  // Gestion du scroll
+  window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY > lastScrollY ? "down" : "up"; // Détecte la direction du scroll
+      lastScrollY = currentScrollY;
 
-        // Récupère les images visibles
-        const visibleImages = getVisibleImages();
-        if (visibleImages.length > 0) {
-            animateHandsSequentially(visibleImages, direction); // Anime les mains visibles dans l'ordre
-        }
-    });
+      // Récupère les images visibles
+      const visibleImages = getVisibleImages();
+      if (visibleImages.length > 0) {
+          animateHandsSequentially(visibleImages, direction); // Anime les mains visibles dans l'ordre
+      }
+  });
 });
 
 
@@ -822,8 +597,8 @@ const boite = document.createElement('div');
 
 // Applique les styles pour la boîte
 boite.style.position = 'fixed';  // Toujours visible
-boite.style.top = '50px';       // Distance du haut
-boite.style.right = '50px';      // Distance de la droite
+boite.style.top = '40px';       // Distance du haut
+boite.style.right = '40px';      // Distance de la droite
 boite.style.width = '100px';     // Dimensions inchangées
 boite.style.height = '50px';
 boite.style.backgroundColor = '#4CAF50'; // Vert de fond
@@ -901,8 +676,8 @@ window.onload = function() {
 
   // Parcourir chaque image et appliquer les styles
   images.forEach(function(image) {
-      image.style.float = "left";        // Aligner l'image à gauche
-      image.style.marginLeft = "10px";   // Ajouter une marge de 30px à gauche de l'image
+      image.style.float = "cente";        // Aligner l'image à gauche
+   //   image.style.marginLeft = "10px";   // Ajouter une marge de 10px à gauche de l'image
   });
 };
 
@@ -938,7 +713,7 @@ imgElement.style.height = 'auto';
 
 
 
-//Neige
+
 // Neige
 (function () {
   // Vérifie si la neige doit s'afficher en fonction de la date
@@ -1054,6 +829,136 @@ logoImg.style.marginTop = '190px';
 
 
 
+
+//Logo
+
+$(document).ready(function () {
+  // Sélectionne uniquement #table-liens pour éviter de modifier d'autres éléments
+  $('#table-liens').each(function () {
+      const logosContainer = $('<div>').css({
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginTop: '0px',
+          padding: '10px 20px',
+          gap: '10px',
+          flexWrap: 'wrap' // Permet aux logos de s'adapter aux petits écrans
+      });
+
+
+      logos.forEach(function (logo) {
+          const link = $('<a>').attr({ href: logo.href, title: logo.title });
+
+          const img = $('<img>').attr({
+              src: logo.src,
+              alt: logo.title
+          }).css({
+              width: logo.width,
+              height: logo.height,
+              transition: 'transform 0.3s ease-in-out'
+          });
+
+          // Effet hover : agrandir légèrement le logo
+          img.hover(
+              function () { $(this).css('transform', 'scale(1.2)'); },
+              function () { $(this).css('transform', 'scale(1)'); }
+          );
+
+          link.append(img);
+          logosContainer.append(link);
+      });
+
+      $(this).append(logosContainer);
+  });
+
+  // Ajustement des tailles des logos uniquement pour #table-liens
+  function adjustLogoSize() {
+      $('#table-liens img').each(function () {
+          if ($(window).width() < 768) {
+              $(this).css({ width: '40px', height: '40px' });
+          } else {
+              $(this).css({ width: $(this).attr('width'), height: $(this).attr('height') });
+          }
+      });
+  }
+
+  // Exécuter lors du chargement et du redimensionnement
+  adjustLogoSize();
+  $(window).resize(adjustLogoSize);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Media querry pour la page
+(function () { 
+  document.addEventListener("DOMContentLoaded", function () {
+      const UNIQUE_NAMESPACE = "border2_responsive_handler"; // Évite les conflits globaux
+
+ 
+
+      function appliquerStylesResponsifs() {
+          if (document.getElementById(`style-${UNIQUE_NAMESPACE}`)) return; // Évite les doublons
+
+          let style = document.createElement("style");
+          style.id = `style-${UNIQUE_NAMESPACE}`;
+          style.innerHTML = `
+              .border2 {
+                  position: relative;
+                  overflow: hidden;
+                  text-align: center;
+              }
+              .border2 img {
+                  transition: all 0.3s ease-in-out;
+              }
+          `;
+          document.head.appendChild(style);
+      }
+
+      function reduireImagesPetitEcran() {
+          let largeurEcran = window.innerWidth;
+
+          document.querySelectorAll(".border2 img").forEach(img => {
+              if (largeurEcran <= 600) {
+                  img.style.maxWidth = "50px"; // Change cette valeur pour ajuster la taille
+              } else {
+                  img.style.maxWidth = ""; // Réinitialise pour les grands écrans
+              }
+          });
+      }
+
+      function observerChangementsDOM() {
+          const observer = new MutationObserver(() => {
+              ajusterImagesBorder2();
+              reduireImagesPetitEcran();
+          });
+
+          observer.observe(document.body, { childList: true, subtree: true });
+      }
+
+      appliquerStylesResponsifs();
+      ajusterImagesBorder2();
+      reduireImagesPetitEcran();
+      observerChangementsDOM();
+
+      window.addEventListener("resize", function () {
+          ajusterImagesBorder2();
+          reduireImagesPetitEcran();
+      });
+
+  });
+})();
 
 
 

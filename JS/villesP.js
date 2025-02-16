@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Pauillac', url:'../../../laPosteDeLancienneFrance/Villes P/Pauillac/pauillac.html' },
         { name: 'Payrac', url:'../../../laPosteDeLancienneFrance/Villes P/Payrac/payrac.html' },
         { name: 'Pelissanne', url:'../../../laPosteDeLancienneFrance/Villes P/Pelissanne/pelissanne.html' },
+        { name: 'Perigueux', url:'../../../laPosteDeLancienneFrance/Villes P/Perigueux/Perigueux.html' },
         { name: 'Peronne', url:'../../../laPosteDeLancienneFrance/Villes P/Peronne/peronne.html' },
         { name: 'Perpignan', url:'../../../laPosteDeLancienneFrance/Villes P/Perpignan/perpignan.html' },
         { name: 'Perrecy', url:'../../../laPosteDeLancienneFrance/Villes P/Perrecy/perrecy.html' },

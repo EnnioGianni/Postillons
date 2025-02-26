@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Pontarneaud', url:'../../../laPosteDeLancienneFrance/Villes P/Pontarneaud/pontarneaud.html' },
         { name: 'Pontchartrain', url:'../../../laPosteDeLancienneFrance/Villes P/Pontchartrain/pontchartrain.html' },
         { name: 'Ponthierry', url:'../../../laPosteDeLancienneFrance/Villes P/Ponthierry/ponthierry.html' },
-        { name: 'Pontigny', url:'../../../laPosteDeLancienneFrance/Villes P/Pontigny/pontign.html' },
+        { name: 'Pontigny', url:'../../../laPosteDeLancienneFrance/Villes P/Pontigny/pontigny.html' },
         { name: 'Pontivy', url:'../../../laPosteDeLancienneFrance/Villes P/Pontivy/pontivy.html' },
         { name: 'Pontoise', url:'../../../laPosteDeLancienneFrance/Villes P/Pontoise/pontoise.html' },
         { name: 'Pontorson', url:'../../../laPosteDeLancienneFrance/Villes P/Pontorson/pontorson.html' },

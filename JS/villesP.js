@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Le Pont de Beauvoisin', url:'../../../laPosteDeLancienneFrance/Villes P/Le Pont de Beauvoisin/lePontDeBeauvoisin.html' },
         { name: 'Le Pont de Ce', url:'../../../laPosteDeLancienneFrance/Villes P/Le Pont de Ce/lePontDeCe.html' },
         { name: 'Le pont de Neuilly', url:'../../../laPosteDeLancienneFrance/Villes P/Le pont de Neuilly/lePontDeNeuilly.html' },
-        { name: 'Le Puy', url:'../../../laPosteDeLancienneFrance/Villes P/Le Puy/Le Puy.html' },
+        { name: 'Le Puy', url:'../../../laPosteDeLancienneFrance/Villes P/Le Puy/lePuy.html' },
         { name: 'Les Pieux', url:'../../../laPosteDeLancienneFrance/Villes P/Les Pieux/lesPieux.html' },
         { name: 'Pacy sur Eure', url:'../../../laPosteDeLancienneFrance/Villes P/Pacy sur Eure/pacySurEure.html' },
         { name: 'Pacy-sur-Armancon', url:'../../../laPosteDeLancienneFrance/Villes P/Pacy-sur-Armancon/pacySurArmancon.html' },

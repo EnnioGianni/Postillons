@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {document
     // Tableau d'objets pour stocker les informations sur les liens
     var menuItems = [
         { label: 'La Poste', link: '../../../La Poste/La_Poste.html' },

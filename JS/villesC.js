@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Champlitte', url: '../../../laPosteDeLancienneFrance/Villes C/Champlitte/champlitte.html' },
         { name: 'Champrond', url: '../../../laPosteDeLancienneFrance/Villes C/Champrond/champrond.html' },
         { name: 'Chanceaux', url: '../../../laPosteDeLancienneFrance/Villes C/Chanceaux/chanceaux.html' },
-        { name: 'Chanteloube', url: '../../../laPosteDeLancienneFrance/Villes C/Chanteloube/Cchanteloube.html' },
+        { name: 'Chanteloube', url: '../../../laPosteDeLancienneFrance/Villes C/Chanteloube/chanteloube.html' },
         { name: 'Chantilly', url: '../../../laPosteDeLancienneFrance/Villes C/Chantilly/chantilly.html' },
         { name: 'Chantonnay', url: '../../../laPosteDeLancienneFrance/Villes C/Chantonnay/chantonnay.html' },
         { name: 'Chaource', url: '../../../laPosteDeLancienneFrance/Villes C/Chaource/chaource.html' },

@@ -368,11 +368,11 @@ searchButton.style.fontSize = '12px';
 
 // Crée un élément pour afficher les résultats
 const resultDisplay = document.createElement('div');
-resultDisplay.style.marginTop = '2px';
-resultDisplay.style.fontSize = '8px';
+resultDisplay.style.marginTop = '50px';
+resultDisplay.style.fontSize = '10px';
 resultDisplay.style.color = '#32FA5C';
 resultDisplay.style.position = 'absolute';
-resultDisplay.style.bottom = '-10px';
+resultDisplay.style.bottom = '-30px';
 resultDisplay.style.left = '0';
 resultDisplay.style.right = '0';
 resultDisplay.style.textAlign = 'center';
@@ -434,14 +434,22 @@ function performSearch() {
 
   if (!found) {
     resultDisplay.textContent = `"${searchValue}" non trouvé.`;
-    resultDisplay.style.color = 'Black';
+    resultDisplay.style.color = '#DB423D';
     resultDisplay.style.fontWeight = 'bold';
-    resultDisplay.style.fontSize = '10px';
-  } else {
+    resultDisplay.style.fontSize = '12px';
+
+    // Ajout de l'effet clignotant continu
+    let isVisible = true;
+    setInterval(() => {
+        resultDisplay.style.visibility = isVisible ? 'hidden' : 'visible';
+        isVisible = !isVisible;
+    }, 500); // Clignote toutes les 500ms
+} else {
     resultDisplay.textContent = `${count} résultat(s) trouvé(s).`;
-    resultDisplay.style.color = '#0530FF';
+    resultDisplay.style.color = '#DB423D';
     resultDisplay.style.fontWeight = 'bold';
-  }
+    resultDisplay.style.visibility = 'visible'; // Réinitialiser si trouvé
+}
 }
 
 // Fonction pour mettre en surbrillance une cellule

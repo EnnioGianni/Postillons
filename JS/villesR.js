@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Rochechouart', url:'../../../laPosteDeLancienneFrance/Villes R/Rochechouart/rochechouart.html' },
         { name: 'Rochefort en Beauge', url:'../../../laPosteDeLancienneFrance/Villes R/Rochefort en Beauge/rochefortEnBeauge.html' },
         { name: 'Rochefort en Terre', url:'../../../laPosteDeLancienneFrance/Villes R/Rochefort en Terre/rochefortEnTerre.html' },
-        { name: 'Rochefort-16', url:'../../../laPosteDeLancienneFrance/Villes R/Rochefort-16/rochefort16.html' },
+        { name: 'Rochefort sur Mer', url:'../../../laPosteDeLancienneFrance/Villes R/Rochefort sur Mer/rochefortSurMer.html' },
         { name: 'Rochefort-62', url:'../../../laPosteDeLancienneFrance/Villes R/Rochefort-62/rochefort62.html' },
         { name: 'Rocheserviere', url:'../../../laPosteDeLancienneFrance/Villes R/Rocheserviere/rocheserviere.html' },
         { name: 'Rocroi', url:'../../../laPosteDeLancienneFrance/Villes R/Rocroi/rocroi.html' },

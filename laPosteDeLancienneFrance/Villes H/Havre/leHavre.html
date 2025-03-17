@@ -7,15 +7,17 @@
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
+        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-            <script src="../../../JS/script_global.js.js" defer></script>        
+            <script src="../../../JS/script_global.js" defer></script>        
+            <script src="../../../JS/manquantes.js" defer></script>        
+        <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
             <script src="../../../JS/calculatrice.js" defer></script> 
-            <script src="../../../JS/Liens.js" defer></script> 
+            <script src="../../../JS/Liens.js" defer></script>
             <link rel="stylesheet" href="../../../css/calculatrice.css" />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script>
-            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
 <!--Debut pagination--> 
             <script src="../../../JS/villesA.js" defer></script>        
             <script src="../../../JS/villesB.js" defer></script>        
@@ -44,16 +46,25 @@
             <script src="../../../JS/villesY.js" defer></script>        
             <script src="../../../JS/villesZ.js" defer></script>        
             <script src="../../../JS/accueil.js" defer></script>
-            <script src="../../../JS/accueil.js" defer></script>
             <script src="../../../JS/cityRedirector.js"></script>
             <script src="path/to/cityRedirector.js"></script>  
-            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>  
-            
-        </head>  
+            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script> 
+                      
+    </head> 
+<style>
+p::first-letter {
+        color: red;
+        font-size: 130%;
+      }
+
+</style>
+     
+     
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
-        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>                  
-        <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>  
+        <a href="../../../laPosteDeLancienneFrance/Villes P/P_sommaire.html"><img id="logoImg" src="../../Resource/books_library_1768.ico" alt="Logo"></a>                  
+       
+            <h1 class="titre-principal">Le Postillon</h1>
         <a class="div a" href="../../Villes A/sommaireVilleA.html">A</a>
         <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
         <a class="div a" href="../../Villes C/C_sommaire.html">C</a>
@@ -80,7 +91,7 @@
         <a class="div a" href="../../Villes X/X_sommaire.html">X</a>
         <a class="div a" href="../../Villes Y/Y_sommaire.html">Y</a>
         <a class="div a" href="../../Villes Z/Z_sommaire.html">Z</a>            
-    </header>
+    </header>   
 <section>
 <!--Debut pagination--> 
     <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Le_Havre" class="title-tip" style="font-size: 25px;" title="lien vers wikipedia">
@@ -130,7 +141,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/1.png" alt="Havre" style="width: 70%;"/></a>
+                    <img src="../Havre/Images/1.png" alt="Havre" data-width-mm="30"/>
+                </a>
             </td>
             <td class="border3">1</td>
             <td class="border2">port dû</td>
@@ -143,8 +155,8 @@
 <!--Marque 1A-->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Havre/Images/1A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Havre" style="width: 70%;"/></a>
+             <a  href="../../../proposition/index.html" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> 
+                <img src="../Havre/Images/1a.png" alt="Havre" data-width-mm="50"/>
             </td>
             <td class="border3">1A</td>
             <td class="border2">port dû</td>
@@ -158,7 +170,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/2.png" alt="Havre" style="width: 70%;"/></a>
+                    <img src="../Havre/Images/2.png" alt="Havre" data-width-mm="22"/>
+                </a>
             </td>
             <td class="border3">2</td>
             <td class="border2">port dû</td>
@@ -172,7 +185,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/2A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/2A.png" alt="Havre" style="width: 70%;"/></a>
+                    <img src="../Havre/Images/2A.png" alt="Havre" data-width-mm="22"/>
+                </a>
             </td>
             <td class="border3">2A</td>
             <td class="border2">port dû</td>
@@ -186,7 +200,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/3.png" alt="Havre" style="width: 66%;"/></a>
+                    <img src="../Havre/Images/3.png" alt="Havre" data-width-mm="18"/>
+                </a>
             </td>
             <td class="border3">3</td>
             <td class="border2">déboursé</td>
@@ -200,7 +215,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/4.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/4.png" alt="Havre" style="width: 69%;"/></a>
+                    <img src="../Havre/Images/4.png" alt="Havre" data-width-mm="21"/>
+                </a>
             </td>
             <td class="border3">4</td>
             <td class="border2">port dû</td>
@@ -214,7 +230,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/5.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/5.png" alt="Havre" style="width: 70%;"/></a>
+                    <img src="../Havre/Images/5.png" alt="Havre" data-width-mm="22"/>
+                </a>
             </td>
             <td class="border3">5</td>
             <td class="border2">port dû</td>
@@ -228,7 +245,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/6.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/6.png" alt="Havre" style="width: 69%;"/></a>
+                    <img src="../Havre/Images/6.png" alt="Havre" data-width-mm="21"/>
+                </a>
             </td>
             <td class="border3">6</td>
             <td class="border2">port dû</td>
@@ -242,7 +260,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/7.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/7.png" alt="Havre" style="width: 67%;"/></a>
+                    <img src="../Havre/Images/7.png" alt="Havre" data-width-mm="19"/>
+                </a>
             </td>
             <td class="border3">7</td>
             <td class="border2">port dû</td>
@@ -256,7 +275,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/7A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/7A.png" alt="Havre" style="width: 67%;"/></a>
+                    <img src="../Havre/Images/7A.png" alt="Havre" data-width-mm="19"/>
+                </a>
             </td>
             <td class="border3">7A</td>
             <td class="border2">port dû</td>
@@ -270,7 +290,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/8.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/8.png" alt="Havre" style="width: 72%;"/></a>
+                    <img src="../Havre/Images/8.png" alt="Havre" data-width-mm="25"/>
+                </a>
             </td>
             <td class="border3">8</td>
             <td class="border2">port dû</td>
@@ -284,7 +305,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/9.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/9.png" alt="Havre" style="width: 71%;"/></a>
+                    <img src="../Havre/Images/9.png" alt="Havre" data-width-mm="24"/>
+                </a>
             </td>
             <td class="border3">9</td>
             <td class="border2">port dû</td>
@@ -298,7 +320,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/10.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/10.png" alt="Havre" style="width: 75%;"/></a>
+                    <img src="../Havre/Images/10.png" alt="Havre" data-width-mm="28"/>
+                </a>
             </td>
             <td class="border3">10</td>
             <td class="border2">port dû</td>
@@ -312,7 +335,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/11.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/11.png" alt="Havre" style="width: 71%;"/></a>
+                    <img src="../Havre/Images/11.png" alt="Havre" data-width-mm="24"/>
+                </a>
             </td>
             <td class="border3">11</td>
             <td class="border2">port dû</td>
@@ -326,7 +350,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/11A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/11A.png" alt="Havre" style="width: 71%;"/></a>
+                    <img src="../Havre/Images/11A.png" alt="Havre" data-width-mm="24"/>
+                </a>
             </td>
             <td class="border3">11A</td>
             <td class="border2">port dû</td>
@@ -340,7 +365,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/12.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/12.png" alt="Havre" style="width: 91%;"/></a>
+                    <img src="../Havre/Images/12.png" alt="Havre" data-width-mm="52"/>
+                </a>
             </td>
             <td class="border3">12</td>
             <td class="border2">port dû</td>
@@ -354,7 +380,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/13.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/13.png" alt="Havre" style="width: 50%;"/></a>
+                    <img src="../Havre/Images/13.png" alt="Havre" data-width-mm="30"/>
+                </a>
             </td>
             <td class="border3">13</td>
             <td class="border2">port payé</td>
@@ -368,7 +395,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/14.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/14.png" alt="Havre" style="width: 71%;"/></a>
+                    <img src="../Havre/Images/14.png" alt="Havre" data-width-mm="40"/>
+                </a>
             </td>
             <td class="border3">14</td>
             <td class="border2">déboursé</td>
@@ -382,7 +410,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/15.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/15.png" alt="Havre" style="width: 80%;"/></a>
+                    <img src="../Havre/Images/15.png" alt="Havre" data-width-mm="45"/>
+                </a>
             </td>
             <td class="border3">15</td>
             <td class="border2">déboursé</td>
@@ -396,7 +425,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/16.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/16.png" alt="Havre" style="width: 50%;"/></a>
+                    <img src="../Havre/Images/16.png" alt="Havre" data-width-mm="30"/>
+                </a>
             </td>
             <td class="border3">16</td>
             <td class="border2">Col.Françoise</td>
@@ -410,7 +440,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/16A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/16A.png" alt="Havre" style="width: 50%;"/></a>
+                    <img src="../Havre/Images/16A.png" alt="Havre" data-width-mm="30"/>
+                </a>
             </td>
             <td class="border3">16A</td>
             <td class="border2">Col.Françoise</td>
@@ -424,7 +455,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/17.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/17.png" alt="Havre" style="width: 70%;"/></a>
+                    <img src="../Havre/Images/17.png" alt="Havre" data-width-mm="40"/>
+                </a>
             </td>
             <td class="border3">17</td>
             <td class="border2">NEW..YORK PAR LE HAVRE</td>
@@ -438,7 +470,8 @@
         <tr>
             <td class="border2">
                 <a  href="../Havre/Images/18.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Havre/Images/18.png" alt="Havre" style="width: 70%;"/></a>
+                    <img src="../Havre/Images/18.png" alt="Havre" data-width-mm="40"/>
+                </a>
             </td>
             <td class="border3">18</td>
             <td class="border2">COLONIES/PAR LE HAVRE</td>
@@ -451,8 +484,8 @@
 <!--Marque 19-->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Havre/Images/19.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Havre" style="width: 70%;"/></a>
+                <a  href="../../../proposition/index.html" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> 
+                    <img src="../Havre/Images/19.png" alt="Havre" data-width-mm="50"/>
             </td>
             <td class="border3">19</td>
             <td class="border2">port dû</td>
@@ -465,8 +498,8 @@
 <!--Marque 20-->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Havre/Images/20.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Havre" style="width: 70%;"/></a>
+                <a  href="../../../proposition/index.html" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> 
+                    <img src="../Havre/Images/20.png" alt="Havre" data-width-mm="50"/>
             </td>
             <td class="border3">20</td>
             <td class="border2">port payé</td>
@@ -479,8 +512,8 @@
 <!--Marque 20A-->          
         <tr>
             <td class="border2">
-                <!-- <a  href="../Havre/Images/20A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Havre" style="width: 70%;"/></a>
+                <a  href="../../../proposition/index.html" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> 
+                    <img src="../Havre/Images/20a.png" alt="Havre" data-width-mm="50"/>
             </td>
             <td class="border3">20A</td>
             <td class="border2">port payé</td>
@@ -578,5 +611,7 @@
         </p>
 </div>
 <!---fin Footer défilant-->
+<script src="../../../JS/img.js"></script> 
+
 </body>
 </html>      

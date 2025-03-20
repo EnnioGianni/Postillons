@@ -317,170 +317,206 @@ scrollToTopButton.onclick = function () {
 
 
 
-// Crée dynamiquement une cellule de recherche
-const searchCell = document.createElement('div');
-searchCell.style.position = 'fixed'; // Garde la boîte toujours visible
-searchCell.style.top = '13vh'; // Position en hauteur basée sur la taille de l'écran
-searchCell.style.right = '2vw'; // Ajustement basé sur la largeur de l'écran
-searchCell.style.padding = '1px 2px';
-searchCell.style.backgroundColor = '#2C3E50';
-searchCell.style.color = 'white';
-searchCell.style.borderRadius = '4px';
-searchCell.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
-searchCell.style.fontFamily = 'Arial, sans-serif';
-searchCell.style.fontSize = '8px';
-searchCell.style.zIndex = '1000';
-searchCell.style.display = 'flex';
-searchCell.style.alignItems = 'center';
-searchCell.style.gap = '1px';
-searchCell.style.width = '100px';
-searchCell.style.minWidth = '80px';
-searchCell.style.height = '25px';
-searchCell.style.minHeight = '20px';
-searchCell.style.visibility = 'visible';
-searchCell.style.opacity = '1';
+  document.addEventListener("DOMContentLoaded", function () {
+    // Créer et insérer dynamiquement la boîte de recherche
+    const searchCell = document.createElement('div');
+    searchCell.style.position = 'fixed';
+    searchCell.style.top = '13vh';
+    searchCell.style.right = '2vw';
+    searchCell.style.padding = '1px 2px';
+    searchCell.style.backgroundColor = '#2C3E50';
+    searchCell.style.color = 'white';
+    searchCell.style.borderRadius = '4px';
+    searchCell.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+    searchCell.style.fontFamily = 'Arial, sans-serif';
+    searchCell.style.fontSize = '8px';
+    searchCell.style.zIndex = '1000';
+    searchCell.style.display = 'flex';
+    searchCell.style.alignItems = 'center';
+    searchCell.style.gap = '1px';
+    searchCell.style.width = '100px';
+    searchCell.style.minWidth = '80px';
+    searchCell.style.height = '25px';
+    searchCell.style.minHeight = '20px';
+    searchCell.style.visibility = 'visible';
+    searchCell.style.opacity = '1';
 
-// Créer une boîte de saisie
-const input = document.createElement('textarea');
-input.placeholder = 'N° ou Date';
-input.style.padding = '2px';
-input.style.borderRadius = '3px';
-input.style.border = '1px solid #ccc';
-input.style.fontSize = '8px';
-input.style.width = '60px';
-input.style.height = '20px';
-input.style.textAlign = 'center';
-input.style.display = 'block';
-input.style.margin = '0 auto';
+    // Créer une boîte de saisie
+    const input = document.createElement('textarea');
+    input.placeholder = 'N° ou Date';
+    input.style.padding = '2px';
+    input.style.borderRadius = '3px';
+    input.style.border = '1px solid #ccc';
+    input.style.fontSize = '8px';
+    input.style.width = '60px';
+    input.style.height = '20px';
+    input.style.textAlign = 'center';
+    input.style.display = 'block';
+    input.style.margin = '0 auto';
 
-// Ajouter l'élément au document
-document.body.appendChild(input);
+    // Ajouter l'élément au document
+    document.body.appendChild(input);
 
-// Crée un bouton pour effectuer la recherche
-const searchButton = document.createElement('button');
-searchButton.textContent = '🔍';
-searchButton.style.padding = '2px';
-searchButton.style.border = 'none';
-searchButton.style.background = 'none';
-searchButton.style.color = 'inherit';
-searchButton.style.cursor = 'pointer';
-searchButton.style.fontSize = '12px';
+    // Crée un bouton pour effectuer la recherche
+    const searchButton = document.createElement('button');
+    searchButton.textContent = '🔍';
+    searchButton.style.padding = '2px';
+    searchButton.style.border = 'none';
+    searchButton.style.background = 'none';
+    searchButton.style.color = 'inherit';
+    searchButton.style.cursor = 'pointer';
+    searchButton.style.fontSize = '12px';
 
-// Crée un élément pour afficher les résultats
-const resultDisplay = document.createElement('div');
-resultDisplay.style.marginTop = '50px';
-resultDisplay.style.fontSize = '10px';
-resultDisplay.style.color = '#32FA5C';
-resultDisplay.style.position = 'absolute';
-resultDisplay.style.bottom = '-30px';
-resultDisplay.style.left = '0';
-resultDisplay.style.right = '0';
-resultDisplay.style.textAlign = 'center';
+    // Crée un élément pour afficher les résultats
+    const resultDisplay = document.createElement('div');
+    resultDisplay.style.marginTop = '50px';
+    resultDisplay.style.fontSize = '10px';
+    resultDisplay.style.color = '#32FA5C';
+    resultDisplay.style.position = 'absolute';
+    resultDisplay.style.bottom = '-30px';
+    resultDisplay.style.left = '0';
+    resultDisplay.style.right = '0';
+    resultDisplay.style.textAlign = 'center';
 
-// Assemble les éléments de la cellule de recherche
-searchCell.appendChild(input);
-searchCell.appendChild(searchButton);
-searchCell.appendChild(resultDisplay);
-document.body.appendChild(searchCell);
+    // Assemble les éléments de la cellule de recherche
+    searchCell.appendChild(input);
+    searchCell.appendChild(searchButton);
+    searchCell.appendChild(resultDisplay);
+    document.body.appendChild(searchCell);
 
-// Fonction de recherche
-function performSearch() {
-  const searchValue = input.value.trim();
-  resultDisplay.textContent = '';
-  let count = 0;
-
-  if (!searchValue) {
-    resultDisplay.textContent = 'Entrez une valeur.';
-    return;
-  }
-
-  const tables = document.querySelectorAll('table');
-  let found = false;
-
-  tables.forEach(table => {
-    const rows = table.querySelectorAll('tr');
-
-    rows.forEach(row => {
-      const cells = row.querySelectorAll('td');
-
-      if (cells.length >= 2) {
-        const cell = cells[1];
-        const cellValue = cell.textContent.trim();
-
-        if (!isNaN(searchValue) && cellValue === searchValue) {
-          found = true;
-          count++;
-          highlightCell(cell, `Valeur trouvée : ${cellValue}`);
-        } else {
-          resetCellStyle(cell);
+    // Ajoute une animation CSS pour le bonhomme qui bouge les bras
+    const style = document.createElement('style');
+    style.innerHTML = `
+        @keyframes wave {
+            0%, 100% { transform: translateX(-50%) rotate(0deg); }
+            50% { transform: translateX(-50%) rotate(10deg); }
         }
-      }
-
-      if (cells.length >= 5) {
-        const dateCell = cells[4];
-        const dateValue = dateCell.textContent.trim();
-
-        if (dateValue === searchValue ||
-            (dateValue.includes('-') && dateValue.split('-').includes(searchValue))) {
-          found = true;
-          count++;
-          highlightCell(dateCell, `Valeur trouvée : ${dateValue}`);
-        } else {
-          resetCellStyle(dateCell);
+        .bonhomme {
+            animation: wave 0.5s infinite alternate;
         }
-      }
+    `;
+    document.head.appendChild(style);
+
+    // Fonction de recherche
+    function performSearch() {
+        const searchValue = input.value.trim();
+        resultDisplay.textContent = '';
+        let count = 0;
+        let found = false;
+
+        if (!searchValue) {
+            resultDisplay.textContent = 'Entrez une valeur.';
+            return;
+        }
+
+        const tables = document.querySelectorAll('table');
+
+        tables.forEach(table => {
+            const rows = table.querySelectorAll('tr');
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+
+                if (cells.length >= 2) {
+                    const cell = cells[1]; // Toujours la colonne 2
+                    const cellValue = cell.textContent.trim();
+
+                    // Suppression de l'ancien bonhomme
+                    let existingBonhomme = cell.querySelector(".bonhomme");
+                    if (existingBonhomme) existingBonhomme.remove();
+
+                    if (!isNaN(searchValue) && cellValue === searchValue) {
+                        found = true;
+                        count++;
+                        highlightCell(cell, `Valeur trouvée : ${cellValue}`);
+
+                        // Ajouter le bonhomme 🙌 avec animation
+                        let bonhomme = document.createElement("div");
+                        bonhomme.innerText = "🙌";
+                        bonhomme.style.position = "absolute";
+                        bonhomme.style.top = "-30px";
+                        bonhomme.style.left = "50%";
+                        bonhomme.style.transform = "translateX(-50%)";
+                        bonhomme.style.fontSize = "24px";
+                        bonhomme.classList.add("bonhomme");
+
+                        // Positionner correctement
+                        cell.style.position = "relative";
+                        cell.appendChild(bonhomme);
+                    } else {
+                        resetCellStyle(cell);
+                    }
+                }
+
+                if (cells.length >= 5) {
+                    const dateCell = cells[4]; // Recherche aussi par date
+                    const dateValue = dateCell.textContent.trim();
+
+                    if (dateValue === searchValue ||
+                        (dateValue.includes('-') && dateValue.split('-').includes(searchValue))) {
+                        found = true;
+                        count++;
+                        highlightCell(dateCell, `Valeur trouvée : ${dateValue}`);
+                    } else {
+                        resetCellStyle(dateCell);
+                    }
+                }
+            });
+        });
+
+        if (!found) {
+            resultDisplay.textContent = `"${searchValue}" non trouvé.`;
+            resultDisplay.style.color = '#DB423D';
+            resultDisplay.style.fontWeight = 'bold';
+            resultDisplay.style.fontSize = '12px';
+
+            // Ajout de l'effet clignotant continu
+            let isVisible = true;
+            setInterval(() => {
+                resultDisplay.style.visibility = isVisible ? 'hidden' : 'visible';
+                isVisible = !isVisible;
+            }, 500); // Clignote toutes les 500ms
+        } else {
+            resultDisplay.textContent = `${count} résultat(s) trouvé(s).`;
+            resultDisplay.style.color = '#DB423D';
+            resultDisplay.style.fontWeight = 'bold';
+            resultDisplay.style.visibility = 'visible'; // Réinitialiser si trouvé
+        }
+    }
+
+    // Fonction pour mettre en surbrillance une cellule
+    function highlightCell(cell, tooltip) {
+        cell.style.backgroundColor = '#32FA5C';
+        cell.style.color = '#000';
+        cell.style.fontWeight = 'bold';
+        cell.setAttribute('title', tooltip);
+        cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Fonction pour réinitialiser le style d'une cellule
+    function resetCellStyle(cell) {
+        cell.style.backgroundColor = '';
+        cell.style.color = '';
+        cell.style.fontWeight = '';
+        cell.removeAttribute('title');
+        let existingBonhomme = cell.querySelector(".bonhomme");
+        if (existingBonhomme) existingBonhomme.remove();
+    }
+
+    // Ajoute un événement sur le bouton de recherche
+    searchButton.addEventListener('click', performSearch);
+
+    // Ajoute un événement pour la touche Entrée
+    input.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
     });
-  });
 
-  if (!found) {
-    resultDisplay.textContent = `"${searchValue}" non trouvé.`;
-    resultDisplay.style.color = '#DB423D';
-    resultDisplay.style.fontWeight = 'bold';
-    resultDisplay.style.fontSize = '12px';
-
-    // Ajout de l'effet clignotant continu
-    let isVisible = true;
-    setInterval(() => {
-        resultDisplay.style.visibility = isVisible ? 'hidden' : 'visible';
-        isVisible = !isVisible;
-    }, 500); // Clignote toutes les 500ms
-} else {
-    resultDisplay.textContent = `${count} résultat(s) trouvé(s).`;
-    resultDisplay.style.color = '#DB423D';
-    resultDisplay.style.fontWeight = 'bold';
-    resultDisplay.style.visibility = 'visible'; // Réinitialiser si trouvé
-}
-}
-
-// Fonction pour mettre en surbrillance une cellule
-function highlightCell(cell, tooltip) {
-  cell.style.backgroundColor = '#32FA5C';
-  cell.style.color = '#000';
-  cell.style.fontWeight = 'bold';
-  cell.setAttribute('title', tooltip);
-  cell.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// Fonction pour réinitialiser le style d'une cellule
-function resetCellStyle(cell) {
-  cell.style.backgroundColor = '';
-  cell.style.color = '';
-  cell.style.fontWeight = '';
-  cell.removeAttribute('title');
-}
-
-// Ajoute un événement sur le bouton de recherche
-searchButton.addEventListener('click', performSearch);
-
-// Ajoute un événement pour la touche Entrée
-input.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    performSearch();
-  }
+    // Ajout du titre pour l'info-bulle
+    input.title = "Tapez le numéro de la marque ou une date pour rechercher";
 });
 
-// Ajout du titre pour l'info-bulle
-input.title = "Tapez le numéro de la marque ou une date pour rechercher";
   
 
 

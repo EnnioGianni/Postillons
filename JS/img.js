@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const PIXELS_PER_MM = 3.78; // Conversion mm → px (96 DPI)
-    const STORAGE_EXPIRATION = 86400000; // 24 heures en millisecondes
+    const PIXELS_PER_MM = 3.78;
+    const STORAGE_EXPIRATION = 86400000;
     let isSessionStorageAvailable = checkSessionStorage();
 
     function checkSessionStorage() {
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!data) return null;
         let parsed = JSON.parse(data);
         if (Date.now() - parsed.timestamp > STORAGE_EXPIRATION) {
-            sessionStorage.removeItem(src); // Supprimer les données expirées
+            sessionStorage.removeItem(src);
             return null;
         }
         return parsed.ratio;
@@ -42,20 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isNaN(widthMM)) return;
 
         let widthPX = mmToPx(widthMM);
-        let src = img.currentSrc || img.src; // Prend en compte `srcset` si présent
+        let src = img.currentSrc || img.src;
 
         let cachedRatio = getCachedRatio(src);
         if (cachedRatio) {
-            img.style.width = `${widthPX}px`;
-            img.style.height = `${widthPX / cachedRatio}px`;
+            setImageStyles(img, widthPX, cachedRatio);
             return;
         }
 
         if (img.complete && img.naturalWidth) {
             let ratio = img.naturalWidth / img.naturalHeight;
             cacheRatio(src, ratio);
-            img.style.width = `${widthPX}px`;
-            img.style.height = `${widthPX / ratio}px`;
+            setImageStyles(img, widthPX, ratio);
             return;
         }
 
@@ -64,13 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
         tempImg.onload = function () {
             let ratio = tempImg.width / tempImg.height;
             cacheRatio(src, ratio);
-            img.style.width = `${widthPX}px`;
-            img.style.height = `${widthPX / ratio}px`;
+            setImageStyles(img, widthPX, ratio);
         };
     }
 
+    function setImageStyles(img, widthPX, ratio) {
+        img.style.width = "100%";
+        img.style.maxWidth = `${widthPX}px`;
+        img.style.height = "auto";
+        img.style.display = "block";
+        img.style.margin = "0 auto";
+    }
+
     function processImages() {
-        let images = document.getElementsByTagName("img"); // Plus rapide que `querySelectorAll`
+        let images = document.getElementsByTagName("img");
         for (let img of images) {
             if (img.hasAttribute("data-width-mm")) {
                 if ('IntersectionObserver' in window) {
@@ -94,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     processImages();
 
     const mutationObserver = new MutationObserver(mutations => {
-        requestAnimationFrame(() => { // Optimisation pour ne pas bloquer le thread principal
+        requestAnimationFrame(() => {
             for (let mutation of mutations) {
                 for (let node of mutation.addedNodes) {
                     if (node.tagName === "IMG" && node.hasAttribute("data-width-mm")) {
@@ -106,4 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    // Ajout du support jQuery pour tous types d'écrans
+    if (/Mobi|Android|iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        $(document).ready(function () {
+            $("img[data-width-mm]").each(function () {
+                adjustImageSize(this);
+            });
+        });
+    }
 });

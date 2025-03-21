@@ -7,13 +7,17 @@
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
+        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-            <script src="../../../JS/script_global.js.js" defer></script>        
+            <script src="../../../JS/script_global.js" defer></script>        
+            <script src="../../../JS/manquantes.js" defer></script>        
+        <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
             <script src="../../../JS/calculatrice.js" defer></script> 
+            <script src="../../../JS/Liens.js" defer></script>
             <link rel="stylesheet" href="../../../css/calculatrice.css" />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
 <!--Debut pagination--> 
             <script src="../../../JS/villesA.js" defer></script>        
             <script src="../../../JS/villesB.js" defer></script>        
@@ -42,15 +46,25 @@
             <script src="../../../JS/villesY.js" defer></script>        
             <script src="../../../JS/villesZ.js" defer></script>        
             <script src="../../../JS/accueil.js" defer></script>
-            <script src="../../../JS/accueil.js" defer></script>
             <script src="../../../JS/cityRedirector.js"></script>
             <script src="path/to/cityRedirector.js"></script>  
-            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>   
-    </head>  
+            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script> 
+                      
+    </head> 
+<style>
+p::first-letter {
+        color: red;
+        font-size: 130%;
+      }
+
+</style>
+     
+     
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
-        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>                  
-        <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>  
+        <a href="../../../laPosteDeLancienneFrance/Villes P/P_sommaire.html"><img id="logoImg" src="../../Resource/books_library_1768.ico" alt="Logo"></a>                  
+       
+            <h1 class="titre-principal">Le Postillon</h1>
         <a class="div a" href="../../Villes A/sommaireVilleA.html">A</a>
         <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
         <a class="div a" href="../../Villes C/C_sommaire.html">C</a>
@@ -77,7 +91,7 @@
         <a class="div a" href="../../Villes X/X_sommaire.html">X</a>
         <a class="div a" href="../../Villes Y/Y_sommaire.html">Y</a>
         <a class="div a" href="../../Villes Z/Z_sommaire.html">Z</a>            
-    </header>
+    </header>  
 <section>
 <!--Debut pagination--> 
 <h2 id="h12"><a href="https://fr.wikipedia.org/wiki/La_Flotte" class="title-tip" style="font-size: 25px;" title="lien vers wikipedia">
@@ -126,8 +140,8 @@
 <!--Marque 1--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/1.png" alt="La Flotte" style="width: 80%;"/></a>
+                <a  href="../La-Flotte/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/1.png" alt="La Flotte" data-width-mm="35"/>
             </td>
             <td class="border3">1</td>
             <td class="border2">port dû</td>
@@ -140,8 +154,8 @@
 <!--Marque 2--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/2.png" alt="La Flotte" style="width: 70%;"/></a>
+                <a  href="../La-Flotte/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/2.png" alt="La Flotte" data-width-mm="24"/>
             </td>
             <td class="border3">2</td>
             <td class="border2">port dû</td>
@@ -154,8 +168,8 @@
 <!--Marque 3--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/3.png" alt="La Flotte" style="width: 67%;"/></a>
+                <a  href="../La-Flotte/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/3.png" alt="La Flotte" data-width-mm="21"/>
             </td>
             <td class="border3">3</td>
             <td class="border2">port dû</td>
@@ -168,8 +182,8 @@
 <!--Marque 3A--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/3A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/3A.png" alt="La Flotte" style="width: 67%;"/></a>
+                <a  href="../La-Flotte/Images/3a.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/3a.png" alt="La Flotte" data-width-mm="21"/>
             </td>
             <td class="border3">3A</td>
             <td class="border2">port dû</td>
@@ -182,8 +196,8 @@
 <!--Marque 4--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/4.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/4.png" alt="La Flotte" style="width: 79%;"/></a>
+                <a  href="../La-Flotte/Images/4.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/4.png" alt="La Flotte" data-width-mm="33"/>
             </td>
             <td class="border3">4</td>
             <td class="border2">port dû</td>
@@ -196,8 +210,8 @@
 <!--Marque 5--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/5.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/5.png" alt="La Flotte" style="width: 67%;"/></a>
+                <a  href="../La-Flotte/Images/5.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/5.png" alt="La Flotte" data-width-mm="30"/>
             </td>
             <td class="border3">5</td>
             <td class="border2">port dû</td>
@@ -210,8 +224,8 @@
 <!--Marque 6--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/6.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/6.png" alt="La Flotte" style="width: 50%;"/></a>
+                <a  href="../La-Flotte/Images/6.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/6.png" alt="La Flotte" data-width-mm="30"/>
             </td>
             <td class="border3">6</td>
             <td class="border2">port dû</td>
@@ -224,8 +238,8 @@
 <!--Marque 6A--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/6A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../Flotte/Images/6A.png" alt="La Flotte" style="width: 50%;"/></a>
+                <a  href="../La-Flotte/Images/6A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/6A.png" alt="La Flotte" data-width-mm="35"/>
             </td>
             <td class="border3">6A</td>
             <td class="border2">port dû</td>
@@ -238,8 +252,8 @@
 <!--Marque 7--->          
         <tr>
             <td class="border2">
-                <a  href="../Flotte/Images/7.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                    <img src="../../Resource/Absentebleu.png" alt="La Flotte" style="width: 70%;"/></a>
+                <a  href="../La-Flotte/Images/7.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
+                    <img src="../La-Flotte/Images/7.png" alt="La Flotte" data-width-mm="17"/>
             </td>
             <td class="border3">7</td>
             <td colspan="2">N° 3 comme entrée par mer seule</td>         
@@ -333,5 +347,7 @@
         </p>
 </div>
 <!---fin Footer défilant--> 
+<script src="../../../JS/img.js"></script> 
+
 </body>
 </html>      

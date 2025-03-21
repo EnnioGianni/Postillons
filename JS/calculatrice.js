@@ -316,9 +316,9 @@ scrollToTopButton.onclick = function () {
 
 
 
-
+// Créer et insérer dynamiquement la boîte de recherche
   document.addEventListener("DOMContentLoaded", function () {
-    // Créer et insérer dynamiquement la boîte de recherche
+    
     const searchCell = document.createElement('div');
     searchCell.style.position = 'fixed';
     searchCell.style.top = '13vh';

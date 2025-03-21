@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Flixecourt', url: '../../../laPosteDeLancienneFrance/Villes F/Flixecourt/flixecourt.html' },
         { name: 'Flocelliere', url: '../../../laPosteDeLancienneFrance/Villes F/Flocelliere/laFlocelliere.html' },
         { name: 'Florac', url: '../../../laPosteDeLancienneFrance/Villes F/Florac/florac.html' },
-        { name: 'Flotte', url: '../../../laPosteDeLancienneFrance/Villes F/Flotte/laFlotte.html' },
+        { name: 'La-Flotte', url: '../../../laPosteDeLancienneFrance/Villes F/La-Flotte/laFlotte.html' },
         { name: 'Foix', url: '../../../laPosteDeLancienneFrance/Villes F/Foix/foix.html' },
         { name: 'Fontainebleau', url: '../../../laPosteDeLancienneFrance/Villes F/Fontainebleau/fontainebleau.html' },
         { name: 'Fontaine Francaise', url: '../../../laPosteDeLancienneFrance/Villes F/FontaineFrancaise/fontaineFrancaise.html' },

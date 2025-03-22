@@ -1,0 +1,170 @@
+::selection {
+	background: rgb(80 80 80);
+	color: rgb(200 200 200);
+}
+body {
+	font-size: 16px;
+	font-family: Times New Roman, Times, serif;
+	background-color: #e8e8e8;
+	background-image: url("//www.transparenttextures.com/patterns/light-paper-fibers.png");
+	color: rgb(50 50 50);
+	padding: 1.5rem;
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	font-variant-caps: small-caps;
+}
+h1 {
+	text-transform: uppercase;
+	font-size: 3rem;
+	line-height: 1em;
+	column-span: all;
+	-webkit-column-span: all;
+	text-align: center;
+	padding: 1em 0;
+	margin: 0;
+	border-top: 1px solid;
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: 1em;
+	margin: 0.25em 0;
+}
+
+p {
+	text-align: justify;
+}
+
+header {
+	text-align: center;
+	column-span: all;
+	border-top: 3px solid rgb(30 30 30);
+	border-bottom: 3px solid rgb(30 30 30);
+	font-size: 0.75em;
+	padding-top: 0.75em;
+	padding-bottom: 0.75em;
+	margin-bottom: 2em;
+	font-weight: 700;
+	font-variant-caps: small-caps;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	/* align-itemscenter; */
+	gap: 1em;
+}
+main{
+    padding-bottom: 2rem;
+    border-bottom: 1px solid;
+}
+article {
+	margin: 2em 0;
+}
+article:first-child,
+h2:first-child {
+	margin-top: 0;
+}
+article > h2 + p:first-letter {
+	font-size: 3.5rem;
+	font-weight: bolder;
+	margin: 0 0.25em 0 0;
+	float: left;
+	line-height: 1;
+}
+article p {
+	line-height: 1.5;
+}
+article + article::before {
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 1px;
+    margin: 0 auto 3rem;
+    background: rgb(30 30 30);
+}
+
+blockquote {
+	position: relative;
+	line-height: 1.2em;
+	font-size: 1.5rem;
+	border-left: 0.25em solid;
+	margin: 0;
+	padding: 0.5em 1em;
+	background: rgb(0 0 0 / 5%);
+}
+blockquote::before{
+	content:'“';
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	font-size: 10em;
+	line-height: 1em;
+	opacity: .05;
+	font-family: fantasy;
+}
+blockquote > p{
+	text-align: center;
+	/* text-wrap: balance; */
+	font-style: italic;
+	letter-spacing: 0.05em;
+}
+
+/*legende sous l'image*/
+figure {
+    display: block;
+    float: left ;
+    width: 200px;
+    text-align: center;
+    margin: 0 10px 0 10px;
+    padding: 5px 5px 3px;
+    border: 1px solid #616060;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px 1px rgba(69, 69, 69, 0.2);
+	font-size: 1rem;
+	line-height: 1em;
+}
+ 
+figure img {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+@media only all and (min-width: 700px) {
+	body {
+		font-size: 18px;
+	}
+	header {
+		font-size: 1.25rem;
+	}
+	main {
+		columns: 2;
+		column-gap: 3.5rem;
+		line-height: 1.5em;
+		column-rule: 1px outset #444;
+	}
+	p {
+		text-justify: inter-word;
+	}
+}
+@media only all and (min-width: 1000px) {
+	body {
+		font-size: 20px;
+	}
+	header {
+		font-size: 1.5rem;
+	}
+	main {
+		columns: 3;
+	}
+	h1 {
+		font-size: 5rem;
+	}
+}

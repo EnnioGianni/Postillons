@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+  /* background: url(/Images/Carrosse.jpg) center center / cover no-repeat fixed; */
+  padding:  20px;
+  min-height: 100vh;
+  }
+  
+  
+  /* Center website */
+  .main {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+.h1 {
+  font-size: 50px;
+  word-break: break-Gallerie;
+  text-align: center;
+  color: #060606;
+  margin: -100px 0 20px 0 ;
+  }
+.h2{
+  font-size: 30px;
+  word-break: break-Gallerie;
+  text-align: center;
+  color: #0a0a0a;
+  margin: 10px 0 30px 
+  }
+  .div {
+   border-width:1px 2px 3px 2px;
+   border-style:solid;
+   border-radius: 5px;
+   color: #070707;
+   box-shadow: 3px 3px 3px rgb(209, 209, 207);
+   text-align: center;
+   font-size: 15px;
+  }
+  
+  .row {
+    margin: 10px -16px;
+  }
+  
+  /* Add padding BETWEEN each column */
+  .row,
+  .row > .column {
+    padding: 8px;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+  }
+  
+  /* Clear floats after rows */ 
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Content */
+  .content {
+    background-color: rgb(252, 152, 152);
+    padding: 10px;
+  }
+  
+  /* The "show" class is added to the filtered elements */
+  .show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+   .btn {
+    border-style:solid;
+    border-radius: 3px;
+    /* color: #070707; */
+    box-shadow: 2px 2px 2px rgb(2, 162, 255);
+    outline: none;
+    padding: 12px 16px;
+    background-color: rgb(253, 253, 253);
+    cursor: pointer;
+  } 
+  
+   .btn:hover {
+    background-color: #02e5fe;
+  } 
+  
+   .btn.active {
+    background-color: #666;
+    color: white;
+    border-radius: 4px;
+  } 
+  
+  /*Boutton
+  .btn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .btn span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .btn:hover span {
+    padding-right: 25px;
+  }
+  
+  .btn:hover span:after {
+    opacity: 1;
+    right: 0;
+  }*/
+  
+  
+  
+  
+  /*detail
+  details {
+      font: 25px "Open Sans", Calibri, sans-serif;
+      width: 330px;
+    }
+    
+    details > summary {
+      padding: 0px 0px;
+      width: 330px;
+      background-color: #ddd;
+      border: none;
+      box-shadow: 3px 3px 2px black;
+      cursor: pointer;
+      margin: 0px  0 1px;
+    }
+    
+    details > p {
+      border-radius: 0 0 10px 10px;
+      background-color: #ddd;
+      padding: 2px 4px;
+      margin: 0px 0 0 0px;
+      box-shadow: 3px 3px 4px black;
+      text-align: left;
+      font-size: 1.5rem;
+    }
+    
+    details[open] > summary {
+      background-color: #ccf;
+      padding: 0 -30px 0 -30px;
+  
+    }*/
+
+#mainFooter {
+    background-color:dimgrey;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: var(--white);
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

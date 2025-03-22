@@ -1,0 +1,198 @@
+body {
+  margin: 0;
+  font-family: calibri;
+  /* background-color: rgb(20,20,20); */
+  color: white;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.divider {
+  margin: 0em 0em 2em 0em;
+  border: 1px solid rgb(30,30,30)
+}
+
+#toggle {
+  display: block;
+  position: absolute;
+  inset: 0 auto auto 0;
+  height: 1rem;
+  aspect-ratio: 0.5;
+  background-color: rgb(30,30,30);
+  color: white;
+  border: 3px solid rgb(60,60,60);
+  border-radius: 0.2rem;
+  font-size: 10px;
+  cursor: pointer;
+  margin: 10px 0 0 20px;
+
+}
+
+#side-toggle {
+  position: absolute;
+  display: block;
+  font-size: 1em;
+  cursor: pointer;
+  right: 1rem;
+  z-index: 2;
+  color: rgb(80,80,80);
+  user-select: none;
+}
+
+#side-toggle:hover {
+  color: rgb(100,100,100);
+}
+
+#scroll-container {
+  height: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+#sidebar {
+  position: absolute;
+  inset: 0 auto auto 0;
+  background-color: rgb(20,20,20);
+  height: 100%;
+  width: 10em;
+  max-width: 95%;
+  transition: transform;
+  transition-duration: 0.2s;
+  border-radius: 0 0.5em 0.5em 0;
+  overflow: hidden;
+  filter: drop-shadow(0 0.5em 0.5em black);
+  z-index: 2;
+}
+
+.list-item {
+  display: block;
+  position: relative;
+  width: 100%;
+  background-color: rgb(40,40,40);
+  margin-top: 5px;
+  text-align: center;
+  padding: 10px 0em;
+  user-select: none;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.hoverable:hover {
+  filter: brightness(120%);
+}
+
+.list-start {
+  width: 100%;
+}
+
+.list-end {
+  width: 100%;
+  margin-top: auto;
+  background-color: rgb(15,15,15);
+}
+
+.ad {
+  height: auto;
+  width: auto;
+  background: url(/MPGenerales/1.jpg);
+  background-size: cover;
+  margin: 10px;
+  padding: 10%;
+}
+
+.shopping-cart {
+  position: relative;
+  background-color: rgb(50,150,50);
+  padding: 0.5em 0em 2.5em;
+  margin: 0;
+
+}
+
+#item-count {
+  color: rgb(10,40,10);
+}
+
+#proceed-to-check-out {
+  position: absolute;
+  width: 100%;
+  bottom: 0.5em;
+  left: 0;
+  color: rgb(10,50,10);
+  border-top: 2px solid rgb(10,50,10);
+}
+
+#list-icon {
+  position: absolute;
+  top: 0.35em;
+  left: 0.35em;;
+  font-size: 2em;
+  filter: grayscale(100%);
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  display: block;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#content {
+  text-align: center;
+  margin: 5em 2em 5em 2em;
+}
+
+#swapper-btn {
+  position: relative;
+  display: block;
+  max-width: 350px;
+  /* margin: 3em auto 0 auto; */
+  padding: 10px 10px 10px 10px;
+  border-radius: 0.5em;
+  background: rgb(20,79,10);
+  border: 3px solid black;
+  user-select: none;
+  cursor: pointer;
+  font-size: 8px;
+  margin: 400px 0 0 800px ;
+}
+
+#swap-icon {
+  position: absolute;
+  right: 1rem;
+  top: auto;
+  font-size: 1em;
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(15,15,15);
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 1em;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(60,60,60); 
+    border-radius: 1em;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(80,80,80); 
+  }

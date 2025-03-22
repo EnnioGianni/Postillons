@@ -1,0 +1,148 @@
+#body{ 
+  background: url(../Images/Carrosse.jpg) center center / cover no-repeat fixed;
+}
+#body1{ 
+  background: url(../LesBallonsMontee/Images/1.jpg) center center / cover no-repeat fixed;
+}
+table {
+  border: 1px solid #090909;
+  border-collapse: collapse;
+  margin: 0px;  
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+#h1{
+  margin: 40px;
+  color:blue ;
+}
+table caption {
+  font-size: 1em;
+  margin: .5em 0 .75em;
+  text-align: center;
+}
+
+table tr {
+  background-color: #fefdfb;
+  border: 2px solid #090909;
+  padding: 5px;
+}
+
+table th,
+table td {
+  padding: 5px;
+  text-align: center;
+  font-size: 1rem;
+  border: px solid #090909;
+  /* font-weight: bold; */
+ 
+}
+
+table th {
+  font-size: 1em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: brown;
+  padding: 10px;
+ 
+}
+
+@media screen and (max-width: 500px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1.5rem;
+    /* text-align: right; */
+    padding: 5px 10px 5px 20px;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+.border1{
+  border-width: 0.5px;
+  border-style: solid;
+  border-color : rgb(10, 10, 10);
+}
+
+/* general styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+  margin: 10px;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#canvas1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.youtubeLabel {
+position: absolute;
+top: 0;
+left: 0;
+padding: 15px;
+max-width: 40%;
+}
+.youtubeLabel a{
+color: navy;
+}

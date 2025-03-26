@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tableau de liens de villes
     var cityLinks = [
-        { name: 'Baccarat', url: 
+        { name: 'Baccarat',  url: '../../../laPosteDeLancienneFrance/Villes B/Baccarat/baccarat.html' },
         { name: 'Bagneres de Bigorre', url: '../../../laPosteDeLancienneFrance/Villes B/Bagneres/bagneres.html' },
         { name: 'Bagneres de Luchon', url: '../../../laPosteDeLancienneFrance/Villes B/Bagneres30/bagneres.html' },
         { name: 'Bagnols', url: '../../../laPosteDeLancienneFrance/Villes B/Bagnols/bagnols.html' },

@@ -1,136 +1,177 @@
+/* --------------------- Dropdown Menu --------------------- */
 
-/* Style the dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
+  }
   
-}
-
-/* Style the dropdown link */
-.dropdown .div.a {
-    display: block;
-    position: relative;
-    color: rgb(253, 91, 4);
-    font-weight: bold; /* Texte en gras */
+  /* Lien principal du dropdown */
+  .dropdown .div.a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fd5b04;
+    font-weight: bold;
     height: 36px;
-    /* border: 3px #e08318 solid; */
-}
-.dropdown .div.a:hover{
-    background-color: rgb(253, 218, 201);
+    padding: 0 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dropdown .div.a:hover {
+    background-color: #fddac9;
     color: #0411f7;
-}
-
-/* Style the dropdown content (hidden by default) */
-.dropdown-content {
+  }
+  
+  /* Icône (flèche) */
+  .dropdown .div.a i {
+    margin-left: 8px;
+    font-size: 18px;
+    color: #f90101;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .dropdown:hover .div.a i {
+    transform: rotate(180deg);
+    color: #0411f7;
+  }
+  
+  /* Contenu du menu déroulant */
+  .dropdown-content {
     display: none;
     position: absolute;
     background-color: #fc8b44;
-    min-width: 160px;
-    z-index: 1;
-    border: 1px solid transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-/* Style the dropdown links */
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: rgb(254, 254, 254);
-    font-weight: bold; /* Texte en gras */
-}
-
-/* Change la couleur de fond au passage de la souris */
-.dropdown-content a:hover {
-    background-color: rgb(253, 218, 201);
-    color: #0411f7;
-    border: 2px solid #01580e;
-}
-
-/* Add arrow icon before the link */
-.dropdown .div.a i {
-    margin-left: 5px;
-    font-size: 20px; /* Taille de la flèche augmentée */
-    color: #f90101;
-    transition: transform 0.3s ease;
-}
-
-/* Faites pivoter la flèche en survol pour indiquer le menu ouvert */
-.dropdown:hover .div.a i {
-    transform: rotate(180deg);
-    color:#0411f7
-}
-
-
-/*Boite de recherche*/
-
-.search {
-  width: 20%; /* Utiliser toute la largeur du conteneur */
-  display: flex;
-  margin: 0; /* Enlever la marge négative */
-}
-  .searchTerm {
-    width: 50%;
-    border: 3px solid #f77204;
-    border-right: none;
-    padding: 5px;
-    height: 36px;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-  }
-  .searchTerm:focus {
-    color: #380136;
-  }
-  .searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid #f77204;
-    background: #f77204;
-    text-align: center;
-    color: #eeeeee;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
- 
+    min-width: 180px;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeIn 0.3s ease-in-out;
   }
   
-  .wrap {
-    width: 80%; /* Largeur plus adaptative */
-    margin: 0 auto; /* Centrer dans la page */
-    display: flex; /* Utiliser flexbox pour le centrage */
-    justify-content: center; /* Centrer les éléments horizontalement */
-    align-items: center; /* Centrer les éléments verticalement */
-    padding: 20px; /* Ajouter un peu de padding */
-}
-/* Media Query pour Tablettes */
-@media screen and (max-width: 768px) {
-  .wrap {
-      width: 90%; /* Augmenter la largeur pour les tablettes */
+  /* Afficher au survol */
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
+  
+  /* Liens dans le dropdown */
+  .dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #fddac9;
+    color: #0411f7;
+    border-left: 4px solid #01580e;
+  }
+  
+  /* Animation pour le menu */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* --------------------- Search Box --------------------- */
+  
+  .wrap {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
   .search {
-      width: 30%; /* Ajuster la largeur de la boîte de recherche */
+    display: flex;
+    width: 100%;
+    max-width: 500px;
   }
+  
   .searchTerm {
-      width: 70%; /* Ajuster la largeur de l'input */
+    flex: 1;
+    border: 3px solid #f77204;
+    border-right: none;
+    padding: 8px 12px;
+    height: 40px;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+    font-size: 16px;
   }
-}
-
-/* Media Query pour Smartphones */
-@media screen and (max-width: 480px) {
-  .wrap {
-      width: 95%; /* Augmenter la largeur pour les smartphones */
+  
+  .searchTerm:focus {
+    color: #380136;
+    background-color: #fff9f6;
   }
-  .search {
-      width: 50%; /* Ajuster la largeur de la boîte de recherche */
-  }
-  .searchTerm {
-      width: 60%; /* Ajuster la largeur de l'input */
-  }
+  
   .searchButton {
-      width: 50px; /* Ajuster la taille du bouton si nécessaire */
+    width: 48px;
+    height: 40px;
+    border: none;
+    background-color: #f77204;
+    color: #ffffff;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
   }
-}
+  
+  .searchButton:hover {
+    background-color: #d65e02;
+  }
+  
+  /* --------------------- Responsive --------------------- */
+  
+  /* Tablettes */
+  @media screen and (max-width: 768px) {
+    .wrap {
+      width: 90%;
+    }
+  
+    .search {
+      max-width: 400px;
+    }
+  
+    .searchTerm {
+      font-size: 15px;
+    }
+  }
+  
+  /* Smartphones */
+  @media screen and (max-width: 480px) {
+    .wrap {
+      width: 95%;
+    }
+  
+    .search {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .searchTerm,
+    .searchButton {
+      border-radius: 8px;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  
+    .searchButton {
+      font-size: 18px;
+      height: 40px;
+    }
+  }
+  
 
 /*Fin Boite de recherche*/
 

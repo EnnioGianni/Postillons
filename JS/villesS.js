@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "LA Seyne-sur-Mer", "La Souterraine", "La Suze", "Le Sap", "Les-Sables-Dolonne",
         "Petite Poste de Strasbourg", "Sable", "Saint-Afrique", "Saint-Aignan", "Saint-Amand-en-Berry",
         "Saint-Amand-les-Eaux", "Saint-Ambroix", "Saint-Amour", "Saint-Andre-de-Cubsac", "Saint-Antonin",
-        "Saint-Astier", "Saint-Avold", "Saint-Benoît-du-Sault", "Saint-Bonnet-de-Joux", "Saint-Bonnet-en-Champsaur",
+        "Saint-Astier", "Saint-Avold", "Saint-Beat" "Saint-Benoît-du-Sault", "Saint-Bonnet-de-Joux", "Saint-Bonnet-en-Champsaur",
         "Saint-Brice", "Saint-Brieuc", "Saint-Bris", "Saint-Calais", "Saint-Cannat", "Saint-Cere",
         "Saint-Chamas", "Saint-Chamond", "Saint-Chinian", "Saint-Christophe", "Saint-Clar", "Saint-Claud",
         "Saint-Claude", "Saint-Cloud", "Saint-Cosme", "Saint-Cybardeaux", "Saint-Cyprien", "Saint-Denis",

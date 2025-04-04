@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "Saint-Hermand", "Saint-Hilaire-du-Harcouet", "Saint-Hippolyte", "Saint-Hubert-le-Roi", "Saint-James-de-Beuvron",
         "Saint-Jean-D_Angely", "Saint-Jean-De-Gardoningue", "Saint-Jean-de-Gonville", "Saint-Jean-de-Losne", "Saint-Jean-de-Luz",
         "Saint-Jean-de-Vedaz", "Saint-Jean-du-Bruel", "Saint-Jean-le-Vieux", "Saint-Jean-Pied-de-Port", "Saint-Jory",
-        "Saint-Julien-le-Faucon", "Saint-Just", "Saint-Lambert-du-Lattay", "Saint-Laurent", "Saint-Laurent-de-Cerdans",
+        "Saint-Julien-le-Faucon", "Saint-Junien", "Saint-Just", "Saint-Lambert-du-Lattay", "Saint-Laurent", "Saint-Laurent-de-Cerdans",
         "Saint-Laurent-du-Var", "Saint-Laurent-les-Eaux", "Saint-Leonard", "Saint-Lizier", "Saint-Lo", "Saint-Lys",
         "Saint-Macaire", "Saint-Maixent", "Saint-Malo", "Saint-Marcellin", "Saint-Martin-d’Estreaux", "Saint-Martin-de-Re",
         "Saint-Martin-Valmeroux", "Saint-Martory", "Saint-Maurice", "Saint-Maximin", "Saint-Mihiel", "Saint-Nicolas-du-Port",

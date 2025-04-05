@@ -121,3 +121,92 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Attention aux fausses marquée
+(function () {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', showAlertOnce);
+    } else {
+      showAlertOnce();
+    }
+  
+    function showAlertOnce() {
+      // Vérifie si l'alerte a déjà été vue pendant cette session
+      if (sessionStorage.getItem('alertAlreadyShown')) return;
+  
+      // Sinon, on continue et on enregistre qu'on l'a montrée
+      sessionStorage.setItem('alertAlreadyShown', 'true');
+  
+      try {
+        const box = document.createElement('div');
+        box.innerHTML = '⚠️ Attention aux fautes marquées.<br>© Les images sont la propriété du site et ne peuvent être copiées ou utilisées sans permission.';
+  
+        Object.assign(box.style, {
+          all: 'initial',
+          position: 'fixed',
+          top: '220px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backgroundColor: '#f44336',
+          color: 'white',
+          padding: '15px 30px',
+          borderRadius: '10px',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+          fontFamily: 'Arial, sans-serif',
+          fontSize: '16px',
+          zIndex: '999999',
+          textAlign: 'center',
+          display: 'block'
+        });
+  
+        document.body.appendChild(box);
+  
+        setTimeout(() => {
+          if (box && box.parentNode) {
+            box.parentNode.removeChild(box);
+          }
+        }, 7000);
+      } catch (e) {
+        console.warn('Erreur d’affichage du message d’alerte :', e);
+      }
+    }
+  })();
+  
+  (function () {
+    // Interdit le clic droit sur toutes les images
+    document.addEventListener('contextmenu', function (e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+  
+    // Interdit le glisser-déposer des images
+    document.addEventListener('dragstart', function (e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+  
+    // Interdit la sélection des images
+    document.addEventListener('selectstart', function (e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+  })();
+  
+  

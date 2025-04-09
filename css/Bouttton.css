@@ -147,11 +147,6 @@ img {
         padding: 0px;
         /* user-select: none;  */
     }
-    img:hover{
-        -ms-transform: scale(1.5); /* IE 9 */
-        -webkit-transform: scale(1.5); /* Safari 3-8 */
-        transform: scale(1.5);
-    }
     
     figure figcation {
         font-style:italic;
@@ -223,6 +218,7 @@ article{
     margin: 0px;
     opacity: 0.9;
     font-weight: bold;
+    height: auto;
 
     /* background:transparent; */
 }

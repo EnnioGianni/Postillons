@@ -209,4 +209,59 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   })();
   
+
+
+
+
+
   
+ 
+  // Texte sur une seule ligne 
+  function shrinkTextToFitCells() {
+    const table = document.querySelector("table.exemple");
+    if (!table) return;
+
+    const cells = table.querySelectorAll("th, td");
+
+    cells.forEach(cell => {
+        // Appliquer style de base
+        cell.style.whiteSpace = "nowrap";         // Texte sur une seule ligne
+        cell.style.overflow = "hidden";           // Masque dépassement
+        cell.style.textOverflow = "ellipsis";     // "..." si trop long
+        cell.style.padding = "8px";
+    });
+
+    // Largeur de l'écran
+    const width = window.innerWidth;
+
+    // Calcul de la taille de police progressive
+    // Exemple : entre 1200px et 300px, la taille passe de 1rem à 0.6rem
+    const minFont = 0.6;
+    const maxFont = 1;
+    const minWidth = 300;
+    const maxWidth = 1200;
+
+    let fontSize;
+    if (width <= minWidth) {
+        fontSize = minFont;
+    } else if (width >= maxWidth) {
+        fontSize = maxFont;
+    } else {
+        // interpolation linéaire
+        const ratio = (width - minWidth) / (maxWidth - minWidth);
+        fontSize = minFont + (maxFont - minFont) * ratio;
+    }
+
+    // Appliquer la taille calculée
+    cells.forEach(cell => {
+        cell.style.fontSize = fontSize + "rem";
+    });
+
+    // Tableau responsive
+    table.style.width = "100%";
+    table.style.tableLayout = "fixed";
+    table.style.borderCollapse = "collapse";
+}
+
+window.addEventListener("load", shrinkTextToFitCells);
+window.addEventListener("resize", shrinkTextToFitCells);

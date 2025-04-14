@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "Saint-Pol", "Saint-Pol-de-Leon", "Saint-Pons", "Saint-Porchaire", "Saint-Pourcain", "Saint-Privat",
         "Saint-Quentin", "Saint-Rambert", "Saint-Remy", "Saint-Romain", "Saint-Rome-de-Tarn", "Saint-Saens",
         "Saint-Saulge", "Saint-Sauveur-le-Vicomte", "Saint-Savin", "Saint-Savinien", "Saint-Seine", "Saint-Sernin",
-        "Saint-Sever", "Saint-Symphorien-d’Ozon", "Saint-Symphorien-de-Lay", "Saint-Tropez", "Saint-Valery-en-Caux",
+        "Saint-Sever", "Saint-Simphorien-D_Ozon", "Saint-Simphorien-De-Lay", "Saint-Tropez", "Saint-Valery-en-Caux",
         "Saint-Valery-sur-Somme", "Saint-Vallier", "Saint-Venant", "Saint-Yrieix", "Salbris", "Salces",
         "Salers", "Salins", "Salon", "Samatan", "Samer", "Sancerre", "Sancois", "Sannois", "Sansergues",
         "Saragnac", "Sarlat", "Sarralbe", "Sarrebourg", "Sarreguemines", "Sarrelouis", "Sartene", "Sassangy",

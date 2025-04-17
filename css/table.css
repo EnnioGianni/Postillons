@@ -300,10 +300,16 @@ table{
   
   table th,
   table td {
-    padding: 8px;
-    text-align: center;
-    font-size: 1.rem;
-    border: 3px double #3502fe;
+    padding: 8px!important;
+    text-align: center!important;
+    font-size: 1rem;
+    border: 3px double #3502fe!important;
+  }
+  table td {
+    padding: 8px!important;
+    text-align: center!important;
+    font-size: 1rem!important;
+    border: 3px double #3502fe!important;
   }
   /* tr:nth-child(even) {
     background-color: #f8e7d1;
@@ -407,14 +413,14 @@ table{
     border-style: solid;
     border-color : rgb(10, 10, 10);
   }
-  .border3{
-    border-width: 0.5px;
-    border-style: solid;
-    border: 3px double #3502fe;
-    font-size: x-large;
-    color: #ff0303;
+  table .border3 {
+    border-width: 0.5px !important;
+    border-style: double !important;
+    border-color: #3502fe !important;
+    font-size: x-large !important;
+    color: #ff0303 !important;
   }
-  .border4{
+    .border4{
     border-width: 0.5px;
     border-style: solid;
     border: 3px double #3502fe;

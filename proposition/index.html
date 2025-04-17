@@ -1,180 +1,246 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propositions et Galerie</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propositions et Galerie</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
     .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-}
-.gallery-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
-}
-.gallery-item img {
-    max-width: 150px;
-    max-height: 150px;
-    display: block;
-    margin: auto;
-}
-.menu-container {
-    display: flex;
-    justify-content: flex-end; /* Aligne à droite */
-    margin-top: 10px;
-}
-
-.btn-accueil {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn-accueil:hover {
-    background-color: #0056b3;
-}
-
-/* Adaptation pour les petits écrans */
-@media (max-width: 768px) {
-    .menu-container {
-        justify-content: center; /* Centre le bouton sur petits écrans */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
     }
-}
-
-
-</style>
+    .gallery-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    .gallery-item img {
+      max-width: 150px;
+      max-height: 150px;
+      display: block;
+      margin: auto;
+    }
+    .menu-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    .btn-accueil {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-accueil:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+      .menu-container {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
 <body>
-    <div class="container">
+  <div class="container">
+    <header>
+      <h1>Proposer une Image ou une Marque</h1>
+      <div class="menu-container">
+        <button onclick="retourPagePrecedente()" class="btn-accueil">Retour</button>
+      </div>
+    </header>
 
-        <header>
-            <h1>Proposer une Image ou une Marque</h1>
-            <div class="menu-container">
-                <button onclick="retourPagePrecedente()" class="btn-accueil">
-                    Retour
-                </button>
-            </div>
-        </header>
-
-<!-- Section des instructions visibles -->
-        <div class="instructions">
-            <p><strong>Instructions :</strong></p>
-            <ul>
-                <li>Collez une image dans la zone dédiée ou importez-la depuis votre appareil.</li>
-                <li>Ajoutez une description pour l'image.</li>
-                <li>Fournissez vos coordonnées (nom, téléphone, email).</li>
-                <li>Les images proposées apparaîtront dans la galerie ci-dessous.
-                </li>
-            </ul>
-        </div>
-
-        <form id="imageForm">
-            <textarea id="pasteArea" placeholder="Collez ici des images (Ctrl+V)" style="resize: none; height: 100px;"></textarea>
-            <input type="text" id="description" placeholder="Description de l'image" required>
-            <input type="text" id="coordinates" placeholder="Vos coordonnées (ex : Nom, Téléphone, Email)" required>
-            <input type="file" id="imageFile" accept="image/*">
-            <button type="submit">Ajouter</button>
-        </form>
-        
-        <section class="gallery" id="gallery"></section>
-        
-        <table>
-            <!-- Les propositions seront ajoutées ici dynamiquement -->
-        </table>
+    <div class="instructions">
+      <p><strong>Instructions :</strong></p>
+      <ul>
+        <li>Collez une image dans la zone dédiée ou importez-la depuis votre appareil.</li>
+        <li>Ajoutez une description pour l'image.</li>
+        <li>Fournissez vos coordonnées (nom, téléphone, email).</li>
+        <li>Les images proposées apparaîtront dans la galerie ci-dessous.</li>
+        <li style="color: red;">Si vous avez acheté une marque de cette commune, indiquez le prix que vous l'avez payé ici, cela nous aidera à rétablir leur cote.</li>
+      </ul>
     </div>
-    <script src="script.js"></script>
-    <script>
-        function retourPagePrecedente() {
-            if (document.referrer) {
-                window.location.href = document.referrer;
-            } else {
-                window.location.href = '/Postillons/index.html'; // Redirection par défaut si aucune page précédente
-            }
-        }
-        $(document).ready(function () {
-    // Gestion du formulaire d'ajout d'image
-    $("#imageForm").submit(function (event) {
-        event.preventDefault();
 
-        let description = $("#description").val();
-        let coordinates = $("#coordinates").val();
-        let fileInput = $("#imageFile")[0].files[0];
+    <form id="imageForm" autocomplete="off">
+      <textarea id="pasteArea" placeholder="Collez ici des images (Ctrl+V)" style="resize: none; height: 100px;"></textarea>
+      <div id="imagePreview" style="margin: 10px 0;"></div>
+      <button type="button" id="btnAjouterCollee" style="display: none;">Ajouter l’image collée</button>
 
-        if (!description || !coordinates) {
-            alert("Veuillez remplir tous les champs requis.");
-            return;
-        }
+      <label>Description :
+        <input type="text" id="description" placeholder="Description de l'image" required autocomplete="off">
+      </label>
+      <label>Coordonnées :
+        <input type="text" id="coordinates" placeholder="Vos coordonnées (ex : Nom, Téléphone, Email)" required autocomplete="off">
+      </label>
+      <label>Prix payé :
+        <input type="text" id="price" placeholder="Prix payé" required autocomplete="off">
+      </label>
 
-        if (!fileInput) {
-            alert("Veuillez sélectionner une image.");
-            return;
-        }
+      <input type="file" id="imageFile" accept="image/*">
+      <button type="submit">Ajouter l’image du fichier</button>
+    </form>
 
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            let imageSrc = e.target.result;
+    <div style="margin-top: 20px;">
+      <button onclick="restaurerGalerie()">📁 Restaurer la galerie</button>
+      <button onclick="viderGalerie()" style="margin-left: 10px; background-color: crimson; color: white;">🧹 Vider toute la galerie</button>
+    </div>
 
-            // Ajouter l'image et la description à la galerie
-            let newImage = `<div class="gallery-item">
-                                <img src="${imageSrc}" alt="Image ajoutée">
-                                <p>${description}</p>
-                            </div>`;
-            $("#gallery").append(newImage);
+    <section class="gallery" id="gallery"></section>
 
-            // Ajouter une entrée au tableau des propositions
-            let newRow = `<tr>
-                            <td><img src="${imageSrc}" width="50"></td>
-                            <td>${description}</td>
-                            <td>${coordinates}</td>
-                          </tr>`;
-            $("table").append(newRow);
+    <table border="1" style="margin-top: 20px;">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Description</th>
+          <th>Coordonnées</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+<!-- À mettre en toute fin du <body> -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-            // Réinitialiser le formulaire
-            $("#imageForm")[0].reset();
-        };
-        reader.readAsDataURL(fileInput);
-    });
-
-    // Gestion du collage d'images dans la zone de texte
-    $("#pasteArea").on("paste", function (event) {
-        let items = (event.originalEvent.clipboardData || event.clipboardData).items;
+  <script>
+    let imageColleeTemp = null;
+  
+    $(document).ready(function () {
+      $("#pasteArea").on("paste", function (event) {
+        const items = (event.originalEvent || event).clipboardData.items;
         for (let i = 0; i < items.length; i++) {
-            if (items[i].type.indexOf("image") !== -1) {
-                let file = items[i].getAsFile();
-                let reader = new FileReader();
-                reader.onload = function (e) {
-                    let imageSrc = e.target.result;
-
-                    // Ajouter l'image collée à la galerie
-                    let newImage = `<div class="gallery-item">
-                                        <img src="${imageSrc}" alt="Image collée">
-                                        <p>Image collée</p>
-                                    </div>`;
-                    $("#gallery").append(newImage);
-                };
-                reader.readAsDataURL(file);
-            }
+          if (items[i].type.indexOf("image") !== -1) {
+            const file = items[i].getAsFile();
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              imageColleeTemp = e.target.result;
+              $("#imagePreview").html(`<img src="${imageColleeTemp}" style="max-width:150px; max-height:150px;" draggable="false">`);
+              $("#btnAjouterCollee").show();
+            };
+            reader.readAsDataURL(file);
+          }
         }
+      });
+  
+      $("#btnAjouterCollee").click(function () {
+        const description = $("#description").val().trim();
+        const coordinates = $("#coordinates").val().trim();
+        const price = $("#price").val().trim();
+  
+        if (!imageColleeTemp || !description || !coordinates || !price) {
+          alert("Veuillez remplir tous les champs.");
+          return;
+        }
+  
+        ajouterImage(imageColleeTemp, description, coordinates, price);
+  
+        imageColleeTemp = null;
+        $("#imagePreview").empty();
+        $("#btnAjouterCollee").hide();
+        $("#description, #coordinates, #price").val("");
+        alert("✅ Image ajoutée !");
+      });
+  
+      $("#imageForm").submit(function (e) {
+        e.preventDefault();
+        const file = $("#imageFile")[0].files[0];
+        const description = $("#description").val().trim();
+        const coordinates = $("#coordinates").val().trim();
+        const price = $("#price").val().trim();
+  
+        if (!file || !description || !coordinates || !price) {
+          alert("Veuillez remplir tous les champs et choisir une image.");
+          return;
+        }
+  
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          ajouterImage(e.target.result, description, coordinates, price);
+          $("#imageForm")[0].reset();
+          $("#imagePreview").empty();
+          $("#btnAjouterCollee").hide();
+          alert("✅ Image ajoutée !");
+        };
+        reader.readAsDataURL(file);
+      });
     });
-
-    // Retourner à la page précédente
-    $(".btn-accueil").click(function () {
-        retourPagePrecedente();
-    });
-});
-   
-    </script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+    function ajouterImage(src, description, coords, price, id = Date.now(), save = true) {
+      const imageHTML = `
+        <div class="gallery-item" data-id="${id}">
+          <img src="${src}" alt="${description}" draggable="false">
+          <p><strong>${description}</strong><br><em>Prix payé : ${price} €</em></p>
+          <button onclick="supprimerImage(${id})" style="margin-top:5px;">🗑️ Supprimer</button>
+        </div>
+      `;
+      $("#gallery").append(imageHTML);
+  
+      const rowHTML = `
+        <tr data-id="${id}">
+          <td><img src="${src}" width="50" alt="${description}" draggable="false"></td>
+          <td>${description}</td>
+          <td>${coords}</td>
+          <td>${price} €</td>
+        </tr>
+      `;
+      $("table tbody").append(rowHTML);
+  
+      if (save) {
+        const saved = JSON.parse(localStorage.getItem("galerieImages") || "[]");
+        saved.push({ id, src, description, coordinates: coords, price });
+        localStorage.setItem("galerieImages", JSON.stringify(saved));
+      }
+    }
+  
+    function restaurerGalerie() {
+      const sauvegardees = JSON.parse(localStorage.getItem("galerieImages") || "[]");
+      if (sauvegardees.length === 0) {
+        alert("Aucune image sauvegardée.");
+        return;
+      }
+      sauvegardees.forEach(img => {
+        ajouterImage(img.src, img.description, img.coordinates, img.price, img.id, false);
+      });
+      alert("📁 Galerie restaurée !");
+    }
+  
+    function supprimerImage(id) {
+      $(`.gallery-item[data-id="${id}"]`).remove();
+      $(`table tr[data-id="${id}"]`).remove();
+  
+      let saved = JSON.parse(localStorage.getItem("galerieImages") || "[]");
+      saved = saved.filter(img => img.id !== id);
+      localStorage.setItem("galerieImages", JSON.stringify(saved));
+  
+      alert("🗑️ Image supprimée !");
+    }
+  
+    function viderGalerie() {
+      if (confirm("⚠️ Voulez-vous vraiment supprimer toutes les images ? Cette action est irréversible.")) {
+        localStorage.removeItem("galerieImages");
+        $("#gallery").empty();
+        $("table tbody").empty();
+        alert("🧹 Galerie vidée !");
+      }
+    }
+  
+    function retourPagePrecedente() {
+      const urlDeSecours = "index.html";
+      if (document.referrer && document.referrer !== location.href) {
+        window.location.href = document.referrer;
+      } else {
+        window.location.href = urlDeSecours;
+      }
+    }
+  </script>
+          
+<script src="script.js"></script>
 
 </body>
 </html>

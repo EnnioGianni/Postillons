@@ -214,3 +214,16 @@ $(document).ready(function () {
 
 
 
+
+// script.js
+(function() {
+    // Vérifie si le script img.js est déjà présent
+    const alreadyLoaded = [...document.scripts].some(s => s.src.includes("img.js"));
+    if (!alreadyLoaded) {
+      const script = document.createElement("script");
+      script.src = "../../../JS/img.js";
+      script.type = "text/javascript";
+      document.head.appendChild(script);
+    }
+  })();
+  

@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
         "Salers", "Salins", "Salon", "Samatan", "Samer", "Sancerre", "Sancois", "Sannois", "Sansergues",
         "Saragnac", "Sarlat", "Sarralbe", "Sarrebourg", "Sarreguemines", "Sarrelouis", "Sartene", "Sassangy",
         "Saujon", "Saulieu", "Saumur", "Sauve", "Sauze", "Savenay", "Saverdun", "Saverne", "Seclin", "Sedan",
-        "Sées", "Segnelay", "Sélestat", "Selongey", "Semur", "Semur-en-Brionnais", "Senez", "Senlis", "Sennecey",
-        "Senonches", "Sens", "Sernhac", "Serres", "Sete", "Seurre", "Severac", "Sevres", "Seyne", "Sezanne",
-        "Sierentz", "Sigean", "Sille-le-Guillaume", "Sillery", "Sisteron", "Soissons", "Solliès", "Solre-le-Chateau",
+        "Sees", "Segnelay", "Selestat", "Selongey", "Semur", "Semur-en-Brionnais", "Senez", "Senlis", "Sennecey",
+        "Senonches", "Sens", "Sernhac", "Serres", "Sette", "Seurre", "Severac", "Sevres", "Seyne", "Sezanne",
+        "Sierentz", "Sigean", "Sille-le-Guillaume", "Sillery", "Sisteron", "Soissons", "Sollies", "Solre-le-Chateau",
         "Sombernon", "Sommieres", "Songeons", "Souillac", "Sourdeval", "Souvigny", "Spincourt", "Stenay",
         "Strasbourg", "Suette", "Sumene", "Surgeres", "Suzennecourt"
     ];

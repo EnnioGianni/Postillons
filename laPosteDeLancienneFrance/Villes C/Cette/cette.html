@@ -4,14 +4,20 @@
         <meta charset="utf-8" />
             <title>Le Postillon</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link rel="stylesheet" href="../../../css/nba.css" />
             <link rel="stylesheet" href="../../../css/table.css" />
             <link rel="stylesheet" href="../../../css/dropdown.css" />
             <link rel="stylesheet" href="../../../css/modale.css" />
+        <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
             <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
             <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-            <script src="../../../JS/script_global.js.js" defer></script>        
+            <script src="../../../JS/script_global.js" defer></script>        
+            <script src="../../../JS/manquantes.js" defer></script>        
+        <!--<script src="../../../JS/publicite.js" defer></script>-->        
             <script src="../../../JS/script.js" defer></script> 
+            <script src="../../../JS/calculatrice.js" defer></script> 
+            <script src="../../../JS/Liens.js" defer></script>
+            <link rel="stylesheet" href="../../../css/calculatrice.css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
 <!--Debut pagination--> 
             <script src="../../../JS/villesA.js" defer></script>        
             <script src="../../../JS/villesB.js" defer></script>        
@@ -40,11 +46,18 @@
             <script src="../../../JS/villesY.js" defer></script>        
             <script src="../../../JS/villesZ.js" defer></script>        
             <script src="../../../JS/accueil.js" defer></script>
-            <script src="../../../JS/accueil.js" defer></script>
             <script src="../../../JS/cityRedirector.js"></script>
             <script src="path/to/cityRedirector.js"></script>  
-            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>   
-    </head>  
+            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script> 
+                      
+    </head> 
+<style>
+p::first-letter {
+        color: red;
+        font-size: 130%;
+      } 
+</style>
+
 <body>
     <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
         <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>                  
@@ -121,13 +134,14 @@
 <!--Marque 1--->          
         <tr>
             <td class="border2">
-                <a href="../Cette/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Cette/Images/1.png" alt="Cette" style="width: 70%;"/></a>
+                <a href="../Cette/Images/1.png" title="Cliquez pour agrandir" target="_blank">
+                    <img src="../Cette/Images/1.png" alt="Sette" data-width-mm="25">
+                </a>
             </td>
             <td class="border3">1</td>
             <td class="border2">port dû</td>
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Cette" style="width: 18%;"/></a></td>
-            <td class="border2">1729-1790</td>
+            <td class="border2"><img src="../../Resource/plumeDeture.png" alt="Sette" data-width-mm="10"></td>                        
+            <td class="border2">1729-1781</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-9</td>
             <td class="prixProduit" data-id="9">00.00</td>
@@ -136,7 +150,8 @@
         <tr>
             <td class="border2">
                 <a href="../Cette/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Cette/Images/2.png" alt="Cette" style="width: 70%;"/></a>
+                    <img src="../Cette/Images/2.png" alt="Cette" data-width-mm="11">
+                </a>
             </td>
             <td class="border3">2</td>
             <td class="border2">port dû</td>
@@ -149,8 +164,9 @@
 <!--Marque 2A--->          
         <tr>
             <td class="border2">
-                <a href="../Cette/Images/2A.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Cette/Images/2A.png" alt="Cette" style="width: 70%;"/></a>
+                <a href="../Cette/Images/2a.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
+                    <img src="../Cette/Images/2a.png" alt="Cette" data-width-mm="11">
+                </a>
             </td>
             <td class="border3">2A</td>
             <td class="border2">port payé</td>
@@ -164,7 +180,8 @@
         <tr>
             <td class="border2">
                 <a href="../Cette/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Cette/Images/3.png" alt="Cette" style="width: 71%;"/></a>
+                    <img src="../Cette/Images/3.png" alt="Cette" data-width-mm="12">
+                </a>
             </td>
             <td class="border3">3</td>
             <td class="border2">port dû</td>
@@ -178,7 +195,8 @@
         <tr>
             <td class="border2">
                 <a href="../Cette/Images/4.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Cette/Images/4.png" alt="Cette" style="width: 85%;"/></a>
+                    <img src="../Cette/Images/4.png" alt="Cette" data-width-mm="26">
+                </a>
             </td>
             <td class="border3">4</td>
             <td class="border2">port dû</td>
@@ -192,7 +210,7 @@
         <tr>
             <td class="border2">
                 <a href="../Cette/Images/5.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank">
-                    <img src="../Cette/Images/5.png" alt="Cette" style="width: 80%;"/></a>
+                    <img src="../Cette/Images/5.png" alt="Cette" data-width-mm="30">
             </td>
             <td class="border3">5</td>
             <td class="border2">déboursé</td>
@@ -205,12 +223,12 @@
 <!--Marque 6--->          
         <tr>
             <td class="border2">
-                <!-- <a href="../Cette/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Cette" style="width: 70%;"/></a>
+                <a href="../../../proposition/index.html" title="Cliquez pour agrandir" target="_blank">
+                    <img src="../../Resource/Absentebleu.png" alt="Cette" data-width-mm="50">
             </td>
             <td class="border3">6</td>
             <td class="border2">chargé</td>
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Cette" style="width: 18%;"/></a></td>
+            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Cette" data-width-mm="10"></a></td>
             <td class="border2">1791</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-18</td>
@@ -219,12 +237,13 @@
 <!--Marque 7--->          
         <tr>
             <td class="border2">
-                <!-- <a href="../Cette/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt" target="_blank"> -->
-                    <img src="../../Resource/Absentebleu.png" alt="Cette" style="width: 70%;"/></a>
+                <a href="../../../proposition/index.html" title="Cliquez pour agrandir" target="_blank">
+                    <img src="../../Resource/Absentebleu.png" alt="Cette" data-width-mm="50">
+                </a>
             </td>
             <td class="border3">7</td>
             <td class="border2">port payé</td>
-            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Cette" style="width: 18%;"/></a></td>
+            <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Cette" data-width-mm="10"></a></td>
             <td class="border2">1779</td>
             <td class="border2">manuscrit</td>
             <td class="border2">I-19</td>
@@ -234,25 +253,6 @@
         <tr>             
             <th colspan="12" style="color: #000;"></th>         
         </tr>         
-<!--Cartes google-->
-
-<tr>
-    <th colspan="3">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53589.75451124939!2d3.6524575626346816!3d43.39806989213202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b13596502ec76b%3A0x9a6fe1f736276602!2s34200%20S%C3%A8te!5e0!3m2!1sfr!2sfr!4v1713253975063!5m2!1sfr!2sfr" width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </th>         
-
-<!--Blason-->
-<th colspan="1">
-    <a href="https://fr.wikipedia.org/wiki/S%C3%A8te#H%C3%A9raldique">
-        <img src="../Cette/Images/Blason.png" alt="Cette" style="width:80%; height: auto;"/>
-        <p>Blason de Cette</p>
-    </a>
-</th>
-<!--Carte Géoportail-->              
-    <th colspan="4">
-        <iframe width="800" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=3.6961046757036664,43.3977126092808&z=13&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=GEOGRAPHICALGRIDSYSTEMS.ETATMAJOR40::GEOPORTAIL:OGC:WMTS(1)&l2=GEOGRAPHICALGRIDSYSTEMS.CASSINI::GEOPORTAIL:OGC:WMTS(1)&permalink=yes" allowfullscreen></iframe>
-    </th>  
-</tr> 
 <!--Commentaire-->
     <tr> 
         <th colspan="8" style="color: black;"></th>
@@ -294,5 +294,7 @@
         </p>
 </div>
 <!---fin Footer défilant--> 
+<script src="../../../JS/img.js"></script> 
+
 </body>
 </html>      

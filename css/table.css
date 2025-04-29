@@ -1063,7 +1063,20 @@ body.menu-open {
 
 
 
+.texte-responsive {
+  white-space: normal !important;
+  word-break: break-word !important;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+}
 
+@media screen and (max-width: 768px) {
+  .texte-responsive {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
 
 
 

@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
       try {
         const box = document.createElement('div');
-        box.innerHTML = '⚠️ Attention aux fautes marquées.<br>© Les images sont la propriété du site et ne peuvent être copiées ou utilisées sans permission.';
+        box.innerHTML = '⚠️ Attention aux fausses marquées.<br>© Les images sont la propriété du site et ne peuvent être copiées ou utilisées sans permission.';
   
         Object.assign(box.style, {
           all: 'initial',
@@ -480,4 +480,70 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateAllMessages(localStorage.getItem("langOverride") || "auto");
 });
-            
+   
+
+
+
+
+// totpip sous l'image
+
+document.addEventListener('DOMContentLoaded', function () {
+  const tooltip = document.createElement('div');
+  tooltip.style.position = 'absolute';
+  tooltip.style.background = '#333';
+  tooltip.style.color = '#fff';
+  tooltip.style.padding = '6px 10px';
+  tooltip.style.borderRadius = '4px';
+  tooltip.style.fontSize = '13px';
+  tooltip.style.whiteSpace = 'normal';
+  tooltip.style.maxWidth = '260px';
+  tooltip.style.zIndex = '1000';
+  tooltip.style.display = 'none';
+  document.body.appendChild(tooltip);
+
+  const longText = "Si vous avez, cette marque absente, propose-la pour l'ajouté.";
+
+  const shortText = "Si vous avez acheté une marque de cette commune, indiquez le prix que vous l'avez payé en cliquant sur l’image. Cela nous aidera à ajuster la cote.";
+
+  document.querySelectorAll('table').forEach(table => {
+    table.querySelectorAll('tr').forEach(row => {
+      const firstTd = row.querySelector('td');
+      if (!firstTd) return;
+
+      const img = firstTd.querySelector('a img');
+      const link = img?.closest('a');
+      if (!img || !link) return;
+
+      const hrefMatch = link.getAttribute('href') === "../../../proposition/index.html" &&
+                        link.getAttribute('title') === "Cliquez pour agrandir" &&
+                        link.getAttribute('target') === "_blank";
+
+      const tooltipText = hrefMatch ? longText : shortText;
+
+      link.addEventListener('mouseenter', () => {
+        const rect = img.getBoundingClientRect();
+        tooltip.textContent = tooltipText;
+        tooltip.style.left = `${rect.left + window.scrollX}px`;
+        tooltip.style.top = `${rect.bottom + 8 + window.scrollY}px`;
+        tooltip.style.display = 'block';
+      });
+
+      link.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+      });
+    });
+  });
+});
+
+//Texte responsive
+
+var jq = jQuery.noConflict();
+jq(document).ready(function () {
+  jq('.texte-responsive').css({
+    'white-space': 'normal',
+    'word-break': 'break-word'
+  });
+});
+
+
+

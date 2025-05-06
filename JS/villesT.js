@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     const villes = [
         "Taillebourg", "Tain", "Tallano", "Talmont", "Tannay", "Tarare", "Tarascon",
-        "Tarascon en Foix", "Tarbes", "Tartas", "Tauves", "Le Teilleul",
+        "Tarascon-en-Foix", "Tarbes", "Tartas", "Tauves", "Le Teilleul",
         "Le Temple", "Tence", "Terrasson", "Tessy-sur-Vire", "Thann",
-        "Thiers", "Les Thilliers", "Thionville", "Thiré", "Thiviers", "Thoissey",
-        "Thouars", "Thuir", "Tiffauges", "Tillières", "Tilly d'Orceau", "Tinchebray",
-        "Tonnay-Boutonne", "Tonneins", "Tonnerre", "Torcy", "Torigni", "Tôtes",
+        "Thiers", "Les-Thilliers", "Thionville", "Thire", "Thiviers", "Thoissey",
+        "Thouars", "Thuir", "Tiffauges", "Tillieres", "Tilly-d-Orceau", "Tinchebray",
+        "Tonnay-Boutonne", "Tonneins", "Tonnerre", "Torcy", "Torigni", "Totes",
         "Toucy", "Toul", "Toulon", "Toulon-sur-Arroux", "Toulouse", "Touques",
-        "La Tour-du-Pin", "Tourcoing", "Tournan", "Tournay", "Tournon", "Tours",
-        "Tourves", "Toury", "Trappes", "Tréguier", "La Tremblade", "Trevoux",
-        "Trie", "Triel", "Tribardou", "La Trimouille", "Les Trois Maisons", "Les Trois Volets",
+        "La-Tour-du-Pin", "Tourcoing", "Tournan", "Tournay", "Tournon", "Tours",
+        "Tourves", "Toury", "Trappes", "Treguier", "La-Tremblade", "Trevoux",
+        "Trie", "Triel", "Tribardou", "La-Trimouille", "Les-Trois-Maisons", "Les-Trois-Volets",
         "Trouard", "Troyes", "Tulle", "Tullins"
     ];
 

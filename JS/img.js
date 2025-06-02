@@ -278,45 +278,26 @@ window.addEventListener("resize", shrinkTextToFitCells);
 
 
 
-
-// == Ajoute un message informatif avant chaque tableau `.exemple`, avec un style responsive et une bordure décorative ==
+//Traduction en plusieurs
 
 document.addEventListener("DOMContentLoaded", function () {
-  const tables = document.querySelectorAll("table.exemple");
-  if (!tables.length) return;
-
   const browserLang = (navigator.language || "fr").slice(0, 2).toLowerCase();
   let currentLang = localStorage.getItem("langOverride") || browserLang;
   let liveInterval = null;
+  const tables = document.querySelectorAll("table.exemple");
+  const originalTextNodes = [];
 
   const flags = {
-    fr: "🇫🇷",
-    en: "🇬🇧",
-    es: "🇪🇸",
-    it: "🇮🇹",
-    de: "🇩🇪",
-    pt: "🇵🇹",
-    default: "🌐"
+    fr: "🇫🇷", en: "🇬🇧", es: "🇪🇸", it: "🇮🇹", de: "🇩🇪", pt: "🇵🇹", default: "🌐"
   };
 
   const langNames = {
-    fr: "Français",
-    en: "English",
-    es: "Español",
-    it: "Italiano",
-    de: "Deutsch",
-    pt: "Português",
-    default: "Langue inconnue"
+    fr: "Français", en: "English", es: "Español", it: "Italiano", de: "Deutsch", pt: "Português", default: "Langue inconnue"
   };
 
   const liveLabels = {
-    fr: "Message affiché en",
-    en: "Message shown in",
-    es: "Mensaje mostrado en",
-    it: "Messaggio visualizzato in",
-    de: "Nachricht angezeigt in",
-    pt: "Mensagem exibida em",
-    default: "Message shown in"
+    fr: "Message affiché en", en: "Message shown in", es: "Mensaje mostrado en", it: "Messaggio visualizzato in",
+    de: "Nachricht angezeigt in", pt: "Mensagem exibida em", default: "Message shown in"
   };
 
   const messages = {
@@ -343,6 +324,22 @@ document.addEventListener("DOMContentLoaded", function () {
       it will help us restore its rating.`
   };
 
+  const dictionary = {
+    en: {
+      "Marque": "Mark", "Port": "Postage", "Dimensions": "Size", "Date": "Date",
+      "Couleurs": "Color", "Indice": "Index", "Cote": "Value",
+      "port dû": "post due", "port payé": "post paid",
+      "noir": "black", "rouge": "red", "sec": "dry"
+    },
+    es: {
+      "Marque": "Marca", "Port": "Porte", "Dimensions": "Tamaño", "Date": "Fecha",
+      "Couleurs": "Color", "Indice": "Índice", "Cote": "Valor",
+      "port dû": "porte debido", "port payé": "porte pagado",
+      "noir": "negro", "rouge": "rojo", "sec": "seco"
+    },
+    fr: {}
+  };
+
   function getCurrentDateTimeString() {
     const now = new Date();
     return now.toLocaleDateString() + ' à ' + now.toLocaleTimeString();
@@ -352,16 +349,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const old = table.previousElementSibling;
     if (old?.classList?.contains("message-cote-auto")) old.remove();
 
-    const flag = flags[lang] || flags["default"];
-    const langLabel = langNames[lang] || langNames["default"];
-    const message = messages[lang] || messages["default"];
-    const liveLabel = liveLabels[lang] || liveLabels["default"];
+    const flag = flags[lang] || flags.default;
+    const langLabel = langNames[lang] || langNames.default;
+    const message = messages[lang] || messages.default;
+    const liveLabel = liveLabels[lang] || liveLabels.default;
     const dateTime = getCurrentDateTimeString();
 
     const container = document.createElement("div");
     container.className = "message-cote-auto";
     container.dataset.lang = lang;
-
     Object.assign(container.style, {
       width: "100%",
       boxSizing: "border-box",
@@ -371,116 +367,110 @@ document.addEventListener("DOMContentLoaded", function () {
       padding: "5px",
       lineHeight: "15px",
       fontSize: "13px",
-      whiteSpace: "normal",
-      wordBreak: "break-word",
-      overflowWrap: "break-word",
       border: "8px solid #8a7d4a",
-      display: "block",
-      opacity: "0",
-      transition: "opacity 0.6s ease",
-      position: "relative"
+      position: "relative",
+      marginBottom: "10px"
     });
 
     const closeBtn = document.createElement("span");
     closeBtn.textContent = "x";
-    closeBtn.setAttribute("role", "button");
-    closeBtn.setAttribute("tabindex", "0");
-    closeBtn.setAttribute("aria-label", "Fermer le message");
-    closeBtn.addEventListener("click", () => container.remove());
-    closeBtn.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        container.remove();
-      }
-    });
-
     Object.assign(closeBtn.style, {
-      position: "absolute",
-      top: "-1px",
-      right: "10px",
-      cursor: "pointer",
-      fontWeight: "normal",
-      fontSize: "25px",
-      color: "red",
-      background: "none",
-      border: "none"
+      position: "absolute", top: "-1px", right: "10px",
+      fontSize: "25px", color: "red", cursor: "pointer"
     });
+    closeBtn.onclick = () => container.remove();
 
     const select = document.createElement("select");
-    select.style.fontSize = "14px";
-    select.style.marginRight = "32px";
-    select.style.position = "absolute";
-    select.style.top = "4px";
-    select.style.right = "22px";
-    select.style.padding = "2px 6px";
-    select.style.border = "1px solid #aaa";
-    select.style.borderRadius = "4px";
+    Object.assign(select.style, {
+      fontSize: "14px", position: "absolute", top: "4px", right: "22px"
+    });
 
     const autoOption = document.createElement("option");
     autoOption.value = "auto";
     autoOption.textContent = "🌐";
-    autoOption.title = "Auto";
     select.appendChild(autoOption);
 
-    Object.keys(messages).forEach(code => {
-      const option = document.createElement("option");
-      option.value = code;
-      option.textContent = flags[code] || flags.default;
-      option.title = langNames[code] || langNames.default;
-      select.appendChild(option);
+    Object.keys(flags).forEach(code => {
+      if (code === "default") return;
+      const opt = document.createElement("option");
+      opt.value = code;
+      opt.textContent = flags[code];
+      opt.title = langNames[code];
+      select.appendChild(opt);
     });
 
     select.value = localStorage.getItem("langOverride") || "auto";
-    select.addEventListener("change", (e) => updateAllMessages(e.target.value));
+    select.onchange = () => updateLang(select.value);
 
     container.innerHTML = `
       <div style="margin-bottom: 8px; font-weight: bold;" class="live-time">
         ${flag} ${liveLabel} : ${langLabel} – ${dateTime}
       </div>
-      <div>${message}</div>`;
+      <div>${message}</div>
+    `;
 
     container.appendChild(closeBtn);
     container.appendChild(select);
     table.parentNode.insertBefore(container, table);
-    setTimeout(() => container.style.opacity = "1", 10);
   }
 
-  function updateAllMessages(lang) {
-    if (liveInterval) clearInterval(liveInterval);
-
-    currentLang = lang;
+  function updateLang(lang) {
     if (lang === "auto") {
       localStorage.removeItem("langOverride");
       currentLang = browserLang;
     } else {
       localStorage.setItem("langOverride", lang);
+      currentLang = lang;
     }
-
+    document.querySelectorAll(".message-cote-auto").forEach(e => e.remove());
     tables.forEach(table => insertMessage(table, currentLang));
-
-    liveInterval = setInterval(() => {
-      document.querySelectorAll(".message-cote-auto").forEach(box => {
-        const lang = box.dataset.lang || "default";
-        const flag = flags[lang] || flags.default;
-        const name = langNames[lang] || langNames.default;
-        const live = liveLabels[lang] || liveLabels.default;
-        const time = getCurrentDateTimeString();
-        const line = box.querySelector(".live-time");
-        if (line) line.innerHTML = `${flag} ${live} : ${name} – ${time}`;
-      });
-    }, 1000);
+    translatePage(currentLang);
   }
 
-  window.addEventListener("storage", (e) => {
-    if (e.key === "langOverride") {
-      const newLang = e.newValue || browserLang;
-      updateAllMessages(newLang);
-    }
-  });
+  function translatePage(lang) {
+    const dict = dictionary[lang] || {};
+    originalTextNodes.forEach(({ node, original }) => {
+      const clean = original.trim().replace(/\s+/g, " ");
+      node.textContent = dict[clean] || original;
+    });
+  }
 
-  updateAllMessages(localStorage.getItem("langOverride") || "auto");
+  function collectTextNodes() {
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const tag = node.parentNode?.nodeName;
+        if (!node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+        if (["SCRIPT", "STYLE", "NOSCRIPT", "IMG"].includes(tag)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    let node;
+    while ((node = walker.nextNode())) {
+      const clean = node.textContent.trim().replace(/\s+/g, " ");
+      originalTextNodes.push({ node, original: clean });
+    }
+  }
+
+  collectTextNodes();
+  updateLang(currentLang);
+
+  liveInterval = setInterval(() => {
+    document.querySelectorAll(".message-cote-auto").forEach(box => {
+      const lang = box.dataset.lang || "default";
+      const flag = flags[lang] || flags.default;
+      const name = langNames[lang] || langNames.default;
+      const live = liveLabels[lang] || liveLabels.default;
+      const time = getCurrentDateTimeString();
+      const line = box.querySelector(".live-time");
+      if (line) line.innerHTML = `${flag} ${live} : ${name} – ${time}`;
+    });
+  }, 1000);
+
+  window.addEventListener("storage", e => {
+    if (e.key === "langOverride") updateLang(e.newValue || browserLang);
+  });
 });
-   
 
 
 
@@ -537,13 +527,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Texte responsive
 
-var jq = jQuery.noConflict();
-jq(document).ready(function () {
-  jq('.texte-responsive').css({
-    'white-space': 'normal',
-    'word-break': 'break-word'
+
+ var jq = jQuery.noConflict(); // Assure l'alias jq sans conflit avec d'autres bibliothèques
+
+  jq(document).ready(function () {
+    jq('.texte-responsive').css({
+      'white-space': 'normal',
+      'word-break': 'break-word',
+      'overflow-wrap': 'break-word' // recommandé pour plus de compatibilité
+    });
   });
-});
 
 
 

@@ -734,12 +734,14 @@ window.onload = function() {
 
 
 
-// Sélectionne l'élément img par son id
 const imgElement = document.getElementById('img2');
 
-// Applique les styles
-imgElement.style.width = '70%';
-imgElement.style.height = 'auto';
+if (imgElement) {
+    imgElement.style.width = '70%';
+    imgElement.style.height = 'auto';
+} else {
+    console.warn("L'élément avec l'ID 'img2' est introuvable.");
+}
 
 
 

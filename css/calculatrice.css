@@ -10,7 +10,7 @@
   align-items: center;
   position: fixed;
   bottom: 50px;
-  left: 85%;
+  left: 50%;
   transform: translateX(-50%);
   max-width: 250px;
   width: calc(100% - 20px);

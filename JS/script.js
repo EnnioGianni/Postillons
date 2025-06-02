@@ -182,28 +182,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-$(document).ready(function () {
+$(function () {
+    const $titre = $(".titre-principal");
+
     function adjustH1Size() {
-        if ($(window).width() < 768) { 
-            $(".titre-principal").css({
-                "font-size": "22px",
-                "text-align": "center",
-                "margin": "10px auto"
-            });
-        } else {
-            $(".titre-principal").css({
-                "font-size": "36px",
-                "text-align": "left",
-                "margin": "0 50px 0 -35px"
-            });
-        }
+        const isMobile = $(window).width() < 768; // détecte si l'écran est petit (mobile)
+
+        $titre.css({
+            fontSize: isMobile ? "22px" : "36px",
+            textAlign: isMobile ? "center" : "left",
+            margin: isMobile ? "10px auto" : "0 50px 0 -35px"
+        });
     }
 
-    adjustH1Size();
-
-    $(window).resize(function () {
-        adjustH1Size();
-    });
+    adjustH1Size(); // Exécution au chargement
+    $(window).on("resize", adjustH1Size); // Réexécution au redimensionnement
 });
 
 
@@ -227,7 +220,9 @@ $(document).ready(function () {
     }
   })();
 
+document.addEventListener("DOMContentLoaded", function () {
 
+});
 
 
 

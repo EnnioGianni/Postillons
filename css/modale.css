@@ -284,10 +284,10 @@ footer {
 }
 
 .modalDialog > div {
-  width: 700px;
+  width: 800px;
   height: auto;
   position: relative;
-  margin: 10% auto;
+  margin: 0% auto;
   padding: 5px 20px 13px 20px;
   border-radius: 10px;
   background: #fff;

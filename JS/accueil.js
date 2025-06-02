@@ -23,11 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {document
         menuDropdown.appendChild(link);
     });
 
-    // Styles pour l'élément Accueil
-    var accueilLinkElement = document.querySelector('.dropdown1 .page-link');
+// Styles pour l'élément Accueil
+var accueilLinkElement = document.querySelector('.dropdown1 .page-link');
+
+if (accueilLinkElement) {
     accueilLinkElement.style.textDecoration = 'none';
     accueilLinkElement.style.color = '#333';
     accueilLinkElement.style.fontWeight = 'bold';
+} else {
+    console.warn("Élément '.dropdown1 .page-link' introuvable");
+}
 
     // Styles pour tous les liens de la liste déroulante
     var dropdownLinks = document.querySelectorAll('.dropdown1 .dropdown-content a');

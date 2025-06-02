@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         "Thouars", "Thuir", "Tiffauges", "Tillieres", "Tilly-d-Orceau", "Tinchebray",
         "Tonnay-Boutonne", "Tonneins", "Tonnerre", "Torcy", "Torigni", "Totes",
         "Toucy", "Toul", "Toulon", "Toulon-sur-Arroux", "Toulouse", "Touques",
-        "La-Tour-du-Pin", "Tourcoing", "Tournan", "Tournay", "Tournon", "Tours",
+        "La-Tour-du-Pin", "Tourcoing", "Tournan", "Tournay", "Tournon","Tournus", "Tours",
         "Tourves", "Toury", "Trappes", "Treguier", "La-Tremblade", "Trevoux",
         "Trie", "Triel", "Tribardou", "La-Trimouille", "Les-Trois-Maisons", "Les-Trois-Volets",
         "Trouard", "Troyes", "Tulle", "Tullins"

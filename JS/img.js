@@ -475,8 +475,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// totpip sous l'image
-
+// Tooltip sous l'image
 document.addEventListener('DOMContentLoaded', function () {
   const tooltip = document.createElement('div');
   tooltip.style.position = 'absolute';
@@ -487,12 +486,14 @@ document.addEventListener('DOMContentLoaded', function () {
   tooltip.style.fontSize = '13px';
   tooltip.style.whiteSpace = 'normal';
   tooltip.style.maxWidth = '260px';
+  tooltip.style.wordBreak = 'break-word';
+  tooltip.style.overflowWrap = 'break-word';
+  tooltip.style.lineHeight = '1.4';
   tooltip.style.zIndex = '1000';
   tooltip.style.display = 'none';
   document.body.appendChild(tooltip);
 
   const longText = "Si vous avez, cette marque absente, propose-la pour l'ajouté.";
-
   const shortText = "Si vous avez acheté une marque de cette commune, indiquez le prix que vous l'avez payé en cliquant sur l’image. Cela nous aidera à ajuster la cote.";
 
   document.querySelectorAll('table').forEach(table => {
@@ -504,41 +505,38 @@ document.addEventListener('DOMContentLoaded', function () {
       const link = img?.closest('a');
       if (!img || !link) return;
 
-      const hrefMatch = link.getAttribute('href') === "../../../proposition/index.html" &&
-                        link.getAttribute('title') === "Cliquez pour agrandir" &&
-                        link.getAttribute('target') === "_blank";
+      let href = link.getAttribute('href')?.toLowerCase() || "";
 
-      const tooltipText = hrefMatch ? longText : shortText;
+      let tooltipText = "";
 
-      link.addEventListener('mouseenter', () => {
-        const rect = img.getBoundingClientRect();
-        tooltip.textContent = tooltipText;
-        tooltip.style.left = `${rect.left + window.scrollX}px`;
-        tooltip.style.top = `${rect.bottom + 8 + window.scrollY}px`;
-        tooltip.style.display = 'block';
+      if (href.match(/\.(png|jpg|jpeg)$/i)) {
+        // c'est une image => tooltip court
+        tooltipText = shortText;
+      } else if (href.includes("proposition/index.html")) {
+        // déjà une proposition => tooltip long
+        tooltipText = longText;
+      }
+
+      if (tooltipText) {
+        link.addEventListener('mouseenter', () => {
+          const rect = img.getBoundingClientRect();
+          tooltip.textContent = tooltipText;
+          tooltip.style.left = `${rect.left + window.scrollX}px`;
+          tooltip.style.top = `${rect.bottom + 8 + window.scrollY}px`;
+          tooltip.style.display = 'block';
+        });
+
+        link.addEventListener('mouseleave', () => {
+          tooltip.style.display = 'none';
+        });
+      }
+
+      // forcer la redirection au clic SANS modifier le href
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = "../../../proposition/index.html";
       });
 
-      link.addEventListener('mouseleave', () => {
-        tooltip.style.display = 'none';
-      });
     });
   });
 });
-
-//Texte responsive
-
-
- var jq = jQuery.noConflict(); // Assure l'alias jq sans conflit avec d'autres bibliothèques
-
-  jq(document).ready(function () {
-    jq('.texte-responsive').css({
-      'white-space': 'normal',
-      'word-break': 'break-word',
-      'overflow-wrap': 'break-word' // recommandé pour plus de compatibilité
-    });
-  });
-
-
-
-
-

@@ -217,55 +217,68 @@ document.addEventListener("DOMContentLoaded", function () {
   
  
   // Texte sur une seule ligne 
-  function shrinkTextToFitCells() {
-    const table = document.querySelector("table.exemple");
-    if (!table) return;
+document.addEventListener('DOMContentLoaded', function () {
+  const tooltip = document.createElement('div');
+  tooltip.style.position = 'absolute';
+  tooltip.style.background = '#333';
+  tooltip.style.color = '#fff';
+  tooltip.style.padding = '6px 10px';
+  tooltip.style.borderRadius = '4px';
+  tooltip.style.fontSize = '13px';
+  tooltip.style.whiteSpace = 'normal';
+  tooltip.style.maxWidth = '260px';
+  tooltip.style.wordBreak = 'break-word';
+  tooltip.style.overflowWrap = 'break-word';
+  tooltip.style.lineHeight = '1.4';
+  tooltip.style.zIndex = '1000';
+  tooltip.style.display = 'none';
+  document.body.appendChild(tooltip);
 
-    const cells = table.querySelectorAll("th, td");
+  const longText = "Si vous avez, cette marque absente, propose-la pour l'ajouté.";
+  const shortText = "Si vous avez acheté une marque de cette commune, indiquez le prix que vous l'avez payé en cliquant sur l’image. Cela nous aidera à ajuster la cote.";
 
-    cells.forEach(cell => {
-        // Appliquer style de base
-        cell.style.whiteSpace = "nowrap";         // Texte sur une seule ligne
-        cell.style.overflow = "hidden";           // Masque dépassement
-        cell.style.textOverflow = "ellipsis";     // "..." si trop long
-        cell.style.padding = "8px";
+  document.querySelectorAll('table').forEach(table => {
+    table.querySelectorAll('tr').forEach(row => {
+      const firstTd = row.querySelector('td');
+      if (!firstTd) return;
+
+      const img = firstTd.querySelector('a img');
+      const link = img?.closest('a');
+      if (!img || !link) return;
+
+      // supprimer le title natif
+      link.removeAttribute("title");
+
+      let href = link.getAttribute('href')?.toLowerCase() || "";
+
+      let tooltipText = "";
+      if (href.match(/\.(png|jpg|jpeg)$/i)) {
+        tooltipText = shortText;
+      } else if (href.includes("proposition/index.html")) {
+        tooltipText = longText;
+      }
+
+      if (tooltipText) {
+        link.addEventListener('mouseenter', () => {
+          const rect = img.getBoundingClientRect();
+          tooltip.textContent = tooltipText;
+          tooltip.style.left = `${rect.left + window.scrollX}px`;
+          tooltip.style.top = `${rect.bottom + 8 + window.scrollY}px`;
+          tooltip.style.display = 'block';
+        });
+
+        link.addEventListener('mouseleave', () => {
+          tooltip.style.display = 'none';
+        });
+      }
+
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = "../../../proposition/index.html";
+      });
     });
-
-    // Largeur de l'écran
-    const width = window.innerWidth;
-
-    // Calcul de la taille de police progressive
-    // Exemple : entre 1200px et 300px, la taille passe de 1rem à 0.6rem
-    const minFont = 0.6;
-    const maxFont = 1;
-    const minWidth = 300;
-    const maxWidth = 1200;
-
-    let fontSize;
-    if (width <= minWidth) {
-        fontSize = minFont;
-    } else if (width >= maxWidth) {
-        fontSize = maxFont;
-    } else {
-        // interpolation linéaire
-        const ratio = (width - minWidth) / (maxWidth - minWidth);
-        fontSize = minFont + (maxFont - minFont) * ratio;
-    }
-
-    // Appliquer la taille calculée
-    cells.forEach(cell => {
-        cell.style.fontSize = fontSize + "rem";
-    });
-
-    // Tableau responsive
-    table.style.width = "100%";
-    table.style.tableLayout = "fixed";
-    table.style.borderCollapse = "collapse";
-}
-
-window.addEventListener("load", shrinkTextToFitCells);
-window.addEventListener("resize", shrinkTextToFitCells);
-
+  });
+});
 
 
 

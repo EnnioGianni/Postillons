@@ -553,3 +553,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+
+
+
+
+// Je possède cette marque postale
+
+document.addEventListener("DOMContentLoaded", function () {
+    const ownedCells = document.querySelectorAll("td.owned");
+
+    ownedCells.forEach(cell => {
+        cell.style.position = "relative";
+
+        const badge = document.createElement("span");
+        badge.textContent = "🏠"; // icône maison
+        badge.title = "Je possède cette marque postale";
+
+        badge.style.position = "absolute";
+        badge.style.top = "4px";
+        badge.style.left = "4px";
+        badge.style.fontSize = "0.8em";
+        badge.style.background = "white";
+        badge.style.borderRadius = "4px";
+        badge.style.padding = "2px";
+        badge.style.boxShadow = "0 0 2px rgba(0,0,0,0.5)";
+        badge.style.color = "green";
+
+        cell.appendChild(badge);
+    });
+});
+
+
+
+
+
+
+
+

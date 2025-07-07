@@ -1,12 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('imageForm');
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('monFormulaire');
     const gallery = document.getElementById('gallery');
-    const table = document.querySelector('table');
-    const images = JSON.parse(localStorage.getItem('images')) || [];
-    const proposals = JSON.parse(localStorage.getItem('proposals')) || [];
+    const table = document.getElementById('table');
 
-    // Afficher les images
+    const images = JSON.parse(localStorage.getItem('images') || "[]");
+    const proposals = JSON.parse(localStorage.getItem('proposals') || "[]");
+
     function displayImages() {
+        if (!gallery) return;
         gallery.innerHTML = '';
         images.forEach((img, index) => {
             const card = document.createElement('div');
@@ -21,15 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Ajouter une proposition
-    function addProposal(proposal) {
-        proposals.push(proposal);
-        localStorage.setItem('proposals', JSON.stringify(proposals));
-        displayProposals();
-    }
-
-    // Afficher les propositions
     function displayProposals() {
+        if (!table) return;
         table.innerHTML = '';
         proposals.forEach((proposal, index) => {
             const row = document.createElement('tr');
@@ -48,49 +42,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Supprimer une image
     window.deleteImage = function (index) {
         images.splice(index, 1);
         localStorage.setItem('images', JSON.stringify(images));
         displayImages();
     };
 
-    // Supprimer une proposition
     window.deleteProposal = function (index) {
         proposals.splice(index, 1);
         localStorage.setItem('proposals', JSON.stringify(proposals));
         displayProposals();
     };
 
-    // Ajouter une image via le formulaire
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const description = document.getElementById('description').value;
-        const coordinates = document.getElementById('coordinates').value;
-        const imageFile = document.getElementById('imageFile').files[0];
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const description = document.getElementById('description').value;
+            const coordinates = document.getElementById('coordinates').value;
+            const imageFile = document.getElementById('imageFile').files[0];
 
-        if (!imageFile) {
-            alert("Veuillez sélectionner une image.");
-            return;
-        }
+            if (!imageFile) {
+                alert("Veuillez sélectionner une image.");
+                return;
+            }
 
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            const newImage = {
-                description,
-                coordinates,
-                data: event.target.result
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const newImage = {
+                    description: description,
+                    coordinates: coordinates,
+                    data: event.target.result
+                };
+                images.push(newImage);
+                localStorage.setItem('images', JSON.stringify(images));
+                form.reset();
+                displayImages();
             };
+            reader.readAsDataURL(imageFile);
+        });
+    }
 
-            images.push(newImage);
-            localStorage.setItem('images', JSON.stringify(images));
-            form.reset();
-            displayImages();
-        };
-        reader.readAsDataURL(imageFile);
-    });
-
-    // Charger les données au démarrage
     displayImages();
     displayProposals();
 });

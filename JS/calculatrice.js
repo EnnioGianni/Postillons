@@ -876,59 +876,90 @@ logoImg.style.marginTop = '190px';
 
 
 
-//Logo
-
+// Logo
 $(document).ready(function () {
-  // Sélectionne uniquement #table-liens pour éviter de modifier d'autres éléments
+  // Tableau de logos
+  const logos = [
+    {
+      href: "https://fr.wikipedia.org",
+      src: "/images/wiki.png",
+      title: "Wikipedia",
+      width: "60px",
+      height: "60px"
+    },
+    {
+      href: "https://www.google.fr",
+      src: "/images/google.png",
+      title: "Google",
+      width: "60px",
+      height: "60px"
+    },
+    {
+      href: "https://www.openai.com",
+      src: "/images/openai.png",
+      title: "OpenAI",
+      width: "60px",
+      height: "60px"
+    },
+    {
+      href: "https://www.laposte.fr",
+      src: "/images/laposte.png",
+      title: "La Poste",
+      width: "60px",
+      height: "60px"
+    }
+  ];
+
+  // Insérer dans #table-liens
   $('#table-liens').each(function () {
-      const logosContainer = $('<div>').css({
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          marginTop: '0px',
-          padding: '10px 20px',
-          gap: '10px',
-          flexWrap: 'wrap' // Permet aux logos de s'adapter aux petits écrans
+    const logosContainer = $('<div>').css({
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '0px',
+      padding: '10px 20px',
+      gap: '10px',
+      flexWrap: 'wrap'
+    });
+
+    logos.forEach(function (logo) {
+      const link = $('<a>').attr({ href: logo.href, title: logo.title, target: "_blank" });
+
+      const img = $('<img>').attr({
+        src: logo.src,
+        alt: logo.title,
+        width: logo.width,
+        height: logo.height
+      }).css({
+        transition: 'transform 0.3s ease-in-out'
       });
 
+      img.hover(
+        function () { $(this).css('transform', 'scale(1.2)'); },
+        function () { $(this).css('transform', 'scale(1)'); }
+      );
 
-      logos.forEach(function (logo) {
-          const link = $('<a>').attr({ href: logo.href, title: logo.title });
+      link.append(img);
+      logosContainer.append(link);
+    });
 
-          const img = $('<img>').attr({
-              src: logo.src,
-              alt: logo.title
-          }).css({
-              width: logo.width,
-              height: logo.height,
-              transition: 'transform 0.3s ease-in-out'
-          });
-
-          // Effet hover : agrandir légèrement le logo
-          img.hover(
-              function () { $(this).css('transform', 'scale(1.2)'); },
-              function () { $(this).css('transform', 'scale(1)'); }
-          );
-
-          link.append(img);
-          logosContainer.append(link);
-      });
-
-      $(this).append(logosContainer);
+    $(this).append(logosContainer);
   });
 
-  // Ajustement des tailles des logos uniquement pour #table-liens
+  // Ajustement responsive
   function adjustLogoSize() {
-      $('#table-liens img').each(function () {
-          if ($(window).width() < 768) {
-              $(this).css({ width: '40px', height: '40px' });
-          } else {
-              $(this).css({ width: $(this).attr('width'), height: $(this).attr('height') });
-          }
-      });
+    $('#table-liens img').each(function () {
+      if ($(window).width() < 768) {
+        $(this).css({ width: '40px', height: '40px' });
+      } else {
+        $(this).css({
+          width: $(this).attr('width'),
+          height: $(this).attr('height')
+        });
+      }
+    });
   }
 
-  // Exécuter lors du chargement et du redimensionnement
   adjustLogoSize();
   $(window).resize(adjustLogoSize);
 });
@@ -947,15 +978,12 @@ $(document).ready(function () {
 
 
 
-//Media querry pour la page
 (function () { 
   document.addEventListener("DOMContentLoaded", function () {
-      const UNIQUE_NAMESPACE = "border2_responsive_handler"; // Évite les conflits globaux
-
- 
+      const UNIQUE_NAMESPACE = "border2_responsive_handler";
 
       function appliquerStylesResponsifs() {
-          if (document.getElementById(`style-${UNIQUE_NAMESPACE}`)) return; // Évite les doublons
+          if (document.getElementById(`style-${UNIQUE_NAMESPACE}`)) return;
 
           let style = document.createElement("style");
           style.id = `style-${UNIQUE_NAMESPACE}`;
@@ -972,37 +1000,25 @@ $(document).ready(function () {
           document.head.appendChild(style);
       }
 
-      function reduireImagesPetitEcran() {
-          let largeurEcran = window.innerWidth;
-
-          document.querySelectorAll(".border2 img").forEach(img => {
-              if (largeurEcran <= 600) {
-                  img.style.maxWidth = "50px"; // Change cette valeur pour ajuster la taille
-              } else {
-                  img.style.maxWidth = ""; // Réinitialise pour les grands écrans
-              }
-          });
+      // fonction vide uniquement pour éviter l'erreur
+      function ajusterImagesBorder2() {
+        // pas de changement de dimensions ici
       }
 
       function observerChangementsDOM() {
           const observer = new MutationObserver(() => {
               ajusterImagesBorder2();
-              reduireImagesPetitEcran();
           });
-
           observer.observe(document.body, { childList: true, subtree: true });
       }
 
       appliquerStylesResponsifs();
       ajusterImagesBorder2();
-      reduireImagesPetitEcran();
       observerChangementsDOM();
 
       window.addEventListener("resize", function () {
           ajusterImagesBorder2();
-          reduireImagesPetitEcran();
       });
-
   });
 })();
 

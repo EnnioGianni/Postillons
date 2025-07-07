@@ -165,18 +165,18 @@ p::first-letter {
 
 
 .titre-principal {
-font-size: 26px; /* Taille normale */
-margin: 0 -10px 0 -35px;
-transition: font-size 0.3s ease-in-out, margin 0.3s ease-in-out;
+    font-size: 26px; /* Taille normale */
+    margin: 0 -10px 0 -35px;
+    transition: font-size 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
 
 /* Mode téléphone (moins de 768px) */
 @media (max-width: 768px) {
-.titre-principal {
-  font-size: 12px;
-  text-align: center;
-  margin: 10px auto;
-}
+    .titre-principal {
+        font-size: 12px;
+        text-align: center;
+        margin: 10px auto;
+    }
 }
 
 

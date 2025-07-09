@@ -228,7 +228,7 @@ footer {
   background-color: #fea251;
   min-width: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 2px 6px;
+  padding: 1px 1px;
   border-color:  blue;
   text-align: center;
 }

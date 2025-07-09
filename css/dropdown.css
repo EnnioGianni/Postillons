@@ -57,11 +57,11 @@
   /* Liens dans le dropdown */
   .dropdown-content a {
     display: block;
-    padding: 10px 15px;
+    padding: 0px 5px;
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
   
   .dropdown-content a:hover {

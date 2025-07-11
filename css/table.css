@@ -38,7 +38,7 @@ body{
 * {
     box-sizing: inherit;
     font-size: 17px;
-    margin: 0px 0px 0 -1px;    
+    margin: 0px 0px 0px -1px;    
 }
 #taille{
   font-size: 35px 35px;

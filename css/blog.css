@@ -4,9 +4,9 @@
     font-family: Copperplate, Papyrus, fantasy;
     font-size: 40px; /* Ajustez la taille de la police pour les écrans mobiles */
     border-collapse: collapse; /* Combine les bordures de cellules */
-	margin: 0 auto;
-	table-layout: fixed;
-	opacity: 0.;
+    margin: 0 auto;
+    table-layout: fixed;
+    opacity: 0; /* Correction ici */
 }
 
 .ligne {
@@ -56,10 +56,11 @@ a {
 }
 
 
-@media screen and (max-width: 650px) {
-    .tableau {
-        font-size: 16px; /* Ajustez la taille de la police pour les écrans très petits */
-    }
+@media (max-width: 600px) {
+  .tableau {
+    font-size: 24px;
+  }
+}
 
     .cellule {
         padding: 6px; /* Réduisez l'espacement des cellules pour les écrans petits */

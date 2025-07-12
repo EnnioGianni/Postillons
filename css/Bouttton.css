@@ -133,7 +133,7 @@ img {
         width: 60px;
         text-align: center;
         margin: 0px 0px 0 10px;
-        padding: px 1px px 10px;
+        padding: 0px 1px 0px 10px;
         /* border: 1px solid #616060; */
         /* border-radius: 5px; */
         /* box-shadow: 3px 3px 2px 1px rgba(69, 69, 69, 0.2); */
@@ -227,27 +227,26 @@ article h1{
     font-size: 2.1rem;
     letter-spacing: 1px;
     font-weight: bold;
-    padding: 10px 0 -10px 0;
-    margin: -30px 0 10px;  
-}
+    padding: 10px 0; /* padding vertical seulement, sans négatif */
+    margin: -30px 0 10px; /* garde ton effet de marge négative ici */}
 article h3{
     text-align: left;
     font-size: 1.2rem;
     letter-spacing: 1px;
     font-weight: bold;
-    padding: 10px 0 0px 25px;  
+    padding: 10px 0px 0px 25px;  
 }
 #h1{
     text-align: center;
     font-size: 2rem;
     letter-spacing: 1px;
     font-weight: bold;
-    margin: -700px 0 20px 0px;
+    margin: -700px 0px 20px 0px;
 }
 article p{
    font-size: 1.2rem;
    text-align: justify;
-   padding: 0px 20px 0 20px;
+   padding: 0px 20px 0px 20px;
    text-indent: 1.5em;
 }
 #p{
@@ -257,7 +256,7 @@ article p{
 #li{
     font-size: 1.3rem;
     text-align: justify;
-    padding: 0px 20px 0 20px;
+    padding: 0px 20px 0px 20px;
     font-weight: bold;
 }
 button {
@@ -280,19 +279,19 @@ button:hover{
 
 /*liste introduction*/
 .ul{
-    margin: 0 0 0 200px;
+    margin: 0px 0px 0px 200px;
 }
 @media (max-width: 1000px) {
     .ul{
-      margin: 0;
+      margin: 0px;
     }
   }
 .ol{
-    margin: 0 0 0 100px;
+    margin: 0px 0px 0px 100px;
 }
 @media (max-width: 1000px) {
     .ol{
-      margin: 0;
+      margin: 0px;
     }
   }
 
@@ -306,35 +305,34 @@ button:hover{
     text-align: center;
     height: 50px;
     width: 1000px;
-    margin: 0 auto; /* Centre l'élément horizontalement */
+    margin: 0px auto; /* Centre l'élément horizontalement */
     /* border: 1px rgb(11, 11, 11) inset; */
 
 /* Media Query pour les écrans plus petits */
 @media (max-width: 768px) {
-    padding: 0px; /* Supprimer le padding */
-    height: auto; /* Ajuster la hauteur automatiquement */
+  .content { /* remplace .content par l’élément réel que tu veux cibler */
+    padding: 0;
+    height: auto;
     text-align: left;
   }
 }
-  
 
+/* Media Query pour les écrans plus larges */
+@media (min-width: 800px) {
+  #site-footer {
+    clear: both;
+  }
+}
 
-
-
-  @media (min-width: 800px) {
-    #site-footer {
-      clear: both;
-    }
     #site-footer .column {
       width: 32%;
       float: left;
-      padding-right: 20;
+      padding-right: 20px;
       margin-bottom: 2%;
     }
     #site-footer .column.last {
-      padding-right: 0;
+      padding-right: 0px;
     }
-  }
   
   /* Section Contact */
 
@@ -342,20 +340,21 @@ button:hover{
     width: 100%; 
     height: 800px;
 }
+
 .section-contact h2 {
     text-align: center;
     color: #f7f7f7;
     font-size: 30px;
     font-weight: 400;
     margin-bottom: 50px;
-    padding: 50px 0 110px 0px;
+    padding: 50px 0px 110px 0px;
 }
 .section-contact h2 strong {
     font-weight: 900;
 }
 
 .container-form {
-    margin: -100px 0 100px 120px;
+    margin: -100px 0px 100px 120px;
     width: 70%;
     padding-left: 30px;
 }
@@ -367,7 +366,7 @@ button:hover{
 .form-groupe label {
     position: absolute;
     top: 50%;
-    left: 0;
+    left: 0px;
     transform: translateY(-50%);
     color: #aaa;
     font-size: 20px;
@@ -431,10 +430,10 @@ textarea:focus {
 }
 @media screen and (max-width: 1300px) {
     .section-contact h2 {
-        padding: 70px 0 0 0;
+        padding: 70px 0px 0px 0px;
     }
     .container-form{
-        padding-left: 0;
+        padding-left: 0px;
     }
     .form-groupe:nth-child(4){
         justify-content: center;
@@ -516,7 +515,7 @@ span {
   .column1 {
     float: left;
     width:25%;
-    padding: 0px 0 0 10px;
+    padding: 0px 0px 0px 10px;
     height: auto;
     /* border: 1px solid black; */
   }
@@ -524,7 +523,7 @@ span {
   .column2 {
     float: right;
     width:75%;
-    padding: 0px 0 0 10px;
+    padding: 0px 0px 0px 10px;
     height: auto;
     /* border: 1px solid black; */
    
@@ -549,7 +548,6 @@ span {
     }
   }
 
-
   /*fin boite de text*/
 
 
@@ -571,8 +569,8 @@ span {
 /* Foncer l'arrière-plan de la fenêtre modale */
 .modal {
   display: none; 
-  left: 0;
-  top: 0;
+  left: 0px;
+  top: 0px;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -598,8 +596,8 @@ span {
   margin: auto;
   background-color: #f3f3f3;
   position: relative;
-  padding: 0;
-  outline: 0;
+  padding: 0px;
+  outline: 0px;
   border: 1px #777 solid;
   text-align: justify;
   width: 80%;
@@ -647,7 +645,7 @@ footer {
 .title-tip-up[title]:hover:before {
     top: auto;
     bottom: 100%;
-    margin-top: 0;
+    margin-top: 0px;
     margin-bottom: 0.5em;
     font-size: 10px;
   }
@@ -662,14 +660,14 @@ footer {
   .title-tip-right[title]:hover:before {
     top: auto;
     left: 100%;
-    margin-top: 0;
+    margin-top: 0px;
     margin-left: 0.5em;
     font-size: 10px;
   }
   .title-tip-right[title]:hover:after {
     top: 50%;
     left: 100%;
-    margin-left: 0;
+    margin-left: 0px;
     margin-top: -0.125em;
     border: 0.25em dashed transparent;
     border-right: 0.25em solid #222;
@@ -680,7 +678,7 @@ footer {
     top: auto;
     left: auto;
     right: 100%;
-    margin-top: 0;
+    margin-top: 0px;
     margin-right: 0.5em;
     font-size: 10px;
   }
@@ -688,7 +686,7 @@ footer {
     top: 50%;
     left: auto;
     right: 100%;
-    margin-left: 0;
+    margin-left: 0px;
     margin-top: -0.125em;
     border: 0.25em dashed transparent;
     border-left: 0.25em solid #222;

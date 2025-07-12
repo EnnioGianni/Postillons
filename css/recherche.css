@@ -1,9 +1,10 @@
 /* CSS pour la case de recherche */
 .search-box {
     display: flex;
-    align-items: auto;
+    align-items: center;
     margin-right: 20px;
 }
+
 
 #search-input {
     padding: 10px;

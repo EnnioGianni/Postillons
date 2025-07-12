@@ -132,7 +132,7 @@ body {
     .site-footer .column {
       width: 32%;
       float: left;
-      padding-right: 20;
+      padding-right: 20px;
       margin-bottom: 2%;
     }
     .site-footer .column.last {

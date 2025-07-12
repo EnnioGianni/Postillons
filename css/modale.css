@@ -287,7 +287,7 @@ footer {
   width: 800px;
   height: auto;
   position: relative;
-  margin: 0% auto;
+  margin: 10% auto;
   padding: 5px 20px 13px 20px;
   border-radius: 10px;
   background: #fff;
@@ -341,10 +341,15 @@ box-shadow: 1px 1px 3px #000;
 
 }
 @keyframes clignoter {
- 0%   { color:#000000; }
- 40%   {color:#090909; }
- 100% { opacity:#000000; }
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
 }
+
+.mon-texte-clignotant {
+  animation: clignoter 2s ease-in-out infinite;
+}
+
 
 
 

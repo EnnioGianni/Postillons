@@ -41,7 +41,7 @@ body{
     margin: 0px 0px 0px -1px;    
 }
 #taille{
-  font-size: 35px 35px;
+  font-size: 35px;
   color: #fde402;
  
 }
@@ -63,9 +63,10 @@ color: #ddd;
   margin: 0 180px 0 180px;
   text-align: justify;
 }
-.p3{line-height: 300%m;
-
+.p3 {
+  line-height: 3;
 }
+
 
 
 
@@ -513,7 +514,7 @@ span {
 
 /*lettrine*/
 span1 {
-  padding: -0px -10px 5px 0px;
+  padding: 0px 0px 5px 0px;
   margin-bottom: 20px;
   text-align: center;
   font-weight: bold;
@@ -612,7 +613,7 @@ p{
   z-index: 99;
 }
 .N-text {
-  padding-top: -10px 0 -10px 0;
+  padding: 10px 0; /* haut et bas */
   vertical-align: middle;
   font-size: 25px;
   color: rgb(2, 2, 2);
@@ -620,7 +621,7 @@ p{
   width: 100%;
   animation: marquee 10s linear infinite;
   display: inline-block;
-  padding-right: 10px;
+  padding-right: 10px; /* redondant avec padding: 10px 0 */
 }
 .news {
   height: auto;

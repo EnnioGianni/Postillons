@@ -301,7 +301,7 @@ button:hover{
     background-color: #969595;
     color: white;
     overflow: hidden;
-    padding: 0px 0px 0px 0px;
+    padding: 0px;
     text-align: center;
     height: 50px;
     width: 1000px;

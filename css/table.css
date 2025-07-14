@@ -38,10 +38,10 @@ body{
 * {
     box-sizing: inherit;
     font-size: 17px;
-    margin: 0px 0px 0px -1px;    
+    margin: 0px 0px 0px 1px;    
 }
 #taille{
-  font-size: 35px;
+  font-size: 25px;
   color: #fde402;
  
 }
@@ -181,63 +181,102 @@ p::first-letter {
 }
 
 
-/*bouton de recherche*/
+/* Style de l'input (champ de recherche) */
 input {
   height: 37px;
-  width:99%;
-  border: 3px #e08318 solid;
+  width: 200px;
+  border: 3px solid #e08318;
   text-align: center;
+  box-sizing: border-box;
 }
+
+/* Icône à l'intérieur (ex: loupe) */
 i {
   color: #2105f4;
 }
-button {
-  background-color: #e08318;
-  height: 30px;
-  width: 50px;
-  border: 1px solid transparent;
-}
-button:hover {
-  background-color: #e08318;
-  height: 30px;
-  width: 40px;
-  border: 1px solid transparent;
-}
-form {
-  box-sizing: border-box;
+
+/* Conteneur principal centré */
+.wrap {
   display: flex;
-  margin: 0 -130px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
 }
 
+/* Boîte de recherche */
+.search {
+  display: flex;
+  align-items: center;
+  border: 3px solid #e08318;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Champ de recherche */
+.search input {
+  height: 37px;
+  width: 250px;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Bouton de recherche */
+.searchButton {
+  height: 37px;
+  width: 50px;
+  background-color: #e08318;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.searchButton i {
+  color: #2105f4;
+  font-size: 16px;
+}
+
+.searchButton:hover {
+  background-color: #d26f10;
+}
+
+/* Résultats ou éléments surlignés */
 .highlight {
-  background-color: #f7bc85; /* Choisissez votre couleur de surbrillance */
+  background-color: #f7bc85;
 }
 
-/* Requête média pour tablettes (par exemple, écrans entre 600px et 900px de large) */
-@media screen and (min-width: 600px) and (max-width: 900px) {
-  /* Styles spécifiques aux tablettes */
-  input, button {
-    width: 100%; /* Ajustez la largeur à 100% pour une meilleure adaptation aux écrans de tablettes */
+/* Responsive tablettes */
+@media screen and (max-width: 900px) {
+  .search input {
+    width: 100%;
   }
-  form {
-    margin: 0; /* Ajustez les marges du formulaire pour les tablettes */
-  }
-}
 
-/* Requête média pour smartphones (par exemple, écrans de moins de 600px de large) */
-@media screen and (max-width: 599px) {
-  /* Styles spécifiques aux smartphones */
-  input, button {
-    width: 100%; /* Ajustez la largeur pour les smartphones */
-  }
-  form {
-    flex-direction: column; /* Empilez les éléments du formulaire verticalement sur les petits écrans */
+  .search {
+    flex-direction: row;
+    width: 90%;
   }
 }
 
-/* .highlight {
-  background-color: yellow;
-} */
+/* Responsive smartphones */
+@media screen and (max-width: 600px) {
+  .search {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .search input,
+  .searchButton {
+    width: 100%;
+  }
+
+  .searchButton {
+    border-top: 1px solid #e08318;
+  }
+}
 
 
 
@@ -615,7 +654,7 @@ p{
 .N-text {
   padding: 10px 0; /* haut et bas */
   vertical-align: middle;
-  font-size: 25px;
+  font-size: 2px;
   color: rgb(2, 2, 2);
   margin: 0;
   width: 100%;

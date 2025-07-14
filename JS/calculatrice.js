@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ajouter une action au clic
     button.addEventListener("click", function () {
         // Rediriger vers la page des articles sur l'histoire de la Poste
-        window.location.href = "/Postillons/La Poste/histoireDeLaPoste.html";
+        window.location.href = "/Postillons/LaPoste/histoireDeLaPoste.html";
     });
 
     // Ajouter le bouton au conteneur

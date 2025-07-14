@@ -590,5 +590,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// =============================================================
+// SCRIPT : Marges ciblées pour les flèches simples « et »
+// Objectif : appliquer uniquement aux flèches simples seules
+// =============================================================
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionner tous les éléments .page-item dans la pagination
+  const paginationItems = document.querySelectorAll(".pagination .page-item");
 
+  paginationItems.forEach((item) => {
+    // Trouver le lien contenu dans chaque .page-item
+    const link = item.querySelector("a.page-link");
+
+    if (!link) return;
+
+    // Récupérer le contenu texte du lien
+    const content = link.textContent.trim();
+
+    // Appliquer une marge spécifique si le contenu est exactement «
+    if (content === "«") {
+      item.style.margin = "0 -2px 0 0"; // Marge droite uniquement
+    }
+
+    // Appliquer une marge spécifique si le contenu est exactement »
+    if (content === "»") {
+      item.style.margin = "0 0 0 -39px"; // Marge gauche uniquement
+    }
+
+    // Si le lien contient «« ou »» ou du texte supplémentaire, rien n'est appliqué
+  });
+});

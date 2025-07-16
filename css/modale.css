@@ -231,6 +231,7 @@ footer {
   padding: 1px 1px;
   border-color:  blue;
   text-align: center;
+  width: 200px;
 }
 
 .dropdown:hover .dropdown-content {

@@ -621,3 +621,176 @@ document.addEventListener("DOMContentLoaded", function () {
     // Si le lien contient «« ou »» ou du texte supplémentaire, rien n'est appliqué
   });
 });
+
+
+
+
+
+
+
+
+
+// ===============================
+// Script d'insertion du champ de recherche
+// entre les boutons « et » dans la pagination
+// ===============================
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionne la pagination (la liste <ul>)
+  const pagination = document.querySelector("ul.pagination");
+  if (!pagination) return; // Si la pagination n'existe pas, on ne fait rien
+
+  // Supprime tout champ de recherche existant pour éviter les doublons
+  const existingInput = document.querySelector("#villeInput");
+  if (existingInput) {
+    const liToRemove = existingInput.closest("li"); // Trouve le <li> parent
+    if (liToRemove) liToRemove.remove(); // Supprime l'ancien champ s'il existe
+  }
+
+  // Crée une nouvelle cellule <li> pour contenir le champ de recherche
+  const villeInputLi = document.createElement("li");
+  villeInputLi.className = "page-item";
+  villeInputLi.style.display = "flex";
+  villeInputLi.style.alignItems = "center"; // Aligne verticalement le champ
+
+  // Crée le conteneur dropdown (utile pour les suggestions si nécessaire)
+  const dropdownDiv = document.createElement("div");
+  dropdownDiv.className = "dropdown";
+
+  // Crée le champ de saisie <input>
+  const input = document.createElement("input");
+  input.type = "text";
+  input.id = "villeInput"; // ID unique pour retrouver le champ
+  input.placeholder = "Tapez le nom d'une ville"; // Texte par défaut
+  input.setAttribute("aria-label", "Champ de recherche pour une ville"); // Accessibilité
+  input.style.height = "37px";
+  input.style.width = "200px";
+  input.style.border = "3px solid #e08318";
+  input.style.textAlign = "center";
+  input.style.boxSizing = "border-box";
+
+  // Crée le conteneur déroulant des suggestions (vide ici)
+  const dropdownContent = document.createElement("div");
+  dropdownContent.id = "dropdownContent";
+  dropdownContent.className = "dropdown-content scrollable-content";
+  dropdownContent.setAttribute("aria-live", "polite"); // Accessibilité (annonce des suggestions)
+
+  // Assemble le champ et le contenu dropdown
+  dropdownDiv.appendChild(input);
+  dropdownDiv.appendChild(dropdownContent);
+  villeInputLi.appendChild(dropdownDiv);
+
+  // Insertion du <li> juste après le 2ᵉ bouton de la pagination
+  // [««] [«] → [champ ici] ← [»] [»»]
+  const items = pagination.querySelectorAll("li");
+  if (items.length >= 4) {
+    pagination.insertBefore(villeInputLi, items[2]); // Insère à la bonne place
+  } else {
+    pagination.appendChild(villeInputLi); // Si pas assez de boutons, ajoute à la fin
+  }
+});
+
+
+
+
+
+// ==============================
+// Script : Ajout automatique des rôles ARIA aux balises principales
+// Objectif : améliorer l'accessibilité sans modifier le HTML original
+// ==============================
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Tableau des éléments HTML à cibler avec leur rôle ARIA recommandé
+  const rolesToAdd = [
+    { selector: "header", role: "banner" },          // Le <header> représente l'en-tête principal
+    { selector: "nav", role: "navigation" },         // Le <nav> est une barre de navigation
+    { selector: "main", role: "main" },              // Le <main> contient le contenu principal
+    { selector: "footer", role: "contentinfo" }      // Le <footer> contient les infos de bas de page
+  ];
+
+  // Parcourt chaque élément à traiter
+  rolesToAdd.forEach(({ selector, role }) => {
+    const el = document.querySelector(selector); // Sélectionne l'élément HTML (ex: <nav>)
+    if (el && !el.hasAttribute("role")) {        // Vérifie s'il existe et n'a pas encore de rôle
+      el.setAttribute("role", role);             // Ajoute le rôle ARIA correspondant
+    }
+  });
+
+  // Ajout spécial : rôle "search" autour du champ de recherche
+  const searchInput = document.querySelector("#villeInput"); // Cible le champ de recherche
+  if (searchInput) {
+    const wrapper = searchInput.closest("form, div"); // Trouve le conteneur le plus proche (form ou div)
+    if (wrapper && !wrapper.hasAttribute("role")) {
+      wrapper.setAttribute("role", "search");         // Ajoute role="search" si manquant
+    }
+  }
+});
+
+
+
+// ==========================================
+// 📌 Historique persistant des villes visitées (scroll après 2 villes)
+// Affiche toutes les villes visitées sous forme de liens cliquables
+// Scroll vertical dès que la liste dépasse 2 lignes
+// À coller dans img.js
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Récupère le nom et l’URL de la ville actuelle
+  const titreVille = document.querySelector("h2 a");
+  if (!titreVille) return;
+
+  const nomVille = titreVille.textContent.trim();
+  const urlVille = window.location.pathname;
+
+  // 2. Charge l’historique depuis localStorage
+  let historique = JSON.parse(localStorage.getItem("villesRecemmentVues")) || [];
+
+  // 3. Retire les doublons (même nom + même URL)
+  historique = historique.filter(v => !(v.nom === nomVille && v.url === urlVille));
+
+  // 4. Ajoute la ville actuelle en haut de la liste
+  historique.unshift({ nom: nomVille, url: urlVille });
+
+  // 5. Sauvegarde dans localStorage
+  localStorage.setItem("villesRecemmentVues", JSON.stringify(historique));
+
+  // 6. Crée le bloc flottant d’affichage
+  const bloc = document.createElement("div");
+  bloc.id = "historique-villes";
+  bloc.style.position = "fixed";
+  bloc.style.bottom = "10px";
+  bloc.style.right = "100px";
+  bloc.style.width = "200px";
+  bloc.style.maxHeight = "200px"; // ~3 villes visibles sans scroll
+  bloc.style.overflowY = "auto";
+  bloc.style.background = "#fff";
+  bloc.style.border = "1px solid #ccc";
+  bloc.style.padding = "8px";
+  bloc.style.fontSize = "13px";
+  bloc.style.zIndex = "10000";
+  bloc.style.boxShadow = "0 0 4px rgba(0,0,0,0.2)";
+  bloc.style.borderRadius = "6px";
+
+  // 7. Ajoute le titre
+  const titre = document.createElement("div");
+  titre.textContent = "📜 Villes visitées :";
+  titre.style.fontWeight = "bold";
+  titre.style.marginBottom = "6px";
+  bloc.appendChild(titre);
+
+  // 8. Ajoute chaque ville sous forme de lien
+  historique.forEach(v => {
+    const lien = document.createElement("a");
+    lien.href = v.url;
+    lien.textContent = "• " + v.nom;
+    lien.style.display = "block";
+    lien.style.margin = "2px 0";
+    lien.style.color = "#0077aa";
+    lien.style.textDecoration = "none";
+    lien.style.wordBreak = "break-word";
+    bloc.appendChild(lien);
+  });
+
+  // 9. Ajoute le bloc dans le body
+  document.body.appendChild(bloc);
+});

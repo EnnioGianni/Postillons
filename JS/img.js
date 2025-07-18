@@ -728,69 +728,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // ==========================================
-// 📌 Historique persistant des villes visitées (scroll après 2 villes)
+// 📌 Historique persistant des villes visitées (max 5, reset session)
 // Affiche toutes les villes visitées sous forme de liens cliquables
 // Scroll vertical dès que la liste dépasse 2 lignes
-// À coller dans img.js
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Récupère le nom et l’URL de la ville actuelle
+  // Réinitialiser l'historique si nouvelle session
+  if (!sessionStorage.getItem("sessionActive")) {
+    localStorage.removeItem("villesRecemmentVues");
+    sessionStorage.setItem("sessionActive", "true");
+  }
+
   const titreVille = document.querySelector("h2 a");
   if (!titreVille) return;
 
   const nomVille = titreVille.textContent.trim();
   const urlVille = window.location.pathname;
 
-  // 2. Charge l’historique depuis localStorage
   let historique = JSON.parse(localStorage.getItem("villesRecemmentVues")) || [];
 
-  // 3. Retire les doublons (même nom + même URL)
+  // Supprime doublon (même nom + même URL)
   historique = historique.filter(v => !(v.nom === nomVille && v.url === urlVille));
 
-  // 4. Ajoute la ville actuelle en haut de la liste
+  // Ajoute la ville en tête
   historique.unshift({ nom: nomVille, url: urlVille });
 
-  // 5. Sauvegarde dans localStorage
+  // Limite à 5 villes max
+  historique = historique.slice(0, 5);
+
+  // Sauvegarde mise à jour
   localStorage.setItem("villesRecemmentVues", JSON.stringify(historique));
 
-  // 6. Crée le bloc flottant d’affichage
+  // Bloc d'affichage
   const bloc = document.createElement("div");
   bloc.id = "historique-villes";
-  bloc.style.position = "fixed";
-  bloc.style.bottom = "10px";
-  bloc.style.right = "100px";
-  bloc.style.width = "200px";
-  bloc.style.maxHeight = "200px"; // ~3 villes visibles sans scroll
-  bloc.style.overflowY = "auto";
-  bloc.style.background = "#fff";
-  bloc.style.border = "1px solid #ccc";
-  bloc.style.padding = "8px";
-  bloc.style.fontSize = "13px";
-  bloc.style.zIndex = "10000";
-  bloc.style.boxShadow = "0 0 4px rgba(0,0,0,0.2)";
-  bloc.style.borderRadius = "6px";
+  Object.assign(bloc.style, {
+    position: "fixed",
+    bottom: "10px",
+    right: "100px",
+    width: "200px",
+    maxHeight: "200px",
+    overflowY: "auto",
+    background: "#fff",
+    border: "1px solid #ccc",
+    padding: "8px",
+    fontSize: "13px",
+    zIndex: "10000",
+    boxShadow: "0 0 4px rgba(0,0,0,0.2)",
+    borderRadius: "6px"
+  });
 
-  // 7. Ajoute le titre
   const titre = document.createElement("div");
   titre.textContent = "📜 Villes visitées :";
   titre.style.fontWeight = "bold";
   titre.style.marginBottom = "6px";
   bloc.appendChild(titre);
 
-  // 8. Ajoute chaque ville sous forme de lien
   historique.forEach(v => {
     const lien = document.createElement("a");
     lien.href = v.url;
     lien.textContent = "• " + v.nom;
-    lien.style.display = "block";
-    lien.style.margin = "2px 0";
-    lien.style.color = "#0077aa";
-    lien.style.textDecoration = "none";
-    lien.style.wordBreak = "break-word";
+    Object.assign(lien.style, {
+      display: "block",
+      margin: "2px 0",
+      color: "#0077aa",
+      textDecoration: "none",
+      wordBreak: "break-word"
+    });
     bloc.appendChild(lien);
   });
 
-  // 9. Ajoute le bloc dans le body
   document.body.appendChild(bloc);
 });

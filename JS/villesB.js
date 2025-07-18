@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Bedarieux', url: '../../../laPosteDeLancienneFrance/Villes B/Bedarieux/bedarieux.html' },
         { name: 'Belfort', url: '../../../laPosteDeLancienneFrance/Villes B/Belfort/belfort.html' },
         { name: 'Bellac', url: '../../../laPosteDeLancienneFrance/Villes B/Bellac/bellac.html' },
-        { name: 'Belle Isle en Mer', url: '../../../laPosteDeLancienneFrance/Villes B/Belle/belleIsleEnMer.html' },
+        { name: 'BelleIsleEnMer', url: '../../../laPosteDeLancienneFrance/Villes B/BelleIsleEnMer/belleIsleEnMer.html' },
         { name: 'Belle Isle en Terre', url: '../../../laPosteDeLancienneFrance/Villes B/BelleIsleEnTerre/belleIsleEnTerre.html' },
         { name: 'Bellegarde', url: '../../../laPosteDeLancienneFrance/Villes B/Bellegarde/bellegarde.html' },
         { name: 'Bellemare', url: '../../../laPosteDeLancienneFrance/Villes B/Bellemare/bellemare.html' },

@@ -179,18 +179,20 @@
         </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 <!--Marque 1C-->                
         <tr style="color: red;">
-            <td class="border2">
+            <td class="border2 owned">
                 <a href="../Blanc/Images/1C.png">
                     <img src="../Blanc/Images/1C.png" alt="Blanc" data-width-mm="33">
-                </a>
+                </a>            
             </td>
             <td class="border3">1C</td>
             <td class="border1">port dû</td>
             <td class="border1">33x6mm</td>
             <td class="border1">1785-1789</td>
             <td class="border1r">rouge</td>
-            <td class="border2">I-17</td>
-            <td class="prixProduit" data-id="17">00.00</td>
+            <td class="border2">I-17
+                <br><a href="#popup1" class="ouvrirNote" data-note="prix payé 19,30€">(Lire la note)</a>
+            </td>
+            <td class="prixProduit" data-id="17">00.00 </td>
         </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 <!--Marque 2-->                
         <tr>
@@ -255,13 +257,31 @@
     </div>
 <button id="showCalculatorBtn" type="button" title="Afficher la calculatrice">Afficher la calculatrice</button>
 
-<!--popup 1--> 
-        <div id="popup1" class="popup-container">
-            <div class="popup-content">
-                <a href="#" class="close">&times;</a>
-                <p></p>
-            </div>
-        </div> 
+<!-- Boîte extérieure : légèrement plus grande que l'intérieur -->
+<div id="popup1" class="popup-container" style="
+  display: none;
+  position: absolute;
+  padding: 2px;  /* juste pour encadrer */
+  background: transparent; /* transparent pour que seule la boîte interne soit visible */
+  z-index: 9999;
+">
+
+  <!-- Boîte intérieure : contenu stylé, dimension automatique -->
+  <div class="popup-content" style="
+    background: #fff;
+    border: 1px solid #444;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    display: inline-block;
+    max-width: 300px;
+    white-space: normal;
+    margin: 0px 0px 0px 1500px;
+  ">
+    <p style="margin: 0;">Contenu de la note dynamique</p>
+  </div>
+
+</div>
 
 <!--popup 2-->
         <div id="popup2" class="popup-container">
@@ -292,6 +312,40 @@
 <!--fin Footer défilant-->
  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>   
 <script src="../../../JS/img.js"></script>
+<script>
+  const popup = document.getElementById('popup1');
+  const content = popup.querySelector('p');
+
+  document.querySelectorAll('.ouvrirNote').forEach(lien => {
+    lien.addEventListener('mouseover', function () {
+      const note = this.getAttribute('data-note') || 'Note indisponible.';
+      content.textContent = note;
+
+      // Mesurer le lien
+      const rect = this.getBoundingClientRect();
+      
+      // Positionner à gauche du lien
+      popup.style.display = 'block';  // Afficher pour calculer la largeur
+      const popupWidth = popup.offsetWidth;
+      popup.style.top = (rect.top + window.scrollY) + 'px';
+      popup.style.left = (rect.left + window.scrollX - popupWidth - 10) + 'px'; // 10px de marge
+
+    });
+
+    lien.addEventListener('mouseout', function () {
+      popup.style.display = 'none';
+    });
+  });
+
+  // Garder le popup affiché si on le survole
+  popup.addEventListener('mouseover', function () {
+    popup.style.display = 'block';
+  });
+
+  popup.addEventListener('mouseout', function () {
+    popup.style.display = 'none';
+  });
+</script>
 
 </body>
 </html>   

@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Bonneval', url: '../../../laPosteDeLancienneFrance/Villes B/Bonneval/bonneval.html' },
         { name: 'Bonnieres', url: '../../../laPosteDeLancienneFrance/Villes B/Bonnieres/bonnieres.html' },
         { name: 'Bonny', url: '../../../laPosteDeLancienneFrance/Villes B/Bonny/bonny.html' },
-        { name: 'Le Bordeau de Vigny', url: '../../../laPosteDeLancienneFrance/Villes B/Bordeau/bordeau.html' },
+        { name: 'LeBordeauDeVigny', url: '../../../laPosteDeLancienneFrance/Villes B/LeBordeauDeVigny/leBordeauDeVigny.html' },
         { name: 'Bordeaux', url: '../../../laPosteDeLancienneFrance/Villes B/Bordeaux/bordeaux.html' },
         { name: 'Petite poste de Bordeaux', url: '../../../laPosteDeLancienneFrance/Villes B/Bordeauxpp/bordeauxpp.html' },
         { name: 'Bort', url: '../../../laPosteDeLancienneFrance/Villes B/Bort/bort.html' },

@@ -801,3 +801,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.body.appendChild(bloc);
 });
+
+// 📦 Optimisation du chargement des images : Lazy Loading
+// Ce script applique à toutes les images de la page le chargement différé (lazy loading)
+// Cela permet de charger les images uniquement lorsqu'elles entrent dans le champ de vision de l'utilisateur,
+// ce qui améliore les performances et réduit la consommation de données.
+
+document.querySelectorAll('img').forEach(img => {
+  img.loading = 'lazy'; // Attribut HTML5 natif pour le chargement différé
+});
+
+

@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Boulogne sur Mer', url: '../../../laPosteDeLancienneFrance/Villes B/BoulogneSurMer/boulogneSurMer.html' },
         { name: 'Boulou', url: '../../../laPosteDeLancienneFrance/Villes B/Boulou/boulou.html' },
         { name: 'Bouquenon', url: '../../../laPosteDeLancienneFrance/Villes B/Bouquenon/bouquenon.html' },
-        { name: 'Bourbon L Archambault', url: '../../../laPosteDeLancienneFrance/Villes B/Bourbon/bourbon.html' },
+        { name: 'BourbonLarchambault', url: '../../../laPosteDeLancienneFrance/Villes B/BourbonLarchambault/bourbonLarchambault.html' },
         { name: 'Bourbon Lancy', url: '../../../laPosteDeLancienneFrance/Villes B/BourbonLancy/bourbonLancy.html' },
         { name: 'Bourbonne', url: '../../../laPosteDeLancienneFrance/Villes B/Bourbonne/bourbonne.html' },
         { name: 'Bourbourg', url: '../../../laPosteDeLancienneFrance/Villes B/Bourbourg/bourbourg.html' },

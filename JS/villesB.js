@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Bourgneuf', url: '../../../laPosteDeLancienneFrance/Villes B/Bourgneuf/bourgneuf.html' },
         { name: 'Bourgneuf en Retz', url: '../../../laPosteDeLancienneFrance/Villes B/BourgneufEnRetz/bourgneufEnRetz.html' },
         { name: 'Bourgoin', url: '../../../laPosteDeLancienneFrance/Villes B/Bourgoin/bourgoin.html' },
-        { name: 'Bourgtheroude', url: '../../../laPosteDeLancienneFrance/Villes B/Bourgtheroulde/bourgtheroulde.html' },
+        { name: 'Bourgthroulde', url: '../../../laPosteDeLancienneFrance/Villes B/Bourgthroulde/bourgtheroulde.html' },
         { name: 'Bourgueil', url: '../../../laPosteDeLancienneFrance/Villes B/Bourgueil/bourgueil.html' },
         { name: 'Bourmont', url: '../../../laPosteDeLancienneFrance/Villes B/Bourmont/bourmont.html' },
         { name: 'Boussac', url: '../../../laPosteDeLancienneFrance/Villes B/Boussac/boussac.html' },

@@ -765,7 +765,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bloc.id = "historique-villes";
   Object.assign(bloc.style, {
     position: "fixed",
-    bottom: "10px",
+    bottom: "45px",
     right: "100px",
     width: "200px",
     maxHeight: "200px",
@@ -791,7 +791,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lien.textContent = "• " + v.nom;
     Object.assign(lien.style, {
       display: "block",
-      margin: "2px 0",
+      margin: "2px 0px",
       color: "#0077aa",
       textDecoration: "none",
       wordBreak: "break-word"

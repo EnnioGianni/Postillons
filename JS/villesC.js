@@ -1,265 +1,51 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var input = document.getElementById('villeInput');
-    var dropdownContent = document.getElementById('dropdownContent');
-    var villeLink = document.getElementById('villeLink');
+    const villes = [
+        "Couterne", "Coutras", "Couture", "Cozes", "Craon", "Craponne", "Crecy En Brie", "Creil", "Cremieu", "Crepy en Valois", "Cressensac", "Crest", "Crevecoeur", "Croissanville", "Crolles", "Cuers", "Cuges", "Culan", 
+        "Caudebec", "Caudrot", "Caudry", "Caussade", "Cauterets", "Cavaillon", "Cavignac", "Caylus", "Cazeres", "Cercles", "Cerdon", "Céret", "Cernay", "Cervione", "Cette", "Chabanais", "Chablis", "Chagny", "La Chaise-Dieu", "Chalabre", "Chalamont", "Le Chalard", "Chalaure", "Challans", "halon sur Saône", "Chalon Sur Marne", "Chalus", "Chambly", "Chambon", "Chambord","Chambrais", "Champagnole", "Champigny", "Champlitte", "Champrond", "Chanceaux", "Chanteloube", "Chantilly", "Chantonnay", "Chaource", "Charente", "Charenton", "La Charite", "Charlemont", "Charleroi", "Charleville", "Charly", "Charmes", "Charolles", "Charost", "Chartre sur le Loir", "Chartre", "Chataigneraie", "Chateau-Chalon", "Chateau-Chinon", "Chateau-du-Loir", "Chateau-Gontier", "Chateau-Landon", "Chateau-Porcien", "Chateau-Renault", "Chateau-Salins", "Chateau-Thierry", "Chateau-Villain", "Chateaubriant", "Chateaudun", "Chateaulin", "Chateaumeillant", "Chateauneuf","Chateauneuf de Bretagne", "Chateauneuf sur Cher", "Chateauneuf en Thymerais", "Chateauroux", "Chatel sur Moselle", "Chatelaudren", "Le chatelet en Brie", "Chatellerault", "Chatillon de Michaille", "Chatillon les Dombes", "Chatillon sur Indre", "Chatillon sur Loing", "Chatillon sur Loire", "Chatillon sur Marne", "Chatillon sur Seine", "Chatillon sur Sevre", "Chatou", "La Chatre", "Chaudesaigues", "Chaumes", "Chaumont en Bassigny", "Chaumont en Vexin", "Chaunai", "Chauny", "La Chaussee", "Chauvigny", "Chazelles", "Chef Boutonne", "Chelles", "Chemille", "Chenerailles", "Cherbourg", "Cheroy", "Chevilly","Chevreuse", "Chezy", "Chilleurs", "Chinon", "Choisy le Roi", "Cholet", "Chomerac", "Chorges", "Chouze", "Cingetabelle", "Cintrey", "La Ciotat", "Cirey S Blaise", "Civray", "Cizay", "Clairac", "Clairvaux", "Clamecy", "Claye", "La Clayette", "Clermont en Argonne", "Clermont en Beauvoisis", "Clermont Ferrand", "Clermont Lodeve", "Clerval", "Clery", "Clisson", "Cloyes", "Cluny", "Cocherel", "Cognac", "Coillure", "Coincy", "Collobrieres", "Collonges", "Colombey", "Combouin", "Combourg", "Commercy", "Compiegne", "Concarneau", "Conches", "Conde", "Conde sur Noireau", "Condom", "Condrieux", "Confolens", "Connerre", "Corbeil", "Corbie", "Corbeny", "Corbigny", "Cordes", "Cormoz", "Corps", "Corse", "Corte", "Cosne", "La Cote St Andre", "Cotignac", "Coubert", "Couches", "Couhe", "Coulanges sur Yonne", "Coullomiers", "Courgivaux", "Courson", "Courtanvault S Loir", "Courtenay", "Courtomer", "Courtrai", "Courville", "Coutances", 
 
-    // Tableau de liens de villes
-    var cityLinks = [
-        { name: 'Cadenet', url: '../../../laPosteDeLancienneFrance/Villes C/Cadenet/cadenet.html' },
-        { name: 'Cadillac', url: '../../../laPosteDeLancienneFrance/Villes C/Cadillac/cadillac.html' },
-        { name: 'Caen', url: '../../../laPosteDeLancienneFrance/Villes C/Caen/caen.html' },
-        { name: 'Cahors', url: '../../../laPosteDeLancienneFrance/Villes C/Cahors/cahors.html' },
-        { name: 'Calais', url: '../../../laPosteDeLancienneFrance/Villes C/Calais/calais.html' },
-        { name: 'Calvi', url: '../../../laPosteDeLancienneFrance/Villes C/Calvi/calvi.html' },
-        { name: 'Cahusac', url: '../../../laPosteDeLancienneFrance/Villes C/Cahusac/cahusac.html' },
-        { name: 'Calvisson', url: '../../../laPosteDeLancienneFrance/Villes C/Calvisson/calvisson.html' },
-        { name: 'Camaret', url: '../../../laPosteDeLancienneFrance/Villes C/Camaret/camaret.html' },
-        { name: 'Cambrai', url: '../../../laPosteDeLancienneFrance/Villes C/Cambrai/cambrai.html' },
-        { name: 'Cande', url: '../../../laPosteDeLancienneFrance/Villes C/Cande/cande.html' },
-        { name: 'Cannes', url: '../../../laPosteDeLancienneFrance/Villes C/Cannes/cannes.html' },
-        { name: 'Cany', url: '../../../laPosteDeLancienneFrance/Villes C/Cany/cany.html' },
-        { name: 'Caraman', url: '../../../laPosteDeLancienneFrance/Villes C/Caraman/caraman.html' },
-        { name: 'Carcassonne', url: '../../../laPosteDeLancienneFrance/Villes C/Carcassonne/carcassonne.html' },
-        { name: 'Carentan', url: '../../../laPosteDeLancienneFrance/Villes C/Carentan/carentan.html' },
-        { name: 'Carhaix', url: '../../../laPosteDeLancienneFrance/Villes C/Carhaix/carhaix.html' },
-        { name: 'Carignan', url: '../../../laPosteDeLancienneFrance/Villes C/Carignan/carignan.html' },
-        { name: 'La Carla Bayle', url: '../../../laPosteDeLancienneFrance/Villes C/CarlaBayle/carlaBayle.html' },
-        { name: 'Carpentras', url: '../../../laPosteDeLancienneFrance/Villes C/Carpentras/carpentras.html' },
-        { name: 'Carrouge', url: '../../../laPosteDeLancienneFrance/Villes C/Carrouge/carrouge.html' },
-        { name: 'Carvin', url: '../../../laPosteDeLancienneFrance/Villes C/Carvin/carvin.html' },
-        { name: 'Casal', url: '../../../laPosteDeLancienneFrance/Villes C/Casal/casal.html' },
-        { name: 'Cassel', url: '../../../laPosteDeLancienneFrance/Villes C/Cassel/cassel.html' },
-        { name: 'Cassis', url: '../../../laPosteDeLancienneFrance/Villes C/Cassis/cassis.html' },
-        { name: 'Castelfranc', url: '../../../laPosteDeLancienneFrance/Villes C/Castelfranc/castelfranc.html' },
-        { name: 'Castellane', url: '../../../laPosteDeLancienneFrance/Villes C/Castellane/castellane.html' },
-        { name: 'Castelnau de Magnoac', url: '../../../laPosteDeLancienneFrance/Villes C/Castelnau/castelnau.html' },
-        { name: 'Castelnau de Médoc', url: '../../../laPosteDeLancienneFrance/Villes C/Castelnau32/castelnau32.html' },
-        { name: 'Castelnau de Montratier', url: '../../../laPosteDeLancienneFrance/Villes C/castelnau44/castelnau44.html' },
-        { name: 'Castelnaudary', url: '../../../laPosteDeLancienneFrance/Villes C/Castelnaudary/castelnaudary.html' },
-        { name: 'Castelsarrasin', url: '../../../laPosteDeLancienneFrance/Villes C/Castelsarrasin/castelsarrasin.html' },
-        { name: 'Castillon', url: '../../../laPosteDeLancienneFrance/Villes C/Castillon/castillon.html' },
-        { name: 'Castre', url: '../../../laPosteDeLancienneFrance/Villes C/Castre/castre.html' },
-        { name: 'Castre en Guyenne', url: '../../../laPosteDeLancienneFrance/Villes C/Castre32/castresEnGuyenne.html.html' },
-        { name: 'Cateau Cambrésis', url: '../../../laPosteDeLancienneFrance/Villes C/CateauCambresis/cateauCambresis.html' },
-        { name: 'Le Catelet', url: '../../../laPosteDeLancienneFrance/Villes C/Catelet/catelet.html' },
-        { name: 'Caudebec', url: '../../../laPosteDeLancienneFrance/Villes L/Caudebec/caudebec.html' },
-        { name: 'Caudrot', url: '../../../laPosteDeLancienneFrance/Villes C/Caudrot/caudrot.html' },
-        { name: 'Caudry', url: '../../../laPosteDeLancienneFrance/Villes C/Caudry/caudry.html' },
-        { name: 'Caussade', url: '../../../laPosteDeLancienneFrance/Villes C/Caussade/caussade.html' },
-        { name: 'Cauterets', url: '../../../laPosteDeLancienneFrance/Villes C/Cauterets/cauterets.html' },
-        { name: 'Cavaillon', url: '../../../laPosteDeLancienneFrance/Villes C/Cavaillon/cavaillon.html' },
-        { name: 'Cavignac', url: '../../../laPosteDeLancienneFrance/Villes C/Cavignac/cavignac.html' },
-        { name: 'Caylus', url: '../../../laPosteDeLancienneFrance/Villes C/Caylus/caylus.html' },
-        { name: 'Cazeres', url: '../../../laPosteDeLancienneFrance/Villes C/Cazeres/cazeres.html' },
-        { name: 'Cercles', url: '../../../laPosteDeLancienneFrance/Villes C/Cercles/cercles.html' },
-        { name: 'Cerdon', url: '../../../laPosteDeLancienneFrance/Villes C/Cerdon/cerdon.html' },
-        { name: 'Céret', url: '../../../laPosteDeLancienneFrance/Villes C/Ceret/ceret.html' },
-        { name: 'Cernay', url: '../../../laPosteDeLancienneFrance/Villes C/Cernay/cernay.html' },
-        { name: 'Cervione', url: '../../../laPosteDeLancienneFrance/Villes C/Cervione/cervione.html' },
-        { name: 'Cette', url: '../../../laPosteDeLancienneFrance/Villes C/Cette/cette.html' },
-        { name: 'Chabanais', url: '../../../laPosteDeLancienneFrance/Villes C/Chabanais/chabanais.html' },
-        { name: 'Chablis', url: '../../../laPosteDeLancienneFrance/Villes C/Chablis/chablis.html' },
-        { name: 'Chagny', url: '../../../laPosteDeLancienneFrance/Villes C/Chagny/chagny.html' },
-        { name: 'La Chaise-Dieu', url: '../../../laPosteDeLancienneFrance/Villes CChaiseDieu/chaiseDieu/.html' },
-        { name: 'Chalabre', url: '../../../laPosteDeLancienneFrance/Villes C/Chalabre/chalabre.html' },
-        { name: 'Chalamont', url: '../../../laPosteDeLancienneFrance/Villes C/Chalamont/chalamont.html' },
-        { name: 'Le Chalard', url: '../../../laPosteDeLancienneFrance/Villes C/Chalard/chalard.html' },
-        { name: 'Chalaure', url: '../../../laPosteDeLancienneFrance/Villes C/Chalaure/chalaure.html' },
-        { name: 'Challans', url: '../../../laPosteDeLancienneFrance/Villes C/Challans/challans.html' },
-        { name: 'halon sur Saône', url: '../../../laPosteDeLancienneFrance/Villes C/Chalon/chalon.html' },
-        { name: 'Chalon Sur Marne', url: '../../../laPosteDeLancienneFrance/Villes C/Chalon49/chalonsSurMarne.html' },
-        { name: 'Chalus', url: '../../../laPosteDeLancienneFrance/Villes C/Chalus/chalus.html' },
-        { name: 'Chambly', url: '../../../laPosteDeLancienneFrance/Villes C/Chambly/chambly.html' },
-        { name: 'Chambon', url: '../../../laPosteDeLancienneFrance/Villes C/Chambon/chambon.html' },
-        { name: 'Chambord', url: '../../../laPosteDeLancienneFrance/Villes C/Chambord/chambord.html' },
-        { name: 'Chambrais', url: '../../../laPosteDeLancienneFrance/Villes C/Chambrais/chambrais.html' },
-        { name: 'Champagnole', url: '../../../laPosteDeLancienneFrance/Villes C/Champagnole/champagnole.html' },
-        { name: 'Champigny', url: '../../../laPosteDeLancienneFrance/Villes C/Champigny/champigny.html' },
-        { name: 'Champlitte', url: '../../../laPosteDeLancienneFrance/Villes C/Champlitte/champlitte.html' },
-        { name: 'Champrond', url: '../../../laPosteDeLancienneFrance/Villes C/Champrond/champrond.html' },
-        { name: 'Chanceaux', url: '../../../laPosteDeLancienneFrance/Villes C/Chanceaux/chanceaux.html' },
-        { name: 'Chanteloube', url: '../../../laPosteDeLancienneFrance/Villes C/Chanteloube/chanteloube.html' },
-        { name: 'Chantilly', url: '../../../laPosteDeLancienneFrance/Villes C/Chantilly/chantilly.html' },
-        { name: 'Chantonnay', url: '../../../laPosteDeLancienneFrance/Villes C/Chantonnay/chantonnay.html' },
-        { name: 'Chaource', url: '../../../laPosteDeLancienneFrance/Villes C/Chaource/chaource.html' },
-        { name: 'Charente', url: '../../../laPosteDeLancienneFrance/Villes C/Charente/charente.html' },
-        { name: 'Charenton', url: '../../../laPosteDeLancienneFrance/Villes C/Charenton/charenton.html' },
-        { name: 'La Charite', url: '../../../laPosteDeLancienneFrance/Villes C/Charite/charite.html' },
-        { name: 'Charlemont', url: '../../../laPosteDeLancienneFrance/Villes C/Charlemont/charlemont.html' },
-        { name: 'Charleroi', url: '../../../laPosteDeLancienneFrance/Villes C/Charleroi/charleroi.html' },
-        { name: 'Charleville', url: '../../../laPosteDeLancienneFrance/Villes C/Charleville/charleville.html' },
-        { name: 'Charly', url: '../../../laPosteDeLancienneFrance/Villes C/Charly/charly.html' },
-        { name: 'Charmes', url: '../../../laPosteDeLancienneFrance/Villes C/Charmes/charmes.html' },
-        { name: 'Charolles', url: '../../../laPosteDeLancienneFrance/Villes C/Charolles/charolles.html' },
-        { name: 'Charost', url: '../../../laPosteDeLancienneFrance/Villes C/Charost/charost.html' },
-        { name: 'Chartre sur le Loir', url: '../../../laPosteDeLancienneFrance/Villes C/Chartre/chartreSurLeLoir.html' },
-        { name: 'Chartre', url: '../../../laPosteDeLancienneFrance/Villes C/Chartre27/chartres.html' },
-        { name: 'Chataigneraie', url: '../../../laPosteDeLancienneFrance/Villes CChataigneraie/chataigneraie/.html' },
-        { name: 'Chateau-Chalon', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau1chalon/chateauChalon.html' },
-        { name: 'Chateau-Chinon', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau2Chinon/chateauChinon.html' },
-        { name: 'Chateau-du-Loir', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau3Loire/chateauDuLoir.html' },
-        { name: 'Chateau-Gontier', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau4Gontier/chateauGontier.html' },
-        { name: 'Chateau-Landon', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau5Landon/chateauLandon.html' },
-        { name: 'Chateau-Porcien', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau6Porcien/chateauPorcien.html' },
-        { name: 'Chateau-Renault', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau7Renault/chateauRenault.html' },
-        { name: 'Chateau-Salins', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau8Salins/chateauSalins.html' },
-        { name: 'Chateau-Thierry', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau9Thierry/chateauThierry.html' },
-        { name: 'Chateau-Villain', url: '../../../laPosteDeLancienneFrance/Villes C/Chateau10Villain/chateauVillain.html' },
-        { name: 'Chateaubriant', url: '../../../laPosteDeLancienneFrance/Villes C/Chateaubriant/chateaubriant.html' },
-        { name: 'Chateaudun', url: '../../../laPosteDeLancienneFrance/Villes C/Chateaudun/chateaudun.html' },
-        { name: 'Chateaulin', url: '../../../laPosteDeLancienneFrance/Villes C/Chateaulin/chateaulin.html' },
-        { name: 'Chateaumeillant', url: '../../../laPosteDeLancienneFrance/Villes C/Chateaumeillant/chateaumeillant.html' },
-        { name: 'Chateauneuf', url: '../../../laPosteDeLancienneFrance/Villes C/Chateauneuf1/Chateauneuf.html' },
-        { name: 'Chateauneuf de Bretagne', url: '../../../laPosteDeLancienneFrance/Villes C/Chateauneuf2deBretagne/chateaunefDeBretagne.html' },
-        { name: 'Chateauneuf sur Cher', url: '../../../laPosteDeLancienneFrance/Villes C/Chateauneuf3surCher/chateaneufSurCher.html' },
-        { name: 'Chateauneuf en Thymerais', url: '../../../laPosteDeLancienneFrance/Villes C/Chateauneuf4enThymerais/chateaunefEnThymerais.html' },
-        { name: 'Chateauroux', url: '../../../laPosteDeLancienneFrance/Villes C/Chateauroux/chateauroux.html' },
-        { name: 'Chatel sur Moselle', url: '../../../laPosteDeLancienneFrance/Villes C/Chatel/chatelSurMoselle.html' },
-        { name: 'Chatelaudren', url: '../../../laPosteDeLancienneFrance/Villes C/Chatelaudren/chatelaudren.html' },
-        { name: 'Le chatelet en Brie', url: '../../../laPosteDeLancienneFrance/Villes C/ChateletEnBrie/leChateletEnBrie.html' },
-        { name: 'Chatellerault', url: '../../../laPosteDeLancienneFrance/Villes C/Chatellerault/chatellerault.html' },
-        { name: 'Chatillon de Michaille', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon1deMichaille/chatillonDeMichaille.html' },
-        { name: 'Chatillon les Dombes', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon2LesDombes/chatillonLesDombes.html' },
-        { name: 'Chatillon sur Indre', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon3SurIndre/chatillonSurIndre.html' },
-        { name: 'Chatillon sur Loing', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon4SurLoing/chatillonSurLoing.html' },
-        { name: 'Chatillon sur Loire', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon5SurLoire/chatillonSurLoire.html' },
-        { name: 'Chatillon sur Marne', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon6SurMarne/chatillonSurMarne.html' },
-        { name: 'Chatillon sur Seine', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon7SurSeine/chatillonSurSeine.html' },
-        { name: 'Chatillon sur Sevre', url: '../../../laPosteDeLancienneFrance/Villes C/Chatillon8SurSevre/chatillonSurSevre.html' },
-        { name: 'Chatou', url: '../../../laPosteDeLancienneFrance/Villes C/Chatou/chatou.html' },
-        { name: 'La Chatre', url: '../../../laPosteDeLancienneFrance/Villes C/Chatre/laChatre.html' },
-        { name: 'Chaudesaigues', url: '../../../laPosteDeLancienneFrance/Villes C/Chaudesaigues/chaudesaigues.html' },
-        { name: 'Chaumes', url: '../../../laPosteDeLancienneFrance/Villes C/Chaumes/chaumes.html' },
-        { name: 'Chaumont en Bassigny', url: '../../../laPosteDeLancienneFrance/Villes C/Chaumont50/chaumontEnBassigny.html' },
-        { name: 'Chaumont en Vexin', url: '../../../laPosteDeLancienneFrance/Villes C/Chaumont58/chaumontEnVexin.html' },
-        { name: 'Chaunai', url: '../../../laPosteDeLancienneFrance/Villes C/Chaunai/chaunai.html' },
-        { name: 'Chauny', url: '../../../laPosteDeLancienneFrance/Villes C/Chauny/chauny.html' },
-        { name: 'La Chaussee', url: '../../../laPosteDeLancienneFrance/Villes C/Chaussee/laChaussee.html' },
-        { name: 'Chauvigny', url: '../../../laPosteDeLancienneFrance/Villes C/Chauvigny/chauvigny.html' },
-        { name: 'Chazelles', url: '../../../laPosteDeLancienneFrance/Villes C/Chazelles/chazelles.html' },
-        { name: 'Chef Boutonne', url: '../../../laPosteDeLancienneFrance/Villes C/ChefBoutonne/chefBoutonne.html' },
-        { name: 'Chelles', url: '../../../laPosteDeLancienneFrance/Villes C/Chelles/chelles.html' },
-        { name: 'Chemille', url: '../../../laPosteDeLancienneFrance/Villes C/Chemille/chemille.html' },
-        { name: 'Chenerailles', url: '../../../laPosteDeLancienneFrance/Villes C/Chenerailles/chenerailles.html' },
-        { name: 'Cherbourg', url: '../../../laPosteDeLancienneFrance/Villes C/Cherbourg/cherbourg.html' },
-        { name: 'Cheroy', url: '../../../laPosteDeLancienneFrance/Villes C/Cheroy/cheroy.html' },
-        { name: 'Chevilly', url: '../../../laPosteDeLancienneFrance/Villes C/Chevilly/chevilly.html' },
-        { name: 'Chevreuse', url: '../../../laPosteDeLancienneFrance/Villes C/Chevreuse/chevreuse.html' },
-        { name: 'Chezy', url: '../../../laPosteDeLancienneFrance/Villes C/Chezy/chezy.html' },
-        { name: 'Chilleurs', url: '../../../laPosteDeLancienneFrance/Villes C/Chilleurs/chilleurs.html' },
-        { name: 'Chinon', url: '../../../laPosteDeLancienneFrance/Villes C/Chinon/chinon.html' },
-        { name: 'Choisy le Roi', url: '../../../laPosteDeLancienneFrance/Villes C/Choisy/choisyLeRoi.html' },
-        { name: 'Cholet', url: '../../../laPosteDeLancienneFrance/Villes C/Cholet/cholet.html' },
-        { name: 'Chomerac', url: '../../../laPosteDeLancienneFrance/Villes C/Chomerac/chomerac.html' },
-        { name: 'Chorges', url: '../../../laPosteDeLancienneFrance/Villes C/Chorges/chorges.html' },
-        { name: 'Chouze', url: '../../../laPosteDeLancienneFrance/Villes C/Chouze/chouze.html' },
-        { name: 'Cingetabelle', url: '../../../laPosteDeLancienneFrance/Villes C/Cingetabelle/cingetabelle.html' },
-        { name: 'Cintrey', url: '../../../laPosteDeLancienneFrance/Villes C/Cintrey/cintrey.html' },
-        { name: 'La Ciotat', url: '../../../laPosteDeLancienneFrance/Villes C/Ciotat/laCiotat.html' },
-        { name: 'Cirey S Blaise', url: '../../../laPosteDeLancienneFrance/Villes C/Cirey/cireySBlaise.html' },
-        { name: 'Civray', url: '../../../laPosteDeLancienneFrance/Villes C/Civray/civray.html' },
-        { name: 'Cizay', url: '../../../laPosteDeLancienneFrance/Villes C/Cizay/cizay.html' },
-        { name: 'Clairac', url: '../../../laPosteDeLancienneFrance/Villes C/Clairac/clairac.html' },
-        { name: 'Clairvaux', url: '../../../laPosteDeLancienneFrance/Villes C/Clairvaux/clairvaux.html' },
-        { name: 'Clamecy', url: '../../../laPosteDeLancienneFrance/Villes C/Clamecy/clamecy.html' },
-        { name: 'Claye', url: '../../../laPosteDeLancienneFrance/Villes C/Claye/Claye.html' },
-        { name: 'La Clayette', url: '../../../laPosteDeLancienneFrance/Villes C/Clayette/laClayette.html' },
-        { name: 'Clermont en Argonne', url: '../../../laPosteDeLancienneFrance/Villes C/Clermont1/clermontEnArgonne.html' },
-        { name: 'Clermont en Beauvoisis', url: '../../../laPosteDeLancienneFrance/Villes C/Clermont2/clermontEnBeauvoisis.html' },
-        { name: 'Clermont Ferrand', url: '../../../laPosteDeLancienneFrance/Villes C/Clermont3/clermontFerrand.html' },
-        { name: 'Clermont Lodeve', url: '../../../laPosteDeLancienneFrance/Villes C/Clermont4/clermontLodeve.html' },
-        { name: 'Clerval', url: '../../../laPosteDeLancienneFrance/Villes C/Clerval/clerval.html' },
-        { name: 'Clery', url: '../../../laPosteDeLancienneFrance/Villes C/Clery/clery.html' },
-        { name: 'Clisson', url: '../../../laPosteDeLancienneFrance/Villes C/Clisson/clisson.html' },
-        { name: 'Cloyes', url: '../../../laPosteDeLancienneFrance/Villes C/Cloyes/cloyes.html' },
-        { name: 'Cluny', url: '../../../laPosteDeLancienneFrance/Villes C/Cluny/cluny.html' },
-        { name: 'Cocherel', url: '../../../laPosteDeLancienneFrance/Villes C/Cocherel/cocherel.html' },
-        { name: 'Cognac', url: '../../../laPosteDeLancienneFrance/Villes C/Cognac/cognac.html' },
-        { name: 'Coillure', url: '../../../laPosteDeLancienneFrance/Villes C/Coillure/coillure.html' },
-        { name: 'Coincy', url: '../../../laPosteDeLancienneFrance/Villes C/Coincy/coincy.html' },
-        { name: 'Collobrieres', url: '../../../laPosteDeLancienneFrance/Villes C/Collobrieres/collobrieres.html' },
-        { name: 'Collonges', url: '../../../laPosteDeLancienneFrance/Villes C/Collonges/collonges.html' },
-        { name: 'Colmar', url: '../../../laPosteDeLancienneFrance/Villes C/Colmar/colmar.html' },
-        { name: 'Colmars', url: '../../../laPosteDeLancienneFrance/Villes C/Colmars/colmars.html' },
-        { name: 'Colombey', url: '../../../laPosteDeLancienneFrance/Villes C/Colombey/colombey.html' },
-        { name: 'Combouin', url: '../../../laPosteDeLancienneFrance/Villes C/Combouin/combouin.html' },
-        { name: 'Combourg', url: '../../../laPosteDeLancienneFrance/Villes C/Combourg/combourg.html' },
-        { name: 'Commercy', url: '../../../laPosteDeLancienneFrance/Villes C/Commercy/commercy.html' },
-        { name: 'Compiegne', url: '../../../laPosteDeLancienneFrance/Villes C/Compiegne/compiegne.html' },
-        { name: 'Concarneau', url: '../../../laPosteDeLancienneFrance/Villes C/Concarneau/concarneau.html' },
-        { name: 'Conches', url: '../../../laPosteDeLancienneFrance/Villes C/Conches/conches.html' },
-        { name: 'Conde', url: '../../../laPosteDeLancienneFrance/Villes C/Conde/conde.html' },
-        { name: 'Conde sur Noireau', url: '../../../laPosteDeLancienneFrance/Villes C/Conde13/condeSurNoireau.html' },
-        { name: 'Condom', url: '../../../laPosteDeLancienneFrance/Villes C/condom/Condom.html' },
-        { name: 'Condrieux', url: '../../../laPosteDeLancienneFrance/Villes C/Condrieux/condrieux.html' },
-        { name: 'Confolens', url: '../../../laPosteDeLancienneFrance/Villes C/Confolens/confolens.html' },
-        { name: 'Connerre', url: '../../../laPosteDeLancienneFrance/Villes C/Connerre/connerre.html' },
-        { name: 'Corbeil', url: '../../../laPosteDeLancienneFrance/Villes C/Corbeil/corbeil.html' },
-        { name: 'Corbie', url: '../../../laPosteDeLancienneFrance/Villes C/Corbie/corbie.html' },
-        { name: 'Corbeny', url: '../../../laPosteDeLancienneFrance/Villes C/Corbeny/corbeny.html' },
-        { name: 'Corbigny', url: '../../../laPosteDeLancienneFrance/Villes C/Corbigny/corbigny.html' },
-        { name: 'Cordes', url: '../../../laPosteDeLancienneFrance/Villes C/Cordes/cordes.html' },
-        { name: 'Cormoz', url: '../../../laPosteDeLancienneFrance/Villes C/Cormoz/cormoz.html' },
-        { name: 'Corps', url: '../../../laPosteDeLancienneFrance/Villes C/Corps/corps.html' },
-        { name: 'Corse', url: '../../../laPosteDeLancienneFrance/Villes C/Corse/corse.html' },
-        { name: 'Corte', url: '../../../laPosteDeLancienneFrance/Villes C/Corte/Ccorte.html' },
-        { name: 'Cosne', url: '../../../laPosteDeLancienneFrance/Villes C/Cosne/cosne.html' },
-        { name: 'La Cote St Andre', url: '../../../laPosteDeLancienneFrance/Villes C/CoteStAndre/coteStAndre.html' },
-        { name: 'Cotignac', url: '../../../laPosteDeLancienneFrance/Villes C/Cotignac/cotignac.html' },
-        { name: 'Coubert', url: '../../../laPosteDeLancienneFrance/Villes C/Coubert/coubert.html' },
-        { name: 'Couches', url: '../../../laPosteDeLancienneFrance/Villes C/Couches/couches.html' },
-        { name: 'Couhe', url: '../../../laPosteDeLancienneFrance/Villes C/Couhe/couhe.html' },
-        { name: 'Coulanges sur Yonne', url: '../../../laPosteDeLancienneFrance/Villes C/Coulanges/coulangesSurYonne.html' },
-        { name: 'Coullomiers', url: '../../../laPosteDeLancienneFrance/Villes C/Coullomiers/coullomiers.html' },
-        { name: 'Courgivaux', url: '../../../laPosteDeLancienneFrance/Villes C/Courgivaux/courgivaux.html' },
-        { name: 'Courson', url: '../../../laPosteDeLancienneFrance/Villes C/Courson/courson.html' },
-        { name: 'Courtanvault S Loir', url: '../../../laPosteDeLancienneFrance/Villes C/Courtanvault/courtanvaultSurLoir.html' },
-        { name: 'Courtenay', url: '../../../laPosteDeLancienneFrance/Villes C/Courtenay/courtenay.html' },
-        { name: 'Courtomer', url: '../../../laPosteDeLancienneFrance/Villes C/Courtomer/courtomer.html' },
-        { name: 'Courtrai', url: '../../../laPosteDeLancienneFrance/Villes C/Courtrai/courtrai.html' },
-        { name: 'Courville', url: '../../../laPosteDeLancienneFrance/Villes C/Courville/courville.html' },
-        { name: 'Coutances', url: '../../../laPosteDeLancienneFrance/Villes C/Coutances/coutances.html' },
-        { name: 'Couterne', url: '../../../laPosteDeLancienneFrance/Villes C/Couterne/couterne.html' },
-        { name: 'Coutras', url: '../../../laPosteDeLancienneFrance/Villes C/Coutras/coutras.html' },
-        { name: 'Couture', url: '../../../laPosteDeLancienneFrance/Villes C/Couture/couture.html' },
-        { name: 'Cozes', url: '../../../laPosteDeLancienneFrance/Villes C/Cozes/cozes.html' },
-        { name: 'Craon', url: '../../../laPosteDeLancienneFrance/Villes C/Craon/craon.html' },
-        { name: 'Craponne', url: '../../../laPosteDeLancienneFrance/Villes C/Craponne/craponne.html' },
-        { name: 'Crecy En Brie', url: '../../../laPosteDeLancienneFrance/Villes C/CrecyEnBrie/crecyEnBrie.html' },
-        { name: 'Creil', url: '../../../laPosteDeLancienneFrance/Villes C/Creil/creil.html' },
-        { name: 'Cremieu', url: '../../../laPosteDeLancienneFrance/Villes C/Cremieu/cremieu.html' },
-        { name: 'Crepy en Valois', url: '../../../laPosteDeLancienneFrance/Villes C/Crepy/crepyEnValois.html' },
-        { name: 'Cressensac', url: '../../../laPosteDeLancienneFrance/Villes C/Cressensac/crenssensac.html' },
-        { name: 'Crest', url: '../../../laPosteDeLancienneFrance/Villes C/Crest/crest.html' },
-        { name: 'Crevecoeur', url: '../../../laPosteDeLancienneFrance/Villes C/Crevecoeur/crevecoeur.html' },
-        { name: 'Croissanville', url: '../../../laPosteDeLancienneFrance/Villes C/Croissanville/croissanville.html' },
-        { name: 'Crolles', url: '../../../laPosteDeLancienneFrance/Villes C/Crolles/crolles.html' },
-        { name: 'Cuers', url: '../../../laPosteDeLancienneFrance/Villes C/Cuers/cuers.html' },
-        { name: 'Cuges', url: '../../../laPosteDeLancienneFrance/Villes C/Cuges/cuges.html' },
-        { name: 'Culan', url: '../../../laPosteDeLancienneFrance/Villes C/Culan/culan.html' },
-        // Ajoutez d'autres villes ici
     ];
 
-    // Initialisation des liens de ville
-    for (var i = 0; i < cityLinks.length; i++) {
-        var link = document.createElement('a');
-        link.href = cityLinks[i].url;
-        link.textContent = cityLinks[i].name;
-        dropdownContent.appendChild(link);
+    function normalizeText(str) {
+        return str
+            .normalize("NFD")                    // Décompose accents
+            .replace(/[\u0300-\u036f]/g, "")     // Supprime accents
+            .replace(/[^a-zA-Z0-9]/g, "")        // Supprime les caractères spéciaux
+            .toLowerCase();                      // Minuscule
     }
 
-    input.addEventListener('input', function () {
-        var filter = input.value.toLowerCase();
-        var links = dropdownContent.getElementsByTagName('a');
+    const input = document.getElementById('villeInput');
+    const dropdownContent = document.getElementById('dropdownContent');
+    const villeLink = document.getElementById('villeLink');
 
-        for (var i = 0; i < links.length; i++) {
-            var city = links[i].textContent.toLowerCase();
-            links[i].style.display = city.includes(filter) ? '' : 'none';
-        }
+    const cityLinks = villes.map(ville => {
+        const dossier = ville.replace(/ /g, '-').replace(/'/g, '').replace(/é/g, 'e');
+        const fichier = ville
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // Sans accents
+            .replace(/[-’'`]/g, '') // Sans apostrophes/tirets
+            .replace(/[^a-zA-Z0-9 ]/g, '') // Sans caractères spéciaux
+            .split(' ')
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+            .join('');
+
+        const link = document.createElement('a');
+        link.href = `../../../laPosteDeLancienneFrance/Villes C/${dossier}/${fichier}.html`;
+        link.textContent = ville;
+        link.dataset.normalized = normalizeText(ville);
+        dropdownContent.appendChild(link);
+
+        return link;
+    });
+
+    input.addEventListener('input', function () {
+        const filter = normalizeText(input.value);
+        cityLinks.forEach(link => {
+            const normalizedCity = link.dataset.normalized;
+            link.style.display = normalizedCity.includes(filter) ? '' : 'none';
+        });
     });
 
     dropdownContent.addEventListener('click', function (event) {
-        var target = event.target;
+        const target = event.target;
         if (target.tagName === 'A') {
             villeLink.innerHTML = ' &emsp;&emsp;' + target.textContent + '<i class="fas fa-caret-down"></i>';
             window.location.href = target.href;

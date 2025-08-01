@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'La Buissiere', url: '../../../laPosteDeLancienneFrance/Villes B/Buissieres/buissieres.html' },
         { name: 'Buzancais', url: '../../../laPosteDeLancienneFrance/Villes B/Buzancais/buzancais.html' },
         { name: 'Buzancy', url: '../../../laPosteDeLancienneFrance/Villes B/Buzancy/buzancy.html' },
+        { name: 'Buis', url: '../../../laPosteDeLancienneFrance/Villes B/Buis/buis.html' },
         
         // Ajoutez d'autres villes ici
     ];

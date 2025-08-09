@@ -766,9 +766,9 @@ document.addEventListener("DOMContentLoaded", () => {
   Object.assign(bloc.style, {
     position: "fixed",
     bottom: "45px",
-    right: "100px",
+    right: "1600px",
     width: "200px",
-    maxHeight: "200px",
+    maxHeight: "1200px",
     overflowY: "auto",
     background: "#fff",
     border: "1px solid #ccc",
@@ -812,3 +812,193 @@ document.querySelectorAll('img').forEach(img => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+// === IDENTIFIANT UNIQUE PAR PAGE ===
+const pageKey = "blocNote_" + window.location.pathname;
+
+// === OVERLAY FOND SOMBRE ===
+const overlay = document.createElement("div");
+Object.assign(overlay.style, {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  backgroundColor: "rgba(0,0,0,0.5)",
+  zIndex: "9997",
+  display: "none"
+});
+
+// === BOUTON FLOTANT ===
+const toggleBtn = document.createElement("div");
+toggleBtn.style.position = "fixed";
+toggleBtn.style.top = window.innerWidth < 600 ? "auto" : "150px";
+toggleBtn.style.bottom = window.innerWidth < 600 ? "20px" : "auto";
+toggleBtn.style.right = "38px";
+toggleBtn.style.zIndex = "9999";
+toggleBtn.style.padding = "3px 8px";
+toggleBtn.style.borderRadius = "10px";
+toggleBtn.style.background = "#4a90e2";
+toggleBtn.style.color = "#fff";
+toggleBtn.style.cursor = "pointer";
+toggleBtn.style.textAlign = "center";
+toggleBtn.style.fontFamily = "sans-serif";
+toggleBtn.style.fontSize = "9px";
+toggleBtn.style.border = "2px solid #1d5fb3";
+toggleBtn.style.boxShadow = "2px 2px 8px rgba(0,0,0,0.3)";
+toggleBtn.style.transition = "all 0.3s ease";
+toggleBtn.style.userSelect = "none";
+toggleBtn.style.minWidth = "50px";
+
+const arrowDiv = document.createElement("div");
+arrowDiv.id = "btnArrow";
+arrowDiv.style.fontSize = "13px";
+arrowDiv.style.lineHeight = "1";
+arrowDiv.style.transition = "transform 0.3s ease";
+arrowDiv.textContent = "🡆";
+
+const labelDiv = document.createElement("div");
+labelDiv.style.marginTop = "0px";
+labelDiv.style.fontSize = "9px";
+labelDiv.textContent = "📜 Note historique";
+
+toggleBtn.appendChild(arrowDiv);
+toggleBtn.appendChild(labelDiv);
+
+// === PANEL LATÉRAL ===
+const sidePanel = document.createElement("div");
+Object.assign(sidePanel.style, {
+  position: "fixed",
+  top: "0",
+  right: "0",
+  height: "100%",
+  width: "30%",
+  background: "#f9f3e9",
+  boxShadow: "0 0 10px rgba(0,0,0,0.3)",
+  padding: "20px",
+  zIndex: "9998",
+  overflowY: "auto",
+  transform: "translateX(100%)",
+  transition: "transform 0.4s ease-in-out"
+});
+sidePanel.setAttribute("role", "complementary");
+sidePanel.setAttribute("aria-label", "Note historique de la ville");
+
+sidePanel.innerHTML = `
+  <div style="text-align: center;">
+    <h2 style="margin: 20px auto; font-family: 'Georgia', serif; color:#5b4636; text-align: center;">Note historique</h2>
+  </div>
+  <textarea id="blocNote" readonly style="
+    width:100%;
+    height:1000px;
+    background: #fdf6e3;
+    color: #5b4636;
+    border: 2px solid #cbb894;
+    border-radius: 5px;
+    padding:12px;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: none;
+    background-image: linear-gradient(rgba(255,255,224,0.5) 1px, transparent 1px);
+    background-size: 100% 30px;
+  "></textarea>
+`;
+
+// === INSERTION ET FONCTIONNEMENT ===
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.appendChild(overlay);
+  document.body.appendChild(toggleBtn);
+  document.body.appendChild(sidePanel);
+
+  const textarea = document.getElementById("blocNote");
+  let tries = 0;
+
+  const chargerTexte = () => {
+    if (typeof window.blocNoteTexteInitial === "string") {
+      textarea.value = window.blocNoteTexteInitial;
+      textarea.focus();
+    } else {
+      tries++;
+      if (tries < 20) setTimeout(chargerTexte, 100);
+      else textarea.value = "Note introuvable.";
+    }
+  };
+  chargerTexte();
+
+  if (typeof jQuery === "undefined") {
+    const script = document.createElement("script");
+    script.src = "https://code.jquery.com/jquery-3.7.1.min.js";
+    script.onload = initToggle;
+    document.head.appendChild(script);
+  } else {
+    initToggle();
+  }
+});
+
+// === TOGGLE EN jQUERY ===
+function initToggle() {
+  const $toggleBtn = $(toggleBtn);
+  const $sidePanel = $(sidePanel);
+  const $overlay = $(overlay);
+  const $arrow = $("#btnArrow");
+  const $closeBtn = $("#closePanel");
+  let panelVisible = false;
+
+  const isMobile = () => window.innerWidth <= 768;
+
+  function openPanel() {
+    panelVisible = true;
+    if (isMobile()) {
+      $("table").fadeOut(200);
+      $overlay.show();
+    }
+
+    if (isMobile()) {
+      $sidePanel.css({ width: "100%", transform: "translateX(0%)" });
+    } else {
+      $sidePanel.css({ width: "30%", transform: "translateX(0%)" });
+    }
+    $arrow.text("🡄").css("transform", "rotate(180deg)");
+    $toggleBtn.css({ background: "#2c6ecb", borderColor: "#1b4e9b" });
+    sessionStorage.setItem("panelVisible", "true");
+  }
+
+  function closePanel() {
+    panelVisible = false;
+    if (isMobile()) {
+      $("table").fadeIn(200);
+      $overlay.hide();
+    }
+    $sidePanel.css("transform", "translateX(100%)");
+    $arrow.text("🡆").css("transform", "rotate(0deg)");
+    $toggleBtn.css({ background: "#4a90e2", borderColor: "#1d5fb3" });
+    sessionStorage.setItem("panelVisible", "false");
+  }
+
+  $toggleBtn.on("click", function (e) {
+    e.stopPropagation();
+    if (panelVisible) closePanel();
+    else openPanel();
+  });
+
+  $overlay.on("click", closePanel);
+  $closeBtn.on("click", closePanel);
+
+  $sidePanel.on("click", function (e) {
+    e.stopPropagation();
+  });
+
+  if (sessionStorage.getItem("panelVisible") === "true") {
+    openPanel();
+  }
+}

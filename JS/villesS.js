@@ -1,91 +1,248 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    const villes = [
+    var input = document.getElementById('villeInput');
+    var dropdownContent = document.getElementById('dropdownContent');
+    var villeLink = document.getElementById('villeLink');
 
-        "LA Seyne-sur-Mer", "La Souterraine", "La Suze", "Le Sap", "Les-Sables-Dolonne",
-        "Petite Poste de Strasbourg", "Sable", "Saint-Afrique", "Saint-Aignan", "Saint-Amand-en-Berry",
-        "Saint-Amand-les-Eaux", "Saint-Ambroix", "Saint-Amour", "Saint-Andre-de-Cubsac", "Saint-Antonin",
-        "Saint-Astier", "Saint-Avold", "Saint-Beat", "Saint-Benoit-Du-Sault", "Saint-Bonnet-de-Joux", "Saint-Bonnet-en-Champsaur",
-        "Saint-Brice", "Saint-Brieuc", "Saint-Bris", "Saint-Calais", "Saint-Cannat", "Saint-Cere",
-        "Saint-Chamas", "Saint-Chamond", "Saint-Chinian", "Saint-Christophe", "Saint-Clar", "Saint-Claud",
-        "Saint-Claude", "Saint-Cloud", "Saint-Cosme", "Saint-Cybardeaux", "Saint-Cyprien", "Saint-Denis",
-        "Saint-Die", "Saint-Dizier", "Saint-Dye-sur-Loire", "Sainte-Foy", "Sainte-Livrade", "Sainte-Marie-aux-Mines",
-        "Sainte-Maure", "Sainte-Menehould", "Sainte-Mere-Eglise", "Sainte-Reine", "Saintes", "Saint-Etienne",
-        "Saint-Fargeau", "Saint-Florent", "Saint-Florentin", "Saint-Florent-le-Vieil", "Saint-Flour", "Saint-Fort-sur-Gironde",
-        "Saint-Fulgent", "Saint-Gaudens", "Saint-Geniez", "Saint-Genis", "Saint-George", "Saint-Gerand",
-        "Saint-Germain-en-Laye", "Saint-Germain-L_Espinasse", "Saint-Gilles", "Saint-Gilles-sur-Vie", "Saint-Girons",
-        "Saint-Hermand", "Saint-Hilaire-du-Harcouet", "Saint-Hippolyte", "Saint-Hubert-le-Roi", "Saint-James-de-Beuvron",
-        "Saint-Jean-D_Angely", "Saint-Jean-De-Gardoningue", "Saint-Jean-de-Gonville", "Saint-Jean-de-Losne", "Saint-Jean-de-Luz",
-        "Saint-Jean-de-Vedaz", "Saint-Jean-du-Bruel", "Saint-Jean-le-Vieux", "Saint-Jean-Pied-de-Port", "Saint-Jory",
-        "Saint-Julien-le-Faucon", "Saint-Junien", "Saint-Just", "Saint-Lambert-du-Lattay", "Saint-Laurent", "Saint-Laurent-de-Cerdans",
-        "Saint-Laurent-du-Var", "Saint-Laurent-les-Eaux", "Saint-Leonard", "Saint-Lizier", "Saint-Lo", "Saint-Lys",
-        "Saint-Macaire", "Saint-Maixent", "Saint-Malo", "Saint-Marcelin", "Saint-Martin-D_Estreaux", "Saint-Martin-de-Re",
-        "Saint-Martin-Valmeroux", "Saint-Martory", "Saint-Maurice", "Saint-Maximin", "Saint-Mihiel", "Saint-Nicolas-du-Port",
-        "Saint-Nicolas-De-La-Grave", "Saint-Omer", "Saint-Pardoux", "Saint-Paul-de-Vence", "Saint-Paul-Trois-Chateau",
-        "Saint-Péray", "Saint-Pere-En-Retz", "Saint-Pierre-Eglise", "Saint-Pierre-le-Moutier", "Saint-Pierre-sur-Dives",
-        "Saint-Pol", "Saint-Pol-de-Leon", "Saint-Pons", "Saint-Porchaire", "Saint-Pourcain", "Saint-Privat",
-        "Saint-Quentin", "Saint-Rambert", "Saint-Remy", "Saint-Romain", "Saint-Rome-de-Tarn", "Saint-Saens",
-        "Saint-Saulge", "Saint-Sauveur-le-Vicomte", "Saint-Savin", "Saint-Savinien", "Saint-Seine", "Saint-Sernin",
-        "Saint-Sever", "Saint-Simphorien-D_Ozon", "Saint-Simphorien-De-Lay", "Saint-Tropez", "Saint-Valery-en-Caux",
-        "Saint-Valery-sur-Somme", "Saint-Vallier", "Saint-Venant", "Saint-Yrieix", "Salbris", "Salces",
-        "Salers", "Salins", "Salon", "Samatan", "Samer", "Sancerre", "Sancois", "Sannois", "Sansergues",
-        "Saragnac", "Sarlat", "Sarralbe", "Sarrebourg", "Sarreguemines", "Sarrelouis", "Sartene", "Sassangy",
-        "Saujon", "Saulieu", "Saumur", "Sauve", "Sauze", "Savenay", "Saverdun", "Saverne", "Seclin", "Sedan",
-        "Sees", "Segnelay", "Selestat", "Selongey", "Semur", "Semur-en-Brionnais", "Senez", "Senlis", "Sennecey",
-        "Senonches", "Sens", "Sernhac", "Serres", "Sette", "Seurre", "Severac", "Sevres", "Seyne", "Sezanne",
-        "Sierentz", "Sigean", "Sille-le-Guillaume", "Sillery", "Sisteron", "Soissons", "Sollies", "Solre-le-Chateau",
-        "Sombernon", "Sommieres", "Songeons", "Souillac", "Sourdeval", "Souvigny", "Spincourt", "Stenay",
-        "Strasbourg", "Suette", "Sumene", "Surgeres", "Suzennecourt"
+    // Tableau de liens de villes
+    var cityLinks = [
+
+{ name: 'La Seyne-sur-Mer', url: '../../../laPosteDeLancienneFrance/Villes_L/LaSeyneSurMer/laSeyneSurMer.html' },
+{ name: 'La Souterraine', url: '../../../laPosteDeLancienneFrance/Villes_L/LaSouterraine/laSouterraine.html' },
+{ name: 'La Suze', url: '../../../laPosteDeLancienneFrance/Villes_L/LaSuze/laSuze.html' },
+{ name: 'Le Sap', url: '../../../laPosteDeLancienneFrance/Villes_L/LeSap/leSap.html' },
+{ name: 'Les-Sables-Dolonne', url: '../../../laPosteDeLancienneFrance/Villes_L/LesSablesDolonne/lesSablesDolonne.html' },
+{ name: 'Petite Poste de Strasbourg', url: '../../../laPosteDeLancienneFrance/Villes_P/PetitePosteDeStrasbourg/petitePosteDeStrasbourg.html' },
+{ name: 'Sable', url: '../../../laPosteDeLancienneFrance/Villes_S/Sable/sable.html' },
+{ name: 'Saint-Afrique', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAfrique/saintAfrique.html' },
+{ name: 'Saint-Aignan', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAignan/saintAignan.html' },
+{ name: 'Saint-Amand-en-Berry', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAmandEnBerry/saintAmandEnBerry.html' },
+{ name: 'Saint-Amand-les-Eaux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAmandLesEaux/saintAmandLesEaux.html' },
+{ name: 'Saint-Ambroix', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAmbroix/saintAmbroix.html' },
+{ name: 'Saint-Amour', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAmour/saintAmour.html' },
+{ name: 'Saint-Andre-de-Cubsac', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAndreDeCubsac/saintAndreDeCubsac.html' },
+{ name: 'Saint-Antonin', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAntonin/saintAntonin.html' },
+{ name: 'Saint-Astier', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAstier/saintAstier.html' },
+{ name: 'Saint-Avold', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintAvold/saintAvold.html' },
+{ name: 'Saint-Beat', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintBeat/saintBeat.html' },
+{ name: 'Saint-Benoit-Du-Sault', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintBenoitDuSault/saintBenoitDuSault.html' },
+{ name: 'Saint-Bonnet-de-Joux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintBonnetDeJoux/saintBonnetDeJoux.html' },
+{ name: 'Saint-Bonnet-en-Champsaur', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintBonnetEnChampsaur/saintBonnetEnChampsaur.html' },
+{ name: 'Saint-Brice', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintBrice/saintBrice.html' },
+{ name: 'Saint-Brieuc', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintBrieuc/saintBrieuc.html' },
+{ name: 'Saint-Bris', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintBris/saintBris.html' },
+{ name: 'Saint-Calais', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintCalais/saintCalais.html' },
+{ name: 'Saint-Cannat', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintCannat/saintCannat.html' },
+{ name: 'Saint-Cere', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintCere/saintCere.html' },
+{ name: 'Saint-Chamas', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintChamas/saintChamas.html' },
+{ name: 'Saint-Chamond', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintChamond/saintChamond.html' },
+{ name: 'Saint-Chinian', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintChinian/saintChinian.html' },
+{ name: 'Saint-Christophe', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintChristophe/saintChristophe.html' },
+{ name: 'Saint-Clar', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintClar/saintClar.html' },
+{ name: 'Saint-Claud', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintClaud/saintClaud.html' },
+{ name: 'Saint-Claude', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintClaude/saintClaude.html' },
+{ name: 'Saint-Cloud', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintCloud/saintCloud.html' },
+{ name: 'Saint-Cosme', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintCosme/saintCosme.html' },
+{ name: 'Saint-Cybardeaux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintCybardeaux/saintCybardeaux.html' },
+{ name: 'Saint-Cyprien', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintCyprien/saintCyprien.html' },
+{ name: 'Saint-Denis', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintDenis/saintDenis.html' },
+{ name: 'Saint-Die', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintDie/saintDie.html' },
+{ name: 'Saint-Dizier', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintDizier/saintDizier.html' },
+{ name: 'Saint-Dye-sur-Loire', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintDyeSurLoire/saintDyeSurLoire.html' },
+{ name: 'Sainte-Foy', url: '../../../laPosteDeLancienneFrance/Villes_S/SainteFoy/sainteFoy.html' },
+{ name: 'Sainte-Livrade', url: '../../../laPosteDeLancienneFrance/Villes_S/SainteLivrade/sainteLivrade.html' },
+{ name: 'Sainte-Marie-aux-Mines', url: '../../../laPosteDeLancienneFrance/Villes_S/SainteMarieAuxMines/sainteMarieAuxMines.html' },
+{ name: 'Sainte-Maure', url: '../../../laPosteDeLancienneFrance/Villes_S/SainteMaure/sainteMaure.html' },
+{ name: 'Sainte-Menehould', url: '../../../laPosteDeLancienneFrance/Villes_S/SainteMenehould/sainteMenehould.html' },
+{ name: 'Sainte-Mere-Eglise', url: '../../../laPosteDeLancienneFrance/Villes_S/SainteMereEglise/sainteMereEglise.html' },
+{ name: 'Sainte-Reine', url: '../../../laPosteDeLancienneFrance/Villes_S/SainteReine/sainteReine.html' },
+{ name: 'Saintes', url: '../../../laPosteDeLancienneFrance/Villes_S/Saintes/saintes.html' },
+{ name: 'Saint-Etienne', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintEtienne/saintEtienne.html' },
+{ name: 'Saint-Fargeau', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintFargeau/saintFargeau.html' },
+{ name: 'Saint-Florent', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintFlorent/saintFlorent.html' },
+{ name: 'Saint-Florentin', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintFlorentin/saintFlorentin.html' },
+{ name: 'Saint-Florent-le-Vieil', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintFlorentLeVieil/saintFlorentLeVieil.html' },
+{ name: 'Saint-Flour', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintFlour/saintFlour.html' },
+{ name: 'Saint-Fort-sur-Gironde', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintFortSurGironde/saintFortSurGironde.html' },
+{ name: 'Saint-Fulgent', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintFulgent/saintFulgent.html' },
+{ name: 'Saint-Gaudens', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGaudens/saintGaudens.html' },
+{ name: 'Saint-Geniez', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGeniez/saintGeniez.html' },
+{ name: 'Saint-Genis', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGenis/saintGenis.html' },
+{ name: 'Saint-George', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGeorge/saintGeorge.html' },
+{ name: 'Saint-Gerand', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGerand/saintGerand.html' },
+{ name: 'Saint-Germain-en-Laye', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGermainEnLaye/saintGermainEnLaye.html' },
+{ name: 'Saint-Germain-L_Espinasse', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGermainLEspinasse/saintGermainLEspinasse.html' },
+{ name: 'Saint-Gilles', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGilles/saintGilles.html' },
+{ name: 'Saint-Gilles-sur-Vie', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGillesSurVie/saintGillesSurVie.html' },
+{ name: 'Saint-Girons', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGirons/saintGirons.html' },
+{ name: 'Saint-Hermand', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintHermand/saintHermand.html' },
+{ name: 'Saint-Hilaire-du-Harcouet', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintHilaireDuHarcouet/saintHilaireDuHarcouet.html' },
+{ name: 'Saint-Hippolyte', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintHippolyte/saintHippolyte.html' },
+{ name: 'Saint-Hubert-le-Roi', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintHubertLeRoi/saintHubertLeRoi.html' },
+{ name: 'Saint-James-de-Beuvron', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJamesDeBeuvron/saintJamesDeBeuvron.html' },
+{ name: 'Saint-Jean-D_Angely', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanDAngely/saintJeanDAngely.html' },
+{ name: 'Saint-Jean-De-Gardoningue', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanDeGardoningue/saintJeanDeGardoningue.html' },
+{ name: 'Saint-Jean-de-Gonville', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanDeGonville/saintJeanDeGonville.html' },
+{ name: 'Saint-Jean-de-Losne', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanDeLosne/saintJeanDeLosne.html' },
+{ name: 'Saint-Jean-de-Luz', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanDeLuz/saintJeanDeLuz.html' },
+{ name: 'Saint-Jean-de-Vedaz', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanDeVedaz/saintJeanDeVedaz.html' },
+{ name: 'Saint-Jean-du-Bruel', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanDuBruel/saintJeanDuBruel.html' },
+{ name: 'Saint-Jean-le-Vieux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanLeVieux/saintJeanLeVieux.html' },
+{ name: 'Saint-Jean-Pied-de-Port', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJeanPiedDePort/saintJeanPiedDePort.html' },
+{ name: 'Saint-Jory', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJory/saintJory.html' },
+{ name: 'Saint-Julien-le-Faucon', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJulienLeFaucon/saintJulienLeFaucon.html' },
+{ name: 'Saint-Junien', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJunien/saintJunien.html' },
+{ name: 'Saint-Just', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintJust/saintJust.html' },
+{ name: 'Saint-Lambert-du-Lattay', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLambertDuLattay/saintLambertDuLattay.html' },
+{ name: 'Saint-Laurent', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLaurent/saintLaurent.html' },
+{ name: 'Saint-Laurent-de-Cerdans', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLaurentDeCerdans/saintLaurentDeCerdans.html' },     
+{ name: 'Saint-Laurent-du-Var', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLaurentDuVar/saintLaurentDuVar.html' },
+{ name: 'Saint-Laurent-les-Eaux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLaurentLesEaux/saintLaurentLesEaux.html' },
+{ name: 'Saint-Leonard', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLeonard/saintLeonard.html' },
+{ name: 'Saint-Lizier', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLizier/saintLizier.html' },
+{ name: 'Saint-Lo', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLo/saintLo.html' },
+{ name: 'Saint-Lys', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintLys/saintLys.html' },
+{ name: 'Saint-Macaire', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMacaire/saintMacaire.html' },
+{ name: 'Saint-Maixent', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMaixent/saintMaixent.html' },
+{ name: 'Saint-Malo', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMalo/saintMalo.html' },
+{ name: 'Saint-Marcelin', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMarcelin/saintMarcelin.html' },
+{ name: 'Saint-Martin-D_Estreaux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMartinDEstreaux/saintMartinDEstreaux.html' },
+{ name: 'Saint-Martin-de-Re', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMartinDeRe/saintMartinDeRe.html' },
+{ name: 'Saint-Martin-Valmeroux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMartinValmeroux/saintMartinValmeroux.html' },
+{ name: 'Saint-Martory', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMartory/saintMartory.html' },
+{ name: 'Saint-Maurice', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMaurice/saintMaurice.html' },
+{ name: 'Saint-Maximin', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMaximin/saintMaximin.html' },
+{ name: 'Saint-Mihiel', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintMihiel/saintMihiel.html' },
+{ name: 'Saint-Nicolas-du-Port', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintNicolasDuPort/saintNicolasDuPort.html' },
+{ name: 'Saint-Nicolas-De-La-Grave', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintNicolasDeLaGrave/saintNicolasDeLaGrave.html' },
+{ name: 'Saint-Omer', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintOmer/saintOmer.html' },
+{ name: 'Saint-Pardoux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPardoux/saintPardoux.html' },
+{ name: 'Saint-Paul-de-Vence', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPaulDeVence/saintPaulDeVence.html' },
+{ name: 'Saint-Paul-Trois-Chateau', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPaulTroisChateau/saintPaulTroisChateau.html' },
+{ name: 'Saint-Péray', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPeray/saintPeray.html' },
+{ name: 'Saint-Pere-En-Retz', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPereEnRetz/saintPereEnRetz.html' },
+{ name: 'Saint-Pierre-Eglise', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPierreEglise/saintPierreEglise.html' },
+{ name: 'Saint-Pierre-le-Moutier', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPierreLeMoutier/saintPierreLeMoutier.html' },
+{ name: 'Saint-Pierre-sur-Dives', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPierreSurDives/saintPierreSurDives.html' },       
+{ name: 'Saint-Pol', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPol/saintPol.html' },
+{ name: 'Saint-Pol-de-Leon', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPolDeLeon/saintPolDeLeon.html' },
+{ name: 'Saint-Pons', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPons/saintPons.html' },
+{ name: 'Saint-Porchaire', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPorchaire/saintPorchaire.html' },
+{ name: 'Saint-Pourcain', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPourcain/saintPourcain.html' },
+{ name: 'Saint-Privat', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintPrivat/saintPrivat.html' },
+{ name: 'Saint-Quentin', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintQuentin/saintQuentin.html' },
+{ name: 'Saint-Rambert', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintRambert/saintRambert.html' },
+{ name: 'Saint-Remy', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintRemy/saintRemy.html' },
+{ name: 'Saint-Romain', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintRomain/saintRomain.html' },
+{ name: 'Saint-Rome-de-Tarn', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintRomeDeTarn/saintRomeDeTarn.html' },
+{ name: 'Saint-Saens', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSaens/saintSaens.html' },
+{ name: 'Saint-Saulge', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSaulge/saintSaulge.html' },
+{ name: 'Saint-Sauveur-le-Vicomte', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSauveurLeVicomte/saintSauveurLeVicomte.html' },
+{ name: 'Saint-Savin', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSavin/saintSavin.html' },
+{ name: 'Saint-Savinien', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSavinien/saintSavinien.html' },
+{ name: 'Saint-Seine', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSeine/saintSeine.html' },
+{ name: 'Saint-Sernin', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSernin/saintSernin.html' },
+{ name: 'Saint-Sever', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSever/saintSever.html' },
+{ name: 'Saint-Simphorien-D_Ozon', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSimphorienDOzon/saintSimphorienDOzon.html' },
+{ name: 'Saint-Simphorien-De-Lay', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintSimphorienDeLay/saintSimphorienDeLay.html' },
+{ name: 'Saint-Tropez', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintTropez/saintTropez.html' },
+{ name: 'Saint-Valery-en-Caux', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintValeryEnCaux/saintValeryEnCaux.html' },
+{ name: 'Saint-Valery-sur-Somme', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintValerySurSomme/saintValerySurSomme.html' },
+{ name: 'Saint-Vallier', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintVallier/saintVallier.html' },
+{ name: 'Saint-Venant', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintVenant/saintVenant.html' },
+{ name: 'Saint-Yrieix', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintYrieix/saintYrieix.html' },
+{ name: 'Salbris', url: '../../../laPosteDeLancienneFrance/Villes_S/Salbris/salbris.html' },
+{ name: 'Salces', url: '../../../laPosteDeLancienneFrance/Villes_S/Salces/salces.html' },   
+{ name: 'Salers', url: '../../../laPosteDeLancienneFrance/Villes_S/Salers/salers.html' },
+{ name: 'Salins', url: '../../../laPosteDeLancienneFrance/Villes_S/Salins/salins.html' },
+{ name: 'Salon', url: '../../../laPosteDeLancienneFrance/Villes_S/Salon/salon.html' },
+{ name: 'Samatan', url: '../../../laPosteDeLancienneFrance/Villes_S/Samatan/samatan.html' },
+{ name: 'Samer', url: '../../../laPosteDeLancienneFrance/Villes_S/Samer/samer.html' },
+{ name: 'Sancerre', url: '../../../laPosteDeLancienneFrance/Villes_S/Sancerre/sancerre.html' },
+{ name: 'Sancois', url: '../../../laPosteDeLancienneFrance/Villes_S/Sancois/sancois.html' },
+{ name: 'Sannois', url: '../../../laPosteDeLancienneFrance/Villes_S/Sannois/sannois.html' },
+{ name: 'Sansergues', url: '../../../laPosteDeLancienneFrance/Villes_S/Sansergues/sansergues.html' },
+{ name: 'Saragnac', url: '../../../laPosteDeLancienneFrance/Villes_S/Saragnac/saragnac.html' },
+{ name: 'Sarlat', url: '../../../laPosteDeLancienneFrance/Villes_S/Sarlat/sarlat.html' },
+{ name: 'Sarralbe', url: '../../../laPosteDeLancienneFrance/Villes_S/Sarralbe/sarralbe.html' },
+{ name: 'Sarrebourg', url: '../../../laPosteDeLancienneFrance/Villes_S/Sarrebourg/sarrebourg.html' },
+{ name: 'Sarreguemines', url: '../../../laPosteDeLancienneFrance/Villes_S/Sarreguemines/sarreguemines.html' },
+{ name: 'Sarrelouis', url: '../../../laPosteDeLancienneFrance/Villes_S/Sarrelouis/sarrelouis.html' },
+{ name: 'Sartene', url: '../../../laPosteDeLancienneFrance/Villes_S/Sartene/sartene.html' },
+{ name: 'Sassangy', url: '../../../laPosteDeLancienneFrance/Villes_S/Sassangy/sassangy.html' },
+{ name: 'Saujon', url: '../../../laPosteDeLancienneFrance/Villes_S/Saujon/saujon.html' },
+{ name: 'Saulieu', url: '../../../laPosteDeLancienneFrance/Villes_S/Saulieu/saulieu.html' },
+{ name: 'Saumur', url: '../../../laPosteDeLancienneFrance/Villes_S/Saumur/saumur.html' },
+{ name: 'Sauve', url: '../../../laPosteDeLancienneFrance/Villes_S/Sauve/sauve.html' },
+{ name: 'Sauze', url: '../../../laPosteDeLancienneFrance/Villes_S/Sauze/sauze.html' },
+{ name: 'Savenay', url: '../../../laPosteDeLancienneFrance/Villes_S/Savenay/savenay.html' },
+{ name: 'Saverdun', url: '../../../laPosteDeLancienneFrance/Villes_S/Saverdun/saverdun.html' },
+{ name: 'Saverne', url: '../../../laPosteDeLancienneFrance/Villes_S/Saverne/saverne.html' },
+{ name: 'Seclin', url: '../../../laPosteDeLancienneFrance/Villes_S/Seclin/seclin.html' },
+{ name: 'Sedan', url: '../../../laPosteDeLancienneFrance/Villes_S/Sedan/sedan.html' },
+{ name: 'Sees', url: '../../../laPosteDeLancienneFrance/Villes_S/Sees/sees.html' },
+{ name: 'Segnelay', url: '../../../laPosteDeLancienneFrance/Villes_S/Segnelay/segnelay.html' },
+{ name: 'Selestat', url: '../../../laPosteDeLancienneFrance/Villes_S/Selestat/selestat.html' },
+{ name: 'Selongey', url: '../../../laPosteDeLancienneFrance/Villes_S/Selongey/selongey.html' },
+{ name: 'Semur', url: '../../../laPosteDeLancienneFrance/Villes_S/Semur/semur.html' },
+{ name: 'Semur-en-Brionnais', url: '../../../laPosteDeLancienneFrance/Villes_S/SemurEnBrionnais/semurEnBrionnais.html' },
+{ name: 'Senez', url: '../../../laPosteDeLancienneFrance/Villes_S/Senez/senez.html' },
+{ name: 'Senlis', url: '../../../laPosteDeLancienneFrance/Villes_S/Senlis/senlis.html' },
+{ name: 'Sennecey', url: '../../../laPosteDeLancienneFrance/Villes_S/Sennecey/sennecey.html' },
+{ name: 'Senonches', url: '../../../laPosteDeLancienneFrance/Villes_S/Senonches/senonches.html' },
+{ name: 'Sens', url: '../../../laPosteDeLancienneFrance/Villes_S/Sens/sens.html' },
+{ name: 'Sernhac', url: '../../../laPosteDeLancienneFrance/Villes_S/Sernhac/sernhac.html' },
+{ name: 'Serres', url: '../../../laPosteDeLancienneFrance/Villes_S/Serres/serres.html' },
+{ name: 'Sette', url: '../../../laPosteDeLancienneFrance/Villes_S/Sette/sette.html' },
+{ name: 'Seurre', url: '../../../laPosteDeLancienneFrance/Villes_S/Seurre/seurre.html' },
+{ name: 'Severac', url: '../../../laPosteDeLancienneFrance/Villes_S/Severac/severac.html' },
+{ name: 'Sevres', url: '../../../laPosteDeLancienneFrance/Villes_S/Sevres/sevres.html' },
+{ name: 'Seyne', url: '../../../laPosteDeLancienneFrance/Villes_S/Seyne/seyne.html' },
+{ name: 'Sezanne', url: '../../../laPosteDeLancienneFrance/Villes_S/Sezanne/sezanne.html' },
+{ name: 'Sierentz', url: '../../../laPosteDeLancienneFrance/Villes_S/Sierentz/sierentz.html' },
+{ name: 'Sigean', url: '../../../laPosteDeLancienneFrance/Villes_S/Sigean/sigean.html' },
+{ name: 'Sille-le-Guillaume', url: '../../../laPosteDeLancienneFrance/Villes_S/SilleLeGuillaume/silleLeGuillaume.html' },
+{ name: 'Sillery', url: '../../../laPosteDeLancienneFrance/Villes_S/Sillery/sillery.html' },
+{ name: 'Sisteron', url: '../../../laPosteDeLancienneFrance/Villes_S/Sisteron/sisteron.html' },
+{ name: 'Soissons', url: '../../../laPosteDeLancienneFrance/Villes_S/Soissons/soissons.html' },
+{ name: 'Sollies', url: '../../../laPosteDeLancienneFrance/Villes_S/Sollies/sollies.html' },
+{ name: 'Solre-le-Chateau', url: '../../../laPosteDeLancienneFrance/Villes_S/SolreLeChateau/solreLeChateau.html' },
+{ name: 'Sombernon', url: '../../../laPosteDeLancienneFrance/Villes_S/Sombernon/sombernon.html' },
+{ name: 'Sommieres', url: '../../../laPosteDeLancienneFrance/Villes_S/Sommieres/sommieres.html' },
+{ name: 'Songeons', url: '../../../laPosteDeLancienneFrance/Villes_S/Songeons/songeons.html' },
+{ name: 'Souillac', url: '../../../laPosteDeLancienneFrance/Villes_S/Souillac/souillac.html' },
+{ name: 'Sourdeval', url: '../../../laPosteDeLancienneFrance/Villes_S/Sourdeval/sourdeval.html' },
+{ name: 'Souvigny', url: '../../../laPosteDeLancienneFrance/Villes_S/Souvigny/souvigny.html' },
+{ name: 'Spincourt', url: '../../../laPosteDeLancienneFrance/Villes_S/Spincourt/spincourt.html' },
+{ name: 'Stenay', url: '../../../laPosteDeLancienneFrance/Villes_S/Stenay/stenay.html' },
+{ name: 'Strasbourg', url: '../../../laPosteDeLancienneFrance/Villes_S/Strasbourg/strasbourg.html' },
+{ name: 'Suette', url: '../../../laPosteDeLancienneFrance/Villes_S/Suette/suette.html' },
+{ name: 'Sumene', url: '../../../laPosteDeLancienneFrance/Villes_S/Sumene/sumene.html' },
+{ name: 'Surgeres', url: '../../../laPosteDeLancienneFrance/Villes_S/Surgeres/surgeres.html' },
+{ name: 'Suzennecourt', url: '../../../laPosteDeLancienneFrance/Villes_S/Suzennecourt/suzennecourt.html' },
+        // Ajoutez d'autres villes ici
     ];
 
-// Fonction de normalisation pour comparaison robuste
-    function normalizeText(str) {
-        return str
-            .normalize("NFD")                    // décompose les accents
-            .replace(/[\u0300-\u036f]/g, "")     // enlève les accents
-            .replace(/[^a-zA-Z0-9]/g, "")        // enlève tout sauf lettres/chiffres
-            .toLowerCase();                      // en minuscule
+    // Initialisation des liens de ville
+    for (var i = 0; i < cityLinks.length; i++) {
+        var link = document.createElement('a');
+        link.href = cityLinks[i].url;
+        link.textContent = cityLinks[i].name;
+        dropdownContent.appendChild(link);
     }
 
-    const input = document.getElementById('villeInput');
-    const dropdownContent = document.getElementById('dropdownContent');
-    const villeLink = document.getElementById('villeLink');
-
-    // Création des liens et stockage du nom normalisé
-    const cityLinks = villes.map(ville => {
-        const dossier = ville.replace(/ /g, '-');
-        const fichier = ville
-            .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // retire accents
-            .replace(/[-’'`]/g, '') // retire apostrophes et tirets
-            .replace(/[^a-zA-Z0-9 ]/g, '') // caractères spéciaux
-            .split(' ')
-            .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
-            .join('');
-
-        const link = document.createElement('a');
-        link.href = `../../../laPosteDeLancienneFrance/Villes S/${dossier}/${fichier}.html`;
-        link.textContent = ville;
-        link.dataset.normalized = normalizeText(ville); // version normalisée pour recherche
-        dropdownContent.appendChild(link);
-
-        return link;
-    });
-
-    // Recherche : normalisation du texte utilisateur
     input.addEventListener('input', function () {
-        const filter = normalizeText(input.value);
+        var filter = input.value.toLowerCase();
+        var links = dropdownContent.getElementsByTagName('a');
 
-        cityLinks.forEach(link => {
-            const normalizedCity = link.dataset.normalized;
-            link.style.display = normalizedCity.includes(filter) ? '' : 'none';
-        });
+        for (var i = 0; i < links.length; i++) {
+            var city = links[i].textContent.toLowerCase();
+            links[i].style.display = city.includes(filter) ? '' : 'none';
+        }
     });
 
-    // Redirection au clic
     dropdownContent.addEventListener('click', function (event) {
-        const target = event.target;
-        if (target.tagName === 'A') {
+        var target = event.target;
+        if (target.tagName === 'S') {
             villeLink.innerHTML = ' &emsp;&emsp;' + target.textContent + '<i class="fas fa-caret-down"></i>';
             window.location.href = target.href;
         }

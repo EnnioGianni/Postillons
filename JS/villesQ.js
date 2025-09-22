@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tableau de liens de villes
     var cityLinks = [
-        { name: 'La-Queue-En-Beauce', url:'../../../laPosteDeLancienneFrance/Villes Q/La-Queue-En-Beauce/laQueueEnBeauce.html' },
-        { name: 'La-Queue-En-Brie', url:'../../../laPosteDeLancienneFrance/Villes Q/La-Queue-En-Brie/laQueueEnBrie.html' },
-        { name: 'Le-Quesnoy', url:'../../../laPosteDeLancienneFrance/Villes Q/Le-Quesnoy/leQuesnoy.html' },
-        { name: 'Querhoent', url:'../../../laPosteDeLancienneFrance/Villes Q/Querhoent/querhoent.html' },
-        { name: 'Quiberon', url:'../../../laPosteDeLancienneFrance/Villes Q/Quiberon/quiberon.html' },
-        { name: 'Quilleboeuf', url:'../../../laPosteDeLancienneFrance/Villes Q/Quilleboeuf/quilleboeuf.html' },
-        { name: 'Quimper', url:'../../../laPosteDeLancienneFrance/Villes Q/Quimper/quimper.html' },
-        { name: 'Quimperle', url:'../../../laPosteDeLancienneFrance/Villes Q/Quimperle/quimperle.html' },
-        { name: 'Quingey', url:'../../../laPosteDeLancienneFrance/Villes Q/Quingey/quingey.html' },
-        { name: 'Quintin', url:'../../../laPosteDeLancienneFrance/Villes Q/Quintin/quintin.html' },
+        { name: 'La-Queue-En-Beauce', url:'../../../laPosteDeLancienneFrance/Villes_Q/La-Queue-En-Beauce/laQueueEnBeauce.html' },
+        { name: 'La-Queue-En-Brie', url:'../../../laPosteDeLancienneFrance/Villes_Q/La-Queue-En-Brie/laQueueEnBrie.html' },
+        { name: 'Le-Quesnoy', url:'../../../laPosteDeLancienneFrance/Villes_Q/Le-Quesnoy/leQuesnoy.html' },
+        { name: 'Querhoent', url:'../../../laPosteDeLancienneFrance/Villes_Q/Querhoent/querhoent.html' },
+        { name: 'Quiberon', url:'../../../laPosteDeLancienneFrance/Villes_Q/Quiberon/quiberon.html' },
+        { name: 'Quilleboeuf', url:'../../../laPosteDeLancienneFrance/Villes_Q/Quilleboeuf/quilleboeuf.html' },
+        { name: 'Quimper', url:'../../../laPosteDeLancienneFrance/Villes_Q/Quimper/quimper.html' },
+        { name: 'Quimperle', url:'../../../laPosteDeLancienneFrance/Villes_Q/Quimperle/quimperle.html' },
+        { name: 'Quingey', url:'../../../laPosteDeLancienneFrance/Villes_Q/Quingey/quingey.html' },
+        { name: 'Quintin', url:'../../../laPosteDeLancienneFrance/Villes_Q/Quintin/quintin.html' },
 
         // Ajoutez d'autres villes ici
     ];

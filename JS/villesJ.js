@@ -5,20 +5,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tableau de liens de villes
     var cityLinks = [
-        { name: 'Jalons', url: '../../../laPosteDeLancienneFrance/Villes J/Jalons/jalons.html' },
-        { name: 'Janville', url: '../../../laPosteDeLancienneFrance/Villes J/Janville/janville.html' },
-        { name: 'Joigny', url: '../../../laPosteDeLancienneFrance/Villes J/Joigny/joigny.html' },
-        { name: 'Joinville', url: '../../../laPosteDeLancienneFrance/Villes J/Joinville/joinville.html' },
-        { name: 'Jonchery', url: '../../../laPosteDeLancienneFrance/Villes J/Jonchery/jonchery.html' },
-        { name: 'Joncy', url: '../../../laPosteDeLancienneFrance/Villes J/Joncy/joncy.html' },
-        { name: 'Jonzac', url: '../../../laPosteDeLancienneFrance/Villes J/Jonzac/jonzac.html' },
-        { name: 'Josselin', url: '../../../laPosteDeLancienneFrance/Villes J/Josselin/josselin.html' },
-        { name: 'Joyeuse', url: '../../../laPosteDeLancienneFrance/Villes J/Joyeuse/joyeuse.html' },
-        { name: 'Jumieges', url: '../../../laPosteDeLancienneFrance/Villes J/Jumieges/jumieges.html' },
-        { name: 'Jumillac', url: '../../../laPosteDeLancienneFrance/Villes J/Jumillac/jumillac.html' },
-        { name: 'Jussey', url: '../../../laPosteDeLancienneFrance/Villes J/Jussey/jussey.html' },
-        { name: 'Juvisy', url: '../../../laPosteDeLancienneFrance/Villes J/Juvisy/juvisy.html' },
-        { name: 'Juzennecour', url: '../../../laPosteDeLancienneFrance/Villes J/Juzennecour/juzennecour.html' },
+        { name: 'Jalons', url: '../../../laPosteDeLancienneFrance/Villes_J/Jalons/jalons.html' },
+        { name: 'Janville', url: '../../../laPosteDeLancienneFrance/Villes_J/Janville/janville.html' },
+        { name: 'Joigny', url: '../../../laPosteDeLancienneFrance/Villes_J/Joigny/joigny.html' },
+        { name: 'Joinville', url: '../../../laPosteDeLancienneFrance/Villes_J/Joinville/joinville.html' },
+        { name: 'Jonchery', url: '../../../laPosteDeLancienneFrance/Villes_J/Jonchery/jonchery.html' },
+        { name: 'Joncy', url: '../../../laPosteDeLancienneFrance/Villes_J/Joncy/joncy.html' },
+        { name: 'Jonzac', url: '../../../laPosteDeLancienneFrance/Villes_J/Jonzac/jonzac.html' },
+        { name: 'Josselin', url: '../../../laPosteDeLancienneFrance/Villes_J/Josselin/josselin.html' },
+        { name: 'Joyeuse', url: '../../../laPosteDeLancienneFrance/Villes_J/Joyeuse/joyeuse.html' },
+        { name: 'Jumieges', url: '../../../laPosteDeLancienneFrance/Villes_J/Jumieges/jumieges.html' },
+        { name: 'Jumillac', url: '../../../laPosteDeLancienneFrance/Villes_J/Jumillac/jumillac.html' },
+        { name: 'Jussey', url: '../../../laPosteDeLancienneFrance/Villes_J/Jussey/jussey.html' },
+        { name: 'Juvisy', url: '../../../laPosteDeLancienneFrance/Villes_J/Juvisy/juvisy.html' },
+        { name: 'Juzennecour', url: '../../../laPosteDeLancienneFrance/Villes_J/Juzennecour/juzennecour.html' },
 
        
    

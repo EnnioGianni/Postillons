@@ -5,31 +5,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tableau de liens de villes
     var cityLinks = [
-        { name: 'Ille', url: '../../../laPosteDeLancienneFrance/Villes I/Ille/ille.html' },
-        { name: 'Illiers', url: '../../../laPosteDeLancienneFrance/Villes I/Illiers/illiers.html' },
-        { name: 'Ingrande', url: '../../../laPosteDeLancienneFrance/Villes I/Ingrande/ingrande.html' },
-        { name: 'Is-Sur-Tille', url: '../../../laPosteDeLancienneFrance/Villes I/Is_Sur_Tille/isSurTille.html' },
-        { name: 'Isigny', url: '../../../laPosteDeLancienneFrance/Villes I/Isigny/isigny.html' },
-        { name: 'Issoire', url: '../../../laPosteDeLancienneFrance/Villes I/Issoire/issoire.html' },
-        { name: 'Issoudun', url: '../../../laPosteDeLancienneFrance/Villes I/Issoudun/issoudun.html' },
-        { name: 'Ivry-Petite-Ville', url: '../../../laPosteDeLancienneFrance/Villes I/Ivry_Petite_Ville/ivryPetiteVille.html' },
-        { name: 'Lisle-Adam', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Adam/lisleAdam.html' },
-        { name: 'Lisle-Bouchard', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Bouchard/lisleBouchard.html' },
-        { name: 'Lisle-Daix', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Daix/lisleDaix.html' },
-        { name: 'Lisle-Dalby', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Dalby/lisleDalby.html' },
-        { name: 'Lisle-En-Dodon', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_En_Dodon/lisleEnDodon.html' },
-        { name: 'Lisle-Jourdain', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Jourdain/lisleJourdain.html' },
-        { name: 'Lisle-Jourdain (80)', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Jourdain80/lisleJourdain80.html' },
-        { name: 'Lisle-Rousse', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Rousse/lisleRousse.html' },
-        { name: 'Lisle-Sur-Le-Doubs', url: '../../../laPosteDeLancienneFrance/Villes I/Lisle_Sur_Le_Doubs/lisleSurLeDoubs.html' },
-        { name: '', url: '../../../laPosteDeLancienneFrance/Villes I//.html' },
+        { name: 'Ille', url: '../../../laPosteDeLancienneFrance/Villes_I/Ille/ille.html' },
+        { name: 'Illiers', url: '../../../laPosteDeLancienneFrance/Villes_I/Illiers/illiers.html' },
+        { name: 'Ingrande', url: '../../../laPosteDeLancienneFrance/Villes_I/Ingrande/ingrande.html' },
+        { name: 'Is-Sur-Tille', url: '../../../laPosteDeLancienneFrance/Villes_I/Is_Sur_Tille/isSurTille.html' },
+        { name: 'Isigny', url: '../../../laPosteDeLancienneFrance/Villes_I/Isigny/isigny.html' },
+        { name: 'Issoire', url: '../../../laPosteDeLancienneFrance/Villes_I/Issoire/issoire.html' },
+        { name: 'Issoudun', url: '../../../laPosteDeLancienneFrance/Villes_I/Issoudun/issoudun.html' },
+        { name: 'Ivry-Petite-Ville', url: '../../../laPosteDeLancienneFrance/Villes_I/Ivry_Petite_Ville/ivryPetiteVille.html' },
+        { name: 'Lisle-Adam', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Adam/lisleAdam.html' },
+        { name: 'Lisle-Bouchard', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Bouchard/lisleBouchard.html' },
+        { name: 'Lisle-Daix', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Daix/lisleDaix.html' },
+        { name: 'Lisle-Dalby', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Dalby/lisleDalby.html' },
+        { name: 'Lisle-En-Dodon', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_En_Dodon/lisleEnDodon.html' },
+        { name: 'Lisle-Jourdain', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Jourdain/lisleJourdain.html' },
+        { name: 'Lisle-Jourdain (80)', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Jourdain80/lisleJourdain80.html' },
+        { name: 'Lisle-Rousse', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Rousse/lisleRousse.html' },
+        { name: 'Lisle-Sur-Le-Doubs', url: '../../../laPosteDeLancienneFrance/Villes_I/Lisle_Sur_Le_Doubs/lisleSurLeDoubs.html' },
+        { name: '', url: '../../../laPosteDeLancienneFrance/Villes_I//.html' },
        
    
        
        
 
   
-// Ajoutez d'autres villes ici
+// Ajoutez d'autres Villes_Ici
     ];
 
     // Initialisation des liens de ville

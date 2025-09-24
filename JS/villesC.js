@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Chantilly', url: '../../../laPosteDeLancienneFrance/Villes_C/Chantilly/chantilly.html' },
         { name: 'Chantonnay', url: '../../../laPosteDeLancienneFrance/Villes_C/Chantonnay/chantonnay.html' },
         { name: 'Chaource', url: '../../../laPosteDeLancienneFrance/Villes_C/Chaource/chaource.html' },
-        { name: 'Charente', url: '../../../laPosteDeLancienneFrance/Villes_C/Charente/charente.html' },
+        { name: 'Charente', url: '../../../laPosteDeLancienneFrance/Villes_C/Charente/charante.html' },
         { name: 'Charenton', url: '../../../laPosteDeLancienneFrance/Villes_C/Charenton/charenton.html' },
         { name: 'La Charite', url: '../../../laPosteDeLancienneFrance/Villes_C/Charite/charite.html' },
         { name: 'Charlemont', url: '../../../laPosteDeLancienneFrance/Villes_C/Charlemont/charlemont.html' },

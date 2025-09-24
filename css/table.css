@@ -167,9 +167,10 @@ p::first-letter {
 
 
 .titre-principal {
-    font-size: 26px; /* Taille normale */
-    margin: 0 -10px 0 -35px;
-    transition: font-size 0.3s ease-in-out, margin 0.3s ease-in-out;
+  font-size: 30px;
+  margin: 0 auto;        /* centre automatiquement */
+  text-align: center;    /* centre le texte */
+  display: block;        /* assure le bon comportement */
 }
 
 /* Mode téléphone (moins de 768px) */

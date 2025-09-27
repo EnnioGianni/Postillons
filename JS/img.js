@@ -1011,3 +1011,21 @@ function initToggle() {
 
 
 
+// === Gestion des sections repliables ===
+// Sélectionne tous les en-têtes avec la classe "toggle-header"
+document.addEventListener("DOMContentLoaded", () => {
+    const headers = document.querySelectorAll(".toggle-header");
+
+    headers.forEach(header => {
+        header.addEventListener("click", () => {
+            const content = header.nextElementSibling; // contenu juste après
+            const isVisible = content.style.display === "block";
+
+            // Alterner l'affichage
+            content.style.display = isVisible ? "none" : "block";
+
+            // Ajouter/enlever la classe "active" (pour tourner la flèche)
+            header.classList.toggle("active", !isVisible);
+        });
+    });
+});

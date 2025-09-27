@@ -1123,7 +1123,22 @@ body.menu-open {
 }
 
 
+/*texte depliable*/
+.toggle-header {
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
 
+.toggle-header .arrow {
+  display: inline-block;
+  transition: transform 0.3s;
+  margin-right: 5px;
+}
+
+.toggle-header.active .arrow {
+  transform: rotate(90deg); /* flèche tournée quand ouvert */
+}
 
 
 

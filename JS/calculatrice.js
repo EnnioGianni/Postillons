@@ -321,8 +321,8 @@ scrollToTopButton.onclick = function () {
     
     const searchCell = document.createElement('div');
     searchCell.style.position = 'fixed';
-    searchCell.style.top = '13vh';
-    searchCell.style.right = '60px';
+    searchCell.style.top = '120px';
+    searchCell.style.right = '190px';
     searchCell.style.padding = '1px 2px';
     searchCell.style.backgroundColor = '#2C3E50';
     searchCell.style.color = 'white';
@@ -340,6 +340,13 @@ scrollToTopButton.onclick = function () {
     searchCell.style.minHeight = '20px';
     searchCell.style.visibility = 'visible';
     searchCell.style.opacity = '1';
+
+    
+
+
+
+
+
 
     // Créer une boîte de saisie
     const input = document.createElement('textarea');

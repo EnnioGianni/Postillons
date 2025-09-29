@@ -826,7 +826,7 @@ document.querySelectorAll('img').forEach(img => {
 const pageKey = "blocNote_" + window.location.pathname;
 
 // === OVERLAY FOND SOMBRE ===
-const overlay = document.createElement("div");
+//const overlay = document.createElement("div");
 Object.assign(overlay.style, {
   position: "fixed",
   top: 0,

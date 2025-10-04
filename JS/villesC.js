@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Cluny', url: '../../../laPosteDeLancienneFrance/Villes_C/Cluny/cluny.html' },
         { name: 'Cocherel', url: '../../../laPosteDeLancienneFrance/Villes_C/Cocherel/cocherel.html' },
         { name: 'Cognac', url: '../../../laPosteDeLancienneFrance/Villes_C/Cognac/cognac.html' },
-        { name: 'Coillure', url: '../../../laPosteDeLancienneFrance/Villes_C/Coillure/coillure.html' },
+        { name: 'Collioure', url: '../../../laPosteDeLancienneFrance/Villes_C/Collioure/collioure.html' },
         { name: 'Coincy', url: '../../../laPosteDeLancienneFrance/Villes_C/Coincy/coincy.html' },
         { name: 'Collobrieres', url: '../../../laPosteDeLancienneFrance/Villes_C/Collobrieres/collobrieres.html' },
         { name: 'Collonges', url: '../../../laPosteDeLancienneFrance/Villes_C/Collonges/collonges.html' },

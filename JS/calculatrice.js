@@ -389,7 +389,7 @@ scrollToTopButton.onclick = function () {
     searchCell.appendChild(input);
     searchCell.appendChild(searchButton);
     searchCell.appendChild(resultDisplay);
-    searchCell.style.cssText += 'position:fixed; top:267px; left:50%; transform:translateX(-50%);';
+    searchCell.style.cssText += 'position:fixed; top:267px; left:35%; transform:translateX(-50%);';
     document.body.appendChild(searchCell);
 
     // Ajoute une animation CSS pour le bonhomme qui bouge les bras

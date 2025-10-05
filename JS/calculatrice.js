@@ -55,6 +55,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const showBtn = document.getElementById('showCalculatorBtn');
     const calculator = document.querySelector('.calculator');
 
+    // --- Initialiser l'affichage selon la taille d'écran ---
+const mq = window.matchMedia('(max-width: 768px)');
+
+function setCalcVisibility() {
+  if (mq.matches) {
+    // Petit écran : cachée au lancement
+    calculator.style.display = 'none';
+    showBtn.style.display = 'block';
+  } else {
+    // Écran ≥ 768px : visible au lancement
+    calculator.style.display = 'flex';
+    showBtn.style.display = 'none';
+  }
+}
+
+setCalcVisibility();
+// (optionnel) Si tu veux que ça s'adapte quand on redimensionne :
+if (mq.addEventListener) mq.addEventListener('change', setCalcVisibility);
+else mq.addListener(setCalcVisibility); // compatibilité anciens navigateurs
+
+
     closeBtn.addEventListener('click', function() {
         calculator.style.display = 'none'; // Masquer la calculatrice
         showBtn.style.display = 'block'; // Afficher le bouton pour réafficher la calculatrice

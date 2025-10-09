@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Cormoz', url: '../../../laPosteDeLancienneFrance/Villes_C/Cormoz/cormoz.html' },
         { name: 'Corps', url: '../../../laPosteDeLancienneFrance/Villes_C/Corps/corps.html' },
         { name: 'Corse', url: '../../../laPosteDeLancienneFrance/Villes_C/Corse/corse.html' },
-        { name: 'Corte', url: '../../../laPosteDeLancienneFrance/Villes_C/Corte/Ccorte.html' },
+        { name: 'Corte', url: '../../../laPosteDeLancienneFrance/Villes_C/Corte/corte.html' },
         { name: 'Cosne', url: '../../../laPosteDeLancienneFrance/Villes_C/Cosne/cosne.html' },
         { name: 'La-Cote-St-Andre', url: '../../../laPosteDeLancienneFrance/Villes_C/La-Cote-St-Andre/laCoteStAndre.html' },
         { name: 'Cotignac', url: '../../../laPosteDeLancienneFrance/Villes_C/Cotignac/cotignac.html' },

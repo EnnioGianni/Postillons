@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-//Traduction en plusieurs
+//Traduction en plusieurs langues
 
 document.addEventListener("DOMContentLoaded", function () {
   const browserLang = (navigator.language || "fr").slice(0, 2).toLowerCase();

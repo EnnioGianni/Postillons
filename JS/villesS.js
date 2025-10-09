@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 { name: 'Saint-Gerand', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGerand/saintGerand.html' },
 { name: 'Saint-Germain-en-Laye', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGermainEnLaye/saintGermainEnLaye.html' },
 { name: 'Saint-Germain-L_Espinasse', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGermainLEspinasse/saintGermainLEspinasse.html' },
-{ name: 'Saint-Gilles', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGilles/saintGilles.html' },
+{ name: 'Saint-Gilles', url: '../../../laPosteDeLancienneFrance/Villes_S/Saint-Gilles/saintGilles.html' },
 { name: 'Saint-Gilles-sur-Vie', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGillesSurVie/saintGillesSurVie.html' },
 { name: 'Saint-Girons', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintGirons/saintGirons.html' },
 { name: 'Saint-Hermand', url: '../../../laPosteDeLancienneFrance/Villes_S/SaintHermand/saintHermand.html' },

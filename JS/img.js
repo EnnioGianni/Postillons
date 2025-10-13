@@ -727,68 +727,137 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// ==========================================
-// 📌 Historique persistant des villes visitées (max 5, reset session)
-// Affiche toutes les villes visitées sous forme de liens cliquables
-// Scroll vertical dès que la liste dépasse 2 lignes
-// ==========================================
+
+// ======================================================
+// 🧩 Historique persistant des villes visitées (max 5)
+// + Lazy Loading images
+// + Bouton "×" pour réduire le panneau
+// + Bouton flottant "📜" centré pour le réafficher
+// + Scroll vertical dès que la liste dépasse 2 lignes
+// ======================================================
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Réinitialiser l'historique si nouvelle session
-  if (!sessionStorage.getItem("sessionActive")) {
-    localStorage.removeItem("villesRecemmentVues");
-    sessionStorage.setItem("sessionActive", "true");
+
+  // ------------------------------
+  // 🔧 Clés de stockage
+  // ------------------------------
+  const STORAGE_KEY = "villesRecemmentVues";       // Historique persistant
+  const SESSION_FLAG = "sessionActive";            // Flag de session
+  const MINIMIZED_KEY = "historiqueVillesMinimized"; // État réduit/affiché
+
+  // ------------------------------
+  // ♻️ Réinitialiser l'historique si nouvelle session
+  // ------------------------------
+  if (!sessionStorage.getItem(SESSION_FLAG)) {
+    localStorage.removeItem(STORAGE_KEY);
+    sessionStorage.setItem(SESSION_FLAG, "true");
+    sessionStorage.removeItem(MINIMIZED_KEY); // Par défaut, panneau visible
   }
 
+  // ------------------------------
+  // 🏷️ Récupération du nom et de l’URL de la ville
+  // ------------------------------
   const titreVille = document.querySelector("h2 a");
-  if (!titreVille) return;
+  if (!titreVille) return; // arrêt si pas de ville détectée
 
   const nomVille = titreVille.textContent.trim();
   const urlVille = window.location.pathname;
 
-  let historique = JSON.parse(localStorage.getItem("villesRecemmentVues")) || [];
+  // ------------------------------
+  // 📚 Chargement de l'historique existant
+  // ------------------------------
+  let historique = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-  // Supprime doublon (même nom + même URL)
+  // 🔁 Suppression d'un éventuel doublon
   historique = historique.filter(v => !(v.nom === nomVille && v.url === urlVille));
 
-  // Ajoute la ville en tête
+  // ⬆️ Ajout de la ville actuelle
   historique.unshift({ nom: nomVille, url: urlVille });
 
-  // Limite à 5 villes max
+  // ✂️ Limitation à 5 éléments
   historique = historique.slice(0, 5);
 
-  // Sauvegarde mise à jour
-  localStorage.setItem("villesRecemmentVues", JSON.stringify(historique));
+  // 💾 Sauvegarde
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(historique));
 
-  // Bloc d'affichage
+  // ------------------------------
+  // 🧱 Construction du panneau d'historique
+  // ------------------------------
   const bloc = document.createElement("div");
   bloc.id = "historique-villes";
+
   Object.assign(bloc.style, {
     position: "fixed",
     bottom: "45px",
-    right: "1600px",
-    width: "200px",
-    maxHeight: "1200px",
-    overflowY: "auto",
+    right: "1600px",        // position du panneau
+    width: "220px",
+    maxHeight: "240px",
     background: "#fff",
     border: "1px solid #ccc",
     padding: "8px",
     fontSize: "13px",
     zIndex: "10000",
-    boxShadow: "0 0 4px rgba(0,0,0,0.2)",
-    borderRadius: "6px"
+    boxShadow: "0 0 8px rgba(0,0,0,0.15)",
+    borderRadius: "8px"
   });
 
+  // ------------------------------
+  // ✖️ Bouton fermer/réduire
+  // ------------------------------
+  const btnClose = document.createElement("button");
+  btnClose.type = "button";
+  btnClose.setAttribute("aria-label", "Réduire l'historique des villes");
+  btnClose.textContent = "×";
+
+  Object.assign(btnClose.style, {
+    position: "absolute",
+    top: "4px",
+    right: "6px",
+    width: "22px",
+    height: "22px",
+    lineHeight: "20px",
+    textAlign: "center",
+    border: "none",
+    background: "transparent",
+    cursor: "pointer",
+    fontSize: "18px",
+    color: "#666",
+    borderRadius: "4px"
+  });
+
+  btnClose.addEventListener("mouseenter", () => { btnClose.style.background = "rgba(0,0,0,0.06)"; });
+  btnClose.addEventListener("mouseleave", () => { btnClose.style.background = "transparent"; });
+
+  // ------------------------------
+  // 🏷️ Titre du panneau
+  // ------------------------------
   const titre = document.createElement("div");
   titre.textContent = "📜 Villes visitées :";
-  titre.style.fontWeight = "bold";
-  titre.style.marginBottom = "6px";
-  bloc.appendChild(titre);
+  Object.assign(titre.style, {
+    fontWeight: "bold",
+    marginBottom: "6px",
+    paddingRight: "24px"
+  });
 
+  // ------------------------------
+  // 📋 Conteneur de la liste
+  // ------------------------------
+  const listeWrap = document.createElement("div");
+  const LINE_HEIGHT_PX = 18;
+  Object.assign(listeWrap.style, {
+    lineHeight: LINE_HEIGHT_PX + "px",
+    overflowY: "hidden"
+  });
+
+  // ------------------------------
+  // 🔗 Ajout des liens
+  // ------------------------------
   historique.forEach(v => {
     const lien = document.createElement("a");
     lien.href = v.url;
     lien.textContent = "• " + v.nom;
+    lien.setAttribute("aria-label", `Voir la page de ${v.nom}`);
+
     Object.assign(lien.style, {
       display: "block",
       margin: "2px 0px",
@@ -796,20 +865,108 @@ document.addEventListener("DOMContentLoaded", () => {
       textDecoration: "none",
       wordBreak: "break-word"
     });
-    bloc.appendChild(lien);
+
+    lien.addEventListener("mouseenter", () => { lien.style.textDecoration = "underline"; });
+    lien.addEventListener("mouseleave", () => { lien.style.textDecoration = "none"; });
+
+    listeWrap.appendChild(lien);
   });
 
+  // ------------------------------
+  // 🧩 Assemblage
+  // ------------------------------
+  bloc.appendChild(btnClose);
+  bloc.appendChild(titre);
+  bloc.appendChild(listeWrap);
   document.body.appendChild(bloc);
+
+  // ------------------------------
+  // 📏 Activer scroll si plus de 2 lignes
+  // ------------------------------
+  requestAnimationFrame(() => {
+    const visibleMax = LINE_HEIGHT_PX * 2;
+    if (listeWrap.scrollHeight > visibleMax) {
+      listeWrap.style.maxHeight = visibleMax + "px";
+      listeWrap.style.overflowY = "auto";
+    }
+  });
+
+  // ------------------------------
+  // 🔔 Bouton flottant 📜 (réafficher)
+  // ------------------------------
+  const btnRestore = document.createElement("button");
+  btnRestore.type = "button";
+  btnRestore.setAttribute("aria-label", "Réafficher l'historique des villes");
+  btnRestore.title = "Réafficher l’historique"; // ✅ info-bulle
+
+  btnRestore.textContent = "📜";
+
+  // ✅ Centré parfaitement
+  Object.assign(btnRestore.style, {
+    position: "fixed",
+    bottom: "45px",
+    right: "1600px",
+    width: "36px",
+    height: "36px",
+    borderRadius: "50%",
+    border: "1px solid #ccc",
+    background: "#fff",
+    boxShadow: "0 0 8px rgba(0,0,0,0.15)",
+    cursor: "pointer",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    lineHeight: "normal",
+    padding: "0",
+    boxSizing: "border-box",
+    fontSize: "18px",
+    zIndex: "10001",
+    display: "none"
+  });
+
+  btnRestore.addEventListener("mouseenter", () => { btnRestore.style.background = "rgba(0,0,0,0.03)"; });
+  btnRestore.addEventListener("mouseleave", () => { btnRestore.style.background = "#fff"; });
+
+  document.body.appendChild(btnRestore);
+
+  // ------------------------------
+  // 🔀 Fonctions de bascule
+  // ------------------------------
+  const reducePanel = () => {
+    bloc.style.display = "none";
+    btnRestore.style.display = "flex";
+    sessionStorage.setItem(MINIMIZED_KEY, "true");
+  };
+
+  const showPanel = () => {
+    bloc.style.display = "block";
+    btnRestore.style.display = "none";
+    sessionStorage.setItem(MINIMIZED_KEY, "false");
+  };
+
+  // ------------------------------
+  // 🖱️ Événements
+  // ------------------------------
+  btnClose.addEventListener("click", reducePanel);
+  btnRestore.addEventListener("click", showPanel);
+
+  // 📌 Rétablissement de l’état
+  if (sessionStorage.getItem(MINIMIZED_KEY) === "true") {
+    reducePanel();
+  } else {
+    showPanel();
+  }
 });
 
-// 📦 Optimisation du chargement des images : Lazy Loading
-// Ce script applique à toutes les images de la page le chargement différé (lazy loading)
-// Cela permet de charger les images uniquement lorsqu'elles entrent dans le champ de vision de l'utilisateur,
-// ce qui améliore les performances et réduit la consommation de données.
-
-document.querySelectorAll('img').forEach(img => {
-  img.loading = 'lazy'; // Attribut HTML5 natif pour le chargement différé
+// ------------------------------------------------------
+// 💤 Lazy Loading des images
+// ------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach(img => {
+    img.loading = "lazy";
+  });
 });
+
 
 
 

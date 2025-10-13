@@ -1,111 +1,131 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-            <title>Le Postillon</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link rel="stylesheet" href="../../../css/table.css" />
-            <link rel="stylesheet" href="../../../css/dropdown.css" />
-            <link rel="stylesheet" href="../../../css/modale.css" />
-            <link rel="stylesheet" href="../../../css/bootstrap.min.css" />
-            <script src="../../../JS/bootstrap.bundle.min.js" defer></script>        
-            <script src="../../../JS/script_global.js.js" defer></script>        
-            <script src="../../../JS/script.js" defer></script> 
-            <script src="../../../JS/calculatrice.js" defer></script> 
-            <link rel="stylesheet" href="../../../css/calculatrice.css" />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js"></script> 
-<!--Debut pagination--> 
-            <script src="../../../JS/villesA.js" defer></script>        
-            <script src="../../../JS/villesB.js" defer></script>        
-            <script src="../../../JS/villesC.js" defer></script>        
-            <script src="../../../JS/villesD.js" defer></script>        
-            <script src="../../../JS/villesE.js" defer></script>        
-            <script src="../../../JS/villesF.js" defer></script>        
-            <script src="../../../JS/villesG.js" defer></script>        
-            <script src="../../../JS/villesH.js" defer></script>        
-            <script src="../../../JS/villesI.js" defer></script>        
-            <script src="../../../JS/villesJ.js" defer></script>        
-            <script src="../../../JS/villesK.js" defer></script>        
-            <script src="../../../JS/villesL.js" defer></script>        
-            <script src="../../../JS/villesM.js" defer></script>        
-            <script src="../../../JS/villesN.js" defer></script>        
-            <script src="../../../JS/villesO.js" defer></script>        
-            <script src="../../../JS/villesP.js" defer></script>        
-            <script src="../../../JS/villesQ.js" defer></script>        
-            <script src="../../../JS/villesR.js" defer></script>        
-            <script src="../../../JS/villesS.js" defer></script>        
-            <script src="../../../JS/villesT.js" defer></script>        
-            <script src="../../../JS/villesU.js" defer></script>        
-            <script src="../../../JS/villesV.js" defer></script>        
-            <script src="../../../JS/villesW.js" defer></script>        
-            <script src="../../../JS/villesX.js" defer></script>        
-            <script src="../../../JS/villesY.js" defer></script>        
-            <script src="../../../JS/villesZ.js" defer></script>        
-            <script src="../../../JS/accueil.js" defer></script>
-            <script src="../../../JS/accueil.js" defer></script>
-            <script src="../../../JS/cityRedirector.js"></script>
-            <script src="path/to/cityRedirector.js"></script>  
-            <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script>   
-    </head>  
+<head>
+    <meta charset="utf-8">
+        <title>Le Postillon</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/Postillons/css/table.css">
+        <link rel="stylesheet" href="/Postillons/css/dropdown.css">
+        <link rel="stylesheet" href="/Postillons/css/modale.css">
+    <!--<link rel="stylesheet" href="../../../css/publicite.css" />-->
+        <link rel="stylesheet" href="/Postillons/css/bootstrap.min.css">
+        <script src="/Postillons/JS/script_global.js" defer></script>        
+        <script src="/Postillons/JS/manquantes.js" defer></script>        
+    <!--<script src="../../../JS/publicite.js" defer></script>-->        
+        <script src="/Postillons/JS/script.js" defer></script> 
+        <script src="/Postillons/JS/calculatrice.js" defer></script> 
+        <script src="/Postillons/JS/Liens.js" defer></script>
+        <link rel="stylesheet" href="/Postillons/css/calculatrice.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" defer></script>
+<!--header-->            
+        <script src="../../../JS/villesA.js" defer></script>        
+        <script src="../../../JS/villesB.js" defer></script>        
+        <script src="../../../JS/villesC.js" defer></script>        
+        <script src="../../../JS/villesD.js" defer></script>        
+        <script src="../../../JS/villesE.js" defer></script>        
+        <script src="../../../JS/villesF.js" defer></script>        
+        <script src="../../../JS/villesG.js" defer></script>        
+        <script src="../../../JS/villesH.js" defer></script>        
+        <script src="../../../JS/villesI.js" defer></script>        
+        <script src="../../../JS/villesJ.js" defer></script>        
+        <script src="../../../JS/villesK.js" defer></script>        
+        <script src="../../../JS/villesL.js" defer></script>        
+        <script src="../../../JS/villesM.js" defer></script>        
+        <script src="../../../JS/villesN.js" defer></script>        
+        <script src="../../../JS/villesO.js" defer></script>        
+        <script src="../../../JS/villesP.js" defer></script>        
+        <script src="../../../JS/villesQ.js" defer></script>        
+        <script src="../../../JS/villesR.js" defer></script>        
+        <script src="../../../JS/villesS.js" defer></script>        
+        <script src="../../../JS/villesT.js" defer></script>        
+        <script src="../../../JS/villesU.js" defer></script>        
+        <script src="../../../JS/villesV.js" defer></script>        
+        <script src="../../../JS/villesW.js" defer></script>        
+        <script src="../../../JS/villesX.js" defer></script>        
+        <script src="../../../JS/villesY.js" defer></script>        
+        <script src="../../../JS/villesZ.js" defer></script>        
+        <script src="../../../JS/accueil.js" defer></script>
+        <script src="../../../JS/cityRedirector.js"></script>
+        <script src="https://kit.fontawesome.com/50786edb2e.js" crossorigin="anonymous" defer></script> 
+<style>
+    p::first-letter {
+            color: red;
+            font-size: 130%;
+        }   
+</style>      
+                    
+
+<script>
+// Note enrichie pour Calais (lecture seule)
+window.blocNoteTexteInitial = `
+   🏗️ 🚧 Page en construction 🚧🏗️
+`;
+</script>
+
+</head> 
 <body>
-    <header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
-        <a href="../../../laPosteDeLancienneFrance/Villes A/sommaireVilleA.html"><img id="logoImg" src="../../Resource/books_library_1768.ico"></a>                  
-        <h1 id="h1" style="margin: 0 50px 0 -35px;">Le Postillon</h1>  
-        <a class="div a" href="../../Villes A/sommaireVilleA.html">A</a>
-        <a class="div a" href="../../Villes B/B_sommaire.html">B</a>
-        <a class="div a active" href="../../Villes C/C_sommaire.html">C</a>
-        <a class="div a" href="../../Villes D/D_sommaire.html">D</a>
-        <a class="div a" href="../../Villes E/E_sommaire.html">E</a>
-        <a class="div a" href="../../Villes F/F_sommaire.html">F</a>
-        <a class="div a" href="../../Villes G/G_sommaire.html">G</a>
-        <a class="div a" href="../../Villes H/H_sommaire.html">H</a>
-        <a class="div a" href="../../Villes I/I_sommaire.html">I</a>
-        <a class="div a" href="../../Villes J/J_sommaire.html">J</a>
-        <a class="div a" href="../../Villes K/K_sommaire.html">K</a>
-        <a class="div a" href="../../Villes L/L_sommaire.html">L</a>
-        <a class="div a" href="../../Villes M/M_sommaire.html">M</a>
-        <a class="div a" href="../../Villes N/N_sommaire.html">N</a>
-        <a class="div a" href="../../Villes O/O_sommaire.html">O</a>
-        <a class="div a" href="../../Villes P/P_sommaire.html">P</a>
-        <a class="div a" href="../../Villes Q/Q_sommaire.html">Q</a>
-        <a class="div a" href="../../Villes R/R_sommaire.html">R</a>
-        <a class="div a" href="../../Villes S/S_sommaire.html">S</a>
-        <a class="div a" href="../../Villes T/T_sommaire.html">T</a>
-        <a class="div a" href="../../Villes U/U_sommaire.html">U</a>
-        <a class="div a" href="../../Villes V/V_sommaire.html">V</a>
-        <a class="div a" href="../../Villes W/W_sommaire.html">W</a>
-        <a class="div a" href="../../Villes X/X_sommaire.html">X</a>
-        <a class="div a" href="../../Villes Y/Y_sommaire.html">Y</a>
-        <a class="div a" href="../../Villes Z/Z_sommaire.html">Z</a>            
-    </header>
-<section>
+<header id="mainHeader" class="d-flex justify-content-between align-items-center py-3 px-5">     
+    <a href="../../../laPosteDeLancienneFrance/Villes_P/P_sommaire.html"><img id="logoImg" src="../../Resource/books_library_1768.ico" alt="Logo"></a>                     
+        <h1 class="titre-principal" style="font-size: 50px;">Le Postillon</h1>
+        <a class="a" href="../../Villes_A/sommaireVilleA.html">A</a>
+        <a class="a" href="../../Villes_B/B_sommaire.html">B</a>
+        <a class="a active" href="../../Villes_C/C_sommaire.html">C</a>
+        <a class="a" href="../../Villes_D/D_sommaire.html">D</a>
+        <a class="a" href="../../Villes_E/E_sommaire.html">E</a>
+        <a class="a" href="../../Villes_F/F_sommaire.html">F</a>
+        <a class="a" href="../../Villes_G/G_sommaire.html">G</a>
+        <a class="a" href="../../Villes_H/H_sommaire.html">H</a>
+        <a class="a" href="../../Villes_I/I_sommaire.html">I</a>
+        <a class="a" href="../../Villes_J/J_sommaire.html">J</a>
+        <a class="a" href="../../Villes_K/K_sommaire.html">K</a>
+        <a class="a" href="../../Villes_L/L_sommaire.html">L</a>
+        <a class="a" href="../../Villes_M/M_sommaire.html">M</a>
+        <a class="a" href="../../Villes_N/N_sommaire.html">N</a>
+        <a class="a" href="../../Villes_O/O_sommaire.html">O</a>
+        <a class="a" href="../../Villes_P/P_sommaire.html">P</a>
+        <a class="a" href="../../Villes_Q/Q_sommaire.html">Q</a>
+        <a class="a" href="../../Villes_R/R_sommaire.html">R</a>
+        <a class="a" href="../../Villes_S/S_sommaire.html">S</a>
+        <a class="a" href="../../Villes_T/T_sommaire.html">T</a>
+        <a class="a" href="../../Villes_U/U_sommaire.html">U</a>
+        <a class="a" href="../../Villes_V/V_sommaire.html">V</a>
+        <a class="a" href="../../Villes_W/W_sommaire.html">W</a>
+        <a class="a" href="../../Villes_X/X_sommaire.html">X</a>
+        <a class="a" href="../../Villes_Y/Y_sommaire.html">Y</a>
+        <a class="a" href="../../Villes_Z/Z_sommaire.html">Z</a>    
+</header> 
+
 <!--Debut pagination--> 
-<h2 id="h12"><a href="https://fr.wikipedia.org/wiki/Cr%C3%A9mieu" class="title-tip" style="font-size: 25px;" title="lien vers wikipedia">
-    Crémieu - Dauphiné (37)</a></h2><p>Bureau ouvert le 1<sup>er</sup> octobre 1767</p>
-    <nav>
+<main>
+    <h2 id="h12">
+        <a href="https://fr.wikipedia.org/wiki/Cr%C3%A9mieu" class="title-tip" style="font-size: 25px;" title="lien vers wikipedia">
+            Crémieu - Dauphiné (37)
+        </a>
+    </h2>
+        <p>Bureau ouvert le 1<sup>er</sup> octobre 1767</p>
+<nav>
     <ul class="pagination justify-content-center">
-        <ul class="pagination justify-content-center">
-             <li class="page-item"><a class="page-link title-tip title-tip-left" href="../C_sommaire.html" title="Sommaire C">&laquo;&laquo;</a></li>
-               <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Creil/creil.html" title="Creil">&laquo;</a></li>                
-                <li class="page-item">
-                    <div class="dropdown">
-                        <!-- Champ de saisie de la ville -->
-                        <input type="text" id="villeInput" placeholder="Tapez le nom d'une ville ">
-                        <!-- Cellule "ville" -->
-                        <a id="villeLink" class="div a title-tip page-link">&emsp;&emsp;Elle s'affichera ici<i class="fas fa-caret-down"></i></a>
-                        <!-- Contenu déroulant -->
-                        <div class="dropdown-content scrollable-content" id="dropdownContent"></div>
-                    </div>
-                </li>            
-                    <div class="dropdown-content" id="menuDropdown">
-                        <!-- Les liens seront ajoutés dynamiquement ici -->
-                    </div>
-                    <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Crepy/crepyEnValois.html" title="Crépy-En-Valois">&raquo;</a></li>
-                    <li class="page-item"><a class="page-link title-tip title-tip-left" href="../../../index.html" title="Accueil">&raquo;&raquo;</a></li>       
-        </ul>              
-    </ul>
+        <li class="page-item"><a class="page-link title-tip title-tip-left" href="../C_sommaire.html" title="Sommaire_C">&laquo;&laquo;</a></li>
+        <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Creil/creil.html" title="Creil">&laquo;</a></li>                
+            <li class="page-item">
+                <div class="dropdown">
+                    <!-- Champ de saisie de la ville -->
+                    <input type="text" id="villeInput" placeholder="Tapez le nom d'une ville ">
+                    <!-- Contenu déroulant -->
+                    <div class="dropdown-content scrollable-content" id="dropdownContent"></div>
+                </div>
+            </li>                         
+        <li class="page-item"><a class="page-link title-tip title-tip-up" href="../Crepy-En-Valois/crepyEnValois.html" title="Crepy-En-Valois">&raquo;</a></li>
+        <li class="page-item"><a class="page-link title-tip title-tip-left" href="../../../index.html" title="Accueil">&raquo;&raquo;</a></li>
+    </ul> 
+        <div 
+        class="dropdown-content" id="menuDropdown">
+                    <!-- Les liens seront ajoutés dynamiquement ici -->
+        </div>           
 </nav>
 <!--Fin pagination-->
+
+<!--Debut de la table-->      
 <table class="exemple">       
     <thead >   
         <tr>
@@ -120,11 +140,12 @@
         </tr>
     </thead>
 
-<!--Marque 1--->          
+<!--Marque 1-->         
     <tr>
         <td class="border2">
-            <a  href="../Cremieu/Images/1.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                <img src="../Cremieu/Images/1.png" alt="Cremieu" style="width:70%;"/></a>
+            <a  href="../Cremieu/Images/1.png">
+                <img src="../Cremieu/Images/1.png" alt="Cremieu" data-width-mm="25">
+            </a>
         </td>
         <td class="border3">1</td>
         <td class="border2">port dû</td>
@@ -134,11 +155,12 @@
         <td class="border2">I-25</td>
         <td class="prixProduit" data-id="25">00.00</td>
     </tr> 
-<!--Marque 2--->          
+<!--Marque 2-->         
     <tr>
         <td class="border2">
-            <a  href="../Cremieu/Images/2.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                <img src="../Cremieu/Images/2.png" alt="Cremieu" style="width:77%;"/></a>
+            <a  href="../Cremieu/Images/2.png">
+                <img src="../Cremieu/Images/2.png" alt="Cremieu" data-width-mm="32">
+            </a>
         </td>
         <td class="border3">2</td>
         <td class="border2">port dû</td>
@@ -148,11 +170,12 @@
         <td class="border2">I-13</td>
         <td class="prixProduit" data-id="13">00.00</td>
     </tr> 
-<!--Marque 2A--->          
+<!--Marque 2A-->         
     <tr>
         <td class="border2">
-            <a  href="../Cremieu/Images/2A.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank">
-                <img src="../Cremieu/Images/2A.png" alt="Cremieu" style="width:77%;"/></a>
+            <a  href="../Cremieu/Images/2A.png">
+                <img src="../Cremieu/Images/2A.png" alt="Cremieu" data-width-mm="32">
+            </a>
         </td>
         <td class="border3">2A</td>
         <td class="border2">port dû</td>
@@ -162,106 +185,75 @@
         <td class="border2">I-13</td>
         <td class="prixProduit" data-id="13">00.00</td>
     </tr> 
-<!--Marque 3--->          
+<!--Marque 3-->         
     <tr>
         <td class="border2">
-            <!-- <a  href="../Cremieu/Images/3.png" title="clique pour grandir" class="title-tip title-tip-rigt;" target="_blank"> -->
-                <img src="../../Resource/Absentebleu.png" alt="Cremieu" style="width:70%;"/></a>
+                <a  href="../../../proposition/index.html">
+                <img src="../Cremieu/Images/3.png" alt="Cremieu" data-width-mm="50">
+            </a>
         </td>
         <td class="border3">3</td>
         <td class="border2">déboursé</td>
-        <td class="border2"><a><img src="../../Resource/plumeDeture.png" alt="Cremieu" style="width: 18%;"/></a></td>
+        <td class="border2"><img src="../../Resource/plumeDeture.png" alt="Cremieu" data-width-mm="10"></td>
         <td class="border2">1771</td>
         <td class="border2">manuscrit</td>
         <td class="border2">I-20</td>
         <td class="prixProduit" data-id="20">00.00</td>
     </tr> 
-<!--Commentaire-->                    
-        <tr>             
-            <th colspan="12" style="color: #000;"></th>         
-        </tr>         
-<!--Cartes google-->
-
-<tr>
-    <th colspan="3">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d66767.21814389183!2d5.235655552721426!3d45.72887543581122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b345b67669f2b%3A0x408ab2ae4be7ab0!2s38460%20Cr%C3%A9mieu!5e0!3m2!1sfr!2sfr!4v1714997564089!5m2!1sfr!2sfr" width="700" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </th>         
-
-<!--Blason-->
- <th colspan="1">
-    <a href="https://fr.wikipedia.org/wiki/H%C3%A9raldique">
-        <img src="../Cremieu/Images/Blason.png" alt="Cremieu" style="width:80%; height: auto;"/>
-        <p>Blason de Cremieu</p>
-    </a>
-</th> 
-<!--Carte Géoportail-->              
-    <th colspan="4">
-        <iframe width="800" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" sandbox="allow-forms allow-scripts allow-same-origin" src="https://www.geoportail.gouv.fr/embed/visu.html?c=5.2594784590869414,45.725318531253066&z=12&l0=ORTHOIMAGERY.ORTHOPHOTOS::GEOPORTAIL:OGC:WMTS(1)&l1=GEOGRAPHICALGRIDSYSTEMS.CASSINI::GEOPORTAIL:OGC:WMTS(1)&permalink=yes" allowfullscreen></iframe>
-    </th>  
-</tr> 
-<!--Commentaire-->
+<!--Liens-->
+        <tr > 
+            <th 
+                colspan="8" id="table-liens" style="padding-top: 10px;">Liens utiles 
+            </th>              
+<!-- Le contenu dynamique sera inséré ici -->           
+        </tr> 
+  <!--Espace-->
     <tr> 
         <th colspan="8" style="color: black;"></th>
-    </tr>   
-    
+    </tr>
+       
+  </table> 
+
 <!-- Scroll To Top -->
     <button onclick="topFunction()" id="scrollToTopButton" title="Haut de page"><i class="fas fa-chevron-up"></i></button>
 
-</table> 
 <!--Calculatrice-->
-<div class="calculator">
-    <div class="display-wrapper">
-        <input type="text" class="display" id="display">
-        <button id="closeCalculator" class="close-btn" title="Fermer la calculatrice">X</button>
+    <div class="calculator">
+        <div class="display-wrapper">
+            <input type="text" class="display" id="display">
+            <button id="closeCalculator" class="close-btn" title="Fermer la calculatrice">X</button>
+        </div>
+        <div class="buttons">
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            <button class="equal" onclick="calculate()">=</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <p>Additionne vos marques</p>
+        </div>
     </div>
-    <div class="buttons">
-        <button class="operator" onclick="appendToDisplay('+')">+</button>
-        <button class="operator" onclick="appendToDisplay('-')">-</button>
-        <button class="equal" onclick="calculate()">=</button>
-        <button class="clear" onclick="clearDisplay()">C</button>
-        <p>Additionne vos marques</p>
-    </div>
-</div>
-<button id="showCalculatorBtn" title="Afficher la calculatrice">Afficher la calculatrice</button>
+<button id="showCalculatorBtn" type="button" title="Afficher la calculatrice">Afficher la calculatrice</button>
 
-<!--popup 1--> 
-<div id="popup1" class="popup-container">
-    <div class="popup-content">
-        <a href="#" class="close">&times;</a>
-        <p></p>
-    </div>
-</div> 
+</main> 
 
-<!--popup 2-->
-<div id="popup2" class="popup-container">
-    <div class="popup-content">
-        <a href="#" class="close">&times;</a>
-        <p></p>
-    </div>
-</div> 
-<!--Fin popup-->
-
-</section> 
-
-<!---Footer défilant-->
-<div class='News-footer'>
-    <div class='news'>
-        <span id='news-head'>COTE</span>
-    </div>
-        <p class='N-text'>
-            <marquee direction='left' >
-                <span>Celles-ci s'entendent pour de belles frappes.</span>
-                <span>• Pour les lettre en port paye:</span>
-                <span>• Cote du PP sans plus value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16.</span>
-                <span>• Si la marque de port (dû) qui accompagne le (port payé) est d'un indice supérieur a 16, majorer de 2 indices la cote du port payé.</span> 
-                <span>• &copy; Copyright Tout droit réservé.</span>
-            </marquee>
-        </p>
-</div>
-<!---fin Footer défilant--> 
+<!--Footer défilant-->
+<footer class="News-footer">
+  <div class="news">
+      <span id="news-head">COTE</span>
+  </div>
+  <div class="N-text scroll-text">
+      <div>
+          • Celles-ci s'entendent pour de belles frappes. &emsp;
+          • Pour les lettres en port payé : &emsp;
+          • Cote du PP sans plus-value si la marque de port (dû) qui l'accompagne est d'un indice inférieur à 16. &emsp;
+          • Si la marque de port (dû) qui accompagne le port payé est d'un indice supérieur à 16, majorer de 2 indices la cote du port payé. &emsp;
+          • © Copyright Tout droit réservé.
+      </div>
+  </div>
+</footer>
+<!--fin Footer défilant-->
+ <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>   
+<script src="../../../JS/img.js"></script>
 </body>
-</html>      
-
-
+</html>   
 
 

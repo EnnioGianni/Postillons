@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { name: 'Dol-De-Bretagne', url: '../../../laPosteDeLancienneFrance/Villes_D/Dol-De-Bretagne/dolDeBretagne.html' },
         { name: 'Dole', url: '../../../laPosteDeLancienneFrance/Villes_D/Dole/dole.html' },
         { name: 'Domfront', url: '../../../laPosteDeLancienneFrance/Villes_D/Domfront/domfront.html' },
+        { name: 'Dompaire', url: '../../../laPosteDeLancienneFrance/Villes_D/Dompaire/dompaire.html' },
         { name: 'Donchery', url: '../../../laPosteDeLancienneFrance/Villes_D/Donchery/donchery.html' },
         { name: 'Le-Donjon', url: '../../../laPosteDeLancienneFrance/Villes_D/Le-Donjon/leDonjon.html' },
         { name: 'Donnemarie', url: '../../../laPosteDeLancienneFrance/Villes_D/Donnemarie/donnemarie.html' },

@@ -167,7 +167,7 @@ p::first-letter {
 
 
 .titre-principal {
-  font-size: 30px;
+  font-size: 20px;
   margin: 0 auto;        /* centre automatiquement */
   text-align: center;    /* centre le texte */
   display: block;        /* assure le bon comportement */
